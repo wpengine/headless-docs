@@ -1,3 +1,3 @@
 # Headless Platform Guides
 
-- [Getting Started]("./getting-started/")
+- [Getting Started](./getting-started/)

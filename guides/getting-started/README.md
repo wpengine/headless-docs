@@ -6,7 +6,6 @@ Requirements:
 
 - [Node.js](https://nodejs.org/en/download/)
 - WP Engine Headless CLI Tool ([install](../../README.md#installation))
-- WordPress site with the REST API enabled
 
 What we'll cover:
 

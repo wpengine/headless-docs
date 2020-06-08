@@ -2,10 +2,16 @@
 
 In this guide, you'll learn the basics of deploying apps on the WP Engine Headless Platform.
 
+Requirements:
+
+- [Node.js](https://nodejs.org/en/download/)
+- WP Engine Headless CLI Tool ([install](../../README.md#installation))
+- WordPress site with the REST API enabled
+
 What we'll cover:
 
-- Supported Apps
-- Creating Your First App
+- [Supported Apps](#supported-apps)
+- [Creating Your First App](./create-app.md)
 - Deploying Your App
   - The Build Process
 - Development Workflow

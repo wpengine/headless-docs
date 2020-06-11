@@ -39,12 +39,16 @@ Copy this basic configuration into your `wpe.json` file:
   "name": "My-First-Headless-App",
   "repo": "your-github-org-or-user/your-repo",
   "environments": [
-    "name": "Development",
-    "branch": "dev",
-    "secrets": [
-      "key": "YOUR_ENV_VAR",
-      "value": "123"
-    ]
+    {
+      "name": "Development",
+      "branch": "dev",
+      "secrets": [
+        {
+          "key": "YOUR_ENV_VAR",
+          "value": "123"
+        }
+      ]
+    }
   ]
 }
 ```

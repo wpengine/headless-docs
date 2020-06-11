@@ -11,8 +11,7 @@ What we'll cover:
 
 - [Supported Apps](#supported-apps)
 - [Creating Your First App](./create-app.md)
-- Deploying Your App
-  - The Build Process
+- [Deploying Your App](./deploy-app.md)
 - Development Workflow
 
 ## Supported Apps

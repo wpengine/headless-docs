@@ -42,7 +42,7 @@ mkdir pages
 Create a simple React component in the file `./pages/index.tsx`:
 
 ```tsx
-const Home = () => <h1>Hello World!</h1>;
+const Home = () => <h1>Hello Headless!</h1>;
 
 export default Home;
 ```

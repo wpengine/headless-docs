@@ -110,4 +110,4 @@ Now, copy the `id` and use in the `get` command to check the status of your depl
 wpe alpha apps get APP_ID
 ```
 
-The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once it is complete, the get command will return the URL of your application. Copy the url into a browser window, and you'll see your app up and running on the platform.
+The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once it is complete, the get command will return the URL of your application. Copy the url into a browser window, and you'll see your app up and running on the platform :tada:

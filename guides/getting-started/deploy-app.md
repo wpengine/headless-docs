@@ -92,6 +92,8 @@ For example, the GitHub repo, https://github.com/matt-landers/headless-summit202
 
 Replace `branch` under the Development `environment` with the branch in your repo you want to connect to Development.
 
+Note: Remember that you added `wpe.json` to your `.gitignore` file, so it won't be checked into GitHub. This is important because you will use this config to store secrets (i.e. API keys, credentials, etc.) that you don't want to publish to GitHub.
+
 ## Deploy Your App
 
 Now that you have a valid configuration file for a new app, deploy it to the platform with the following command:

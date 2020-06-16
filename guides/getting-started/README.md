@@ -19,7 +19,7 @@ What we'll cover:
 
 The platform supports [Node.js](https://nodejs.org/) based applications.
 
-Node uses npm for it's package management which allows you to set the version of Node your applications requires via the `engines` property.
+Node uses npm for it's package management which allows you to set the version of Node your applications requires via the `engines` property inside your project's `package.json`.
 
 ```json
 {

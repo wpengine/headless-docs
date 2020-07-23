@@ -22,7 +22,7 @@ $ npm i next react react-dom
 $ npm i -D typescript @types/react @types/node
 ```
 
-Open `package.json` and replace the `scripts` property with:
+Open `package.json` and replace the `scripts` property with the following:
 
 ```json
 "scripts": {

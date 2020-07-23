@@ -29,4 +29,4 @@ Node uses npm for it's package management which allows you to set the version of
 }
 ```
 
-The minimum version of Node supported is version 10.
+The supported versions of Node are 10, 12, and 14. Specifying a version of Node smaller than the minimum supported version will result in the application of the minimum version (10); specifying a larger version will result in the application of the maximum supported version (14).

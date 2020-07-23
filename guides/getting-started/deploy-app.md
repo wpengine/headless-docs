@@ -7,7 +7,7 @@ Now that we have an app up and running, let's deploy it to the Headless Platform
 Initialize a repo:
 
 ```
-git init
+$ git init
 ```
 
 Create a `.gitignore` file and add this config to it. Add anything else you might want to leave out of the repo.
@@ -23,8 +23,8 @@ wpe.json
 Create the initial commit:
 
 ```
-git add .
-git commit -m "first commit"
+$ git add .
+$ git commit -m "first commit"
 ```
 
 Now that we have a local git repository set up, let's connect it to GitHub.
@@ -99,15 +99,15 @@ Note: Remember that you added `wpe.json` to your `.gitignore` file, so it won't 
 Now that you have a valid configuration file for a new app, deploy it to the platform with the following command:
 
 ```
-wpe alpha apps create -f wpe.json
+$ wpe alpha apps create -f wpe.json
 ```
 
 The `create` command will return the `id` of the application that was created.
 
 Now, copy the `id` and use it in the `get` command to check the status of your deployment:
 
-```bash
-wpe alpha apps get APP_ID
+```
+$ wpe alpha apps get APP_ID
 ```
 
 The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once it is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:

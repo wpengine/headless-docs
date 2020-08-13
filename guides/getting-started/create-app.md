@@ -4,25 +4,25 @@ For our first app, we're going to use [Next.js](https://nextjs.org/docs/).
 
 Create a new folder named `my-headless-app` and `cd` into the folder.
 
-```bash
-mkdir my-headless-app
-cd my-headless-app
+```
+$ mkdir my-headless-app
+$ cd my-headless-app
 ```
 
 Initialize a node app:
 
 ```bash
-npm init -y
+$ npm init -y
 ```
 
 Install required dependencies for Next.js and TypeScript support:
 
-```bash
-npm i next react react-dom
-npm i -D typescript @types/react @types/node
+```
+$ npm i next react react-dom
+$ npm i -D typescript @types/react @types/node
 ```
 
-Open `package.json` and replace the `scripts` property with:
+Open `package.json` and replace the `scripts` property with the following:
 
 ```json
 "scripts": {
@@ -35,8 +35,8 @@ Open `package.json` and replace the `scripts` property with:
 
 Create a folder named `pages`. Next.js uses this folder to determine routes for your application.
 
-```bash
-mkdir pages
+```
+$ mkdir pages
 ```
 
 Create a simple React component in the file `./pages/index.tsx`:
@@ -49,10 +49,10 @@ export default Home;
 
 Start your development server to make sure everything is working correctly:
 
-```bash
-npm run dev
+```
+$ npm run dev
 ```
 
 When you navigate to `http://localhost:3000`, you should see your app running!
 
-Now, let's [deploy the app](./deploy-app.md) to the headless platform :rocket:
+Now, let's [deploy the app](./deploy-app.md) to the headless platform. :rocket:

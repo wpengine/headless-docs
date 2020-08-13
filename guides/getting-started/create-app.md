@@ -9,7 +9,7 @@ $ mkdir my-headless-app
 $ cd my-headless-app
 ```
 
-Initialize a node app:
+Initialize a Node app via `npm`:
 
 ```bash
 $ npm init -y
@@ -55,4 +55,4 @@ $ npm run dev
 
 When you navigate to `http://localhost:3000`, you should see your app running!
 
-Now, let's [deploy the app](./deploy-app.md) to the headless platform. :rocket:
+Next, let's [deploy the app](./deploy-app.md) to the headless platform. :rocket:

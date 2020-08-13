@@ -10,7 +10,7 @@ Initialize a repo:
 $ git init
 ```
 
-Create a `.gitignore` file and add this config to it. Add anything else you might want to leave out of the repo.
+Create a `.gitignore` file in the root of your application, and add this config to it. (Tip: Add anything else you might want to leave out of the repo.)
 
 ```
 node_modules
@@ -31,39 +31,39 @@ Now that we have a local git repository set up, let's connect it to GitHub.
 
 - Log in to [GitHub](github.com).
 - Create a new repository with the name of your choice.
-- Follow the instructions to link an existing local repo to the new GitHub repo.
+- Follow the instructions provided by GitHub when you created the repo to link an existing local repo to the new GitHub repo.
 
-By default, you'll hook your current branch up to `master`, but you're free to set this up however you'd like. Ideally, you'll have multiple branches that represent environments like production, staging, and dev, but for the purposes of this guide, we're going to focus on a single branch/environment.
+In this guide, you'll hook your current branch up to `master`, but you're free to set this up however you'd like. Ideally, you'll have multiple branches that represent environments like production, staging, and dev, but for the purposes of this guide, we're going to focus on a single branch/environment.
 
 ## Authenticate with the Platform
 
 In order to create a new app, you need to log in via your WP Engine account and connect your GitHub account.
 
-First, log in to your WP Engine account:
+First, login to your WP Engine account:
 
 ```
-wpe alpha auth login
+$ wpe alpha auth login
 ```
 
 After you've successfully logged in, connect your GitHub account:
 
 ```
-wpe alpha auth login github
+$ wpe alpha auth login github
 ```
 
-Now you should be able to run a command without getting an error.
+Now, you should be able to run a command without getting an error.
 
-Try running:
+Try running the `list` command and make sure you do not receive an error. The list will be empty until we `create` an app later on in the guide:
 
 ```
-wpe alpha apps list
+$ wpe alpha apps list
 ```
 
 ## Create a `wpe.json` file
 
 In the root of your project, create a file named `wpe.json`. This is the file we will use to configure our deployment.
 
-An `app` only requires a few fields and doesn't represent a deployment. App `environments` represent the deployment that is connected to a branch in your repo.
+An `app` only requires a few fields and doesn't represent a deployment. You can think of an app the same way you think of a Site in the WP Engine portal for WordPress. App `environments` represent the deployment that is connected to a branch in your repo.
 
 Copy this basic configuration into your `wpe.json` file:
 
@@ -75,7 +75,7 @@ Copy this basic configuration into your `wpe.json` file:
     {
       "name": "Development",
       "branch": "dev",
-      "wp_install_name": "install_name"
+      "wp_install_name": "your WordPress evironment name"
       "secrets": [
         {
           "key": "YOUR_ENV_VAR",

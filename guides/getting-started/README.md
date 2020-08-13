@@ -11,9 +11,9 @@ Requirements:
 What we'll cover:
 
 - [Supported Apps](#supported-apps)
-- [Creating Your First App](./create-app.md)
-- [Deploying Your App](./deploy-app.md)
-- Development Workflow
+- [Creating your first app](./create-app.md)
+- [Deploying your first app](./deploy-app.md)
+- [Making changes to your app (workflow)](./workflow.md)
 
 ## Supported Apps
 

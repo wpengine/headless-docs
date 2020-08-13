@@ -105,12 +105,10 @@ Now that you have a valid configuration file for a new app, deploy it to the pla
 $ wpe alpha apps create -f wpe.json
 ```
 
-The `create` command will return the `id` of the application that was created.
-
-Now, copy the `id` and use it in the `get` command to check the status of your deployment:
+Next, use the `get` command to check the status of your deployment:
 
 ```
-$ wpe alpha apps get APP_ID
+$ wpe alpha apps get My-First-Headless-App
 ```
 
 The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once it is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:

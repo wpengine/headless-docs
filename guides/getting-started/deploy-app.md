@@ -51,9 +51,15 @@ After you've successfully logged in, connect your GitHub account:
 $ wpe alpha auth login github
 ```
 
+In order to work with headless, we need to set our account context. Your account name can be found in the WP Engine User Portal in the top left of the nav bar. To set the account context, run:
+
+```
+$ wpe alpha context set account YOUR_ACCOUNT_NAME
+```
+
 Now, you should be able to run a command without getting an error.
 
-Try running the `list` command and make sure you do not receive an error. The list will be empty until we `create` an app later on in the guide:
+Try running the `list` command and make sure you do not receive an error. The list will be empty until you `create` an app later on in the guide:
 
 ```
 $ wpe alpha apps list

@@ -81,7 +81,7 @@ Copy this basic configuration into your `wpe.json` file:
     {
       "name": "Development",
       "branch": "dev",
-      "wp_install_name": "your WordPress environment name",
+      "wp_environment_name": "your WordPress environment name",
       "secrets": [
         {
           "key": "YOUR_ENV_VAR",

@@ -12,9 +12,9 @@ WP Engine Headless Documentation for Developers
 npm i @wpengine/headless-cli
 ``` -->
 
-Download the cli [here]()
+Download the CLI [here]().
 
-To validate install, run:
+To validate installation, run:
 
 ```bash
 wpe

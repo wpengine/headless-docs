@@ -1,8 +1,8 @@
 # Developer Workflow
 
-Now that you have an app deployed to the platform, any changes that you make to your branch will be automatically deployed. To try this out, let's make a change to the site.
+Now that you have an app deployed to the platform, any changes you make to your branch will be automatically deployed. To try this out, let's make a change to the site.
 
-Open `pages/index.tsx`, and replace it with:
+Open `pages/index.tsx` and replace it with the following:
 
 ```tsx
 const Home = () => (
@@ -12,7 +12,7 @@ const Home = () => (
 export default Home;
 ```
 
-Save the file then run:
+Save the file and then run:
 
 ```
 git add .

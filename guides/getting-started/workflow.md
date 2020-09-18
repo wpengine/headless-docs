@@ -23,10 +23,10 @@ git push
 After a few minutes, your site will be updated on the URL listed when you run:
 
 ```
-wpe alpha apps get APP_ID
+wpe alpha apps get APP_NAME
 ```
 
-Remember, you can get your APP_ID by listing your apps:
+Remember, you can get your APP_NAME by listing your apps:
 
 ```
 wpe alpha apps list

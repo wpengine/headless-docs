@@ -59,7 +59,7 @@ $ wpe alpha context set account YOUR_ACCOUNT_NAME
 
 Now you should be able to run a command without getting an error.
 
-Try running the `list` command to make sure. The list will be empty until you `create` an app later in the guide.
+Try running the `list` command to make sure you do not get any errors. The list will be empty until you `create` an app later in the guide.
 
 ```
 $ wpe alpha apps list

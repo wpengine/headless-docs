@@ -39,7 +39,7 @@ $ git remote add origin YOUR_GITHUB_URL
 $ git push -u origin master
 ```
 
-In this guide, you'll hook your current branch up to `master`, but you're free to set this up however you'd like. Ideally, you'll have multiple branches that represent environments like production, staging, and dev, but for the purposes of this guide, we're going to focus on a single branch/environment.
+In this guide, you'll hook your current branch (`master`) up to the platform for deployment, but you're free to set this up however you'd like. Ideally, you'll have multiple branches that represent environments like production, staging, and dev, but for the purposes of this guide, we're going to focus on a single branch/environment.
 
 ## Authenticate with the Platform
 

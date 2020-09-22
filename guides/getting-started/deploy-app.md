@@ -31,7 +31,13 @@ Now that we have a local git repository set up, let's connect it to GitHub.
 
 - Log in to [GitHub](https://github.com).
 - Create a new repository with the name of your choice.
-- Follow the instructions provided by GitHub when you created the repo to link an existing local repo to the new GitHub repo.
+
+Once you have the repo created in GitHub, run:
+
+```
+$ git remote add origin YOUR_GITHUB_URL
+$ git push -u origin master
+```
 
 In this guide, you'll hook your current branch up to `master`, but you're free to set this up however you'd like. Ideally, you'll have multiple branches that represent environments like production, staging, and dev, but for the purposes of this guide, we're going to focus on a single branch/environment.
 

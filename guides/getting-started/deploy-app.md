@@ -82,12 +82,12 @@ Copy this basic configuration into your `wpe.json` file:
 ```json
 {
   "name": "My-First-Headless-App",
-  "repo": "your-github-org-or-user/your-repo",
+  "repo": "YOUR-github-org-or-user/your-repo",
   "environments": [
     {
-      "name": "Development",
-      "branch": "dev",
-      "wp_environment_name": "your WordPress environment name",
+      "name": "Production",
+      "branch": "master",
+      "wp_environment_name": "YOUR WordPress environment name",
       "secrets": [
         {
           "key": "WP_URL",
@@ -105,7 +105,7 @@ For example, the GitHub repo, https://github.com/matt-landers/headless-summit202
 
 Replace `branch` under the Development `environment` with the branch in your repo you want to connect to Development.
 
-Replace the value of `wp_environment_name` with the environment name form User Portal. For instance, if domain name is `env_name.wpengine.com`, use `env_name` as `wp_environment_name`.
+Replace the value of `wp_environment_name` with the environment name from User Portal. For instance, if domain name is `env_name.wpengine.com`, use `env_name` as `wp_environment_name`.
 
 Note: Remember that you added `wpe.json` to your `.gitignore` file, so it won't be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 

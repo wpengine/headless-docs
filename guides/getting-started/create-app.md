@@ -30,7 +30,7 @@ Open `package.json` and replace the `scripts` property with the following:
   "dev": "next dev",
   "start": "next start -p 8080",
   "wpe-build": "next build"
-}
+},
 ```
 
 Create a folder named `pages`. Next.js uses this folder to determine routes for your application.

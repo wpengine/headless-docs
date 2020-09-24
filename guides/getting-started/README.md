@@ -13,7 +13,7 @@ What we'll cover:
 - [Supported apps](#supported-apps)
 - [Creating your first app](./create-app.md)
 - [Deploying your first app](./deploy-app.md)
-- [Making changes to your app (workflow)](./workflow.md)
+- [Making changes to your app (dev workflow)](./workflow.md)
 
 ## Supported Apps
 

@@ -103,9 +103,9 @@ Replace `repo` with the repo you want to connect to your app. Your repo consists
 
 For example, the GitHub repo, https://github.com/matt-landers/headless-summit2020, is represented by `matt-landers/headless-summit2020`. Notice that it is just the repo url without `https://github.com/`.
 
-Replace `branch` under the Development `environment` with the branch in your repo you want to connect to Development.
-
 Replace the value of `wp_environment_name` with the environment name from User Portal. For instance, if domain name is `env_name.wpengine.com`, use `env_name` as `wp_environment_name`.
+
+`branch` under the Production `environment` specifies the branch to watch and build.
 
 Note: Remember that you added `wpe.json` to your `.gitignore` file, so it won't be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 

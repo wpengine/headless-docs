@@ -16,7 +16,7 @@ npm i @wpengine/headless-cli
 - The binary isn't signed, so you'll need to enable it in System Preferences->Security. It probably won't show up there until you attempt to run it.
 - Run `chmod +x wpe` on the binary after you unzip it
 - Copy the binary to `/usr/local/bin`
-- Move the config.yaml file to the folder `~/.wpe`
+- Move the `config.yaml` file to the folder `~/.wpe`
 
 To validate installation, run:
 

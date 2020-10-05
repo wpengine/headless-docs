@@ -3,6 +3,7 @@
 WP Engine Headless Documentation for Developers
 
 - [Getting Started](./guides/getting-started/)
+- [Troubleshooting](./guides/troubleshooting/)
 
 ## Installation
 

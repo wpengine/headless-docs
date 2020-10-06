@@ -6,7 +6,7 @@ While deploying your app or making changes, you may run into a situation where y
 
 The platform will pull your app from GitHub and build it when you first create it and anytime you make changes and push them to GitHub. During the build, the platform will run `npm i` and `npm run wpe-build`. It's possible that either for these could fail, and your build logs will tell you what happened.
 
-First, list the builds for an Environment of an App:
+List the builds for an Environment of an App:
 
 First, find your app name by running:
 
@@ -34,7 +34,7 @@ $ wpe alpha builds get -a APP_NAME -e ENVIRONMENT_ID -b BUILD_ID
 
 Look through the Error Output and Build Output for any issues that may be preventing the build from completing.
 
-## Check `package.json`
+## Ensure `package.json` lists your dependencies
 
 Your `package.json` tells the platform how to build your app.
 
@@ -60,7 +60,9 @@ First, it installs the dependencies for your app using `npm i`. In order to do t
 
 Newer versions of `npm` will automatically add dependencies to your `package.json`, but make sure there aren't any missing. This is a common cause of an app working on your machine but not on the platform.
 
-Next, make sure you've added `wpe-build` as a `script` in your `package.json`. Here is an example `scripts` section:
+## Ensure `package.json` contains a `wpe-build` script
+
+After the platform pulls your code and runs `npm i`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
 
 ```
 "scripts": {
@@ -70,3 +72,5 @@ Next, make sure you've added `wpe-build` as a `script` in your `package.json`. H
   "start": "next start -p 8080"
 },
 ```
+
+Note that it is acceptable to have a blank script (i.e. `"wpe-build": ""`), but the script must exist.

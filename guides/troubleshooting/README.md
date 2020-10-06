@@ -4,7 +4,7 @@ While deploying your app or making changes, you may run into a situation where y
 
 ## Check the build logs
 
-The platform will pull your app from GitHub and build it when you first create it and anytime you make changes and push them to GitHub. During the build, the platform will run `npm i` and `npm run wpe-build`. It's possible that either for these could fail, and your build logs will tell you what happened.
+The platform will build linked branches in GitHub when apps (or environments) are created and any time a linked branch changes. Pushing directly into a branch and merging a PR both trigger a build. During the build, the platform will run `npm i` and `npm run wpe-build`. It's possible that either of these could fail and your build logs will tell you what happened.
 
 First, list the builds for an Environment of an App:
 

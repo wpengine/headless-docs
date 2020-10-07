@@ -30,7 +30,7 @@ $ git commit -m "first commit"
 Now that we have a local git repository set up, let's connect it to GitHub.
 
 - Log in to [GitHub](https://github.com).
-- Create a new repository with the name of your choice.
+- Create a new repository in GitHub with the name of your choice.
 
 Once you have the repo created in GitHub, run:
 

@@ -39,7 +39,7 @@ If you want to see standard output / error logs for you app, type:
 ```
 wpe alpha logs get -a APP_NAME -e ENV_ID
 ```
-You can get the environment ID by running ```apps get APP_NAME``` in the CLI.
+You can get the environment ID by running ```wpe alpha apps get APP_NAME``` in the CLI.
 
 
 If you want to delete your environment, run:

@@ -28,7 +28,7 @@ Open `package.json` and replace the `scripts` property with the following:
 "scripts": {
   "build": "next build",
   "dev": "next dev",
-  "start": "next start -p 8080",
+  "start": "next start -p ${PORT-3000}",
   "wpe-build": "next build"
 },
 ```

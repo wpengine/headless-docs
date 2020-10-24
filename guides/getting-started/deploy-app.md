@@ -36,10 +36,10 @@ Once you have the repo created in GitHub, run:
 
 ```
 $ git remote add origin YOUR_GITHUB_URL
-$ git push -u origin master
+$ git push -u origin main
 ```
 
-Using this guide, you will connect your current branch (`master`) to the platform for deployment, but you are free to set this up however you'd like. Ideally, you will have multiple branches that represent environments like production, staging, and development, but for the purposes of this guide, we're going to focus on a single branch/environment.
+Using this guide, you will connect your current branch (`main`) to the platform for deployment, but you are free to set this up however you'd like. Ideally, you will have multiple branches that represent environments like production, staging, and development, but for the purposes of this guide, we're going to focus on a single branch/environment.
 
 ## Authenticate with the Platform
 
@@ -86,7 +86,7 @@ Copy this basic configuration into your `wpe.json` file:
   "environments": [
     {
       "name": "Production",
-      "branch": "master",
+      "branch": "main",
       "wp_environment_name": "YOUR WordPress environment name",
       "secrets": [
         {

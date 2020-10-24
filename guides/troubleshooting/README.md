@@ -74,3 +74,16 @@ After the platform pulls your code and runs `npm i`, it will execute the `wpe-bu
 ```
 
 Note that it is acceptable to have a blank script (i.e. `"wpe-build": ""`), but the script must exist.
+
+## Check your branch configuration
+
+If the branch that you are using GitHub does not match the branch that you have configured for your environment, the platform will not build your software. Double check that the branch configured for the environment matches the branch you're committing to in GitHub:
+
+```
+$ wpe alpha apps get APP_NAME
+```
+
+This command will list your app and the environment configurations with the branch names.
+
+**Note:** [GitHub is changing](https://github.com/github/renaming) the default branch name from `master` to `main`. Depending on where your organization is on that journey, and when your repository was created, your default may be `master` or `main`. WP Engine supports the use of the more inclusive `main`, so this guide uses `main` in examples. This may be a source of inconsistency.
+

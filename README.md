@@ -13,7 +13,7 @@ WP Engine Headless Documentation for Developers
 npm i @wpengine/headless-cli
 ``` -->
 
-- Download the CLI for macOS [here](https://drive.google.com/file/d/1i5dgrFjt03McPYI8gMhi1IZx-tfZnTdo/view).
+- Download the CLI for macOS (v.0.0.4) [here](https://drive.google.com/file/d/11Hwbg4D_0_h1GZzOuX1P429eZGeN_2Ue/view).
 
 The following instructions are needed until the CLI is distributed to npm:
 

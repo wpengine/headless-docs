@@ -90,6 +90,10 @@ Copy this basic configuration into your `wpe.json` file:
       "wp_environment_name": "YOUR WordPress environment name",
       "secrets": [
         {
+          "key": "PORT",
+          "value": "8080"
+        },
+        {
           "key": "WP_URL",
           "value": "https://yoururl"
         }
@@ -106,6 +110,8 @@ For example, the GitHub repo https://github.com/matt-landers/headless-summit2020
 Replace the value of `wp_environment_name` with the environment name from User Portal. For instance, if the domain name is `env_name.wpengine.com`, use `env_name` as `wp_environment_name`.
 
 `branch` under the Production `environment` specifies the branch to watch and build.
+
+You need to include the variable `PORT` in your secrets list and specify the port number you want your service to listen.
 
 Note: Remember that you added `wpe.json` to your `.gitignore` file, so it will not be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 

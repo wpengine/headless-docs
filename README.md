@@ -55,5 +55,5 @@ Flags:
   -h, --help            help for wpeh
   -v, --version         version for wpeh
 
-Use "wpeh [command] --help" for more information about a command.
+Use "wpe [command] --help" for more information about a command.
 ```

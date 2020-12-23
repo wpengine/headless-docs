@@ -88,7 +88,7 @@ Copy this basic configuration into your `wpe.json` file:
       "name": "Production",
       "branch": "main",
       "wp_environment_name": "YOUR WordPress environment name",
-      "secrets": [
+      "env_variables": [
         {
           "key": "WP_URL",
           "value": "https://yoururl"

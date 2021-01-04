@@ -8,6 +8,8 @@ If you're new to headless, this is the place to start. If you've created headles
 
 When we talk about headless with WordPress, we mean that we are using WordPress for content creation but not for front-end rendering. Instead of using traditional WordPress themes, you develop your front-end using a JavaScript framework like React. In addition, the front-end is hosted on a separate server from the WordPress instance.
 
+Since the front-end is responsible for displaying content to the end user, it needs to access the content. In order to do that, it utilized the WordPress REST API or GraphQL via [WPGraphQL](https://www.wpgraphql.com/).
+
 ## Why Headless?
 
 Headless is gaining momentum for a few reasons:
@@ -17,7 +19,7 @@ Headless is gaining momentum for a few reasons:
 - Security - Removing the responsibility of rendering from WordPress reduces the surface area for attacks. Now, you can choose to only expose the API to the internet.
 - Integrations - It is true that the WordPress community provides many integrations through plugins, but they don't always work well together. When you go headless, you have more control over your integrations, and most services support integrating with JavaScript and Node.js.
 
-## Hosting Your Headless Sites
+## Hosting Your Headless Apps
 
 WordPress runs on PHP, but it's likely that your headless site will utilize [Node](https://nodejs.org/). At the very least, you'll use Node and NPM to manage JavaScript dependencies and bundle your applications (i.e. webpack).
 

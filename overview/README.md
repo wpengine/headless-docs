@@ -64,7 +64,7 @@ Here's an example configuration for a typical app with a Production and Developm
 }
 ```
 
-The \*_app_ has 3 properties:
+The **app** has 3 properties:
 
 - name - the name of your app which you choose.
 - repo - the GitHub repository linked to your app.

@@ -88,7 +88,7 @@ Copy this basic configuration into your `wpe.json` file:
       "name": "Production",
       "branch": "main",
       "wp_environment_name": "YOUR WordPress environment name",
-      "secrets": [
+      "env_variables": [
         {
           "key": "WP_URL",
           "value": "https://yoururl"
@@ -125,4 +125,4 @@ $ wpe alpha apps get My-First-Headless-App
 
 The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once deployment is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:
 
-Now let's check out our configured [developer workflow](../workflow).
+Now let's check out our configured [developer workflow](./workflow.md).

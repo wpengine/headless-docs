@@ -1,8 +1,3 @@
----
-title: "WP Engine Headless CLI Reference"
-description: "WP Engine's CLI command description and usage"
----
-
 # The WP Engine Headless CLI Commands
 
 This section contains reference information on using WP Engine's command line

@@ -1,4 +1,4 @@
-- [wpe alpha](/reference/cli/wpe/alpha)
+- [wpe](/reference/cli/wpe)
   - [apps](/reference/cli/wpe/alpha/apps)
     - [create](/reference/cli/wpe/alpha/apps/create)
     - [delete](/reference/cli/wpe/alpha/apps/delete)

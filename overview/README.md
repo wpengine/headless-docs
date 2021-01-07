@@ -79,3 +79,9 @@ Each **environment** has 4 properties:
 - env_vars (optional) - an array of environment variables that you want to be available at build-time and runtime as OS environment variables.
   - In Node, you can access these variables with `process.env`.
   - Environment variables are useful for storing information needed to build or run your application like API keys/secrets.
+
+## Connecting Your WordPress Backend
+
+Each app environment is paired with a WordPress backend. In the [WP Engine User Portal](https://my.wpengine.com1), the WordPress equivalent to an _app_ is a _site_. A site has environments just like apps. Each _app environment_ needs to be paired with a _site environment_ via the site's environment id (found in user portal). You make the connection by setting the **`wp_environment_name`** property for each environment in your app config.
+
+The **`wp_environment_name`** property is **required** as it provides the authorization context for the environment which determines which users have access to modify and deploy the _app environment_.

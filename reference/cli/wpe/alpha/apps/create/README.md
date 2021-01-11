@@ -6,7 +6,7 @@ Create a new WP Engine Headless Application
 ## Usage
 
 ```bash
-wpe alpha apps create [OPTIONS]
+$ wpe alpha apps create [OPTIONS]
 ```
 
 ## Extended Description
@@ -56,7 +56,7 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
 With the above file created, you can deploy your app with a single command:
 
 ```bash
-wpe alpha apps create -f wpe.json
+$ wpe alpha apps create -f wpe.json
 ```
 
 ## Parent Command

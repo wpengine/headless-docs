@@ -6,7 +6,7 @@ Removes a WP Engine Headless Application
 ## Usage
 
 ```bash
-wpe alpha apps delete [APPNAME] [OPTIONS]
+$ wpe alpha apps delete [APPNAME] [OPTIONS]
 ```
 
 ## Extended Description
@@ -27,7 +27,7 @@ The `wpe alpha apps delete` command allows you to remove an existing WP Engine H
 ### Delete "myapp"
 
 ```bash
-wpe alpha apps delete myapp
+$ wpe alpha apps delete myapp
 ```
 
 ## Parent Command

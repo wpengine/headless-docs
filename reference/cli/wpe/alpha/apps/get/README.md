@@ -6,7 +6,7 @@ Get information about a WP Engine Headless Application
 ## Usage
 
 ```bash
-wpe alpha apps get [APPNAME] [OPTIONS]
+$ wpe alpha apps get [APPNAME] [OPTIONS]
 ```
 
 ## Extended Description
@@ -24,7 +24,7 @@ The `wpe alpha apps get` command provides information about an existing WP Engin
 ### Get "myapp"
 
 ```bash
-wpe alpha apps get myapp
+$ wpe alpha apps get myapp
 ```
 
 The above command will print something that looks like the following to the console:

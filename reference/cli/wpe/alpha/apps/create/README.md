@@ -29,9 +29,41 @@ The `environments` correspond to the WP Engine User Portal environments where yo
 
 ## Examples
 
-[Create Your First App](/guides/getting-started/create-app)
+### Create With A wpe.json File
+
+The simplest way to create your new app is by configuring a `wpe.json` file with the variables necessary to deploy the application. Something like the following:
+
+```json
+{
+  "name": "My-First-Headless-App",
+  "repo": "YOUR-github-org-or-user/your-repo",
+  "environments": [
+    {
+      "name": "Production",
+      "branch": "main",
+      "wp_environment_name": "YOUR WordPress environment name",
+      "env_variables": [
+        {
+          "key": "WP_URL",
+          "value": "https://yoururl"
+        }
+      ]
+    }
+  ]
+}
+```
+
+With the above file created, you can deploy your app with a single command:
+
+```bash
+wpe alpha apps create -f wpe.json
+```
 
 ## Parent Command
 | Command | Description                                                                              |
 |:--------|:-----------------------------------------------------------------------------------------|
 | [wpe](/reference/cli/wpe/)                  | The base command for the WPE CLI                     |
+
+## Further Reading
+
+- [Create Your First App](/guides/getting-started/create-app)

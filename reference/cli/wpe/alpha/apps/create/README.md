@@ -23,7 +23,7 @@ The `environments` correspond to the WP Engine User Portal environments where yo
 |:----------------|:--------|:-------------------------------------------------------------------------------------------|
 | `--environments, -e` | Environments in JSON format (use with -n, -r flags; surround value with single quotation marks) |
 | `--filepath, -f`     | Path to file with JSON of the app to create (use without -e, -n, -r flags)                      |
-| `--help, -h`         | help for create                                                                                 |
+| `--help, -h`         | Help for create                                                                                 |
 | `--name, -n`         | Assign a name to the app (optional use with -e, -r flags)                                       |
 | `--repo, -r`         | GitHub repo associated with the app (use with -e, -n flags)                                     |
 
@@ -53,6 +53,7 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
 }
 ```
 
+
 With the above file created, you can deploy your app with a single command:
 
 ```bash
@@ -60,9 +61,9 @@ wpe alpha apps create -f wpe.json
 ```
 
 ## Parent Command
-| Command | Description                                                                              |
-|:--------|:-----------------------------------------------------------------------------------------|
-| [wpe](/reference/cli/wpe/)                  | The base command for the WPE CLI                     |
+| Command | Description                                                                                 |
+|:--------|:--------------------------------------------------------------------------------------------|
+| [wpe alpha apps](/reference/cli/wpe/alpha/apps) | The base command for interacting with your WPE apps |
 
 ## Further Reading
 

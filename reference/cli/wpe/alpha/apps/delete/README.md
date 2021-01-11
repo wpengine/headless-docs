@@ -17,10 +17,10 @@ The `wpe alpha apps delete` command allows you to remove an existing WP Engine H
 
 ## Options
 
-| Name, shorthand | Default | Description     |
-|:----------------|:--------|:----------------|
-| `--force`     | Force delete, avoid all prompts |
-| `--help, -h`  | Help for delete                 |
+| Name, shorthand | Description                     |
+|:----------------|:--------------------------------|
+| `--force`       | Force delete, avoid all prompts |
+| `--help, -h`    | Help for delete                 |
 
 ## Examples
 
@@ -31,6 +31,6 @@ wpe alpha apps delete myapp
 ```
 
 ## Parent Command
-| Command | Description                                                                                 |
-|:--------|:--------------------------------------------------------------------------------------------|
+| Command                                         | Description                                         |
+|:------------------------------------------------|:----------------------------------------------------|
 | [wpe alpha apps](/reference/cli/wpe/alpha/apps) | The base command for interacting with your WPE apps |

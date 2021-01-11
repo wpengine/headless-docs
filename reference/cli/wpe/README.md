@@ -5,8 +5,8 @@ client. Each command has a reference page along with samples.
 
 ## WPE Top-level Commands
 
-| Command | Description                                                                              |
-|:--------|:-----------------------------------------------------------------------------------------|
+| Command                                     | Description                                          |
+|:--------------------------------------------|:-----------------------------------------------------|
 | [apps](/reference/cli/wpe/alpha/apps)       | Manage your headless applications                    |
 | [auth](/reference/cli/wpe/alpha/auth)       | Authenticate with the WP Engine Headless CLI         |
 | [builds](/reference/cli/wpe/alpha/builds)   | Get build results for your headless applications     |

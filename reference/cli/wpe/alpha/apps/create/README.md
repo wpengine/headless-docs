@@ -19,13 +19,13 @@ The `environments` correspond to the WP Engine User Portal environments where yo
 
 ## Options
 
-| Name, shorthand | Default | Description                                                                                |
-|:----------------|:--------|:-------------------------------------------------------------------------------------------|
-| `--environments, -e` | Environments in JSON format (use with -n, -r flags; surround value with single quotation marks) |
-| `--filepath, -f`     | Path to file with JSON of the app to create (use without -e, -n, -r flags)                      |
-| `--help, -h`         | Help for create                                                                                 |
-| `--name, -n`         | Assign a name to the app (optional use with -e, -r flags)                                       |
-| `--repo, -r`         | GitHub repo associated with the app (use with -e, -n flags)                                     |
+| Name, shorthand      | Description                                                                                          |
+|:---------------------|:-----------------------------------------------------------------------------------------------------|
+| `--environments, -e` | Environments in JSON format (use with -n, -r flags; surround value with single quotation marks)      |
+| `--filepath, -f`     | Path to file with JSON of the app to create (use without -e, -n, -r flags)                           |
+| `--help, -h`         | Help for create                                                                                      |
+| `--name, -n`         | Assign a name to the app (optional use with -e, -r flags)                                            |
+| `--repo, -r`         | GitHub repo associated with the app (use with -e, -n flags)                                          |
 
 ## Examples
 
@@ -61,8 +61,8 @@ wpe alpha apps create -f wpe.json
 ```
 
 ## Parent Command
-| Command | Description                                                                                 |
-|:--------|:--------------------------------------------------------------------------------------------|
+| Command                                         | Description                                         |
+|:------------------------------------------------|:----------------------------------------------------|
 | [wpe alpha apps](/reference/cli/wpe/alpha/apps) | The base command for interacting with your WPE apps |
 
 ## Further Reading

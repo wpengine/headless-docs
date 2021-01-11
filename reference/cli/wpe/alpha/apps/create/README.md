@@ -13,9 +13,9 @@ wpe alpha apps create [OPTIONS]
 
 The `wpe alpha apps create` command allows you to create a new WP Engine Headless Application. You provide the GitHub repository you want to use, the environments you want to deploy, and the name of your app. Running the command will deploy the code from your repository to the corresponding environments.
 
-The `repository` is a reference to your GitHub repository. For example, if your GitHub repository is `https://github.com/organization/mysite` then the value your use for `repository` will be `organization/mysite`.
+The `repository` is a reference to your GitHub repository. For example, if your GitHub repository is `https://github.com/organization/myapp` then the value your use for `repository` will be `organization/myapp`.
 
-The `environments` correspond to the WP Engine User Portal environments where you have your WP site. So if your domain is `mysite.wpengine.com`, your environment would be `mysite`.
+The `environments` correspond to the WP Engine User Portal environments where you have your WP site. So if your domain is `myapp.wpengine.com`, your environment would be `myapp`.
 
 ## Options
 
@@ -35,8 +35,8 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
 
 ```json
 {
-  "name": "My-First-Headless-App",
-  "repo": "YOUR-github-org-or-user/your-repo",
+  "name": "myapp",
+  "repo": "organization/myapp",
   "environments": [
     {
       "name": "Production",
@@ -52,7 +52,6 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
   ]
 }
 ```
-
 
 With the above file created, you can deploy your app with a single command:
 

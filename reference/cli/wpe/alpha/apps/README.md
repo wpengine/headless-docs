@@ -13,4 +13,3 @@ The `wpe alpha apps` command group provides functionality for managing your WP E
 | [list](/reference/cli/wpe/alpha/apps/list)       | List all existing WP Engine Headless Applications                             |
 | [rebuild](/reference/cli/wpe/alpha/apps/rebuild) | Rebuild an existing WP Engine Headless Applications                           |
 | [update](/reference/cli/wpe/alpha/apps/update)   | Update an existing WP Engine Headless Application                             |
-| [help](/reference/cli/wpe/help)                  | Show the help menu                                                            |

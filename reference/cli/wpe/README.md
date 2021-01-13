@@ -14,4 +14,3 @@ client. Each command has a reference page along with samples.
 | [envs](/reference/cli/wpe/alpha/envs)       | Manage your headless application environments        |
 | [logs](/reference/cli/wpe/alpha/logs)       | View logs for your headless applications             |
 | [completion](/reference/cli/wpe/completion) | Load shell completion scripts                        |
-| [help](/reference/cli/wpe/help)             | Show the WP Engine Headless CLI help menu            |

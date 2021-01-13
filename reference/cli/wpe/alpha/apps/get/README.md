@@ -1,7 +1,7 @@
 # wpe alpha apps get
 
 ## Description
-Get information about a WP Engine Headless Application
+Get information about an existing WP Engine Headless Application
 
 ## Usage
 
@@ -15,9 +15,9 @@ The `wpe alpha apps get` command provides information about an existing WP Engin
 
 ## Options
 
-| Name, shorthand | Default | Description     |
-|:----------------|:--------|:----------------|
-| `--help, -h`  | Help for get                |
+| Name, shorthand | Description  |
+|:----------------|:-------------|
+| `--help, -h`    | Help for get |
 
 ## Examples
 

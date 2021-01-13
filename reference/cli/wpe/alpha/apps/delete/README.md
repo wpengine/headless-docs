@@ -1,7 +1,7 @@
 # wpe alpha apps delete
 
 ## Description
-Removes a WP Engine Headless Application
+Remove an WP Engine Headless Application
 
 ## Usage
 

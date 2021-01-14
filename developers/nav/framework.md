@@ -1,1 +1,1 @@
-1. [Previews](/framework/previews)
+1. [Previews](/docs/previews)

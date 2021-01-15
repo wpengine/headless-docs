@@ -6,14 +6,14 @@ Requirements:
 
 - [Node.js](https://nodejs.org/en/download/)
 - [git](https://git-scm.com/downloads)
-- WP Engine Headless CLI tool ([install](../../README.md#installation))
+- WP Engine Headless CLI tool ([install](../../#installation))
 
 What we'll cover:
 
 - [Supported apps](#supported-apps)
-- [Creating your first app](./create-app.md)
-- [Deploying your first app](./deploy-app.md)
-- [Making changes to your app (dev workflow)](./workflow.md)
+- [Creating your first app](./create-app)
+- [Deploying your first app](./deploy-app)
+- [Making changes to your app (dev workflow)](./workflow)
 
 ## Supported Apps
 

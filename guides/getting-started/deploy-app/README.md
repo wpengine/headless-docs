@@ -125,4 +125,4 @@ $ wpe alpha apps get My-First-Headless-App
 
 The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once deployment is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:
 
-Now let's check out our configured [developer workflow](./workflow.md).
+Now let's check out our configured [developer workflow](/guides/getting-started/workflow).

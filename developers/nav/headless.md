@@ -1,2 +1,6 @@
+1. [Installation](/)
 1. [Getting Started](/guides/getting-started)
+    1. [Creating your first app](/guides/getting-started)
+    2. [Deploying your first app](/guides/getting-started)
+    3. [Making changes to your app (dev workflow)](/guides/getting-started/workflow)
 2. [Troubleshooting](/guides/troubleshooting)

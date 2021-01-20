@@ -55,4 +55,4 @@ $ npm run dev
 
 When you navigate to `http://localhost:3000`, you should see your app running!
 
-Next, let's [deploy the app](../deploy-app) to the Headless Platform. :rocket:
+Next, let's [deploy the app](/guides/getting-started/deploy-app) to the Headless Platform. :rocket:

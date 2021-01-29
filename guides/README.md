@@ -1,6 +1,6 @@
 # Atlas Platform Documentation
 
-- [Introduction](/overview/README.md)
+- [Introduction](/)
 - [Getting Started](/guides/getting-started)
 - [Troubleshooting](/guides/troubleshooting)
 

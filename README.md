@@ -2,7 +2,7 @@
 
 Welcome to the WP Engine Headless Platform for WordPress, Atlas!
 
-If you're new to headless, this is the place to start. If you've created headless sites before, head over to our [Getting Started Guide](/guides/getting-started/README.md).
+If you're new to headless, this is the place to start. If you've created headless sites before, head over to our [Getting Started Guide](/guides/getting-started).
 
 ## What is Headless WordPress?
 

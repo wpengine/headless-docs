@@ -5,7 +5,7 @@ In this guide, you'll learn the basics of deploying apps on the WP Engine Headle
 Requirements:
 
 - [Node.js](https://nodejs.org/en/download/)
-- [git](https://git-scm.com/downloads)
+- [Git](https://git-scm.com/downloads)
 - WP Engine Headless CLI tool ([install](/#installation))
 
 What we'll cover:

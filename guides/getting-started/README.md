@@ -6,7 +6,7 @@ Requirements:
 
 - [Node.js](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/downloads)
-- WP Engine Headless CLI tool ([install](/#installation))
+- WP Engine Headless CLI tool ([install](/guides#install-the-atlas-cli))
 
 What we'll cover:
 

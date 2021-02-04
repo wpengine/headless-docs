@@ -4,7 +4,7 @@ For our first app, we're going to use [Next.js](https://nextjs.org/docs/).
 
 Create a new folder named `my-headless-app` and `cd` into the folder:
 
-```
+```bash
 $ mkdir my-headless-app
 $ cd my-headless-app
 ```
@@ -17,7 +17,7 @@ $ npm init -y
 
 Install the required dependencies for Next.js and TypeScript support:
 
-```
+```bash
 $ npm i next react react-dom
 $ npm i -D typescript @types/react @types/node
 ```
@@ -35,7 +35,7 @@ Open `package.json` and replace the `scripts` property with the following:
 
 Create a folder named `pages`. Next.js uses this folder to determine routes for your application.
 
-```
+```bash
 $ mkdir pages
 ```
 
@@ -49,7 +49,7 @@ export default Home;
 
 Start your development server to make sure everything is working correctly:
 
-```
+```bash
 $ npm run dev
 ```
 

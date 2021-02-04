@@ -10,25 +10,25 @@ List the builds for an Environment of an App:
 
 First, find your app name by running:
 
-```
+```bash
 $ wpe alpha apps list
 ```
 
 Next, find your Environment ID by running:
 
-```
+```bash
 $ wpe alpha apps get APP_NAME
 ```
 
 Once you have your APP_NAME and ENVIRONMENT_ID, use them in the following command to view your builds:
 
-```
+```bash
 $ wpe alpha builds list -a APP_NAME -e ENVIRONMENT_ID
 ```
 
 This command will show you a list of builds. Now, you can find the build logs for a specific build with the ID of the build using the `get` command:
 
-```
+```bash
 $ wpe alpha builds get -a APP_NAME -e ENVIRONMENT_ID -b BUILD_ID
 ```
 
@@ -40,7 +40,7 @@ Your `package.json` tells the platform how to build your app.
 
 First, it installs the dependencies for your app using `npm i`. In order to do this, all of your dependencies need to be listed under the `dependencies` section of the `package.json`. Here's an example:
 
-```
+```json
 "dependencies": {
   "@apollo/react-hooks": "^3.1.5",
   "@apollo/react-ssr": "^3.1.5",
@@ -64,7 +64,7 @@ Newer versions of `npm` will automatically add dependencies to your `package.jso
 
 After the platform pulls your code and runs `npm i`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
 
-```
+```json
 "scripts": {
   "dev": "next",
   "build": "next build",
@@ -79,7 +79,7 @@ Note that it is acceptable to have a blank script (i.e. `"wpe-build": ""`), but 
 
 If the branch that you are using GitHub does not match the branch that you have configured for your environment, the platform will not build your software. Double check that the branch configured for the environment matches the branch you're committing to in GitHub:
 
-```
+```bash
 $ wpe alpha apps get APP_NAME
 ```
 

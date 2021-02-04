@@ -18,6 +18,7 @@
     2. [set](/reference/cli/wpe/alpha/context/set)
 6. [wpe envs](/reference/cli/wpe/alpha/envs)
     1. [delete](/reference/cli/wpe/alpha/envs/delete)
+    2. [purge](/reference/cli/wpe/alpha/envs/purge)
     2. [rebuild](/reference/cli/wpe/alpha/envs/rebuild)
 7. [wpe logs](/reference/cli/wpe/alpha/logs)
     1. [get](/reference/cli/wpe/alpha/logs/get)

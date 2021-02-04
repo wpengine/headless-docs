@@ -1,6 +1,7 @@
 # wpe alpha apps create
 
 ## Description
+
 Create a new WP Engine Headless Application
 
 ## Usage
@@ -19,13 +20,13 @@ The `environments` correspond to the WP Engine User Portal environments where yo
 
 ## Options
 
-| Name, shorthand      | Description                                                                                          |
-|:---------------------|:-----------------------------------------------------------------------------------------------------|
-| `--environments, -e` | Environments in JSON format (use with -n, -r flags; surround value with single quotation marks)      |
-| `--filepath, -f`     | Path to file with JSON of the app to create (use without -e, -n, -r flags)                           |
-| `--help, -h`         | Help for create                                                                                      |
-| `--name, -n`         | Assign a name to the app (optional use with -e, -r flags)                                            |
-| `--repo, -r`         | GitHub repo associated with the app (use with -e, -n flags)                                          |
+| Name, shorthand      | Description                                                                                     |
+| :------------------- | :---------------------------------------------------------------------------------------------- |
+| `--environments, -e` | Environments in JSON format (use with -n, -r flags; surround value with single quotation marks) |
+| `--filepath, -f`     | Path to file with JSON of the app to create (use without -e, -n, -r flags)                      |
+| `--help, -h`         | Help for create                                                                                 |
+| `--name, -n`         | Assign a name to the app (optional use with -e, -r flags)                                       |
+| `--repo, -r`         | GitHub repo associated with the app (use with -e, -n flags)                                     |
 
 ## Examples
 
@@ -37,11 +38,13 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
 {
   "name": "myapp",
   "repo": "organization/myapp",
+  "region": "US-C",
   "environments": [
     {
       "name": "Production",
       "branch": "main",
       "wp_environment_name": "YOUR WordPress environment name",
+      "domains": ["yourdomain.com"],
       "env_variables": [
         {
           "key": "WP_URL",
@@ -59,9 +62,19 @@ With the above file created, you can deploy your app with a single command:
 $ wpe alpha apps create -f wpe.json
 ```
 
+Providing custom `domains` is optional. If you do want to connect a custom domain, you need to configure your domain one of 2 ways.
+
+- Root CNAME pointed to `js.wpenginepowered.com`
+- A records with the following IPs:
+  - `141.193.213.10`
+  - `141.193.213.11`
+
+**NOTE: We currently only support one custom domain.**
+
 ## Parent Command
+
 | Command                                         | Description                                         |
-|:------------------------------------------------|:----------------------------------------------------|
+| :---------------------------------------------- | :-------------------------------------------------- |
 | [wpe alpha apps](/reference/cli/wpe/alpha/apps) | The base command for interacting with your WPE apps |
 
 ## Further Reading

@@ -43,11 +43,13 @@ Here's an example configuration for a typical app with a Production and Developm
 {
   "name": "MyHeadlessApp",
   "repo": "matt-landers/headless-wpe",
+  "region": "US-C",
   "environments": [
     {
       "name": "Production",
       "branch": "main",
       "wp_environment_name": "headlesswpe",
+      "domains": ["yourdomain.com"],
       "env_variables": [
         { "key": "WP_URL", "value": "https://headlesswpe.wpengine.com" }
       ]
@@ -66,19 +68,31 @@ Here's an example configuration for a typical app with a Production and Developm
 
 The **app** has 3 properties:
 
-- name - the name of your app which you choose.
-- repo - the GitHub repository linked to your app.
-- environments - an array of environments that your app contains.
-  - Each environment is deployed to the platform and received a unique URL.
+- `name` - the name of your app which you choose.
+- `repo` - the GitHub repository linked to your app.
+- `region` - the region where you want your app hosted (this setting cannot be modified)
+  - `EU-W` - Europe West
+  - `UK` - United Kingdom
+  - `US-C` - US Central
+  - `AUS-SE` - Australia Southeast
+- `environments` - an array of environments that your app contains.
+  - Each environment is deployed to the platform and receives a unique URL.
 
-Each **environment** has 4 properties:
+Each **environment** has the following properties:
 
-- name - the name you choose for the environment.
-- branch - a branch that exists in the GitHub repo linked to the app.
-- wp_environment_name - the name of the WordPress environment (found in the user portal) that you want to link to your Node environment.
-- env_variables (optional) - an array of environment variables that you want to be available at build-time and runtime as OS environment variables.
+- `name` - the name you choose for the environment.
+- `branch` - a branch that exists in the GitHub repo linked to the app.
+- `wp_environment_name` - the name of the WordPress environment (found in the user portal) that you want to link to your Node environment.
+- `env_variables` (optional) - an array of environment variables that you want to be available at build-time and runtime as OS environment variables.
   - In Node, you can access these variables with `process.env`.
   - Environment variables are useful for storing information needed to build or run your application like API keys/secrets.
+- `domains` - (optional) If you want to connect a custom domain, you need to configure your domain one of 2 ways:
+  - Root CNAME pointed to `js.wpenginepowered.com`
+  - A records with the following IPs:
+    - `141.193.213.10`
+    - `141.193.213.11`
+
+**NOTE: Currently, only one custom domain is supported.**
 
 ## Connecting Your WordPress Backend
 

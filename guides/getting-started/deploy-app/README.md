@@ -6,13 +6,13 @@ Now that we have an app up and running, let's deploy it to the Headless Platform
 
 Initialize a repo:
 
-```
+```bash
 $ git init
 ```
 
 Create a `.gitignore` file in the root of your application, and add the following config to it. (Tip: Include any other files or directories that you do not want to commit to source control.)
 
-```
+```text
 node_modules
 .next
 wpe.json
@@ -22,7 +22,7 @@ wpe.json
 
 Create the initial commit:
 
-```
+```bash
 $ git add .
 $ git commit -m "first commit"
 ```
@@ -34,7 +34,7 @@ Now that we have a local git repository set up, let's connect it to GitHub.
 
 Once you have the repo created in GitHub, run:
 
-```
+```bash
 $ git remote add origin YOUR_GITHUB_URL
 $ git push -u origin main
 ```
@@ -47,19 +47,19 @@ In order to create a new app, you need to log in via your WP Engine account and 
 
 First, log in to your WP Engine account:
 
-```
+```bash
 $ wpe alpha auth login
 ```
 
 After you've successfully logged in, connect your GitHub account:
 
-```
+```bash
 $ wpe alpha auth login github
 ```
 
 In order to work with headless apps, we need to set our account context. Your account name can be found in the WP Engine User Portal in the top left of the navigation bar. To set the account context, run:
 
-```
+```bash
 $ wpe alpha context set account YOUR_ACCOUNT_NAME
 ```
 
@@ -67,7 +67,7 @@ Now you should be able to run a command without getting an error.
 
 Try running the `list` command to make sure you do not get any errors. The list will be empty until you `create` an app later in the guide.
 
-```
+```bash
 $ wpe alpha apps list
 ```
 
@@ -123,13 +123,13 @@ Note: Remember that you added `wpe.json` to your `.gitignore` file, so it will n
 
 Now that you have a valid configuration file for a new app, deploy it to the platform with the following command:
 
-```
+```bash
 $ wpe alpha apps create -f wpe.json
 ```
 
 Next, use the `get` command to check the status of your deployment:
 
-```
+```bash
 $ wpe alpha apps get My-First-Headless-App
 ```
 

@@ -5,7 +5,7 @@ Print completions for zsh.
 
 ## Usage
 
-```zsh
+```bash
 $ wpe completion zsh [OPTIONS]
 ```
 
@@ -13,13 +13,13 @@ $ wpe completion zsh [OPTIONS]
 
 The `wpe completion zsh` command will print tab completion configuration for zsh. If shell completion is not already enabled in your environment you will need to enable it by running the following command:
 
-```zsh
+```bash
 $ echo "autoload -U compinit; compinit" >> ~/.zshrc
 ```
 
 To load completions for each session run the following command once:
 
-```zsh
+```bash
 $ wpe completion zsh > "${fpath[1]}/_wpe"
 ```
 

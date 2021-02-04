@@ -7,17 +7,17 @@
 ## Install the Atlas CLI
 
 ```bash
-npm i @wpengine/headless-cli -g
+$ npm i @wpengine/headless-cli -g
 ```
 
 Verify the installation via:
 
 ```bash
-wpe --version
+$ wpe --version
 ```
 
 Your should see something like:
 
-```
-wpe version vX.X.X
+```bash
+$ wpe version vX.X.X
 ```

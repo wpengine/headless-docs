@@ -6,7 +6,7 @@ Get details of a specific build for an app's environment.
 ## Usage
 
 ```bash
-$ wpe alpha builds get [BUILD_ID] [OPTIONS]
+$ wpe alpha builds get $BUILD_ID [OPTIONS]
 ```
 
 ## Extended Description

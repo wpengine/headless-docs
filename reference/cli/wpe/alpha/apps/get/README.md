@@ -6,7 +6,7 @@ Get information about an existing WP Engine Headless Application
 ## Usage
 
 ```bash
-$ wpe alpha apps get [APPNAME] [OPTIONS]
+$ wpe alpha apps get $APP_NAME [OPTIONS]
 ```
 
 ## Extended Description

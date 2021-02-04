@@ -6,7 +6,7 @@ Set the account context for the WP Engine Headless CLI.
 ## Usage
 
 ```bash
-$ wpe alpha context set account [ACCOUNT_NAME]
+$ wpe alpha context set account $ACCOUNT_NAME
 ```
 
 ## Extended Description

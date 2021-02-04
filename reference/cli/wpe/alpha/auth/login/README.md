@@ -6,7 +6,7 @@ Login to the WP Engine Headless CLI
 ## Usage
 
 ```bash
-$ wpe alpha apps login [PROVIDER]
+$ wpe alpha auth login [$LOGIN_PROVIDER]
 ```
 
 ## Extended Description

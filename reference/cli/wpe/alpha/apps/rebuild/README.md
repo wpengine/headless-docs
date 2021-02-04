@@ -6,7 +6,7 @@ Rebuild an existing WP Engine Headless Applications
 ## Usage
 
 ```bash
-$ wpe alpha apps rebuild [APPNAME] [OPTIONS]
+$ wpe alpha apps rebuild $APP_NAME [OPTIONS]
 ```
 
 ## Extended Description

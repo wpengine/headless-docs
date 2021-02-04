@@ -6,7 +6,7 @@ Remove an WP Engine Headless Application
 ## Usage
 
 ```bash
-$ wpe alpha apps delete [APPNAME] [OPTIONS]
+$ wpe alpha apps delete $APP_NAME [OPTIONS]
 ```
 
 ## Extended Description

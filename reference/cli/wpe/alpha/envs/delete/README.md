@@ -6,7 +6,7 @@ Remove a deployed environment from an application.
 ## Usage
 
 ```bash
-$ wpe alpha envs delete [ENV_ID] [OPTIONS]
+$ wpe alpha envs delete $ENV_ID [OPTIONS]
 ```
 
 ## Extended Description

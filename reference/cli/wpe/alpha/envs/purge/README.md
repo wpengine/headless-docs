@@ -6,7 +6,7 @@ Manually purge the domain cache for a specified application environment.
 ## Usage
 
 ```bash
-$ wpe alpha envs purge [ENV_ID] [OPTIONS]
+$ wpe alpha envs purge $ENV_ID [OPTIONS]
 ```
 
 ## Extended Description

@@ -6,7 +6,7 @@ Manually invoke a rebuild of a specified application environment.
 ## Usage
 
 ```bash
-$ wpe alpha envs rebuild [ENV_ID] [OPTIONS]
+$ wpe alpha envs rebuild $ENV_ID [OPTIONS]
 ```
 
 ## Extended Description

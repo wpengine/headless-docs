@@ -1,4 +1,4 @@
-# wpe alpha envs rebuild
+# wpe alpha envs purge
 
 ## Description
 Manually purge the domain cache for a specified application environment.
@@ -18,7 +18,7 @@ The `wpe alpha envs purge` command allows you to purge the domain cache for a sp
 | Name, shorthand | Description      |
 |:----------------|:-----------------|
 | `--app, -a`     | The app name     |
-| `--help, -h`    | Help for rebuild |
+| `--help, -h`    | Help for purge   |
 
 ## Examples
 

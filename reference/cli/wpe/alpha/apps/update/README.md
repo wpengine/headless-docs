@@ -44,7 +44,7 @@ The simplest way to update your app is by configuring a `wpe.json` file with the
       "wp_environment_name": "YOUR WordPress environment name",
       "env_variables": [
         {
-          "key": "WP_URL",
+          "key": "WORDPRESS_URL",
           "value": "https://yoururl"
         }
       ]

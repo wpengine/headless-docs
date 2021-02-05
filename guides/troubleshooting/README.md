@@ -40,7 +40,7 @@ Your `package.json` tells the platform how to build your app.
 
 First, it installs the dependencies for your app using `npm i`. In order to do this, all of your dependencies need to be listed under the `dependencies` section of the `package.json`. Here's an example:
 
-```json
+```bash
 "dependencies": {
   "@apollo/react-hooks": "^3.1.5",
   "@apollo/react-ssr": "^3.1.5",
@@ -64,7 +64,7 @@ Newer versions of `npm` will automatically add dependencies to your `package.jso
 
 After the platform pulls your code and runs `npm i`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
 
-```json
+```bash
 "scripts": {
   "dev": "next",
   "build": "next build",
@@ -86,4 +86,3 @@ $ wpe alpha apps get APP_NAME
 This command will list your app and the environment configurations with the branch names.
 
 **Note:** [GitHub is changing](https://github.com/github/renaming) the default branch name from `master` to `main`. Depending on where your organization is on that journey, and when your repository was created, your default may be `master` or `main`. WP Engine supports the use of the more inclusive `main`, so this guide uses `main` in examples. This may be a source of inconsistency.
-

@@ -43,7 +43,7 @@ $ wpe alpha builds list -a myapp -e bmna3gedlzerwcb4vc04gssl
 
 Running the above command will print something that looks similar to the following:
 
-```bash
+```text
 ID                              APP_NAME        ENVIRONMENT                     REPOSITORY              BRANCH  TIMESTAMP               COMMIT_SHA
 sqdt3na72uwu4sea7xwro5o8        myapp           bmna3gedlzerwcb4vc04gssl        organization/myapp      main    2021-01-01T00:00:46Z    71234c6
 ```

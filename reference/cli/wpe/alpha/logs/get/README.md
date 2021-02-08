@@ -29,7 +29,7 @@ $ wpe alpha logs get -e bmna3gedlzerwcb4vc04gssl -a myapp
 
 The above command will print something similar to the following:
 
-```bash
+```text
 TIMESTAMP               SEVERITY        MESSAGE
 2021-01-01T00:00:46Z    Info
 2021-01-01T00:00:46Z    Info            > myapp@1.0.0 start /app/repo

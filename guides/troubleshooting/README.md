@@ -40,7 +40,7 @@ Your `package.json` tells the platform how to build your app.
 
 First, it installs the dependencies for your app using `npm i`. In order to do this, all of your dependencies need to be listed under the `dependencies` section of the `package.json`. Here's an example:
 
-```bash
+```text
 "dependencies": {
   "@apollo/react-hooks": "^3.1.5",
   "@apollo/react-ssr": "^3.1.5",
@@ -64,7 +64,7 @@ Newer versions of `npm` will automatically add dependencies to your `package.jso
 
 After the platform pulls your code and runs `npm i`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
 
-```bash
+```text
 "scripts": {
   "dev": "next",
   "build": "next build",

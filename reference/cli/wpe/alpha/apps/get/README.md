@@ -29,7 +29,7 @@ $ wpe alpha apps get myapp
 
 The above command will print something that looks like the following to the console:
 
-```bash
+```text
 NAME                    REPO
 myapp                   organization/myapp
 

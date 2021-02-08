@@ -24,7 +24,7 @@ $ npm i -D typescript @types/react @types/node
 
 Open `package.json` and replace the `scripts` property with the following:
 
-```bash
+```text
 "scripts": {
   "build": "next build",
   "dev": "next dev",

@@ -27,7 +27,7 @@ $ wpe alpha apps list
 
 The above command will print something that looks like the following to the console:
 
-```bash
+```text
 NAME                    REPO
 cosmic_seal             organization/repo
 dapper_penguin          organization/repo

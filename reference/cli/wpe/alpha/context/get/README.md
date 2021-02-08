@@ -27,7 +27,7 @@ $ wpe alpha context get
 
 The above command will print something similar to the following:
 
-```bash
+```text
 ACCOUNT
 myaccount
 ```

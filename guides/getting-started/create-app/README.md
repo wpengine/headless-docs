@@ -41,7 +41,7 @@ $ mkdir pages
 
 Create a simple React component in the file `./pages/index.tsx`:
 
-```tsx
+```ts
 const Home = () => <h1>Hello, Headless!</h1>;
 
 export default Home;

@@ -47,7 +47,7 @@ The simplest way to create your new app is by configuring a `wpe.json` file with
       "domains": ["yourdomain.com"],
       "env_variables": [
         {
-          "key": "WP_URL",
+          "key": "WORDPRESS_URL",
           "value": "https://yoururl"
         }
       ]

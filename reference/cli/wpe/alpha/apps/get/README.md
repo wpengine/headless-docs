@@ -35,7 +35,7 @@ myapp                   organization/myapp
 
 ENVIRONMENT     BRANCH  URL                                                             ID                              STATE
 Development     master  https://hbq5fb1hu43epj6apiu2enakm.js.wpenginepowered.com        bq5fb1hu43epj6apiu2enakm        deployed
-ENVIRONMENT VARIABLES: WP_URL
+ENVIRONMENT VARIABLES: WORDPRESS_URL
 STATUS
 ```
 

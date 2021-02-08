@@ -51,7 +51,7 @@ Here's an example configuration for a typical app with a Production and Developm
       "wp_environment_name": "headlesswpe",
       "domains": ["yourdomain.com"],
       "env_variables": [
-        { "key": "WP_URL", "value": "https://headlesswpe.wpengine.com" }
+        { "key": "WORDPRESS_URL", "value": "https://headlesswpe.wpengine.com" }
       ]
     },
     {
@@ -59,7 +59,7 @@ Here's an example configuration for a typical app with a Production and Developm
       "branch": "dev",
       "wp_environment_name": "headlesswpe-dev",
       "env_variables": [
-        { "key": "WP_URL", "value": "https://headlesswpe-dev.wpengine.com" }
+        { "key": "WORDPRESS_URL", "value": "https://headlesswpe-dev.wpengine.com" }
       ]
     }
   ]

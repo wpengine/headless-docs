@@ -22,5 +22,5 @@ Using this guide, you will connect your current branch (`main`) to the platform 
 
 At this point, you can decide to deploy via the CLI or the User Portal:
 
-- [Deploy via the CLI](/guides/getting-started/deploy-app/cli)
 - [Deploy via the User Portal](/guides/getting-started/deploy-app/portal)
+- [Deploy via the CLI](/guides/getting-started/deploy-app/cli)

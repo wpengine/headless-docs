@@ -1,58 +1,24 @@
 # Create Your First App
 
-For our first app, we're going to use [Next.js](https://nextjs.org/docs/).
+For our first app, we're going to use our open source [headless framework](https://github.com/wpengine/headless-framework).
 
-Create a new folder named `my-headless-app` and `cd` into the folder:
+1. First we need a WordPress site. You should have a site when you created your headless account. Your sites are in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. This will log your into WP Admin which is where we'll setup the framework plugin and WPGraphQL.
+1. Download, upload, and activate the `wpe-headless` plugin. [(Plugin Download)](https://wp-product-info.wpesvc.net/v1/plugins/wpe-headless?download)
+1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) on the WordPress site if it's not already installed.
+   - You can automatically install WPGraphQL from the framework plugin settings page as well.
+1. Create a new Next.js app from our [getting-started project](https://github.com/wpengine/headless-framework/tree/canary/examples/getting-started):
+   ```
+   $ npx create-next-app -e https://github.com/wpengine/headless-framework/tree/canary --example-path examples/getting-started --use-npm
+   ```
+1. Navigate to the directory that Next created for you: `cd your-app`
+1. Rename the sample `.env` file so that we can set the environment variables needed by the framework
+   ```
+   cp .env.local.sample .env.local
+   ```
+1. Populate `WORDPRESS_URL` in `.env.local` with the full URL to your WordPress site, including the `http://` or `https://` prefix.
+1. Populate `WP_HEADLESS_SECRET` in `.env.local` with the secret key found at Settings → Headless in your WordPress admin area.
+1. Start your app: `npm run dev`
 
-```bash
-$ mkdir my-headless-app
-$ cd my-headless-app
-```
-
-Initialize a Node app via `npm`:
-
-```bash
-$ npm init -y
-```
-
-Install the required dependencies for Next.js and TypeScript support:
-
-```bash
-$ npm i next react react-dom
-$ npm i -D typescript @types/react @types/node
-```
-
-Open `package.json` and replace the `scripts` property with the following:
-
-```text
-"scripts": {
-  "build": "next build",
-  "dev": "next dev",
-  "start": "next start -p 8080",
-  "wpe-build": "next build"
-},
-```
-
-Create a folder named `pages`. Next.js uses this folder to determine routes for your application.
-
-```bash
-$ mkdir pages
-```
-
-Create a simple React component in the file `./pages/index.tsx`:
-
-```tsx
-const Home = () => <h1>Hello, Headless!</h1>;
-
-export default Home;
-```
-
-Start your development server to make sure everything is working correctly:
-
-```bash
-$ npm run dev
-```
-
-When you navigate to `http://localhost:3000`, you should see your app running!
+You should be able to navigate to http://localhost:3000 and see your app running!
 
 Next, let's [deploy the app](/guides/getting-started/deploy-app) to the Headless Platform. :rocket:

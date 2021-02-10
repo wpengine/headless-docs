@@ -102,14 +102,14 @@ Copy this basic configuration into your `wpe.json` file:
 
 Replace `repo` with the repo you want to connect to your app. Your repo consists of the GitHub organization or user and the repo name.
 
+For example, the GitHub repo https://github.com/matt-landers/headless-summit2020 is represented by `matt-landers/headless-summit2020`. Notice that it is just the repo URL without `https://github.com/`.
+
 `region` can be set to one of the following:
 
 - `EU-W` - Europe West
 - `UK` - United Kingdom
 - `US-C` - US Central
 - `AUS-SE` - Australia Southeast
-
-For example, the GitHub repo https://github.com/matt-landers/headless-summit2020 is represented by `matt-landers/headless-summit2020`. Notice that it is just the repo URL without `https://github.com/`.
 
 Replace the value of `wp_environment_name` with the environment name from User Portal. For instance, if the domain name is `env_name.wpengine.com`, use `env_name` as `wp_environment_name`.
 

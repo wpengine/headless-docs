@@ -7,12 +7,12 @@ For our first app, we're going to use our open source [headless framework](https
 1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) on the WordPress site if it's not already installed.
    - You can automatically install WPGraphQL from the framework plugin settings page as well.
 1. Create a new Next.js app from our [getting-started project](https://github.com/wpengine/headless-framework/tree/canary/examples/getting-started):
-   ```
+   ```bash
    $ npx create-next-app -e https://github.com/wpengine/headless-framework/tree/canary --example-path examples/getting-started --use-npm
    ```
 1. Navigate to the directory that Next created for you: `cd your-app`
 1. Rename the sample `.env` file so that we can set the environment variables needed by the framework
-   ```
+   ```bash
    cp .env.local.sample .env.local
    ```
 1. Populate `WORDPRESS_URL` in `.env.local` with the full URL to your WordPress site, including the `http://` or `https://` prefix.

@@ -4,4 +4,5 @@
    1. [Creating your first app](/guides/getting-started/create-app)
    2. [Deploying your first app](/guides/getting-started/deploy-app)
    3. [Making changes to your app (dev workflow)](/guides/getting-started/workflow)
+1. [User Portal](/guides/portal)
 1. [Troubleshooting](/guides/troubleshooting)

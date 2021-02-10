@@ -29,7 +29,7 @@ $ wpe alpha builds list -a APP_NAME -e ENVIRONMENT_ID
 This command will show you a list of builds. Now, you can find the build logs for a specific build with the ID of the build using the `get` command:
 
 ```bash
-$ wpe alpha builds get -a APP_NAME -e ENVIRONMENT_ID -b BUILD_ID
+$ wpe alpha builds get BUILD_ID
 ```
 
 Look through the Error Output and Build Output for any issues that may be preventing the build from completing.

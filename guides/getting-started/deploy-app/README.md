@@ -8,6 +8,7 @@ Initialize a repo:
 
 ```bash
 $ git init
+$ git branch -M main
 ```
 
 Create a `.gitignore` file in the root of your application, and add the following config to it. (Tip: Include any other files or directories that you do not want to commit to source control.)
@@ -117,7 +118,9 @@ Replace the value of `wp_environment_name` with the environment name from User P
 
 `domains` can be added to your production environment, but for the purposes of this guide, we won't add a custom domain.
 
-Note: Remember that you added `wpe.json` to your `.gitignore` file, so it will not be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
+`env_variables` are optional OS level environment variables that are available to you during build and runtime. You can use these to store API secrets, your WordPress URL, etc. They can be accessed in Node via `process.env.KEY`.
+
+**Important:** Remember that you added `wpe.json` to your `.gitignore` file, so it will not be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 
 ## Deploy Your App
 

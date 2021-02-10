@@ -6,7 +6,7 @@ This section contains documentation on how to use the [User Portal](https://my.w
 
 If your account is enabled for Atlas, you should see "Headless apps" in the menu:
 
-![Headless Apps Menu Item](./images/portal-menu.jpg)
+![Headless Apps Menu Item](/guides/portal/images/portal-menu.jpg)
 
 ## Creating an App
 

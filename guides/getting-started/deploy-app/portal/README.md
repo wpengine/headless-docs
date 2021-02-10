@@ -6,7 +6,7 @@ First login to the [User Portal](https://my.wpengine.com) to create, update, del
 
 If your account is enabled for Atlas, you should see "Headless apps" in the menu:
 
-![Headless Apps Menu Item](/guides/getting-started/deploy-app/images/portal-menu.jpg)
+![Headless Apps Menu Item](/guides/getting-started/deploy-app/portal/images/portal-menu.jpg)
 
 ## Creating an App
 
@@ -62,7 +62,7 @@ Once you've filled out the form, click the "Create app" button in the top right 
 
 If there aren't any errors, you'll be taken to the environment page where you can see the status of your headless app environment. At first, it will be in a "Building code" status. It should look something like this:
 
-![Headless App Building](/guides/getting-started/deploy-app/images/portal-app-building.jpg)
+![Headless App Building](/guides/getting-started/deploy-app/portal/images/portal-app-building.jpg)
 
 Once the build is complete, you can view your site running at the "Headless URL" :tada:
 

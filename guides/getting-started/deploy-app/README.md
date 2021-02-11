@@ -20,7 +20,7 @@ Using this guide, you will connect your current branch (`main`) to the platform 
 
 ## Deploy Your App
 
-At this point, you can decide to deploy via the CLI or the User Portal:
+At this point, you can decide to deploy via the [User Portal](https://my.wpengine.com) or the CLI:
 
 - [Deploy via the User Portal](/guides/getting-started/deploy-app/portal)
 - [Deploy via the CLI](/guides/getting-started/deploy-app/cli)

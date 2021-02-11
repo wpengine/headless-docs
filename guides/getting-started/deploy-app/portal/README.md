@@ -10,7 +10,7 @@ If your account is enabled for Atlas, you should see "Headless apps" in the menu
 
 ## Creating an App
 
-Click the "Create an app" button in the top right. This will take you to a form where you'll need the following information:
+Click the "Get started" or "Create an app" button in the top right. This will take you to a form where you'll need the following information:
 
 ### Headless app name
 

@@ -10,7 +10,7 @@ For our first app, we're going to use our open source [headless framework](https
    ```bash
    $ npx create-next-app -e https://github.com/wpengine/headless-framework/tree/canary --example-path examples/getting-started --use-npm
    ```
-1. Navigate to the directory that Next created for you: `cd your-app`
+1. After running this command you will be prompted with `√ What is your project named?`. There will now be a folder with that same name in your current working directory. Navigate to that directory with `cd your-app`, replacing `your-app` with the project name you specified.
 1. Rename the sample `.env` file so that we can set the environment variables needed by the framework
    ```bash
    cp .env.local.sample .env.local

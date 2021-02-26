@@ -4,11 +4,13 @@ In this guide, you'll learn the basics of deploying apps on the WP Engine Headle
 
 Requirements:
 
+
+- A WPEngine [Atlas](https://wpengine.com/atlas) account
 - [Node.js](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/downloads)
 - WP Engine Headless CLI tool ([install](/guides#install-the-atlas-cli))
 
-What we'll cover:
+What this guide covers:
 
 - [Supported apps](#supported-apps)
 - [Creating your first app](/guides/getting-started/create-app)
@@ -29,4 +31,4 @@ Node.js uses npm for its package management, which allows you to set the version
 }
 ```
 
-The supported versions of Node are 10, 12, and 14. Specifying a version of Node below the minimum supported version will result in the application of the minimum supported version (10); specifying a higher version will result in the application of the maximum supported version (14).
+The supported versions of Node are **10, 12, and 14**. Specifying a Node version below the minimum supported version will default to the minimum supported version (10); setting a higher version will default to the maximum supported version (14).

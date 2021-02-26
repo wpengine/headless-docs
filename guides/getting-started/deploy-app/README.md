@@ -1,6 +1,6 @@
 # Deploy Your First App
 
-Now that we have created a [simple app](/guides/getting-started/create-app) up and running, let's deploy it to the Headless Platform.
+Now that we have created a [simple app](/guides/getting-started/create-app) , let's deploy that app to the Headless Platform.
 
 ## Add Your App to GitHub
 

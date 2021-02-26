@@ -1,6 +1,6 @@
 # Deploy Your First App
 
-Now that we have an app up and running, let's deploy it to the Headless Platform.
+Now that we have created a [simple app](/guides/getting-started/create-app) up and running, let's deploy it to the Headless Platform.
 
 ## Add Your App to GitHub
 
@@ -16,7 +16,7 @@ $ git remote add origin YOUR_GITHUB_URL
 $ git push -u origin main
 ```
 
-Using this guide, you will connect your current branch (`main`) to the platform for deployment, but you are free to set this up however you'd like. Ideally, you will have multiple branches that represent environments like production, staging, and development, but for the purposes of this guide, we're going to focus on a single branch/environment.
+Using this Deploy App guide, you will connect your current branch (`main`) to the Atlas platform for deployment and customize your deployment. Ideally, you will have multiple branches representing environments like production, staging, and development, but for this guide's purposes, we're going to focus on a single branch/environment.
 
 ## Deploy Your App
 

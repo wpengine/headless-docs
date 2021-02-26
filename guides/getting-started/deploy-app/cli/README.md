@@ -1,10 +1,10 @@
-# Deploy your app via the Headless CLI
+# Deploy your app with the Atlas CLI
 
-If you haven't installed the CLI yet, go ahead and do that [here](/guides#install-the-atlas-cli).
+Before you being, install [the Atlas CLI](/guides/README.md##install-the-atlas-cli) and ensure that you have created your [first app](/guides/getting-started/create-app).
 
-## Authenticate with the Platform via the CLI
+## Authenticate to Atlas
 
-In order to create a new app, you need to log in via your WP Engine account and connect your GitHub account.
+To deploy your app, log in to your WP Engine account and connect your GitHub account.
 
 First, log in to your WP Engine account:
 
@@ -18,17 +18,17 @@ After you've successfully logged in, connect your GitHub account:
 $ wpe alpha auth login github
 ```
 
-Note: When connecting your GitHub account, you need to give access to the repository you created and pushed to earlier.
+Note: When connecting your GitHub account, you need to access the repository you created and pushed to earlier.
 
-In order to work with headless apps, we need to set our account context. Your account name can be found in the WP Engine User Portal in the top left of the navigation bar. To set the account context, run:
+To work with headless apps, we need to set **account context**, which associates your application with WP Engine. Find your account name in the WP Engine User Portal at the top left of the navigation bar. 
+
+To set the account context, run:
 
 ```bash
 $ wpe alpha context set account YOUR_ACCOUNT_NAME
 ```
 
-Now you should be able to run a command without getting an error.
-
-Try running the `list` command to make sure you do not get any errors. The list will be empty until you `create` an app later in the guide.
+Now you should be able to run all app commands without error. To make sure, run the `list` command. The list will be empty until you `create` an app later in the guide.
 
 ```bash
 $ wpe alpha apps list
@@ -36,9 +36,9 @@ $ wpe alpha apps list
 
 ## Create a `wpe.json` File
 
-In the root of your project, create a file named `wpe.json`. This is the file we will use to configure our deployment.
+At the root of your project, create a file named `wpe.json`. Use this file to configure your deployment.
 
-An `app` only requires a few fields and does not represent a deployment. You can think of an app the same way you think of a site in the WP Engine Portal. App `environments` represent the deployment that is connected to a branch in your repo.
+An `app` only requires a few fields and does not represent a deployment. You can think of an app the same way you think of a WP Engine Portal site. App `environments` represent the deployment that is connected to a branch in your repo.
 
 Copy this basic configuration into your `wpe.json` file:
 
@@ -63,11 +63,11 @@ Copy this basic configuration into your `wpe.json` file:
 }
 ```
 
-Replace `repo` with the repo you want to connect to your app. Your repo consists of the GitHub organization or user and the repo name.
+Replace `repo` with the GitHub repo you want to connect to your app. Your repo consists of the GitHub organization or user and the repo name.
 
 For example, the GitHub repo https://github.com/matt-landers/headless-summit2020 is represented by `matt-landers/headless-summit2020`. Notice that it is just the repo URL without `https://github.com/`.
 
-`region` can be set to one of the following:
+Set the `region` to one of the following:
 
 - `EU-W` - Europe West
 - `UK` - United Kingdom
@@ -78,15 +78,15 @@ Replace the value of `wp_environment_name` with the environment name from User P
 
 `branch` under the Production `environment` specifies the branch to watch and build.
 
-`domains` can be added to your production environment, but for the purposes of this guide, we won't add a custom domain.
+`domains` can be added to your production environment, but we won't add a custom domain for this guide.
 
-`env_variables` are optional OS level environment variables that are available to you during build and runtime. You can use these to store API secrets, your WordPress URL, etc. They can be accessed in Node via `process.env.KEY`.
+`env_variables` are optional OS-level environment variables that are available to you during build and runtime. You can use these to store API secrets, your WordPress URL, etc. Access these secrets in Node via `process.env.KEY`.
 
-**Important:** Remember that you added `wpe.json` to your `.gitignore` file, so it will not be checked into GitHub. This is important because you will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
+**Important:** Remember that `wpe.json` exists in your `.gitignore` file. Therefore, the file does appear in staging when committing to GitHub.  You will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 
 ## Deploy Your App
 
-Now that you have a valid configuration file for a new app, deploy it to the platform with the following command:
+Now that you have a valid configuration file for your app, deploy the app to the Atlas with the following command:
 
 ```bash
 $ wpe alpha apps create -f wpe.json
@@ -98,6 +98,6 @@ Next, use the `get` command to check the status of your deployment:
 $ wpe alpha apps get My-First-Headless-App
 ```
 
-The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once deployment is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:
+The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once the deployment is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:
 
 Now let's check out our configured [developer workflow](/guides/getting-started/workflow).

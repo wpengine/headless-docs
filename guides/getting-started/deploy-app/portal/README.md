@@ -1,6 +1,8 @@
 # Deploy your app via the User Portal
 
-First login to the [User Portal](https://my.wpengine.com) to create, update, delete, and troubleshoot headless apps on Atlas.
+You can also deploy your application in the Atlas portal. 
+
+Login to the [User Portal](https://my.wpengine.com) to create, update, delete, and troubleshoot headless apps on Atlas.
 
 ## View your headless apps
 
@@ -10,7 +12,7 @@ If your account is enabled for Atlas, you should see "Headless apps" in the menu
 
 ## Creating an App
 
-Click the "Get started" or "Create an app" button in the top right. This will take you to a form where you'll need the following information:
+Click the **Get started** or **Create an app** button in the top right. This will take you to a form where you'll need the following information:
 
 ### Headless app name
 
@@ -18,7 +20,7 @@ The name of your app should be related to the site that you are creating. It wil
 
 ### Headless environment name
 
-During app creation, you will create your first environment. You can add more environments after your app is created. Typically, your first environment would be a development environment. You can name the environment anything you want, but it will be related to a specific branch in your repo.
+During app creation, you will create your first environment (i.e, staging, production). You can add more environments after your app is created. Typically, your first environment would be a development environment. You can name the environment anything you want, but it will be related to a specific branch in your repo.
 
 ### Link to a WordPress environment
 
@@ -58,13 +60,13 @@ Add these environment variables to continue.
 
 ### Create App
 
-Once you've filled out the form, click the "Create app" button in the top right of the form.
+Once you've filled out the form, click the **Create app** button in the top right of the form.
 
-If there aren't any errors, you'll be taken to the environment page where you can see the status of your headless app environment. At first, it will be in a "Building code" status. It should look something like this:
+If there aren't any errors, the environment page appears where you can see status of your headless app environment. At first, it will be in a "Building code" status. It should look like this:
 
 ![Headless App Building](/guides/getting-started/deploy-app/portal/images/portal-app-building.jpg)
 
-Once the build is complete, you can view your site running at the "Headless URL" :tada:
+Once the build is complete, you can view your site running at the **Headless URL** :tada:
 
 Note: If your build failed, you can click the build logs found below Environment Variables to investigate what went wrong.
 

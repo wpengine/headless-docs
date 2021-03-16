@@ -1,3 +1,8 @@
+---
+title: Create Your First App
+description: The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses WPEngine's open-source headless framework and Next.js to create a simple application.
+---
+
 # Create Your First App
 
 The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses WPEngine's open-source [headless framework](https://github.com/wpengine/headless-framework) and Next.js to create a simple application.
@@ -11,7 +16,7 @@ The best way to understand how a Headless CMS operates is to create a simple app
    $ npx create-next-app -e https://github.com/wpengine/headless-framework/tree/canary --example-path examples/getting-started --use-npm
    ```
 
-1. The Next.js responds with `√ What is your project named?`.  Enter a project name and press **Enter**. 
+1. The Next.js responds with `√ What is your project named?`.  Enter a project name and press **Enter**.
 
 	There will now be a folder with that same name in your current working directory. Navigate to that directory with `cd your-app`, replacing `your-app` with the project name you specified.
 

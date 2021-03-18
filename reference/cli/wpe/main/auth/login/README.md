@@ -1,0 +1,39 @@
+# wpe auth login
+
+## Description
+Login to the WP Engine Headless CLI
+
+## Usage
+
+```bash
+$ wpe auth login [$LOGIN_PROVIDER]
+```
+
+## Extended Description
+
+The `wpe  auth login` is how you provide the WP Engine Headless CLI access to your WP Engine Cloud Platform account as well as your GitHub account. There is a two-step process. First you login to your WP Engine Cloud Platform account, then you login using OAuth to your GitHub account. The reason the CLI needs access to your WP Engine Cloud Platform account is because it will deploy applications into that account. The CLI needs access to your GitHub account because it will deploy code stored in a GitHub repository that you specify.
+
+## Options
+
+| Name, shorthand | Description    |
+|:----------------|:---------------|
+| `--help, -h`    | Help for login |
+
+## Examples
+
+First, log in to your WP Engine account:
+
+```bash
+$ wpe auth login
+```
+
+After you've successfully logged in, connect your GitHub account:
+
+```bash
+$ wpe auth login github
+```
+
+## Parent Command
+| Command                                         | Description                         |
+|:------------------------------------------------|:------------------------------------|
+| [wpe auth](/reference/cli/wpe/main/auth) | The base command for authentication |

@@ -78,7 +78,7 @@ Replace the value of `wp_environment_name` with the environment name from User P
 
 `branch` under the Production `environment` specifies the branch to watch and build.
 
-`domains` can be added to your production environment, but we won't add a custom domain for this guide.
+`domains` can be added to your production environment, but for the purposes of this guide, we won't add a custom domain. For instructions on how to add a custom domain in a production environment, see [Introduction > WP Headless Concepts > Apps and Environments](/guides#apps-and-environments).
 
 `env_variables` are optional OS-level environment variables that are available to you during build and runtime. You can use these to store API secrets, your WordPress URL, etc. Access these secrets in Node via `process.env.KEY`.
 

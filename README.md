@@ -86,7 +86,7 @@ Each **environment** has the following properties:
 - `env_variables` (optional) - an array of environment variables that you want to be available at build-time and runtime as OS environment variables.
   - In Node, you can access these variables with `process.env`.
   - Environment variables are useful for storing information needed to build or run your application, like API keys/secrets.
-- `domains` - (optional) If you want to connect a custom domain, you need to configure your domain one of 2 ways:
+- `domains` - (optional) If you want to connect a custom domain, you need to configure your domain one of 2 ways.  Custom domains require a `production` environment.
   - Root CNAME pointed to `js.wpenginepowered.com`
   - A records with the following IPs:
     - `141.193.213.10`

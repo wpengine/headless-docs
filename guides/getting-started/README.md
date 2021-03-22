@@ -17,6 +17,8 @@ What this guide covers:
 - [Deploying your first app](/guides/getting-started/deploy-app)
 - [Making changes to your app (dev workflow)](/guides/getting-started/workflow)
 
+This guide does **not** cover how to add a custom domain. Custom domains require that you have an Atlas account with a `production` environment. Contact the WP Engine Atlas team to get set up with custom domains.
+
 ## Supported Apps
 
 The platform supports [Node.js](https://nodejs.org/)-based applications.

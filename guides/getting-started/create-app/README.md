@@ -7,7 +7,7 @@ description: The best way to understand how a Headless CMS operates is to create
 
 The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses WPEngine's open-source [headless framework](https://github.com/wpengine/headless-framework) and Next.js to create a simple application.
 
-1. Make a WordPress site. You should have a site an Atlas account through WPEngine in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. This will log you into WP Admin, where the setup for the framework plugin and WPGraphQL occurs.
+1. Make a WordPress site. You should have a site and an Atlas account through WPEngine in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. This will log you into WP Admin, where the setup for the framework plugin and WPGraphQL occurs.
 1. Download, upload, and activate the `wpe-headless` plugin. [(Plugin Download)](https://wp-product-info.wpesvc.net/v1/plugins/wpe-headless?download)
 1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) on the WordPress site. You can automatically install WPGraphQL from the framework plugin's **settings** page
 1. Create a new Next.js app from our [getting-started project](https://github.com/wpengine/headless-framework/tree/canary/examples/getting-started). Open your Terminal application and enter:

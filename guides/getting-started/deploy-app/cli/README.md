@@ -9,13 +9,13 @@ To deploy your app, log in to your WP Engine account and connect your GitHub acc
 First, log in to your WP Engine account:
 
 ```bash
-$ wpe alpha auth login
+$ wpe auth login
 ```
 
 After you've successfully logged in, connect your GitHub account:
 
 ```bash
-$ wpe alpha auth login github
+$ wpe auth login github
 ```
 
 Note: When connecting your GitHub account, you need to access the repository you created and pushed to earlier.
@@ -25,13 +25,13 @@ To work with headless apps, we need to set **account context**, which associates
 To set the account context, run:
 
 ```bash
-$ wpe alpha context set account YOUR_ACCOUNT_NAME
+$ wpe context set account YOUR_ACCOUNT_NAME
 ```
 
 Now you should be able to run all app commands without error. To make sure, run the `list` command. The list will be empty until you `create` an app later in the guide.
 
 ```bash
-$ wpe alpha apps list
+$ wpe apps list
 ```
 
 ## Create a `wpe.json` File
@@ -89,13 +89,13 @@ Replace the value of `wp_environment_name` with the environment name from User P
 Now that you have a valid configuration file for your app, deploy the app to the Atlas with the following command:
 
 ```bash
-$ wpe alpha apps create -f wpe.json
+$ wpe apps create -f wpe.json
 ```
 
 Next, use the `get` command to check the status of your deployment:
 
 ```bash
-$ wpe alpha apps get My-First-Headless-App
+$ wpe apps get My-First-Headless-App
 ```
 
 The `get` command will return the details of your app. Your app will take a few minutes to deploy. Once the deployment is complete, the `get` command will return the URL of your application. Copy the URL into a browser window, and you'll see your app up and running on the platform. :tada:

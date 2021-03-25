@@ -1,3 +1,8 @@
+---
+title: Create Your First App
+description: The best way to understand how a Headless CMS operates is to create a simple application and deploy it. Use WPEngine's headless framework to create your first Atlas app.
+---
+
 # Create Your First App
 
 For our first app, we're going to use our open source [headless framework](https://github.com/wpengine/headless-framework).

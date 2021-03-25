@@ -1,3 +1,8 @@
+---
+title: Deploy your app via the User Portal
+description: Use Atlas CLI to create, update, and trouble headless applications.
+---
+
 # Deploy your app via the Headless CLI
 
 If you haven't installed the CLI yet, go ahead and do that [here](/guides#install-the-atlas-cli).

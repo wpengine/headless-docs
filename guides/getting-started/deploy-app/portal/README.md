@@ -1,3 +1,8 @@
+---
+title: Deploy your app via the User Portal
+description: Use the Atlas user portal to create, update, and trouble headless applications.
+---
+
 # Deploy your app via the User Portal
 
 First login to the [User Portal](https://my.wpengine.com) to create, update, delete, and troubleshoot headless apps on Atlas.

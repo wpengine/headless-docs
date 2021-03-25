@@ -10,20 +10,32 @@ In this guide, you'll learn the basics of deploying apps on the WP Engine Headle
 
 Requirements:
 
-- [Node.js](https://nodejs.org/en/download/)
+
+- A WPEngine [Atlas](https://wpengine.com/atlas) account
+- [Node.js](https://nodejs.org/en/download/). We recommend using `nvm` to install node.
 - [Git](https://git-scm.com/downloads)
 - WP Engine Headless CLI tool ([install](/guides#install-the-atlas-cli))
 
-What we'll cover:
+What this guide covers:
 
 - [Supported apps](#supported-apps)
 - [Creating your first app](/guides/getting-started/create-app)
 - [Deploying your first app](/guides/getting-started/deploy-app)
 - [Making changes to your app (dev workflow)](/guides/getting-started/workflow)
 
+This guide does **not** cover how to add a custom domain. Custom domains require that you have an Atlas account with a `production` environment. Contact the WP Engine Atlas team to get set up with custom domains.
+
 ## Supported Apps
 
 The platform supports [Node.js](https://nodejs.org/)-based applications.
+
+We recommend using `nvm` to install Node:
+
+1. In your terminal application, install `nvm` by entering `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`.
+
+2. Restart your terminal and add the proper `nvm` settngs to your `./bashrc` or `.zshrc`.
+
+3. In terminal, enter `nvm install <node-version-number>` to install your chosen version of node.
 
 Node.js uses npm for its package management, which allows you to set the version of Node your applications require via the `engines` property inside your project's `package.json`.
 
@@ -35,4 +47,6 @@ Node.js uses npm for its package management, which allows you to set the version
 }
 ```
 
-The supported versions of Node are 10, 12, and 14. Specifying a version of Node below the minimum supported version will result in the application of the minimum supported version (10); specifying a higher version will result in the application of the maximum supported version (14).
+The supported versions of Node are **10, 12, and 14**. Specifying a Node version below the minimum supported version will default to the minimum supported version (10); setting a higher version will default to the maximum supported version (14). 
+
+**NOTE:** On April 10, 2021, Node version 10 will no longer be supported.

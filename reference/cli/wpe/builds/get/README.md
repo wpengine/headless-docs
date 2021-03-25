@@ -1,0 +1,58 @@
+# wpe builds get
+
+## Description
+Get details of a specific build for an app's environment.
+
+## Usage
+
+```bash
+$ wpe builds get $BUILD_ID [OPTIONS]
+```
+
+## Extended Description
+
+The `wpe builds get` command will print information about a specific build for an app's environment. In order to use this command you will need the build ID. Refer to the [`wpe builds list`](/reference/cli/wpe/main/builds/list) command for how to get build ID of a specific app's environment.
+
+## Options
+
+| Name, shorthand     | Description  |
+|:--------------------|:-------------|
+| `--help, -h`        | Help for get |
+
+## Examples
+
+Let's assume your build ID is `sqeq3na34owo8see7xwro5o8`. Run the following command to see information about the build:
+
+```bash
+$ wpe builds get sqeq3na34owo8see7xwro5o8
+```
+
+Running the above command will print something that looks similar to the following:
+
+```bash
+ID: sqeq3na34owo8see7xwro5o8
+APP_NAME:       myapp
+ENVIRONMENT:    bmna3gedlzerwcb4vc04gssl
+REPOSITORY:     organization/myapp
+BRANCH:         main
+TIMESTAMP:      2021-01-01T00:00:46Z
+COMMIT_SHA:     71234c6
+ERROR: ...
+ ----------generate dockerfile start----------
+If project's Node version is not supported, Node will be upgraded to the project's closest supported version.
+Using Node version: 14
+
+----------generate dockerfile end------------
+----------Summary - Container Build start----------
+Start:2021-01-01 00:00:12.720617455 +0000 UTC
+End:2021-01-01 00:00:46.866221598 +0000 UTC
+Duration:34.146 seconds
+----------Summary - Container Build end------------
+```
+
+The information about the build will include error output from the console if it exists.
+
+## Parent Command
+| Command                                             | Description                 |
+|:----------------------------------------------------|:----------------------------|
+| [wpe builds](/reference/cli/wpe/builds) | The base command for builds |

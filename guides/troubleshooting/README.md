@@ -86,3 +86,19 @@ $ wpe alpha apps get APP_NAME
 This command will list your app and the environment configurations with the branch names.
 
 **Note:** [GitHub is changing](https://github.com/github/renaming) the default branch name from `master` to `main`. Depending on where your organization is on that journey, and when your repository was created, your default may be `master` or `main`. WP Engine supports the use of the more inclusive `main`, so this guide uses `main` in examples. This may be a source of inconsistency.
+
+## Build succeeded but app is not available
+
+If your build was successful but your app is not available at the URL provided, the likely culprit is that your app is running on the wrong port. Atlas expects your app to be running on port 8080. When the platform starts your application, it runs `npm start`. This script found in your `package.json` needs to start your server on port 8080. You can also use the environment variable `PORT`.
+
+Example script for Next.js:
+
+```text
+"start": "next start -p 8080"
+```
+
+Using the PORT environment variable:
+
+```text
+"start": "next start -p ${PORT}"
+```

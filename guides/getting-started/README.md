@@ -1,3 +1,9 @@
+---
+title: Getting Started Guide
+description: Learn how to deploy apps using the WP Engine Headless Platform, Atlas.
+---
+
+
 # Getting Started Guide
 
 In this guide, you'll learn the basics of deploying apps on the WP Engine Headless Platform.

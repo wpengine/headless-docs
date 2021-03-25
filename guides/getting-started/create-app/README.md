@@ -1,6 +1,6 @@
 ---
 title: Create Your First App
-description: The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses WPEngine's open-source headless framework and Next.js to create a simple application.
+description: The best way to understand how a Headless CMS operates is to create a simple application and deploy it. Use WPEngine's headless framework to create a simple application.
 ---
 
 # Create Your First App

@@ -1,3 +1,8 @@
+---
+title: Deploy your app via the User Portal
+description: Use the Atlas user portal to create, update, and trouble headless applications.
+---
+
 # Deploy your app via the User Portal
 
 You can also deploy your application in the Atlas portal. 

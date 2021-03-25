@@ -1,3 +1,8 @@
+---
+title: Deploy your app via the User Portal
+description: Use Atlas CLI to create, update, and trouble headless applications.
+---
+
 # Deploy your app with the Atlas CLI
 
 Before you being, install [the Atlas CLI](/guides/README.md##install-the-atlas-cli) and ensure that you have created your [first app](/guides/getting-started/create-app).

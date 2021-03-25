@@ -1,3 +1,8 @@
+---
+title: Deploy Your First App
+description: After you have a headless application running, deploy that application to the Atlas Headless Platform.
+---
+
 # Deploy Your First App
 
 Now that we have created a [simple app](/guides/getting-started/create-app) , let's deploy that app to the Headless Platform.

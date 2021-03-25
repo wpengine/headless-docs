@@ -23,7 +23,7 @@ Headless is gaining momentum for a few reasons:
 
 WordPress runs on PHP, but your headless site will likely utilize [Node](https://nodejs.org/). At the very least, you'll use Node and NPM to manage JavaScript dependencies and bundle your applications (i.e., webpack).
 
-At WP Engine, we have a Node hosting platform in Alpha with General Availability coming early this year. The platform works differently than our WordPress platform. With WordPress, you get a server that you can FTP or SSH into, but with Node, the infrastructure is opaque to you. All you need to do is point our platform to a GitHub repo, and we'll watch the repo and deploy it automatically!
+At WP Engine, we have a Node hosting platform. The platform works differently than our WordPress platform. With WordPress, you get a server that you can FTP or SSH into, but with Node, the infrastructure is opaque to you. All you need to do is point our platform to a GitHub repo, and we'll watch the repo and deploy it automatically!
 
 # WP Engine Headless Concepts
 

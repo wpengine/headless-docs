@@ -5,7 +5,7 @@ description: Use Atlas CLI to create, update, and trouble headless applications.
 
 # Deploy your app with the Atlas CLI
 
-Before you being, install [the Atlas CLI](/guides/README.md##install-the-atlas-cli) and ensure that you have created your [first app](/guides/getting-started/create-app).
+Before you being, install [the Atlas CLI](/guides#install-the-atlas-cli) and ensure that you have created your [first app](/guides/getting-started/create-app).
 
 ## Authenticate to Atlas
 
@@ -25,7 +25,7 @@ $ wpe auth login github
 
 Note: When connecting your GitHub account, you need to access the repository you created and pushed to earlier.
 
-To work with headless apps, we need to set **account context**, which associates your application with WP Engine. Find your account name in the WP Engine User Portal at the top left of the navigation bar. 
+To work with headless apps, we need to set **account context**, which associates your application with WP Engine. Find your account name in the WP Engine User Portal at the top left of the navigation bar.
 
 To set the account context, run:
 

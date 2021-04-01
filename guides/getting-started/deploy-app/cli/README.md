@@ -87,7 +87,7 @@ Replace the value of `wp_environment_name` with the environment name from User P
 
 `env_variables` are optional OS-level environment variables that are available to you during build and runtime. You can use these to store API secrets, your WordPress URL, etc. Access these secrets in Node via `process.env.KEY`.
 
-**Important:** Remember that `wpe.json` exists in your `.gitignore` file. Therefore, the file does appear in staging when committing to GitHub.  You will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
+**Important:** Remember that `wpe.json` exists in your `.gitignore` file. Therefore, the file does not appear in staging when committing to GitHub.  You will use this config to store secrets (e.g., API keys, credentials) that you don't want to publish to GitHub.
 
 ## Deploy Your App
 

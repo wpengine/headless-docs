@@ -11,19 +11,19 @@ List the builds for an Environment of an App:
 First, find your app name by running:
 
 ```bash
-$ wpe alpha apps list
+$ wpe apps list
 ```
 
 Next, find your Environment ID by running:
 
 ```bash
-$ wpe alpha apps get APP_NAME
+$ wpe apps get APP_NAME
 ```
 
 Once you have your APP_NAME and ENVIRONMENT_ID, use them in the following command to view your builds:
 
 ```bash
-$ wpe alpha builds list -a APP_NAME -e ENVIRONMENT_ID
+$ wpe builds list -a APP_NAME -e ENVIRONMENT_ID
 ```
 
 This command will show you a list of builds. Now, you can find the build logs for a specific build with the ID of the build using the `get` command:
@@ -80,7 +80,7 @@ Note that it is acceptable to have a blank script (i.e. `"wpe-build": ""`), but 
 If the branch that you are using GitHub does not match the branch that you have configured for your environment, the platform will not build your software. Double check that the branch configured for the environment matches the branch you're committing to in GitHub:
 
 ```bash
-$ wpe alpha apps get APP_NAME
+$ wpe apps get APP_NAME
 ```
 
 This command will list your app and the environment configurations with the branch names.

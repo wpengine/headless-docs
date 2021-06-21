@@ -92,7 +92,6 @@ Each **environment** has the following properties:
     - `141.193.213.10`
     - `141.193.213.11`
 
-**NOTE: Currently, only one custom domain is supported.**
 
 ## Connecting Your WordPress Backend
 

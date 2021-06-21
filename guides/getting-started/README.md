@@ -11,7 +11,7 @@ In this guide, you'll learn the basics of deploying apps on the WP Engine Headle
 Requirements:
 
 
-- A WPEngine [Atlas](https://wpengine.com/atlas) account
+- A WP Engine [Atlas](https://wpengine.com/atlas) account
 - [Node.js](https://nodejs.org/en/download/). We recommend using `nvm` to install node.
 - [Git](https://git-scm.com/downloads)
 - WP Engine Headless CLI tool ([install](/guides#install-the-atlas-cli))

@@ -13,7 +13,7 @@ Log in to the [User Portal](https://my.wpengine.com) to create, update, delete, 
 
 If your account is enabled on the Atlas platform, you should see **Atlas** in the portal menu:
 
-![Headless Apps Menu Item](/guides/getting-started/deploy-app/portal/images/portal-menu.png)
+![Headless Apps Menu Item](/guides/getting-started/deploy-app/portal/images/portal-menu.jpg)
 
 ## Creating an App
 

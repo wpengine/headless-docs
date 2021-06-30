@@ -32,7 +32,7 @@ Content Engine, like other WordPress customizations, uses a plugin to enable its
 
 ## Sync content for the first time
 
-With Content Engine fully integrated into your WordPress instance, you can sync your data WordPress CLI. Open a terminal on the WordPress instance and enter `wp ce sync data`.
+With Content Engine fully integrated into your WordPress instance, you can sync your data with WordPress CLI. Open a terminal on the WordPress instance and enter `wp ce sync data`.
 
 ![Content Engine sync](/content-engine/images/ce-sync.png)
 
@@ -40,12 +40,12 @@ Content Engine then syncs users, posts, and pages. Upon completion, CLI returns 
 
 If you do not receive this message, ensure that your access token is set correctly and that the Content Engine plugin is installed. 
 
-With your data synced, you can begin to query your data with Atlas Query Language
+With your data synced, you can begin to query your data with Atlas Query Language.
 
 
 ## Atlas Query Language 
 
-Atlas Query Language (AQL) provides a schema that is intuitive to modern javascript developers to use and can retrieve content with absurdly low latency and high throughput, ensuring sites SEO and user experience is maximised. 
+Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers to use and can retrieve content with absurdly low latency and high throughput, ensuring maximization for a site's SEO and user experience. 
 
 ## Use AQL
 
@@ -86,11 +86,11 @@ Currently, Content Engine supports retrieval for the following:
 - Pages
 - Users
 
-As Content Engine matures, more WordPress content will become available. If you have suggestions for what type of content you would like to see, fill out this feedback form.
+As Content Engine matures, more WordPress content will become available. If you have suggestions for what type of content you would like to see, fill out this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform).
 
 ## Feedback
 
 - **Questions?** Email us ce-beta@wpengine.com
-- **Feedback**: Your feedback helps shape the future of Content Engine. To provide feedback, fill out our [Content Engine](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform). 
+- **Feedback**: Your feedback helps shape the future of Content Engine. To provide feedback, fill out our [Content Engine Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform). 
 
 

@@ -45,7 +45,7 @@ With your data synced, you can begin to query your data with Atlas Query Languag
 
 ## Atlas Query Language 
 
-Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers to use and can retrieve content with absurdly low latency and high throughput, ensuring maximization for a site's SEO and user experience. 
+Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers to use and can retrieve content with low latency and high throughput, ensuring maximization for a site's SEO and user experience. 
 
 ## Use AQL
 

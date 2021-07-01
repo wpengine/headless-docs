@@ -45,7 +45,7 @@ With your data synced, you can begin to query your data with Atlas Query Languag
 
 ## Atlas Query Language 
 
-Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers to use and can retrieve content with low latency and high throughput, ensuring maximization for a site's SEO and user experience. 
+Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers and can retrieve content with low latency and high throughput, ensuring maximization for a site's SEO and user experience. 
 
 ## Use AQL
 
@@ -56,16 +56,16 @@ To begin querying data with AQL:
 2. Upon entering the endpoint, the GraphQL console appears. Use the following query to sync posts from your WordPress instance: 
 
    ```
-   query{
-       posts{
+   query {
+       posts {
            wpID
            slug
            title
            excerpt
            urlPath
-           author{
+           author {
                displayName
-               avatar{
+               avatar {
                    url
                }
            }

@@ -32,7 +32,7 @@ Content Engine, like other WordPress customizations, uses a plugin to enable its
 
 ## Sync content for the first time
 
-With Content Engine fully integrated into your WordPress instance, you can sync your data with WordPress CLI. Open a terminal on the WordPress instance and enter `wp ce sync data`.
+With Content Engine fully integrated into your WordPress instance, you can sync your data with WordPress CLI. Open a terminal on the WordPress instance and enter `wp ce sync_data`.
 
 ![Content Engine sync](/content-engine/images/ce-sync.png)
 

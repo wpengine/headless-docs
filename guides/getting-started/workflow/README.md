@@ -52,3 +52,5 @@ $ wpe envs delete ENV_ID -a APP_NAME
 ```
 
 When you re-run your URL, site should no longer be visible (changes might take few seconds to apply).
+
+If you want to customize how headers are cached, see [Cache-control headers](/guides/getting-started/cache-control).

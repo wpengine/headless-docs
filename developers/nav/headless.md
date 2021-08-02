@@ -6,4 +6,5 @@
       1. [Deploy with User Portal](/guides/getting-started/deploy-app/portal)
       1. [Deploy with the CLI](/guides/getting-started/deploy-app/cli)
    1. [Making changes to your app (dev workflow)](/guides/getting-started/workflow)
+   1. [Cache-control]/guides/getting-started/cache-control)
 1. [Troubleshooting](/guides/troubleshooting)

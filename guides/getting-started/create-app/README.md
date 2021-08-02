@@ -32,4 +32,4 @@ The best way to understand how a Headless CMS operates is to create a simple app
 
 You should be able to navigate to http://localhost:3000 and see your app running!
 
-Next, let's [deploy the app](/guides/getting-started/deploy-app) to the Headless Platform. :rocket:
+Next, let's [deploy the app](/guides/getting-started/deploy-app) to the Headless Platform. :rocket:  

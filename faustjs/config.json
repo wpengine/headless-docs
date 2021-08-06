@@ -1,4 +1,6 @@
 {
+  "title": "Faust.js Documentation",
+  "description": "A JavaScript library for building Headless WordPress websites.",
   "sidebar": [
     {
       "type": "category",

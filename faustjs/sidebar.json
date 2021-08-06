@@ -7,27 +7,27 @@
         {
           "type": "doc",
           "label": "Development Environment Setup",
-          "path": "/faustjs/tutorial/dev-env-setup"
+          "filePath": "/faustjs/tutorial/dev-env-setup.mdx"
         },
         {
           "type": "doc",
           "label": "Create A Basic Headless WordPress Site",
-          "path": "/faustjs/tutorial/basic-headless-site"
+          "filePath": "/faustjs/tutorial/basic-headless-site.mdx"
         },
         {
           "type": "doc",
           "label": "Create Your First React Component",
-          "path": "/faustjs/tutorial/first-react-component"
+          "filePath": "/faustjs/tutorial/first-react-component.mdx"
         },
         {
           "type": "doc",
           "label": "Setup Faust.js",
-          "path": "/faustjs/tutorial/setup-faustjs"
+          "filePath": "/faustjs/tutorial/setup-faustjs.mdx"
         },
         {
           "type": "doc",
           "label": "Querying Data From Your Headless WordPress Site",
-          "path": "/faustjs/tutorial/querying-data"
+          "filePath": "/faustjs/tutorial/querying-data.mdx"
         }
       ]
     },
@@ -38,7 +38,7 @@
         {
           "type": "doc",
           "label": "Getting Started",
-          "path": "/faustjs/next/getting-started"
+          "filePath": "/faustjs/next/getting-started.mdx"
         },
         {
           "type": "category",
@@ -47,27 +47,27 @@
             {
               "type": "doc",
               "label": "Fetching Data",
-              "path": "/faustjs/next/guides/fetching-data"
+              "filePath": "/faustjs/next/guides/fetching-data.mdx"
             },
             {
               "type": "doc",
               "label": "SSG & SSR",
-              "path": "/faustjs/next/guides/ssr-ssg"
+              "filePath": "/faustjs/next/guides/ssr-ssg.mdx"
             },
             {
               "type": "doc",
               "label": "Custom Post Types",
-              "path": "/faustjs/next/guides/custom-post-types"
+              "filePath": "/faustjs/next/guides/custom-post-types.mdx"
             },
             {
               "type": "doc",
               "label": "Previews",
-              "path": "/faustjs/next/guides/post-page-previews"
+              "filePath": "/faustjs/next/guides/post-page-previews.mdx"
             },
             {
               "type": "doc",
               "label": "404s",
-              "path": "/faustjs/next/guides/handle-404s"
+              "filePath": "/faustjs/next/guides/handle-404s.mdx"
             }
           ]
         },
@@ -78,12 +78,12 @@
             {
               "type": "doc",
               "label": "Custom Hooks",
-              "path": "/faustjs/next/reference/hooks-for-fetching-data"
+              "filePath": "/faustjs/next/reference/hooks-for-fetching-data.mdx"
             },
             {
               "type": "doc",
               "label": "URL Params",
-              "path": "/faustjs/next/reference/expected-url-params"
+              "filePath": "/faustjs/next/reference/expected-url-params.mdx"
             }
           ]
         }

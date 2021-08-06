@@ -1,0 +1,93 @@
+{
+  "sidebar": [
+    {
+      "type": "category",
+      "label": "Tutorial",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Development Environment Setup",
+          "path": "/faustjs/tutorial/dev-env-setup"
+        },
+        {
+          "type": "doc",
+          "label": "Create A Basic Headless WordPress Site",
+          "path": "/faustjs/tutorial/basic-headless-site"
+        },
+        {
+          "type": "doc",
+          "label": "Create Your First React Component",
+          "path": "/faustjs/tutorial/first-react-component"
+        },
+        {
+          "type": "doc",
+          "label": "Setup Faust.js",
+          "path": "/faustjs/tutorial/setup-faustjs"
+        },
+        {
+          "type": "doc",
+          "label": "Querying Data From Your Headless WordPress Site",
+          "path": "/faustjs/tutorial/querying-data"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Usage with Next.js",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Getting Started",
+          "path": "/faustjs/next/getting-started"
+        },
+        {
+          "type": "category",
+          "label": "Guides",
+          "items": [
+            {
+              "type": "doc",
+              "label": "Fetching Data",
+              "path": "/faustjs/next/guides/fetching-data"
+            },
+            {
+              "type": "doc",
+              "label": "SSG & SSR",
+              "path": "/faustjs/next/guides/ssr-ssg"
+            },
+            {
+              "type": "doc",
+              "label": "Custom Post Types",
+              "path": "/faustjs/next/guides/custom-post-types"
+            },
+            {
+              "type": "doc",
+              "label": "Previews",
+              "path": "/faustjs/next/guides/post-page-previews"
+            },
+            {
+              "type": "doc",
+              "label": "404s",
+              "path": "/faustjs/next/guides/handle-404s"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Reference",
+          "items": [
+            {
+              "type": "doc",
+              "label": "Custom Hooks",
+              "path": "/faustjs/next/reference/hooks-for-fetching-data"
+            },
+            {
+              "type": "doc",
+              "label": "URL Params",
+              "path": "/faustjs/next/reference/expected-url-params"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

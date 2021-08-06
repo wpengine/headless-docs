@@ -1,6 +1,7 @@
 {
   "title": "Faust.js Documentation",
   "description": "A JavaScript library for building Headless WordPress websites.",
+  "entrypoint": "/faustjs/next/getting-started.mdx",
   "sidebar": [
     {
       "type": "category",

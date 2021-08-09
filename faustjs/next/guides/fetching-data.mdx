@@ -16,3 +16,32 @@ GQless works primarily based on TypeScript typings that are generated using intr
 1. Run `npm install -D @gqless/cli dotenv`
 1. Create a `generate` script in your `package.json` that runs `gqless generate`
 1. Create a `gqless.config.js` file in the root of your project. Use the following example config:
+
+   ```js
+   const dotenv = require("dotenv");
+
+   dotenv.config({
+     path: ".env.local",
+   });
+
+   /**
+    * @type {import("@gqless/cli").GQlessConfig}
+    */
+   const config = {
+     react: false,
+     scalarTypes: { DateTime: "string" },
+     introspection: {
+       endpoint: `${
+         process.env.NEXT_PUBLIC_WORDPRESS_URL ?? process.env.WORDPRESS_URL
+       }/graphql`,
+       headers: {},
+     },
+     destination: "./src/client/index.ts",
+     subscriptions: false,
+     javascriptOutput: false,
+   };
+
+   module.exports = config;
+   ```
+
+1. Run `npm run generate`

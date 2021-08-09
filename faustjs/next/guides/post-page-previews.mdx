@@ -22,7 +22,7 @@ Your headless secret can be found in WP Admin -> Settings -> Headless. Copy this
 
 Add the `WP_HEADLESS_SECRET` key to your `.env` file with the headless secret as the value. Your `.env` file should already have a value for either `NEXT_PUBLIC_WORDPRESS_URL` or `WORDPRESS_URL`. The file should look something like this:
 
-```bash title=".env" {13}
+```bash title=.env {13}
 # Either WORDPRESS_URL or NEXT_PUBLIC_WORDPRESS_URL need to be populated. Not both!
 #
 # (Recommended) Setting WORDPRESS_URL instead of NEXT_PUBLIC_WORDPRESS_URL will limit requests to the WordPress backend
@@ -43,7 +43,7 @@ WP_HEADLESS_SECRET=00000000-0000-0000-0000-000000000001
 Typically, your Next.js app will have `headlessConfig` set in the `_app.tsx` file. The headless secret is passed via the `apiClientSecret` key. Make sure it is being set:
 
 
-```tsx title="_app.tsx" {8}
+```tsx title=_app.tsx {8}
 import { headlessConfig } from '@faustjs/core';
 import { HeadlessProvider } from '@faustjs/next';
 import { client } from 'client';
@@ -79,7 +79,7 @@ export default authorizeHandler;
 
 With your headless secret set and the `authorizeHandler` ready to handle requests, you can now create a Next.js [page](https://nextjs.org/docs/basic-features/pages) for previews. Create a file at `/src/pages/preview.tsx` with the following:
 
-```tsx title="src/pages/preview.tsx"
+```tsx title=src/pages/preview.tsx
 import { useRouter } from 'next/router';
 import { PageComponent } from './[...pageUri]';
 import type { Page, Post } from '@faustjs/core';

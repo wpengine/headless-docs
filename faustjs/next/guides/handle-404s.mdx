@@ -54,3 +54,5 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 ```
 
 The above file name is `[postSlug].tsx` which will ensure that `postSlug` ends up in the URL params. When `is404` is invoked, it will find the `postSlug` URL param and make a request to WordPress to retrieve the `post` by `SLUG` using the `postSlug` param. If no `post` is returned, `is404` will return `true` and `getStaticProps` will subsequently return `{ notFound: true }`.
+
+> **NOTE:** `is404` does not have any relation to the `404.tsx` page you can define with Next.js. If you want to [customize your 404 page](https://nextjs.org/docs/advanced-features/custom-error-page#404-page) you can do that separately.

@@ -37,22 +37,7 @@ Faust.js publishes an `is404` function that makes this easy for you. It function
 `is404` should be called in either `getStaticProps` or `getServerSideProps`. The reason for this is that these are the server-side functions where you need to tell Next.js to send a `404 Not Found` server response. Below is some code in the a `post` page that utilizes `is404` to return a `{ notFound: true }` if necessary:
 
 ```tsx title="src/pages/posts/[postSlug].tsx"
-import { getNextStaticProps, is404 } from '@faust/next';
-import { client } from 'client';
 
-export default function Page() {
-    return (<>
-        {/* ... */}
-    </>)
-}
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    Page,
-    client,
-    notFound: await is404(context, { client }),
-  });
-}
 ```
 
 The above file name is `[postSlug].tsx` which will ensure that `postSlug` ends up in the URL params. When `is404` is invoked, it will find the `postSlug` URL param and make a request to WordPress to retrieve the `post` by `SLUG` using the `postSlug` param. If no `post` is returned, `is404` will return `true` and `getStaticProps` will subsequently return `{ notFound: true }`.

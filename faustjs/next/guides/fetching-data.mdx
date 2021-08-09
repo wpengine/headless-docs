@@ -6,3 +6,13 @@ title: Faust.js makes fetching data from Headless WordPress incredibly easy with
 # Fetching Data From WordPress
 
 > **NOTE**: If you followed the instructions in the [Getting Started with Next.js](../getting-started.mdx) guide, you already have a working instance of the client. The following guide assumes you are setting up a client on an already existing application.
+
+Faust.js uses [GQless](https://gqless.com/react/fetching-data) as the primary way to fetch data from Headless WordPress. GQless is a [proxy-based](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) GraphQL client. GQless [preforms an invisible or skeleton render](https://gqless.com/intro/how-it-works) to identify what data is needed.
+
+## Setting Up Your Client
+
+GQless works primarily based on TypeScript typings that are generated using introspection on your GraphQL API. If you are using WPGraphQL as your Headless WordPress API, you can enable introspection and then generate typings for GQless. You will need to do the following:
+
+1. Run `npm install -D @gqless/cli dotenv`
+1. Create a `generate` script in your `package.json` that runs `gqless generate`
+1. Create a `gqless.config.js` file in the root of your project. Use the following example config:

@@ -108,3 +108,25 @@ To do this you will need to run `gqless generate` again. Running `gqless generat
 ## Providing Your GQless Client To Faust.js
 
 Using the boilerplate client code will provide two different GQless clients that you can use depending upon whether you are on the client or server. However, you will still need to provide the client to Faust.js so that it can use it to fetch data. To do this you can use the `HeadlessProvider` component published by Faust.js, and provide it the GQless client you want to use. This is done in your `_app.tsx` file as follows:
+
+```tsx title="src/pages/_app.tsx" {2,3,14,16}
+import { headlessConfig } from "@faustjs/core";
+import { HeadlessProvider } from "@faustjs/next";
+import { client } from "client";
+import { AppProps } from "next/dist/next-server/lib/router/router";
+
+headlessConfig({
+  wpUrl: process.env.WORDPRESS_URL || process.env.NEXT_PUBLIC_WORDPRESS_URL,
+  apiClientSecret: process.env.WP_HEADLESS_SECRET,
+});
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <HeadlessProvider client={client} pageProps={pageProps}>
+        <Component {...pageProps} />
+      </HeadlessProvider>
+    </>
+  );
+}
+```

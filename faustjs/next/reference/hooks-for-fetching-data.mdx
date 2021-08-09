@@ -24,7 +24,7 @@ Using the above names, Faust.js is able to apply the following logic to determin
 
 The following is an example of how to use the `usePost` hook with a `postSlug`:
 
-```tsx title="/src/pages/posts/[postSlug].tsx" {5,6}
+```tsx title=/src/pages/posts/[postSlug].tsx {5,6}
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
 
@@ -74,7 +74,7 @@ The `usePosts` hook provides the standard interface for getting a list of posts 
 
 The following is an example of how to use the `usePosts` hook with no URL params:
 
-```tsx title="src/pages/index.tsx" {6-8,14-16}
+```tsx title=src/pages/index.tsx {6-8,14-16}
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
 
@@ -99,7 +99,7 @@ export default function Home() {
 
 The code above will get the first 6 posts from the Headless WordPress API. If you want to create a page that would pull posts associated with a specific category you can use the following code:
 
-```tsx title="src/pages/category/[categorySlug].tsx" {6-8,14-16}
+```tsx title=src/pages/category/[categorySlug].tsx {6-8,14-16}
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
 
@@ -140,7 +140,7 @@ Using the above names, Faust.js is able to apply the following logic to determin
 
 The following is an example of how to use the `usePage` hook with a `pageUri`:
 
-```tsx title="/src/pages/[...pageUri].tsx" {5,6}
+```tsx title=/src/pages/[...pageUri].tsx {5,6}
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
 
@@ -186,7 +186,7 @@ The `usePreview` hook provides an abstraction around getting a preview `page` or
 
 The following example shows how to use the `usePreview` hook to render either a `post` or `page` from WordPress:
 
-```tsx title="src/pages/preview.tsx" {14-17}
+```tsx title=src/pages/preview.tsx {14-17}
 import { useRouter } from 'next/router';
 import { PageComponent } from './[...pageUri]';
 import type { Page, Post } from '@faustjs/core';

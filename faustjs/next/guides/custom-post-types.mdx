@@ -113,7 +113,7 @@ You should now be able to access the starter project at [http://localhost:3000](
 
 We'll create a team page in `src/pages/team.tsx` to display our team members:
 
-```tsx title="src/pages/team.tsx"
+```tsx title=src/pages/team.tsx
 import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';
@@ -156,7 +156,7 @@ When querying custom post types in Faust.js, you can leverage the `useQuery` hoo
 
 Let's get our team members using the `useQuery` hook:
 
-```tsx title="src/pages/team.tsx" {6,8}
+```tsx title=src/pages/team.tsx {6,8}
 import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';
@@ -191,7 +191,7 @@ export default function Team() {
 
 Finally, we'll create a `teamMember.tsx` component to display each team member:
 
-```tsx title="/src/components/teamMember.tsx" {1}
+```tsx title=/src/components/teamMember.tsx {1}
 import { TeamMember as TeamMemberType } from 'client';
 
 interface TeamMemberProps {
@@ -221,7 +221,7 @@ Notice we are getting the `TeamMember` TypeScript type from the client and gener
 
 Finally, let's hook up our `TeamMember` component to the team page.
 
-```tsx title="src/pages/team.tsx" {4,27-29}
+```tsx title=src/pages/team.tsx {4,27-29}
 import Head from 'next/head';
 import { Header, Footer } from '../components';
 import { client } from '../client';

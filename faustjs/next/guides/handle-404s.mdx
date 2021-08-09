@@ -36,7 +36,7 @@ Faust.js publishes an `is404` function that makes this easy for you. It function
 
 `is404` should be called in either `getStaticProps` or `getServerSideProps`. The reason for this is that these are the server-side functions where you need to tell Next.js to send a `404 Not Found` server response. Below is some code in the a `post` page that utilizes `is404` to return a `{ notFound: true }` if necessary:
 
-```tsx title=[postSlug].tsx
+```tsx title=src/pages/posts/[postSlug].tsx
 import { getNextStaticProps, is404 } from '@faust/next';
 import { client } from 'client';
 

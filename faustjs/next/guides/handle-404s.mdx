@@ -41,12 +41,10 @@ import { getNextStaticProps, is404 } from '@faust/next';
 import { client } from 'client';
 
 export default function Page() {
-    return (<>
-        {/* ... */}
-    </>);
+    return <></>;
 }
 
-export async function getStaticProps(context) {
+export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
     Page,
     client,

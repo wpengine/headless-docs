@@ -109,7 +109,7 @@ To do this you will need to run `gqless generate` again. Running `gqless generat
 
 Using the boilerplate client code will provide two different GQless clients that you can use depending upon whether you are on the client or server. However, you will still need to provide the client to Faust.js so that it can use it to fetch data. To do this you can use the `HeadlessProvider` component published by Faust.js, and provide it the GQless client you want to use. This is done in your `_app.tsx` file as follows:
 
-```tsx title="src/pages/_app.tsx" {2,3,14,16}
+```tsx title="src/pages/_app.tsx"
 import { headlessConfig } from '@faustjs/core';
 import { HeadlessProvider } from '@faustjs/next';
 import { client } from 'client';
@@ -141,7 +141,7 @@ Assuming you have created a client using the Faust.js `getClient` function, you 
 
 If you are not able to use one of the [WordPress-specific hooks](../reference/hooks-for-fetching-data.mdx) you can use the `useQuery` hook to make a query to the Headless WordPress API. This hook is useful for making any query supported by your Headless WordPress API. It essentially exposes your entire generated GQL schema to you for you to use what you need. For example, say you have a `Header` component and you want to fetch menu items from your "Primary" menu in WordPress. You could do so as follows:
 
-```tsx title="src/components/Header.tsx" {4,15-18,32-40}
+```tsx title="src/components/Header.tsx"
 import React from 'react';
 import styles from 'scss/components/Header.module.scss';
 import Link from 'next/link';
@@ -194,7 +194,7 @@ The code above demonstrates how you can use the `useQuery` hook to make a query 
 
 While Faust.js does not provide any WordPress-specific hooks for mutations, it does provide the `useMutation` hook. This hook is useful for making any mutation supported by your Headless WordPress API. For example, if you have a form on your site that can be used by admins to submit posts, it might look something similar to the following:
 
-```tsx title="src/components/Header.tsx" {2,10-21,30-35}
+```tsx title="src/components/Header.tsx"
 import React from 'react';
 import { client } from 'client';
 

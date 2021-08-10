@@ -12,11 +12,11 @@ In this tutorial, we'll use the client we created in the previous tutorial to qu
 
 ## Using The Client Hooks
 
-The client we created in the previous tutorial gives us access to helpful [React Hooks](/next/reference/hooks-for-fetching-data) for easily querying data from WordPress.
+The client we created in the previous tutorial gives us access to helpful [React Hooks](../next/reference/hooks-for-fetching-data) for easily querying data from WordPress.
 
 ### Get Posts Using `usePosts` Hook
 
-Let's use the [`usePosts`](/next/reference/hooks-for-fetching-data#useposts) hook to get the latest posts from our headless WordPress site.
+Let's use the [`usePosts`](../next/reference/hooks-for-fetching-data#useposts) hook to get the latest posts from our headless WordPress site.
 
 ```tsx title=pages/posts.tsx {1,5-6}
 import { client } from '../client'
@@ -93,9 +93,9 @@ Once those changes are made, navigate to [http://localhost:3000/posts](http://lo
 
 ### Get Data Using The `useQuery` Hook
 
-While Faust.js provides [custom hooks](/next/reference/hooks-for-fetching-data) for fetching data like posts, pages, etc, sometimes you need to fetch data outside of the scope of the custom hooks.
+While Faust.js provides [custom hooks](../next/reference/hooks-for-fetching-data) for fetching data like posts, pages, etc, sometimes you need to fetch data outside of the scope of the custom hooks.
 
-That is where the [`useQuery`](/next/reference/hooks-for-fetching-data#custom-queries-and-mutations) hook comes in. This is a GQless hook that gives access to your entire schema.
+That is where the [`useQuery`](../next/reference/hooks-for-fetching-data#custom-queries-and-mutations) hook comes in. This is a GQless hook that gives access to your entire schema.
 
 Let's display our site title and description using the `useQuery` hook.
 
@@ -127,4 +127,4 @@ Navigate back to [http://localhost:3000/posts](http://localhost:3000/posts) and 
 
 ### What's Next?
 
-At this point, you have a fully functional headless WordPress site! We recommend following up with our [Getting Started Next.js docs](/next/getting-started).
+At this point, you have a fully functional headless WordPress site! We recommend following up with our [Getting Started Next.js docs](../next/getting-started).

@@ -1,6 +1,7 @@
 ---
 slug: /faustjs/next/guides/custom-post-types
 title: Interacting with Custom Post Types
+description: Querying data in custom post types is just as easy as querying for posts or pages in Faust.js.
 ---
 
 # Interacting with Custom Post Types
@@ -9,7 +10,7 @@ Querying data in custom post types is just as easy as querying for posts or page
 
 Before we start, if you haven't already, [setup your WordPress site for headless](../../tutorial/setting-up-wordpress.mdx).
 
-## Create a custom post type
+## Create a Custom Post Type
 
 We'll be using the [Atlas Content Modeler](https://github.com/wpengine/atlas-content-modeler) plugin to create custom post types for this guide, but you can choose to create custom post types in any way you'd like.
 
@@ -19,13 +20,13 @@ Now, navigate to WP Admin -> Content Modeler.
 
 <img src="../../assets/img/empty-content-modeler.png" alt="The Atlas Content Modeler admin interface" />
 
-Let's create a custom post type for our team members. Click the "Get Started" button, and fill out the fields to create a new Content Model. Be sure to mark "API Visibility" to "Public" so we can query the data.
+Let's create a custom post type for team members. Click the "Get Started" button, and fill out the fields to create a new Content Model. Be sure to mark "API Visibility" to "Public" so we can query the data.
 
 <img src="../../assets/img/team-members-content-modeler.png" alt="The Atlas Content Modeler admin interface with fields for a team member content type" />
 
-## Create fields for your custom post type
+## Create Fields for the Custom Post Type
 
-Now, that we've created our custom post type, let's add some fields to it. From WP Admin -> Content Modeler, select the Team Members custom post type.
+Now, that we've created the custom post type, let's add some fields to it. From WP Admin -> Content Modeler, select the Team Members custom post type.
 
 We'll add three fields:
 
@@ -35,7 +36,7 @@ We'll add three fields:
 
 <img src="../../assets/img/team-members-content-modeler-fields.png" alt="The Atlas Content Modeler admin interface with filled custom fields" />
 
-## Create some team members
+## Add Some Team Members
 
 Now that you have created a custom post type and fields, you can start entering data. Navigate to WP Admin -> Team Members to start creating!
 
@@ -43,13 +44,13 @@ For this example, I've created two team members, Jane and John Doe, with bios an
 
 <img src="../../assets/img/content-modeler-add-team-member.png" alt="Atlas Content Modeler Custom Post Type interface for adding a new item" />
 
-## Create your starter headless project
+## Clone the Starter Headless Project
 
 Thus far, you have created a WordPress site with the necessary headless plugins, and data. Now, we need to create a frontend app to consume this data.
 
-We are going to use our getting started example project in Next.js, but the same concepts apply in other frontend frameworks.
+We are going to use the getting started example project in Next.js, but the same concepts apply in other frontend frameworks.
 
-[Follow the steps in our getting started with Next.js usage guide to create a frontend app](../getting-started.mdx)
+[Follow the steps in the getting started with Next.js usage guide to create a frontend app](../getting-started.mdx)
 
 Once your frontend app is created, the structure should look something like this:
 
@@ -77,7 +78,7 @@ my-app/
   tsconfig.json
 ```
 
-### Regenerate your schema
+### Regenerate the GraphQL Schema
 
 Your schema is a TypeScript representation of your WordPress site. Since we have added some custom post types and fields, we'll want to regenerate this schema to ensure it's up to date. To regenerate your schema from the Next.js getting started example, simply run:
 
@@ -99,7 +100,7 @@ If you are using something other than `WPGraphQL` you will need to refer to the 
 
 Once the schema file has been generated, you can then disable introspection again.
 
-### Run the dev server
+### Run the Dev Server
 
 Run the following command to start the dev server:
 
@@ -109,9 +110,9 @@ npm run dev
 
 You should now be able to access the starter project at [http://localhost:3000](http://localhost:3000)
 
-### Create a team page
+### Create a Team Page
 
-We'll create a team page in `src/pages/team.tsx` to display our team members:
+We'll create a team page in `src/pages/team.tsx` to display the team members:
 
 ```tsx title=src/pages/team.tsx
 import Head from 'next/head';
@@ -148,13 +149,13 @@ This will look something like:
 
 <img src="../../assets/img/nextjs-empty-team-members-page.png" alt="An empty web page with a large title for team members" />
 
-### Query the team members
+### Query for Team Members
 
 When querying custom post types in Faust.js, you can leverage the `useQuery` hook that is exported from the client. This allows you to access all of WordPress' data. You'll also notice it's typed from your schema, making things super easy to find.
 
 <img src="../../assets/img/useQuery-typed.png" alt="A screenshot of the useQuery hook and its typings" />
 
-Let's get our team members using the `useQuery` hook:
+Let's get the team members using the `useQuery` hook:
 
 ```tsx title=src/pages/team.tsx {6,8}
 import Head from 'next/head';
@@ -217,9 +218,9 @@ export default function TeamMember({ teamMember }: TeamMemberProps) {
 
 Notice we are getting the `TeamMember` TypeScript type from the client and generated schema.
 
-### Put it all together
+### Put It All Together
 
-Finally, let's hook up our `TeamMember` component to the team page.
+Finally, let's hook up the `TeamMember` component to the team page.
 
 ```tsx title=src/pages/team.tsx {4,27-29}
 import Head from 'next/head';
@@ -268,7 +269,7 @@ Now, head back over to [http://localhost:3000/team](http://localhost:3000/team) 
 
 In this guide, we demonstrated:
 
-* How to create custom post types/fields using Atlas Content Modeler
+* How to create custom post types/fields using [Atlas Content Modeler](https://github.com/wpengine/atlas-content-modeler)
 * Creating data for your custom post types
 * Creating a starter frontend project to consume your WordPress data
 * Using the `useQuery` custom React hook in the framework to query your custom post type data in GraphQL

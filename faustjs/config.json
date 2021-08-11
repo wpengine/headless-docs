@@ -1,6 +1,6 @@
 {
-  "title": "Faust.js Documentation",
-  "description": "A JavaScript library for building Headless WordPress websites.",
+  "title": "Faust.js",
+  "description": "Faust.js focuses on delivering the best developer experience and features you need when building Headless WordPress websites with support for: static site generation, server-side rendering, TypeScript, data-fetching, post and page previews, and more.",
   "entrypoint": "/faustjs/next/getting-started.mdx",
   "sidebar": [
     {

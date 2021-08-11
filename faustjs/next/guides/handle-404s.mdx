@@ -16,23 +16,23 @@ To determine if you need to send a 404 you would need to make a request to WordP
 
 Faust.js publishes an `is404` function that makes this easy for you. It functions similar to how the `usePost`, `usePage`, and `useCategory` hooks function, so it is able to determine the query you want to make based on URL params specified in your Next.js pages. The `is404` function has the following logic:
 
-### `is404` Logic For Posts:
+### `is404` Logic for Posts:
 
 1. If `postId` is found in URL params, `is404` makes a request to retrieve a `post` from WordPress by `ID`. If no `post` is returned, `is404` returns `true`.
 1. If `postSlug` is found in URL params, `is404` makes a request to retrieve a `post` from WordPress by `SLUG`. If no `post` is returned, `is404` returns `true`.
 1. If `postUri` is found in URL params, `is404` makes a request to retrieve a `post` from WordPress by `URI`. If no `post` is returned, `is404` returns `true`.
 
-### `is404` Logic For Pages:
+### `is404` Logic for Pages:
 
 1. If `pageId` is found in URL params, `is404` makes a request to retrieve a `page` from WordPress by `ID`. If no `page` is returned, `is404` returns `true`.
 1. If `pageUri` is found in URL params, `is404` makes a request to retrieve a `page` from WordPress by `URI`. If no `page` is returned, `is404` returns `true`.
 
-### `is404` Logic For Categories:
+### `is404` Logic for Categories:
 
 1. If `categoryId` is found in URL params, `is404` makes a request to retrieve a `category` from WordPress by `ID`. If no `category` is returned, `is404` returns `true`.
 1. If `categorySlug` is found in URL params, `is404` makes a request to retrieve a `category` from WordPress by `SLUG`. If no `category` is returned, `is404` returns `true`.
 
-## How To Use `is404`
+## How to use `is404`
 
 `is404` should be called in either `getStaticProps` or `getServerSideProps`. The reason for this is that these are the server-side functions where you need to tell Next.js to send a `404 Not Found` server response. Below is some code in the a `post` page that utilizes `is404` to return a `{ notFound: true }` if necessary:
 

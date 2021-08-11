@@ -1,24 +1,22 @@
 ---
 slug: /faustjs/next/guides/post-page-previews
-title: Setting Up Post/Page Previews
+title: Setting Up Post and Page Previews
 description: View WordPress preview post/page content on your headless frontend with Faust.js
 ---
 
-# Setting Up Post/Page Previews
+Faust.js has support for page and post previews. This allows you to view your WordPress content on the headless frontend as drafts or even before publishing.
 
-Faust.js has support for page/post previews. This allows you to view your WordPress content on the headless frontend as drafts or even before publishing.
-
-## Set your headless secret
+## Set Your Headless Secret
 
 Your headless secret is a value that is used to authenticate requests to WordPress. This enables you to view content that isn't yet published, on your Next.js frontend.
 
-### Copy your headless secret
+### Copy your Headless Secret
 
 Your headless secret can be found in WP Admin -> Settings -> Headless. Copy this value.
 
 <img src="../../assets/img/headless-admin-secret.png" alt="The Headless WordPress admin interface with a red rectangle around the Secret Key field" />
 
-### Add the headless secret to your `.env` file
+### Add your Headless Secret to your `.env` File
 
 Add the `WP_HEADLESS_SECRET` key to your `.env` file with the headless secret as the value. Your `.env` file should already have a value for either `NEXT_PUBLIC_WORDPRESS_URL` or `WORDPRESS_URL`. The file should look something like this:
 
@@ -38,7 +36,7 @@ NEXT_PUBLIC_WORDPRESS_URL=http://localhost:8080
 WP_HEADLESS_SECRET=00000000-0000-0000-0000-000000000001
 ```
 
-### Ensure the headless secret is being passed to `headlessConfig`
+### Ensure your Headless Secret is Passed to `headlessConfig`
 
 Typically, your Next.js app will have `headlessConfig` set in the `_app.tsx` file. The headless secret is passed via the `apiClientSecret` key. Make sure it is being set:
 
@@ -65,7 +63,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 }
 ```
 
-## Create the authorize handler
+## Create the Authorize Handler
 
 Next, you will need to create the `authorizeHandler`. This authenticates requests from WordPress. Create a page at `/src/pages/api/auth/wpe-headless.ts` with the following:
 
@@ -75,7 +73,7 @@ import { authorizeHandler } from '@faustjs/core';
 export default authorizeHandler;
 ```
 
-## Create your preview page
+## Create your Preview Page
 
 With your headless secret set and the `authorizeHandler` ready to handle requests, you can now create a Next.js [page](https://nextjs.org/docs/basic-features/pages) for previews. Create a file at `/src/pages/preview.tsx` with the following:
 
@@ -155,7 +153,7 @@ return <PostComponent post={postOrPage as Post} />;
 
 We abstract the page and post layouts into components to be reusable so there is no divergence between preview pages/posts and actual pages/posts.
 
-## Navigating to preview pages
+## Navigating to Preview Pages
 
 Start by logging into your WordPress Admin. For this example, we'll create a new post.
 

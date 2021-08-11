@@ -16,7 +16,7 @@ The client we created in the previous tutorial gives us access to helpful [React
 
 ### Get Posts Using `usePosts` Hook
 
-Let's use the [`usePosts`](../next/reference/hooks-for-fetching-data#useposts) hook to get the latest posts from our headless WordPress site.
+Let's use the [`usePosts`](../next/reference/hooks-for-fetching-data#useposts) hook to get the latest posts from your headless WordPress site.
 
 ```tsx title=pages/posts.tsx {1,5-6}
 import { client } from '../client'
@@ -58,7 +58,7 @@ export default function Post(props: PostProps) {
 }
 ```
 
-A couple of things to note here: Our schema generated in the previous tutorial exports a `Post` type. We're able to use this type to define our `Post` component props.
+A couple of things to note here: The schema generated in the previous tutorial exports a `Post` type. We're able to use this type to define the `Post` component props.
 
 Additionally, notice the `title` and `content` properties are functions. This is because you are able to specify if you want the rendered content or raw content. For example:
 
@@ -66,7 +66,7 @@ Additionally, notice the `title` and `content` properties are functions. This is
 post.title({format: PostObjectFieldFormatEnum.RAW})
 ```
 
-Let's go back to our `pages/posts.tsx` component and hook up the data we're fetching to the `Post` component:
+Let's go back to the `pages/posts.tsx` component and hook up the data we're fetching to the `Post` component:
 
 ```tsx title=pages/posts.tsx {12}
 import { client } from '../client'
@@ -97,7 +97,7 @@ While Faust.js provides [custom hooks](../next/reference/hooks-for-fetching-data
 
 That is where the [`useQuery`](../next/reference/hooks-for-fetching-data#custom-queries-and-mutations) hook comes in. This is a GQty hook that gives access to your entire schema.
 
-Let's display our site title and description using the `useQuery` hook.
+Let's display the site title and description using the `useQuery` hook.
 
 ```tsx title=pages/posts.tsx {5,10,11}
 import { client } from "../client";
@@ -127,4 +127,4 @@ Navigate back to [http://localhost:3000/posts](http://localhost:3000/posts) and 
 
 ### What's Next?
 
-At this point, you have a fully functional headless WordPress site! We recommend following up with our [Getting Started Next.js docs](../next/getting-started).
+At this point, you have a fully functional headless WordPress site! We recommend following up with our [Getting Started with Next.js docs](../next/getting-started).

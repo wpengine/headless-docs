@@ -57,7 +57,7 @@
         {
           "type": "doc",
           "label": "wpe",
-          "filePath": "/node-engine/cli/wpe.mdx"
+          "filePath": "/node-engine/reference/cli/wpe.mdx"
         },
         {
           "type": "category",
@@ -66,37 +66,37 @@
             {
               "type": "doc",
               "label": "create",
-              "filePath": "/node-engine/cli/wpe/apps/create.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/create.mdx"
             },
             {
               "type": "doc",
               "label": "delete",
-              "filePath": "/node-engine/cli/wpe/apps/delete.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/delete.mdx"
             },
             {
               "type": "doc",
               "label": "get",
-              "filePath": "/node-engine/cli/wpe/apps/get.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/get.mdx"
             },
             {
               "type": "doc",
               "label": "init",
-              "filePath": "/node-engine/cli/wpe/apps/init.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/init.mdx"
             },
             {
               "type": "doc",
               "label": "list",
-              "filePath": "/node-engine/cli/wpe/apps/list.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/list.mdx"
             },
             {
               "type": "doc",
               "label": "rebuild",
-              "filePath": "/node-engine/cli/wpe/apps/rebuild.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/rebuild.mdx"
             },
             {
               "type": "doc",
               "label": "update",
-              "filePath": "/node-engine/cli/wpe/apps/update.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/apps/update.mdx"
             }
           ]
         },
@@ -107,12 +107,12 @@
             {
               "type": "doc",
               "label": "login",
-              "filePath": "/node-engine/cli/wpe/auth/login.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/auth/login.mdx"
             },
             {
               "type": "doc",
               "label": "logout",
-              "filePath": "/node-engine/cli/wpe/auth/logout.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/auth/logout.mdx"
             }
           ]
         },
@@ -123,12 +123,12 @@
             {
               "type": "doc",
               "label": "get",
-              "filePath": "/node-engine/cli/wpe/builds/get.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/builds/get.mdx"
             },
             {
               "type": "doc",
               "label": "list",
-              "filePath": "/node-engine/cli/wpe/builds/list.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/builds/list.mdx"
             }
           ]
         },
@@ -139,12 +139,12 @@
             {
               "type": "doc",
               "label": "get",
-              "filePath": "/node-engine/cli/wpe/context/get.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/context/get.mdx"
             },
             {
               "type": "doc",
               "label": "set",
-              "filePath": "/node-engine/cli/wpe/context/set.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/context/set.mdx"
             }
           ]
         },
@@ -155,17 +155,17 @@
             {
               "type": "doc",
               "label": "delete",
-              "filePath": "/node-engine/cli/wpe/envs/delete.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/envs/delete.mdx"
             },
             {
               "type": "doc",
               "label": "purge",
-              "filePath": "/node-engine/cli/wpe/envs/purge.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/envs/purge.mdx"
             },
             {
               "type": "doc",
               "label": "rebuild",
-              "filePath": "/node-engine/cli/wpe/envs/rebuild.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/envs/rebuild.mdx"
             }
           ]
         },
@@ -176,7 +176,7 @@
             {
               "type": "doc",
               "label": "get",
-              "filePath": "/node-engine/cli/wpe/logs/get.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/logs/get.mdx"
             }
           ]
         },
@@ -187,12 +187,12 @@
             {
               "type": "doc",
               "label": "bash",
-              "filePath": "/node-engine/cli/wpe/completion/bash.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/completion/bash.mdx"
             },
             {
               "type": "doc",
               "label": "zsh",
-              "filePath": "/node-engine/cli/wpe/completion/zsh.mdx"
+              "filePath": "/node-engine/reference/cli/wpe/completion/zsh.mdx"
             }
           ]
         }

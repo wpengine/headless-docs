@@ -1,0 +1,36 @@
+# wpe envs rebuild
+
+## Description
+
+Manually invoke a rebuild of a specified application environment.
+
+## Usage
+
+```bash
+$ wpe envs rebuild $ENV_ID [OPTIONS]
+```
+
+## Extended Description
+
+The `wpe envs rebuild` command allows you manually rebuild a specified environment for the application. It kicks off the same process that occurs when a new commit is pushed to git.
+
+## Options
+
+| Name, shorthand | Description      |
+| :-------------- | :--------------- |
+| `--app, -a`     | The app name     |
+| `--help, -h`    | Help for rebuild |
+
+## Examples
+
+Let's assume the environment ID is `bmna3gedlzerwcb4vc04gssl` and the app name is `myapp`. Running the following command will rebuild the environment:
+
+```bash
+$ wpe envs rebuild bmna3gedlzerwcb4vc04gssl -a myapp
+```
+
+## Parent Command
+
+| Command            | Description               |
+| :----------------- | :------------------------ |
+| [wpe envs](../envs) | The base command for envs |

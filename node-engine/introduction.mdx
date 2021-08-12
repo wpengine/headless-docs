@@ -1,37 +1,43 @@
-# Introduction
+# Atlas Node Engine Platform Documentation
+
+- [Introduction](#introduction)
+- [Getting Started](./guides/getting-started)
+- [Troubleshooting](./guides/troubleshooting)
+
+## Introduction
 
 Welcome to the WP Engine Headless Platform for WordPress, Atlas!
 
-If you're new to headless, this is the place to start. If you've created headless sites before, head over to our [Getting Started Guide](/guides/getting-started).
+If you're new to headless, this is the place to start. If you've created headless sites before, head over to our [Getting Started Guide](./guides/getting-started).
 
-## What is Headless WordPress?
+### What is Headless WordPress?
 
 When we talk about headless with WordPress, we mean using WordPress for content creation but not for front-end rendering. Instead of using traditional WordPress themes, you develop your front-end using a JavaScript framework like React. A separate server hosts the front-end from the WordPress instance.
 
 Since the front-end is responsible for displaying content to the end-user, it needs to access the content. To do that, it utilized the WordPress REST API or GraphQL via [WPGraphQL](https://www.wpgraphql.com/).
 
-## Why Headless?
+### Why Headless?
 
 Headless is gaining momentum for a few reasons:
 
 - **Developer Choice** - Developers want to use modern frameworks like React to build sites and applications, and headless enables that possibility.
-- **Scalability** - A headless WordPress site scales more manageably because WordPress does not hold sole responsibility for rendering a site. 
+- **Scalability** - A headless WordPress site scales more manageably because WordPress does not hold sole responsibility for rendering a site.
 - **Security** - Removing the responsibility of rendering from WordPress minimizes the surface area for attacks. Now, you can choose only to expose the API to the internet.
 - **Integrations** - The WordPress community provides many integrations through plugins, but those plugins don't always work well together. In a headless instance, you have more control over your integrations because most services support integrating with JavaScript and Node.js.
 
-## Hosting Your Headless Apps
+### Hosting Your Headless Apps
 
 WordPress runs on PHP, but your headless site will likely utilize [Node](https://nodejs.org/). At the very least, you'll use Node and NPM to manage JavaScript dependencies and bundle your applications (i.e., webpack).
 
 At WP Engine, we have a Node hosting platform. The platform works differently than our WordPress platform. With WordPress, you get a server that you can FTP or SSH into, but with Node, the infrastructure is opaque to you. All you need to do is point our platform to a GitHub repo, and we'll watch the repo and deploy it automatically!
 
-# WP Engine Headless Concepts
+## WP Engine Headless Concepts
 
 The Node hosting platform is part of the solution for a headless site. The other part is the WordPress instance. These two work together to make up your site.
 
 We call the Node portion of your site an **app**. An app can have _n_ number of **environments**. Let's explore these concepts.
 
-## Apps and Environments
+### Apps and Environments
 
 An **app** is a logical container of all of your _environments_ for the Node portion of your site. An app can have multiple _environments_ like production, staging, and development.
 
@@ -93,8 +99,34 @@ Each **environment** has the following properties:
     - `141.193.213.11`
 
 
-## Connecting Your WordPress Backend
+### Connecting Your WordPress Backend
 
 Each app environment pairs with a WordPress backend. In the [WP Engine User Portal](https://my.wpengine.com), the WordPress equivalent to an _app_ is a _site_. A site has environments just like apps. Therefore, each _app environment_ needs to pair with a `_site environment_` via the site's environment id found in the user portal. You make the connection by setting the `wp_environment_name` property for each environment in your app config.
 
 The `wp_environment_name` property is **required** as it provides the authorization context for the environment, which determines which users have access to modify and deploy the _app environment_.
+
+## Install the Atlas CLI
+
+Atlas CLI gives you access to all the commands needed to spin up your first Headless application. `npm` is required to install the CLI.
+
+**NOTE:** With version 0.1.4 released March 18, 2021, Atlas CLI no longer requires the `alpha` syntax (i.e., `wpe alpha apps`). If you are still using a previous version of Atlas CLI, run through these steps to use commands without `alpha`.
+
+To install, enter:
+
+```bash
+npm i @wpengine/headless-cli -g
+```
+
+Verify the installation:
+
+```bash
+wpe --version
+```
+
+If the installation was successful, your terminal applications returns:
+
+```bash
+wpe version vX.X.X
+```
+
+You'll now be able to follow the other guides and tutorials on this site, as well as use any command in the [CLI reference](./reference/cli/wpe).

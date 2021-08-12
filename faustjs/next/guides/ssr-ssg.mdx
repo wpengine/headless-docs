@@ -116,7 +116,7 @@ Using the `HeadlessProvider` component us easy, and if you are using an example 
 import React from 'react';
 import { HeadlessProvider } from '@faustjs/next';
 import { client } from 'client';
-import { AppProps } from 'next/dist/next-server/lib/router/router';
+import type { AppProps } from 'next/app';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (

@@ -15,7 +15,7 @@ Content Engine offers the following benefits over WPGraphQL:
 
 ## Pre-requisites
 
-1. A free-tier WP Engine account is required to use Content Engine. If you do not have an account, please reach out to {insert help email for CE).
+1. A free-tier WP Engine account is required to use Content Engine. If you do not have an account, please reach out to (insert help email for CE).
 2. A WordPress site with either posts, pages, or users.
 
 When you enroll in testing Content Engine, you'll receive an email with:
@@ -51,3 +51,48 @@ With your data synced, you can begin to query your data with Atlas Query Languag
 ## Atlas Query Language
 
 Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers and can retrieve content with low latency and high throughput, ensuring maximization for a site's SEO and user experience.
+
+## Use AQL
+
+To begin querying data with AQL:
+
+1. Navigate to your site's AQL URL, https://aql.wpengine.com/sites/:site/graphql. Replace `site:` with your site’s name.
+
+2. Upon entering the endpoint, the GraphQL console appears. Use the following query to sync posts from your WordPress instance:
+
+   ```text
+   query {
+       posts {
+           wpID
+           slug
+           title
+           excerpt
+           urlPath
+           author {
+               displayName
+               avatar {
+                   url
+               }
+           }
+       }
+   }
+   ```
+
+3. Select the **Play** icon to begin querying. All post data will show in a JSON format, which includes all metadata related to each post.
+
+![AQL query](./images/aql-query.png)
+
+## Available Content
+
+Currently, Content Engine supports retrieval for the following:
+
+- Posts
+- Pages
+- Users
+
+As Content Engine matures, more WordPress content will become available. If you have suggestions for what type of content you would like to see, fill out this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform).
+
+## Feedback
+
+- **Questions?** Email us ce-beta@wpengine.com
+- **Feedback**: Your feedback helps shape the future of Content Engine. To provide feedback, fill out our [Content Engine Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform).

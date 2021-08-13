@@ -1,4 +1,8 @@
-# Atlas Node Engine Platform Documentation
+---
+slug: /node-engine/introduction
+title: Atlas Node Engine Platform Documentation
+description: Node Engine is WP Engine's hosting solution for Headless WordPress applications. Headless apps are split into a WordPress backend and a separate Node frontend. With Node Engine you get the premier WordPress hosting experience and state of the art Node hosting combined into one!
+---
 
 - [Introduction](#introduction)
 - [Getting Started](./guides/getting-started)
@@ -65,7 +69,10 @@ Here's an example configuration for a typical app with a Production and Developm
       "branch": "dev",
       "wp_environment_name": "headlesswpe-dev",
       "env_variables": [
-        { "key": "WORDPRESS_URL", "value": "https://headlesswpe-dev.wpengine.com" }
+        {
+          "key": "WORDPRESS_URL",
+          "value": "https://headlesswpe-dev.wpengine.com"
+        }
       ]
     }
   ]
@@ -97,7 +104,6 @@ Each **environment** has the following properties:
   - A records with the following IPs:
     - `141.193.213.10`
     - `141.193.213.11`
-
 
 ### Connecting Your WordPress Backend
 

@@ -45,6 +45,11 @@
         },
         {
           "type": "doc",
+          "label": "Setting Cache-Control Headers",
+          "filePath": "/node-engine/guides/cache-control.mdx"
+        },
+        {
+          "type": "doc",
           "label": "Troubleshooting",
           "filePath": "/node-engine/guides/troubleshooting.mdx"
         }

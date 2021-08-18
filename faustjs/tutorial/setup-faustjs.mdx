@@ -48,11 +48,13 @@ my-app/
 Start by installing the dependencies:
 
 #### Prod Dependencies
+
 ```bash
 npm install --save-prod @faustjs/core @faustjs/next
 ```
 
 #### Dev Dependencies
+
 ```bash
 npm install --save-dev @gqty/cli dotenv
 ```
@@ -62,11 +64,11 @@ npm install --save-dev @gqty/cli dotenv
 Create a `faust.config.js` file in the root of your project:
 
 ```js title=faust.config.js
-const { headlessConfig } = require('@faustjs/core');
+const { headlessConfig } = require("@faustjs/core");
 
 if (!process.env.NEXT_PUBLIC_WORDPRESS_URL) {
   console.error(
-    'You must provide a NEXT_PUBLIC_WORDPRESS_URL environment variable, did you forget to load your .env file?',
+    "You must provide a NEXT_PUBLIC_WORDPRESS_URL environment variable, did you forget to load your .env file?"
   );
 }
 
@@ -103,21 +105,21 @@ Replace the `NEXT_PUBLIC_WORDPRESS_URL` value with the URL of your WordPress sit
 We use [GQty](https://gqty.com) as our GraphQL client. To configure GQty, we need to create a `gqty.config.js` file in the root of our project.
 
 ```js title=gqty.config.js
-require('dotenv').config();
-require('./faust.config');
-const { getGqlUrl } = require('@faustjs/core');
+require("dotenv").config();
+require("./faust.config");
+const { getGqlUrl } = require("@faustjs/core");
 
 /**
  * @type {import("@gqty/cli").GQtyConfig}
  */
 const config = {
   react: false,
-  scalarTypes: { DateTime: 'string' },
+  scalarTypes: { DateTime: "string" },
   introspection: {
     endpoint: getGqlUrl(),
     headers: {},
   },
-  destination: './client/index.ts',
+  destination: "./client/index.ts",
   subscriptions: false,
   javascriptOutput: false,
 };
@@ -131,15 +133,15 @@ Now, we want to create the GQty client that is used to query data. Create a `cli
 /**
  * GQLESS: You can safely modify this file and Query Fetcher based on your needs
  */
-import type { IncomingMessage } from 'http';
-import { getClient } from '@faustjs/next';
+import type { IncomingMessage } from "http";
+import { getClient } from "@faustjs/next";
 import {
   generatedSchema,
   scalarsEnumsHash,
   GeneratedSchema,
   SchemaObjectTypes,
   SchemaObjectTypesNames,
-} from './schema.generated';
+} from "./schema.generated";
 
 export const client = getClient<
   GeneratedSchema,
@@ -158,7 +160,7 @@ export function serverClient(req: IncomingMessage) {
   });
 }
 
-export * from './schema.generated';
+export * from "./schema.generated";
 ```
 
 Next, add the following `generate` script to your `package.json`:
@@ -188,7 +190,6 @@ Next, add the following `generate` script to your `package.json`:
     "typescript": "^4.3.5"
   }
 }
-
 ```
 
 The `generate` script will generate the GraphQL schema based on the structure of your WordPress site.
@@ -209,6 +210,31 @@ npm run generate
 **Note:** Once the generate script has ran, you can disable "Public Introspection"
 
 The `generate` script will create a `client/schema.generated.ts` file upon completion.
+
+### Implement the `<HeadlessProvider>` Component
+
+The `<HeadlessProvider>` is a [Higher-Order Component](https://reactjs.org/docs/higher-order-components.html) that wraps your Next.js app to provide Faust.js with the context needed for fetching data and caching.
+
+Replace the existing `pages/_app.tsx` file contents with the following:
+
+```tsx title=pages/_app.tsx
+import "../faust.config";
+import "../styles/globals.css";
+
+import type { AppProps /*, AppContext */ } from "next/app";
+import { HeadlessProvider } from "@faustjs/next";
+import { client } from "../client";
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <HeadlessProvider client={client} pageProps={pageProps}>
+      <Component {...pageProps} />
+    </HeadlessProvider>
+  );
+}
+
+export default MyApp;
+```
 
 At this point, all of the necessary config is in place. Your app should look something like this:
 

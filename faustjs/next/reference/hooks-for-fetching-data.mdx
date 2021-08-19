@@ -23,8 +23,8 @@ Using the above names, Faust.js is able to apply the following logic to determin
 The following is an example of how to use the `usePost` hook with a `postSlug`:
 
 ```tsx title=/src/pages/posts/[postSlug].tsx {5,6}
-import { getNextStaticProps } from '@faustjs/next';
-import { client } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { client } from "client";
 
 export default function Page() {
   const { usePost } = client;
@@ -42,14 +42,14 @@ export default function Page() {
 The above code will also work with `postId` and `postUri` depending upon what URL scheme you want to use. You may also want to fetch a specific post. Doing that might look similar to the following:
 
 ```tsx {6-10}
-import { getNextStaticProps } from '@faustjs/next';
-import { GetStaticPropsContext } from 'next';
-import { client, PostIdType } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { GetStaticPropsContext } from "next";
+import { client, PostIdType } from "client";
 
 export default function Page() {
   const { usePost } = client;
   const post = usePost({
-    id: 'hello-world',
+    id: "hello-world",
     idType: PostIdType.SLUG,
   });
 
@@ -73,8 +73,8 @@ The `usePosts` hook provides the standard interface for getting a list of posts 
 The following is an example of how to use the `usePosts` hook with no URL params:
 
 ```tsx title=src/pages/index.tsx {6-8,14-16}
-import { getNextStaticProps } from '@faustjs/next';
-import { client } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { client } from "client";
 
 export default function Home() {
   const { usePosts } = client;
@@ -98,8 +98,8 @@ export default function Home() {
 The code above will get the first 6 posts from the Headless WordPress API. If you want to create a page that would pull posts associated with a specific category you can use the following code:
 
 ```tsx title=src/pages/category/[categorySlug].tsx {6-8,14-16}
-import { getNextStaticProps } from '@faustjs/next';
-import { client } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { client } from "client";
 
 export default function Home() {
   const { usePosts } = client;
@@ -139,8 +139,8 @@ Using the above names, Faust.js is able to apply the following logic to determin
 The following is an example of how to use the `usePage` hook with a `pageUri`:
 
 ```tsx title=/src/pages/[...pageUri].tsx {5,6}
-import { getNextStaticProps } from '@faustjs/next';
-import { client } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { client } from "client";
 
 export default function Page() {
   const { usePage } = client;
@@ -158,14 +158,14 @@ export default function Page() {
 The above code will also work with `pageId` and `pageUri` depending upon what URL scheme you want to use. You may also want to fetch a specific page. Doing that might look similar to the following:
 
 ```tsx {6-10}
-import { getNextStaticProps } from '@faustjs/next';
-import { GetStaticPropsContext } from 'next';
-import { client, PageIdType } from 'client';
+import { getNextStaticProps } from "@faustjs/next";
+import { GetStaticPropsContext } from "next";
+import { client, PageIdType } from "client";
 
 export default function Page() {
   const { usePost } = client;
   const page = usePage({
-    id: 'hello-world',
+    id: "hello-world",
     idType: PageIdType.SLUG,
   });
 
@@ -185,11 +185,11 @@ The `usePreview` hook provides an abstraction around getting a preview `page` or
 The following example shows how to use the `usePreview` hook to render either a `post` or `page` from WordPress:
 
 ```tsx title=src/pages/preview.tsx {14-17}
-import { useRouter } from 'next/router';
-import { PageComponent } from './[...pageUri]';
-import type { Page, Post } from '@faustjs/core';
-import { PostComponent } from './posts/[postSlug]';
-import { client } from 'client';
+import { useRouter } from "next/router";
+import { PageComponent } from "./[...pageUri]";
+import type { Page, Post } from "@faustjs/core";
+import { PostComponent } from "./posts/[postSlug]";
+import { client } from "client";
 
 export default function Preview() {
   const {
@@ -219,13 +219,13 @@ export default function Preview() {
 
 GQty publishes the following hooks that can be used for custom queries, mutations, or subscriptions:
 
-- [`useQuery`](https://gqty.com/react/fetching-data#usequery)
+- [`useQuery`](https://gqty.dev/docs/react/fetching-data#usequery)
   - Make any query request to the Headless WordPress API
-- [`useLazyQuery`](https://gqty.com/react/fetching-data#uselazyquery)
-- [`useTransactionQuery`](https://gqty.com/react/fetching-data#usetransactionquery)
-- [`useMutation`](https://gqty.com/react/fetching-data#usemutation)
+- [`useLazyQuery`](https://gqty.dev/docs/react/fetching-data#uselazyquery)
+- [`useTransactionQuery`](https://gqty.dev/docs/react/fetching-data#usetransactionquery)
+- [`useMutation`](https://gqty.dev/docs/react/mutations#usemutation)
   - Make any mutation request to the Headless WordPress API
-- [`useSubscription`](https://gqty.com/react/fetching-data#usesubscription)
+- [`useSubscription`](https://gqty.dev/docs/react/subscriptions#usesubscription)
 
 For example, you may want to get a list of your content types:
 

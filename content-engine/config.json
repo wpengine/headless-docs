@@ -5,21 +5,21 @@
   "ctaLabel": "Get Started",
   "sidebar": [
     {
+      "type": "doc",
+      "label": "Introduction",
+      "filePath": "/content-engine/introduction.mdx"
+    },
+    {
       "type": "category",
-      "label": "Guides",
+      "label": "Tutorials",
       "items": [
         {
-          "type": "doc",
-          "label": "Introduction",
-          "filePath": "/content-engine/introduction.mdx"
-        },
-        {
           "type": "category",
-          "label": "Tutorials",
+          "label": "Models",
           "items": [
             {
               "type": "category",
-              "label": "Relationships",
+              "label": "Fields",
               "items": [
                 {
                   "type": "doc",

@@ -5,9 +5,32 @@
   "ctaLabel": "Get Started",
   "sidebar": [
     {
-      "type": "doc",
-      "label": "Introduction",
-      "filePath": "/content-engine/introduction.mdx"
+      "type": "category",
+      "label": "Guides",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Introduction",
+          "filePath": "/content-engine/introduction.mdx"
+        },
+        {
+          "type": "category",
+          "label": "Tutorials",
+          "items": [
+            {
+              "type": "category",
+              "label": "Relationships",
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "Introduction",
+                  "filePath": "/content-engine/tutorials/relationships/introduction.mdx"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

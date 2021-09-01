@@ -18,15 +18,81 @@
           "label": "Models",
           "items": [
             {
+              "type": "doc",
+              "label": "Create a Model",
+              "filePath": "/content-engine/tutorial/models/create.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Edit a Model",
+              "filePath": "/content-engine/tutorial/models/edit.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Delete a Model",
+              "filePath": "/content-engine/tutorial/models/delete.mdx"
+            },
+            {
               "type": "category",
               "label": "Fields",
               "items": [
                 {
                   "type": "doc",
-                  "label": "Introduction",
-                  "filePath": "/content-engine/tutorials/relationships/introduction.mdx"
+                  "label": "Text",
+                  "filePath": "/content-engine/tutorial/models/fields/text/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Rich Text",
+                  "filePath": "/content-engine/tutorial/models/fields/richtext/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Number",
+                  "filePath": "/content-engine/tutorial/models/fields/number/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Date",
+                  "filePath": "/content-engine/tutorial/models/fields/date/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Media",
+                  "filePath": "/content-engine/tutorial/models/fields/media/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Boolean",
+                  "filePath": "/content-engine/tutorial/models/fields/boolean/index.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Relationship",
+                  "filePath": "/content-engine/tutorial/models/fields/relationship/index.mdx"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Taxonomies",
+          "items": [
+            {
+              "type": "doc",
+              "label": "Create a Taxonomy",
+              "filePath": "/content-engine/tutorial/models/taxonomies/create.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Edit a Taxonomy",
+              "filePath": "/content-engine/tutorial/models/taxonomies/edit.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Delete a Taxonomy",
+              "filePath": "/content-engine/tutorial/models/taxonomies/delete.mdx"
             }
           ]
         }

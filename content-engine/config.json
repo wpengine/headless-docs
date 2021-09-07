@@ -14,6 +14,11 @@
       "label": "Tutorials",
       "items": [
         {
+          "type": "doc",
+          "label": "Graph QL",
+          "filePath": "/content-engine/tutorial/graphql/introduction.mdx"
+        },
+        {
           "type": "category",
           "label": "Models",
           "items": [

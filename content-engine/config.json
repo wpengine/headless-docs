@@ -49,32 +49,32 @@
                 {
                   "type": "doc",
                   "label": "Rich Text",
-                  "filePath": "/content-engine/tutorial/models/fields/richtext/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/richtext/introduction.mdx"
                 },
                 {
                   "type": "doc",
                   "label": "Number",
-                  "filePath": "/content-engine/tutorial/models/fields/number/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/number/introduction.mdx"
                 },
                 {
                   "type": "doc",
                   "label": "Date",
-                  "filePath": "/content-engine/tutorial/models/fields/date/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/date/introduction.mdx"
                 },
                 {
                   "type": "doc",
                   "label": "Media",
-                  "filePath": "/content-engine/tutorial/models/fields/media/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/media/introduction.mdx"
                 },
                 {
                   "type": "doc",
                   "label": "Boolean",
-                  "filePath": "/content-engine/tutorial/models/fields/boolean/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/boolean/introduction.mdx"
                 },
                 {
                   "type": "doc",
                   "label": "Relationship",
-                  "filePath": "/content-engine/tutorial/models/fields/relationship/index.mdx"
+                  "filePath": "/content-engine/tutorial/models/fields/relationship/introduction.mdx"
                 }
               ]
             }

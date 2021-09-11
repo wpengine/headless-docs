@@ -1,6 +1,6 @@
 # Contribute to Atlas documentation
 
-Atlas allows for ANYONE to edit and create documentation for Node Engine, Faust.js, and Content Engine. Notably, we love it when users:
+Atlas allows for ANYONE to edit and create documentation for all Atlas products. Notably, we love it when users:
 
 - Find errors or have ideas on how to improve existing documentation
 - Have an idea for NEW documentation that would help other Atlas users

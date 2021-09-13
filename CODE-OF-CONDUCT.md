@@ -8,7 +8,6 @@ Therefore, remember, when interacting with other headless devs or contributing t
 
 On topic has a broad meaning in Headless development, since our development work could encompass the entire stack. As long as code is involved, any development-related query is fair game. But tone is complex, hard to read. Use clear and succinct language when possible to prevent misunderstandings.
 
-And if you REALLY have a dank non-development-related meme you want to share, the #random channel in our Slack is a good place for those.
 
 ## Respect
 
@@ -27,7 +26,7 @@ We’re all in different parts of our development journey. Some of us have years
 Everyone has different backgrounds and perspectives that differ from yours. Before disagreeing reflexively, try to understand where the other person comes from. Ask more questions. Be comfortable responding to questions. When we empathize, we create an atmosphere of inclusiveness.
 
 
-## Ban Hammer
+## Don't do these
 
 Everyone has the right to express their ideas and challenge others. However, we have a ban hammer and we’re not afraid to use it. If you’re preventing fruitful discussion from happening by being a jerk, we’ll kick you out with no hesitation. The following items will result in immediate expulsion from the community:
 

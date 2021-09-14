@@ -43,7 +43,7 @@ Everyone has the right to express their ideas and challenge others. The followin
 - Sexual content
 - Violent content
 - Misinformation
-- Malware and exploit
+- Malware and exploits
 
 
 If you see another community member do any of the above actions, take a screenshot and email devrel@wpengine.com. 

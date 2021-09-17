@@ -4,7 +4,8 @@
   "description": "Faust.js focuses on delivering the best developer experience and features you need when building Headless WordPress websites with support for: static site generation, server-side rendering, TypeScript, data-fetching, post and page previews, and more.",
   "entrypoint": "https://faustjs.org",
   "redirects": [
-    { "from": "(?:faustjs)(.*)", "to": "https://faustjs.org/docs$1" }
+    { "from": "(?:faustjs)/(.+)", "to": "https://faustjs.org/docs/$1" },
+    { "from": "(?:faustjs)", "to": "https://faustjs.org/" }
   ],
   "ctaLabel": "Get Started",
   "sidebar": [

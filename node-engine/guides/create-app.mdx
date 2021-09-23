@@ -4,15 +4,17 @@ title: Create Your First App
 description: The best way to understand how a Headless CMS operates is to create a simple application and deploy it. Use WPEngine's headless framework to create a simple application.
 ---
 
-The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses WPEngine's open-source [headless framework](https://github.com/wpengine/faustjs) and Next.js to create a simple application.
+The best way to understand how a Headless CMS operates is to create a simple application and deploy it. This tutorial uses Faust.js, WPEngine's open-source [headless framework](https://github.com/wpengine/faustjs), and Next.js to create a simple application.
 
 ## Setup WordPress
 
 1. Make a WordPress site. You should have a site and an Atlas account through WPEngine in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. This will log you into WP Admin, where the setup for the framework plugin and WPGraphQL occurs.
-1. Download, upload, and activate the `wpe-headless` plugin. [(Plugin Download)](https://wp-product-info.wpesvc.net/v1/plugins/wpe-headless?download)
-1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) on the WordPress site. You can automatically install WPGraphQL from the framework plugin's **settings** page
+1. Download the [wpe-headless plugin](https://wp-product-info.wpesvc.net/v1/plugins/wpe-headless?download). Then, upload and activate the plugin from within the WordPress admin panel.
+1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) from the [WordPress Plugin Directory](https://wordpress.org/plugins/wp-graphql/). You can also automatically install WPGraphQL from the `wpe-headless` plugin's **settings** page.
 
 ## Create a Next.js App using the [Getting Started Example](https://developers.wpengine.com/docs/faustjs/next/getting-started)
+
+Install our Next.js Getting Started example using the following command:
 
 ### On MacOS, Linux, or WSL (bash):
 
@@ -41,7 +43,23 @@ Now, copy the sample environment template:
 cp .env.sample .env
 ```
 
-Open the `.env` file you created earlier, it should look something like this:
+Finally, run the dev server:
+
+```bash
+npm run dev
+```
+
+You can now visit [http://localhost:3000](http://localhost:3000) to see the example site!
+
+<Video src="https://user-images.githubusercontent.com/785258/128942790-475f1e87-c754-445b-89c6-62bd102c0f06.mp4" />
+
+Currently, the posts and pages you see are coming from our WordPress site at [https://headlessfw.wpengine.com](https://headlessfw.wpengine.com). In the next step, we'll show you how to hook up your own WordPress site.
+
+## Connecting your WordPress site
+
+The example app above loads WordPress content from the demo site at [https://headlessfw.wpengine.com](https://headlessfw.wpengine.com).
+
+Open the `.env` file you created earlier. It should look something like this:
 
 ```bash
 # Your WordPress site URL
@@ -53,14 +71,16 @@ WP_HEADLESS_SECRET=YOUR_PLUGIN_SECRET
 
 Update the `NEXT_PUBLIC_WORDPRESS_URL` value with your WordPress site URL (be sure to include `http://` or `https://`).
 
-Additionally, update the `WP_HEADLESS_SECRET` value with the secret key found in Settings → Headless in your WordPress admin area to support previews.
+Additionally, update the `WP_HEADLESS_SECRET` value with the secret key found in Settings → Headless in your WordPress admin panel to support previews.
 
-Finally, run the dev server:
+<img
+  src="../assets/img/headless-admin-secret.png"
+  alt="The Headless WordPress admin interface with a red rectangle around the Secret Key field"
+/>
 
-```bash
-npm run dev
-```
 
-You should be able to navigate to [http://localhost:3000](http://localhost:3000) and see your app running!
+Now, if you are still running the dev server, you can navigate back to [http://localhost:3000](http://localhost:3000) and see your app running while connected to your WordPress site!
+
+If you want to continue building the functionality of your headless WordPress site, you can follow our [Faust.js tutorial](https://faustjs.org/docs/tutorial/basic-headless-site).
 
 Next, let's deploy the app to the Headless Platform. 🚀

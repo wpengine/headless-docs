@@ -11,7 +11,7 @@ In this guide, you'll learn the basics of deploying apps on the WP Engine Headle
 Requirements:
 
 - A WP Engine [Atlas](https://wpengine.com/atlas) account
-- [Node.js](https://nodejs.org/en/download/). We recommend using `nvm` to install node.
+- [Node.js](https://nodejs.org/en/download/). We recommend using `nvm` to install Node.js.
 - [Git](https://git-scm.com/downloads)
 - WP Engine Headless CLI tool ([install](../introduction#install-the-atlas-cli))
 
@@ -28,15 +28,15 @@ This guide does **not** cover how to add a custom domain. Custom domains require
 
 The platform supports [Node.js](https://nodejs.org/)-based applications.
 
-We recommend using `nvm` to install Node:
+We recommend using `nvm` to install Node.js:
 
 1. In your terminal application, install `nvm` by entering `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`.
 
 2. Restart your terminal and add the proper `nvm` settngs to your `./bashrc` or `.zshrc`.
 
-3. In terminal, enter `nvm install <node-version-number>` to install your chosen version of node.
+3. In terminal, enter `nvm install <node-version-number>` to install your chosen version of Node.js.
 
-Node.js uses npm for its package management, which allows you to set the version of Node your applications require via the `engines` property inside your project's `package.json`.
+Node.js uses npm for its package management, which allows you to set the version of Node.js your applications require via the `engines` property inside your project's `package.json`.
 
 ```json
 {
@@ -46,11 +46,13 @@ Node.js uses npm for its package management, which allows you to set the version
 }
 ```
 
-The supported versions of Node are 12, 14 and 16. Specifying a Node version below the minimum supported version will default to the minimum supported version (12); setting a higher version will default to the maximum supported version (16). 
+The supported versions of Node.js are 12, 14 and 16. Specifying a Node version below the minimum supported version will default to the minimum supported version (12); setting a higher version will default to the maximum supported version (16). 
 
-If no version is specified, your app will be built with current default version (16). To ensure your project is built with a version of your choice, make sure to include your desired settings in "engines" section of your package.json. **Note:** please be aware that only major versions are available - minor and patch versions will be rounded to a given major version.
+If no version is specified, your app will be built with current default version (16). To ensure your project is built with a version of your choice, make sure to include your desired settings in "engines" section of your package.json. 
 
-Depending on chosen major node.js version, environments are built using `node:<version>-slim` images (visit [Docker](https://hub.docker.com/_/node) page for more details)
+**Note:** Only major versions are available - minor and patch versions will be rounded to a given major version.
+
+Depending on chosen major node version, environments are built using `node:<version>-slim` images (visit [Docker](https://hub.docker.com/_/node) page for more details)
 
 
-**NOTE:** On April 10, 2021, Node version 10 will no longer be supported.
+

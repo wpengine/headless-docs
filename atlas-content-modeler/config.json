@@ -1,0 +1,107 @@
+{
+  "title": "Atlas Content Modeler",
+  "description": "Create content models and create taxonomies and relationships.",
+  "entrypoint": "/atlas-content-modeler/introduction.mdx",
+  "ctaLabel": "Get Started",
+  "sidebar": [
+    {
+      "type": "doc",
+      "label": "Introduction",
+      "filePath": "/atlas-content-modeler/introduction.mdx"
+    },
+    {
+      "type": "category",
+      "label": "Tutorials",
+      "items": [
+        {
+          "type": "doc",
+          "label": "GraphiQL",
+          "filePath": "/atlas-content-modeler/tutorial/graphql/introduction.mdx"
+        },
+        {
+          "type": "category",
+          "label": "Models",
+          "items": [
+            {
+              "type": "doc",
+              "label": "Create a Model",
+              "filePath": "/atlas-content-modeler/tutorial/models/create.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Edit a Model",
+              "filePath": "/atlas-content-modeler/tutorial/models/edit.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Delete a Model",
+              "filePath": "/atlas-content-modeler/tutorial/models/delete.mdx"
+            },
+            {
+              "type": "category",
+              "label": "Fields",
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "Text",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/text/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Rich Text",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/richtext/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Number",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/number/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Date",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/date/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Media",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/media/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Boolean",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/boolean/introduction.mdx"
+                },
+                {
+                  "type": "doc",
+                  "label": "Relationship",
+                  "filePath": "/atlas-content-modeler/tutorial/models/fields/relationship/introduction.mdx"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Taxonomies",
+          "items": [
+            {
+              "type": "doc",
+              "label": "Create a Taxonomy",
+              "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/create.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Edit a Taxonomy",
+              "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/edit.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Delete a Taxonomy",
+              "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/delete.mdx"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

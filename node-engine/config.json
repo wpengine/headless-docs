@@ -20,6 +20,16 @@
         },
         {
           "type": "doc",
+          "label": "Prerequisites",
+          "filePath": "/node-engine/guides/prerequisites.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Headless Concepts",
+          "filePath": "/node-engine/guides/headless-concepts.mdx"
+        },
+        {
+          "type": "doc",
           "label": "Creating Your First App",
           "filePath": "/node-engine/guides/create-app.mdx"
         },

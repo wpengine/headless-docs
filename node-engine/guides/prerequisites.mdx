@@ -1,0 +1,77 @@
+---
+slug: /node-engine/guides/prerequisites
+title: Atlas Node Engine Prerequisites
+description: Find out what you need to run Atlas Node Engine.
+---
+
+The following tools are required to use Node Engine.
+
+- A WP Engine [Atlas](https://wpengine.com/atlas) account.
+- A supported version of [Node.js](https://nodejs.org/en/download/) on your local machine. The supported versions of Node.js are **12, 14, and 16**. Specifying a Node version below the minimum supported version will default to the minimum supported version (12); setting a higher version will default to the maximum supported version (16). 
+- A terminal application on your local machine.
+- A local installation of [Git].
+- An account with a Git hosting service such as GitHub or Bitbucket. 
+- (Optional) WP Engine Headless CLI tool ([install](../introduction#install-the-atlas-cli)). Only needed if you plan on deploying your first app using Atlas CLI.
+
+## Git
+
+To make sure you have Git installed on your computer, open a terminal application and enter `git --version`. You should receive a response similar to `git version <version-number>`.
+
+If you don't have Git installed, follow the instructions on GitHub's website (Install Git)(https://github.com/git-guides/install-git).
+
+Atlas also requires an account through [GitHub](https://github.com/), where you can host the code for your front-end application. Please sign-up before beginning the steps in this guide.
+
+After you've signed up for GitHub, go back to your terminal application. Follow the steps in the [Generate a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) page on GitHub.
+
+## Node.js
+
+Atlas supports [Node.js](https://nodejs.org/)-based applications. The supported versions of Node.js are **12, 14, and 16**. 
+
+### For current Node.js users
+
+Specify a Node.js version in the `package.json` file on your front-end application. If this is your first time building a node application, we'll return to this file later.
+
+If you have a current front-end application you wish to use, enter the following in your `package.json` file.
+
+```json
+{
+  "engines": {
+    "node": "16.00.0"
+  }
+}
+```
+
+Specifying a Node version below the minimum supported version will default to the minimum supported version (12); setting a higher version will default to the maximum supported version (16). 
+
+If no version is specified, your app will be built with current default version (16). To ensure your project is built with a version of your choice, make sure to include your desired settings in "engines" section of your package.json. 
+
+**Note:** Only major versions are available - minor and patch versions will be rounded to a given major version
+
+### Install Node.js 
+
+You can install a supported version from the [Node.js](https://nodejs.org/en/) website.
+
+However, we recommend using `nvm` to install Node.js since this will allow you to switch freely between versions.
+
+1. In your terminal application, install `nvm` by entering `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash`.
+
+2. Restart your terminal and add the proper `nvm` settings to your `./bashrc`[Linux or Git Bash] or `.zshrc`[MacOS]. You can do this by:
+
+   a. Open a terminal application. Enter `open ~/.zshrc` or `open ~/.bashrc`. A text editor appears.
+   b. In the editor, copy the following into your `.zshrc` or `.bashrc` file. 
+      
+      ```
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+      [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+      ```
+   c. Save your `.zshrc` or `.bashrc` file and restart your terminal.
+
+3. Make sure that nvm is installed. Enter `nvm --version` 
+
+4. In terminal, enter `nvm install <node-version-number>` to install your chosen version of Node.js.
+ 
+
+## Next steps
+ 
+Now that you've installed your prerequisites let's dive into [Creating your first app](./create-app). If you have an app already, skip ahead to [Deploying your first app](./deployment).

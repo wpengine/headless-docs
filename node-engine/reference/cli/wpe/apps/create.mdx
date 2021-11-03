@@ -16,9 +16,13 @@ $ wpe apps create [OPTIONS]
 
 ## Extended Description
 
-The `wpe apps create` command allows you to create a new WP Engine Headless Application. You provide the GitHub repository you want to use, the environments you want to deploy, and the name of your app. Running the command will deploy the code from your repository to the corresponding environments.
+The `wpe apps create` command allows you to create a new WP Engine Headless Application. You provide:
+The GitHub repository you want to use.
+The environments you want to deploy.
+The name of your app.
+Running the command will deploy the code from your repository to the corresponding environments.
 
-The `repository` is a reference to your GitHub repository. For example, if your GitHub repository is `https://github.com/organization/myapp` then the value your use for `repository` will be `organization/myapp`.
+The `repository` is a reference to your GitHub repository. For example, if your GitHub repository is `https://github.com/organization/myapp`, then the value your use for `repository` will be `organization/myapp`.
 
 The `environments` correspond to the WP Engine User Portal environments where you have your WP site. So if your domain is `myapp.wpengine.com`, your environment would be `myapp`.
 
@@ -74,6 +78,41 @@ Providing custom `domains` is optional. If you do want to connect a custom domai
   - `141.193.213.11`
 
 **NOTE: We currently only support one custom domain.**
+
+## Create From a zip file
+
+**Note:** The zip app flow only works with wpe CLI version 1.0.0 or greater.
+
+You can create an Atlas app from a `json` file configured for zip uploads. All requirements from the standard `wpe create` flow apply, with a few exceptions.
+
+To make your `json` file zip configurable, set the `"repo"` parameter to `"uploadable"`. Then, add a parameter named `"zip_file_path"` with the directory path to your zip file in your environment variables. 
+
+Finally, ensure that you include an environment `id` to prevent creating duplicate environments.
+
+```json
+{
+  "name":"your_app_name",
+  "repo": "uploadable",
+  "region":"EU-W",
+  "environments": [
+    {
+      "domains":[],
+      "id":"hdcejft13e2rcn345",
+      "name": "someenvname",
+      "zip_file_path": "path/to/file.zip",
+      "branch": "-",
+      "wp_environment_name": "wpinstancename",
+      "env_variables": [
+        {
+          "key": "replace-with-key",
+          "value": "replace-with-key-value"
+        }]
+}
+]
+}
+```
+
+With your `json` file parameters set, run `wpe apps update your_app_name -f wpe.json`. 
 
 ## Further Reading
 

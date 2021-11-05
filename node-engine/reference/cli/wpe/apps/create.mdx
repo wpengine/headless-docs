@@ -83,9 +83,9 @@ Providing custom `domains` is optional. If you do want to connect a custom domai
 
 **Note:** The zip app flow only works with wpe CLI version 1.0.0 or greater.
 
-You can create an Atlas app from a `json` file configured for zip uploads. All requirements from the standard `wpe create` flow apply, with a few exceptions.
+If you don't use a public repository host (i.e. you use GitHub Enterprise), you can create an Atlas app from a `json` file configured for zip uploads. All requirements from the standard `wpe create` flow apply, with a few exceptions.
 
-To make your `json` file zip configurable, set the `"repo"` parameter to `"uploadable"`. Then, add a parameter named `"zip_file_path"` with the directory path to your zip file in your environment variables. 
+To make your `json` file zip configurable, set the `"repo"` parameter to `"uploadable"`. Then, add a parameter named `"zip_file_path"` with the directory path to your zip file. You must include the `"branch:"` parameter, though you do not have to specifiy a branch.
 
 Finally, ensure that you include an environment `id` to prevent creating duplicate environments.
 

@@ -1,16 +1,16 @@
 ---
-slug: /atlas-content-modeler/tutorial/models/fields/relationship/introduction
-title: Atlas Content Modeler Fields - Relationship
-description: Learn how to use Relationship Fields in Atlas Content Modeler.
+slug: /atlas-content-modeler/tutorial/models/fields/relationship/cardinality
+title: Atlas Content Modeler Fields - Relationship - Cardinality
+description: Learn about Cardinality in Relationship Fields in Atlas Content Modeler.
 ---
 
 **Note**: These tutorials assume that you have already [installed the plugin](../../../../introduction.mdx).
 
-## Relationship Field (Beta)
+## Relationship Field (Beta) - Cardinality
 
-The media field is used to include images and other files.
+Cardinality provides a way to setup model relationship restrictions. There are 4 types: One-to-One, One-to-Many, Many-to-One, and Many-to-Many. Cardinality types that only allow one selection use a Radio button in the UI. The types that allow many use Checkboxes in the UI.
 
-### Steps to Use the Relationship Field
+### Steps to Use the Relationship Field Cardinality
 
 ---
 
@@ -23,6 +23,15 @@ The media field is used to include images and other files.
 1. Fill in the form fields to fit your needs
 
    ![Atlas Content Modeler sync](../../../../images/relationships_cardinality.png)
+
+1. Under Connections, choose a Cardinality option:
+
+   ![Atlas Content Modeler sync](../../../../images/cardinality.png)
+
+   1. One-to-One: One of this model type can have one related item
+   1. One-to-Many: One of this model type can have many related items
+   1. Many-to-One: Many of this model type can have one related items
+   1. Many-to-Many: Many of this model type can have many related items
 
 1. Click Create when done to save the field to the model
 

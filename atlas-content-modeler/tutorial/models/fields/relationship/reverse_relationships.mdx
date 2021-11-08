@@ -8,9 +8,11 @@ description: Learn how to use Reverse Relationships in Atlas Content Modeler.
 
 ## Relationship Field (Beta) - Reverse Relationships
 
-The Reverse Relationship option in Relationship Field is used to display the corresponding linked model in the publisher side of the application for that particular model. For example, if a company had employees. If you check reverse relationship in Company, it would show the companies in the Employee edit page.
+The Reverse Relationship option in Relationship Field is used to display the corresponding linked model in the publisher side of the application for that particular model.
 
-### Steps to Use the Relationship Field
+For example, if a company has employees, if you check reverse relationship in Company, it would show the linked companies in the Employee edit page.
+
+### Steps to Use the Relationship Field Reverse Relationships
 
 ---
 
@@ -23,6 +25,10 @@ The Reverse Relationship option in Relationship Field is used to display the cor
 1. Fill in the form fields to fit your needs
 
    ![Atlas Content Modeler sync](../../../../images/relationships_cardinality.png)
+
+1. Under Reverse Reference, check **Configure Reverse Reference** to show models that reference this model. Uncheck to hide or not show models that reference this model.
+
+1. Give a meaningful name for the Reverse Display Name. Ex. If referencing Cages for a Rabbit model. Name the Reverse Display Name something like **Rabbit Cages**. The **Reverse API Identifier** is auto generated but can be named whatever you would like.
 
 1. Click Create when done to save the field to the model
 

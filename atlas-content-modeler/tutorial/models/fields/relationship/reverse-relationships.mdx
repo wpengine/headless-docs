@@ -1,0 +1,40 @@
+---
+slug: /atlas-content-modeler/tutorial/models/fields/relationship/reverse_relationships
+title: Atlas Content Modeler Fields - Relationship - Reverse Relationships
+description: Learn how to use Reverse Relationships in Atlas Content Modeler.
+---
+
+**Note**: These tutorials assume that you have already [installed the plugin](../../../../introduction.mdx).
+
+## Relationship Field (Beta) - Reverse Relationships
+
+The Reverse Relationship option displays the corresponding linked model in the publisher side of the application for that particular model. You can also use Reverse Relationship to expose the Reverse Relationship in WPGraphQL.
+
+For example, if a company has employees, if you check reverse relationship in Company, it would show the linked companies in the Employee edit page.
+
+### Steps to Use the Relationship Field Reverse Relationships
+
+---
+
+1. After navigating to a model, click the + button or if it's the first field, click on the Relationship option.
+
+   ![Atlas Content Modeler sync](../../../../images/field_options.png)
+
+1. Choose the **Relationship** Field type.
+
+1. Fill in the form fields to fit your needs.
+
+   ![Atlas Content Modeler sync](../../../../images/relationships_cardinality.png)
+
+1. Under the Reverse Reference section, check **Configure Reverse Reference** to make the relationship bidirectional. This allows the management of connections from the reverse side of the relationship, and it adds the reverse relationship data to the WPGraphQL graph.
+
+1. Give a meaningful name for the **Reverse Display Name**. For example, if you want to reference **Cages** for a **Rabbit** model. Name the Reverse Display Name something like Rabbit Cages. The **Reverse API Identifier** is auto-generated but can be adjusted if you prefer something else.
+
+1. Click **Create** when done to save the field to the model.
+
+1. Click **Cancel** to stop field creation.
+
+## Feedback
+
+- **Questions/Comments?** [Content Modeler Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLScc2VN-GRSJMz8zVgJLL6kiX3VeV2jkSDnmU1gnuNElEHCEVQ/viewform)
+- **GitHub**: [GitHub Repo Feedback](https://github.com/wpengine/atlas-content-modeler/issues/new/choose)

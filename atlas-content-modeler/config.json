@@ -72,9 +72,25 @@
                   "filePath": "/atlas-content-modeler/tutorial/models/fields/boolean/introduction.mdx"
                 },
                 {
-                  "type": "doc",
-                  "label": "Relationship",
-                  "filePath": "/atlas-content-modeler/tutorial/models/fields/relationship/introduction.mdx"
+                  "type": "category",
+                  "label": "Relationships",
+                  "items": [
+                    {
+                      "type": "doc",
+                      "label": "Introduction",
+                      "filePath": "/atlas-content-modeler/tutorial/models/fields/relationship/introduction.mdx"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "Cardinality",
+                      "filePath": "/atlas-content-modeler/tutorial/models/fields/relationship/cardinality.mdx"
+                    },
+                    {
+                      "type": "doc",
+                      "label": "Reverse Relationships",
+                      "filePath": "/atlas-content-modeler/tutorial/models/fields/relationship/reverse-relationships.mdx"
+                    }
+                  ]
                 }
               ]
             }

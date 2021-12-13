@@ -73,6 +73,39 @@ fragment EmployeeFields on Employee {
 }
 ```
 
+#### Example Query 2
+
+This example queries a Model called Companies. Companies uses the **LOCATION** Taxonomy. In this case, we are querying the term **east coast** and the taxonomy **REGION** inside of the **taxQuery: {}** object.
+
+```
+{
+  companies(first: 2,
+    where: {
+      taxQuery: {
+        relation: OR,
+        taxArray: [
+          {
+            terms: ["east coast"],
+            taxonomy: REGION,
+            operator: IN,
+            field: SLUG
+          }
+        ]
+      }
+  	}
+  ){
+    nodes {
+      ...CompanyFields
+    }
+  }
+}
+
+fragment CompanyFields on Company {
+  name
+  size
+}
+```
+
 ## Feedback
 
 - **Questions/Comments?** [Content Modeler Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLScc2VN-GRSJMz8zVgJLL6kiX3VeV2jkSDnmU1gnuNElEHCEVQ/viewform)

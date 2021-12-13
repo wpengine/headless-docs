@@ -30,21 +30,48 @@ Once you have successfully installed and activated these plugins, you may contin
 
 You can find detailed steps in the basic usage of WPGraphQL here: [WPGraphQL Quick Start]()
 
-The steps below are more specific on how to query taxonomies once you are in Content Modeler.
+The steps below are more specific on how to query content models by taxonomy.
 
 ---
 
-1. Click on Content Modeler in the WordPress side menu
+#### Example Query 1
 
-   ![Atlas Content Modeler sync](../../../images/acm-sidebar.png)
+This example queries a Model called Employees. Employees uses the **LOCATION** Taxonomy. In this case, we are querying the term **dallas** and the taxonomy **LOCATION** inside of the **taxQuery: {}** object.
 
-1. If it's not on Taxonomies, click Taxonomies under Content Modeler in the WordPress side menu
+```
+{
+  employees(first: 10,
+    where: {
+      taxQuery: {
+        relation: OR,
+        taxArray: [
+          {
+            terms: ["dallas"],
+            taxonomy: LOCATION,
+            operator: IN,
+            field: SLUG
+          }
+        ]
+      }
+  	}
+  ){
+    nodes {
+      ...EmployeeFields
+    }
+  }
+}
 
-   ![Atlas Content Modeler sync]()
-
-1. You will then see the form to Add a Taxonomy and the current Taxonomies table
-
-   ![Atlas Content Modeler sync]()
+fragment EmployeeFields on Employee {
+  name
+  employers {
+    edges {
+      node {
+        id
+      }
+    }
+  }
+}
+```
 
 ## Feedback
 

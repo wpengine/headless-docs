@@ -117,7 +117,7 @@
             },
             {
               "type": "doc",
-              "label": "Query a Taxonomy using WPGraphQL",
+              "label": "Query Content Models by Taxonomy",
               "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/query.mdx"
             }
           ]

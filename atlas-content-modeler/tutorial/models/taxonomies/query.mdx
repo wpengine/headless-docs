@@ -81,8 +81,7 @@ This example queries a Model called Companies. Companies uses the **REGION** Tax
 {
   companies(first: 2,
     where: {
-      taxQuery: {
-        relation: OR,
+      taxQuery: {        
         taxArray: [
           {
             terms: ["east coast"],
@@ -95,14 +94,9 @@ This example queries a Model called Companies. Companies uses the **REGION** Tax
   	}
   ){
     nodes {
-      ...CompanyFields
+      name
     }
   }
-}
-
-fragment CompanyFields on Company {
-  name
-  size
 }
 ```
 

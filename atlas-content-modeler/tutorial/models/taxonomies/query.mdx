@@ -42,8 +42,7 @@ This example queries a Model called Employees. Employees uses the **LOCATION** T
 {
   employees(first: 10,
     where: {
-      taxQuery: {
-        relation: OR,
+      taxQuery: {        
         taxArray: [
           {
             terms: ["dallas"],
@@ -56,18 +55,7 @@ This example queries a Model called Employees. Employees uses the **LOCATION** T
   	}
   ){
     nodes {
-      ...EmployeeFields
-    }
-  }
-}
-
-fragment EmployeeFields on Employee {
-  name
-  employers {
-    edges {
-      node {
-        id
-      }
+      name
     }
   }
 }

@@ -8,11 +8,10 @@ The best way to understand how a Headless CMS operates is to create a simple app
 
 ## Setup WordPress
 
-1. Make a WordPress site. Your WordPress site is separate from the site created when you create your app. You should have a site and an Atlas account through WPEngine in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. This will log you into WP Admin, where the setup for the framework plugin and WPGraphQL occurs.
-1. Download the [wpe-headless plugin](https://wp-product-info.wpesvc.net/v1/plugins/wpe-headless?download). Then, upload and activate the plugin from within the WordPress admin panel.
-1. Install [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) from the [WordPress Plugin Directory](https://wordpress.org/plugins/wp-graphql/). You can also automatically install WPGraphQL from the `wpe-headless` plugin's **settings** page.
+Make a WordPress site. Your WordPress site is separate from the site created when you create your app. You should have a site and an Atlas account through WPEngine in the [User Portal](https://my.wpengine.com). Navigate to the site environment you want to use for your backend, and click the WP Admin link at the top of the page. All connections to your app occurs here.
 
-## Create a Next.js App using the [Getting Started Example](https://developers.wpengine.com/docs/faustjs/next/getting-started)
+
+## Create a Next.js App using the [Getting Started Example](https://faustjs.org/docs/next/getting-started)
 
 Install our Next.js Getting Started example using the following command:
 
@@ -20,10 +19,15 @@ Install our Next.js Getting Started example using the following command:
 
 ```bash
 npx create-next-app \
-    -e https://github.com/wpengine/faustjs/tree/canary \
+    -e https://github.com/wpengine/faustjs/tree/main \
     --example-path examples/next/getting-started \
     --use-npm \
     my-app
+``` 
+
+After app creation, change into your app directory: 
+
+```bash 
 cd my-app
 ```
 
@@ -31,7 +35,7 @@ cd my-app
 
 ```ps
 npx create-next-app `
-    -e https://github.com/wpengine/faustjs/tree/canary `
+    -e https://github.com/wpengine/faustjs/tree/main `
     --example-path examples/next/getting-started `
     --use-npm `
     my-app && cd my-app

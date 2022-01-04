@@ -114,6 +114,11 @@
               "type": "doc",
               "label": "Delete a Taxonomy",
               "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/delete.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "Query Content Models by Taxonomy",
+              "filePath": "/atlas-content-modeler/tutorial/models/taxonomies/query.mdx"
             }
           ]
         }

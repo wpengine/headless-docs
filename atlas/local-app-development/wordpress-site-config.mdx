@@ -4,7 +4,7 @@ title: WordPress Site Configuration
 description: How to configure your WordPress backend for local development
 ---
 
-This page will guide you through configuring your local headless WordPress backend site for local development. Your frontend JavaScript application (which we'll set up on the [Frontend App Configuration](./frontend-app-config)) page will source its data from this WordPress backend site.
+This page will guide you through configuring your local headless WordPress backend site for local development. Your frontend JavaScript application (which we'll set up on the [Frontend App Configuration](./frontend-app-config) page) will source its data from this WordPress site.
 
 We recommend the [Local](#local) method outlined below. Otherwise, alternative methods are outlined in the [Local Alternatives](#local-alternatives) and [Connect Directly to the Remote WordPress Site](#connect-directly-to-remote-wordpress-site) sections.
 
@@ -29,11 +29,11 @@ If you created your WordPress site from the [WP Engine User Portal](https://my.w
 
 2. Right-click on your site's name in the sidebar and click `Open site shell`.
 
-![Open site shell](../assets/img/open-site-shell.png)
+![Open site shell](./assets/img/open-site-shell.png)
 
 Your command line app will open and a command will be executed to open an SSH connection to the local WordPress site. You should see output similar to this:
 
-```bash
+```
 $ /Users/john.smith/Library/Application\ Support/Local/ssh-entry/WLLn7jJ4a.sh; exit
 -n -e
 Setting Local environment variables...
@@ -50,7 +50,7 @@ Launching shell: /bin/zsh ...
 
 If your password was updated successfully, you will see output similar to this on the command line:
 
-```bash
+```
 Success: Updated user 1.
 ```
 
@@ -64,7 +64,7 @@ If you choose this method, please follow the the documentation those products pr
 
 ## Connect Directly to Remote WordPress Site
 
-Technically speaking, you could run your frontend JavaScript application locally and connect it directly to a remote WordPress site hosted online rather than a local WordPress site. We generally discourage this approach though, since you could accidentally make changes to a live site without intending to. The safest bet is to run both the WordPress site and the JS app locally, as outlined on the [WordPress Site Configuration](./wordpress-site-config) page and in the sections above.
+Technically speaking, you could run your frontend JavaScript application locally and connect it directly to a remote WordPress site hosted online rather than a local WordPress site. We generally discourage this approach though, since you could accidentally make changes to a live site without intending to. The safest bet is to run both the WordPress site and the JS app locally, as outlined in the sections above.
 
 If you choose this method, no local WordPress site setup is required.
 

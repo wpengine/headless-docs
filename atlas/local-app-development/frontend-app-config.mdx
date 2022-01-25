@@ -34,24 +34,26 @@ If you're using another framework, please reference your framework's documentati
 
 In a web browser, log into the WP Engine [User Portal](https://my.wpengine.com/atlas). Click `Atlas` in the sidebar, then click on the name of the Atlas app associated with this project.
 
-![Atlas app link](../assets/img/atlas-app-link.png)
+![Atlas app link](./assets/img/atlas-app-link.png)
 
 Click `Manage variables` under the `Atlas environment variables` heading.
 
-![Manage variables](../assets/img/manage-variables.png)
+![Manage variables](./assets/img/manage-variables.png)
 
 On the `Variables` page that opens, toggle the `Hide all values` control to the `off` position.
 
-![Environment variables](../assets/img/environment-variables.png)
+![Environment variables](./assets/img/environment-variables.png)
 
 Copy and paste the `Key` and `Value` pairs for each environment variable into your local environment variables file.
 
 As an example, if your app has these two environment variables listed in the User Portal:
 
+```
 | Key                       | Value                        |
 | ------------------------- | ---------------------------- |
 | NEXT_PUBLIC_WORDPRESS_URL | https://my-site.wpengine.com |
 | MY_API_SECRET             | ABC123                       |
+```
 
 You would need to add them to your environment variables file (`.env.local`/`.env.development`/other) in this format:
 
@@ -64,7 +66,7 @@ MY_API_SECRET=ABC123
 
 One of your environment variables will be the URL of the WordPress site where the app sources its data. If you want the app to source its data from your local WordPress site instead, replace this value with the URL of your local WordPress site.
 
-As an example, if your local WordPress site URL is `http://my-site.local`, then your environment variable should be updated to `NEXT_PUBLIC_WORDPRESS_URL=http://my-site.local`.
+As an example, if your project has a `NEXT_PUBLIC_WORDPRESS_URL` environment variable and your local WordPress site URL is `http://my-site.local`, then that environment variable should be updated to `NEXT_PUBLIC_WORDPRESS_URL=http://my-site.local`.
 
 When finished, save the environment variables file.
 

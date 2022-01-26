@@ -1,0 +1,73 @@
+---
+slug: /atlas/local-app-development/wordpress-site-config
+title: WordPress Site Configuration
+description: How to configure your WordPress backend for local development
+---
+
+This page will guide you through configuring your local headless WordPress backend site for local development. Your frontend JavaScript application (which we'll set up on the [Frontend App Configuration](./frontend-app-config) page) will source its data from this WordPress site.
+
+We recommend the [Local](#local) method outlined below. Otherwise, alternative methods are outlined in the [Local Alternatives](#local-alternatives) and [Connect Directly to the Remote WordPress Site](#connect-directly-to-remote-wordpress-site) sections.
+
+## Local
+
+[Local](https://localwp.com/) is a free app for local WordPress site development, and its Local Connect feature allows you to easily pull down a WP Engine-hosted WordPress site to your local machine.
+
+Here are the steps to follow:
+
+1. Install [Local](https://localwp.com/) if you don't already have it on your computer.
+1. Follow the [Local Connect documentation](https://localwp.com/help-docs/connect/local-connect/). Select WP Engine as the hosting provider you'd like to connect to and pull down the WordPress site associated with your Atlas app.
+
+When finished, you should have a local version of the WordPress site set up.
+
+See the [Local Help Docs](https://localwp.com/help-docs/) for further documentation on working with Local.
+
+### Password Reset
+
+If you created your WordPress site from the [WP Engine User Portal](https://my.wpengine.com/), you may not know the password for your WordPress user account. You'll need that in order to log into the WordPress admin on your local machine. Here's how you can reset your password:
+
+1. Make sure your site is up and running in Local.
+
+2. Right-click on your site's name in the sidebar and click `Open site shell`.
+
+![Open site shell](./assets/img/open-site-shell.png)
+
+Your command line app will open and a command will be executed to open an SSH connection to the local WordPress site. You should see output similar to this:
+
+```
+$ /Users/john.smith/Library/Application\ Support/Local/ssh-entry/WLLn7jJ4a.sh; exit
+-n -e
+Setting Local environment variables...
+----
+WP-CLI:   WP-CLI 2.5.0
+Composer: 2.1.5 2021-07-23
+PHP:      7.4.1
+MySQL:    mysql  Ver 8.0.16 for macos10.14 on x86_64 (MySQL Community Server - GPL)
+----
+Launching shell: /bin/zsh ...
+```
+
+3. Run `wp user update john.smith@example.com --user_pass=password` on the command line, where `john.smith@example.com` is the email address for your WP Engine account and `password` is the new password you'd like to use to log into your local WordPress site.
+
+If your password was updated successfully, you will see output similar to this on the command line:
+
+```
+Success: Updated user 1.
+```
+
+You should now be able to click the [`Admin` button](https://localwp.com/help-docs/local-features/using-one-click-admin/) in Local and log into the WordPress admin using the email address for your WP Engine account and the new password you set.
+
+## Local Alternatives
+
+If you don't want to use Local, you can use an alternative such as [MAMP](https://www.mamp.info/en/mac/), [XAMPP](https://www.apachefriends.org/index.html) or [DesktopServer](https://serverpress.com/) and pull down your site using using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) or a similar tool.
+
+If you choose this method, please follow the the documentation those products provide for getting set up for local WordPress site development and migrating a copy of your WordPress site to your local machine.
+
+## Connect Directly to Remote WordPress Site
+
+Technically speaking, you could run your frontend JavaScript application locally and connect it directly to a remote WordPress site hosted online rather than a local WordPress site. We generally discourage this approach though, since you could accidentally make changes to a live site without intending to. The safest bet is to run both the WordPress site and the JS app locally, as outlined in the sections above.
+
+If you choose this method, no local WordPress site setup is required.
+
+--
+
+Next, proceed to [Frontend App Configuration](./frontend-app-config).

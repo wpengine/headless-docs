@@ -1,0 +1,187 @@
+{
+  "title": "Atlas Hosting Platform",
+  "description": "Atlas is WP Engine's hosting solution for Headless WordPress applications. Headless apps pair a WordPress backend with a decoupled JavaScript frontend. With Atlas, you get a premier WordPress hosting experience and state of the art JavaScript hosting combined into one.",
+  "entrypoint": "/atlas/overview.mdx",
+  "ctaLabel": "Learn More",
+  "sidebar": [
+    {
+      "type": "doc",
+      "label": "Overview",
+      "filePath": "/atlas/overview.mdx"
+    },
+    {
+      "type": "category",
+      "label": "Local App Development",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Overview",
+          "filePath": "/atlas/local-app-development/overview.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "1. Prerequisites",
+          "filePath": "/atlas/local-app-development/prerequisites.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "2. WordPress Site Configuration",
+          "filePath": "/atlas/local-app-development/wordpress-site-config.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "3. Frontend App Configuration",
+          "filePath": "/atlas/local-app-development/frontend-app-config.mdx"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "CLI Reference",
+      "items": [
+        {
+          "type": "doc",
+          "label": "wpe",
+          "filePath": "/atlas/reference/cli/wpe.mdx"
+        },
+        {
+          "type": "category",
+          "label": "wpe apps",
+          "items": [
+            {
+              "type": "doc",
+              "label": "create",
+              "filePath": "/atlas/reference/cli/wpe/apps/create.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "delete",
+              "filePath": "/atlas/reference/cli/wpe/apps/delete.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "get",
+              "filePath": "/atlas/reference/cli/wpe/apps/get.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "init",
+              "filePath": "/atlas/reference/cli/wpe/apps/init.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "list",
+              "filePath": "/atlas/reference/cli/wpe/apps/list.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "rebuild",
+              "filePath": "/atlas/reference/cli/wpe/apps/rebuild.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "update",
+              "filePath": "/atlas/reference/cli/wpe/apps/update.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe auth",
+          "items": [
+            {
+              "type": "doc",
+              "label": "login",
+              "filePath": "/atlas/reference/cli/wpe/auth/login.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "logout",
+              "filePath": "/atlas/reference/cli/wpe/auth/logout.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe builds",
+          "items": [
+            {
+              "type": "doc",
+              "label": "get",
+              "filePath": "/atlas/reference/cli/wpe/builds/get.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "list",
+              "filePath": "/atlas/reference/cli/wpe/builds/list.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe context",
+          "items": [
+            {
+              "type": "doc",
+              "label": "get",
+              "filePath": "/atlas/reference/cli/wpe/context/get.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "set",
+              "filePath": "/atlas/reference/cli/wpe/context/set.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe envs",
+          "items": [
+            {
+              "type": "doc",
+              "label": "delete",
+              "filePath": "/atlas/reference/cli/wpe/envs/delete.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "purge",
+              "filePath": "/atlas/reference/cli/wpe/envs/purge.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "rebuild",
+              "filePath": "/atlas/reference/cli/wpe/envs/rebuild.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe logs",
+          "items": [
+            {
+              "type": "doc",
+              "label": "get",
+              "filePath": "/atlas/reference/cli/wpe/logs/get.mdx"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "wpe completion",
+          "items": [
+            {
+              "type": "doc",
+              "label": "bash",
+              "filePath": "/atlas/reference/cli/wpe/completion/bash.mdx"
+            },
+            {
+              "type": "doc",
+              "label": "zsh",
+              "filePath": "/atlas/reference/cli/wpe/completion/zsh.mdx"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

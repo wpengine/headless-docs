@@ -1,0 +1,38 @@
+---
+slug: /atlas/getting-started/environments
+title: 3. Configure Your Environment 
+description: Configure the environments and variable for your Atlas application.
+---
+
+Atlas uses a GitHub branch in your repository to double as your environment. For example, if you want to create a staging environment for your application, you could use your repository's `dev` branch. 
+
+For the purposes of this tutorial, we'll create a production environment with the `main` branch.
+
+## Set up your environment
+
+1. From the list of your repository's branches, select the branch you want to use for the basis of you environment. 
+
+   ![Select a branch](../assets/img/select-branch.png)
+
+2. Fill in a name for your Atlas environment. The name should match how you intend to use the environment. For example, if you intend to use the environment only for development purposes, enter `dev`. 
+
+3. Every headless environment is associated with a WordPress environment via the site environment name. Choose either:
+
+   - **I already have a WordPress environment**: Use a WordPress site from your WP Engine account. Select the search bar and search for the name of your WordPress site.
+   - **I want to create a new WordPress environment**: WP Engine createa new WordPress site and links it to your application. In the box, enter a name for your new WordPress site.
+
+   ![Link to WordPress](../assets/img/link-to-wordpress.png)
+
+4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://my.wpengine.com/atlas#/create) plugins. If you're using the Faust.js starter kit, or Faust.js plan to use Faust.js as your framework, select the **I am using Faust.js** checkbox. 
+
+   ![Select Faust.js Plugin](../assets/img/faustjs.png)
+
+5. Select **Create App**. 
+
+The Atlas app details page appears. When Atlas complete building your application, three checkmarks appear under **Last Build**. To see your deployed Atlas appliction, select the **Atlas URL**. You should see your headless application in action!
+
+![Headless App Building](../assets/img/portal-app-building.png)
+
+## Next Steps
+
+To continue developing your application, see Atlas' [Local App Development](../local-app-development/overview) guide.

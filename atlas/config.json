@@ -1,5 +1,5 @@
 {
-  "title": "Atlas Hosting Platform",
+  "title": "Atlas Platform",
   "description": "Atlas is WP Engine's hosting solution for Headless WordPress applications. Headless apps pair a WordPress backend with a decoupled JavaScript frontend. With Atlas, you get a premier WordPress hosting experience and state of the art JavaScript hosting combined into one.",
   "entrypoint": "/atlas/overview.mdx",
   "ctaLabel": "Learn More",
@@ -58,6 +58,17 @@
           "type": "doc",
           "label": "3. Frontend App Configuration",
           "filePath": "/atlas/local-app-development/frontend-app-config.mdx"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Customization",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Cache-Control Headers",
+          "filePath": "/atlas/customization/cache-control.mdx"
         }
       ]
     },

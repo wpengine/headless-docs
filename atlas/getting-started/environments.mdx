@@ -27,11 +27,30 @@ For this tutorial, we'll create a production environment with the `main` branch.
 
 ![Select Faust.js Plugin](./assets/img/faustjs.png)
 
+**NOTE:** If you're using your existing application, you can set environment variables by selecting **Add environment variable**. See the "Environment variables (Optional)" section for more details.
+
 5. Select **Create App**. 
 
-The Atlas app details page appears. When Atlas completes building your application, three checkmarks appear under **Last Build**. To see your deployed Atlas application, select the **Atlas URL**. You should see your headless application in action!
+6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appear unders **Last Build**. 
 
 ![Headless App Building](./assets/img/portal-app-building.png)
+
+7. To see your deployed Atlas application, select the **Atlas URL**. You should see your headless application in action!
+
+![First app deployed](./assets/img/first-app-complete.png)
+
+## Environment variables (Optional)
+
+If you have a front-end application and you can set your own environment variables.
+
+For environment variables are key/value pairs. The key must be alphanumeric with no spaces, and the value can be any string input.
+
+Environment variables are OS-level environment variables that will be available to your app during the build step (`npm run wpe-build`) and at runtime (`npm start`). In node, you can access the variables via `process.env.KEY`.
+
+The headless framework requires two environment variables which are in your `.env.local` file:
+
+- `WORDPRESS_URL` - The location of your WordPress instance
+- `WP_HEADLESS_SECRET` - The secret found in the plugin via Settings->Atlas in WP admin.
 
 ## Next Steps
 

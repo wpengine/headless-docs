@@ -1,57 +1,62 @@
 ---
 slug: /atlas/getting-started/environments
-title: 3. Configure Your Environment
+title: 5. Configure Environment
 description: Configure the environments and variables for your Atlas application.
 ---
 
-Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `dev` branch.
+Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `staging` branch.
 
 For this tutorial, we'll create a production environment with the `main` branch.
 
-## Set up your environment
+## Set Up Environment
 
-1. From the list of your repository's branches, select the branch you want to use for the basis of your environment.
+Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `staging` branch.
+
+1. From the list of your repository's branches, select the branch you want to base your environment on.
+
+Examples:
+
+- If you want to create a production environment, you could use your repo's `main` branch
+- If you want to create a staging environment, you could use your repository's `staging` branch
 
 ![Select a branch](./assets/img/select-branch.png)
 
-2. Fill in a name for your Atlas environment. The name should match how you intend to use the environment. For example, enter `dev` if you only want to use the environment for development purposes.
+2. Enter a name for your Atlas environment. The name should represent how you intend to use the environment. For example, enter something like `prod` if it's a production environment, `staging` if it's a staging environment, etc.
 
 3. Every headless environment is associated with a WordPress environment via the site environment name. Choose either:
 
-   - **I already have a WordPress environment**: Use a WordPress site from your WP Engine account. Select the search bar and search for the name of your WordPress site.
-   - **I want to create a new WordPress environment**: WP Engine makes a new WordPress site and links it to your application. In the box, enter a name for your new WordPress site.
+   - `I already have a WordPress environment`: Use a WordPress site from your WP Engine account. Select the search bar and search for the name of your WordPress site.
+   - `I want to create a new WordPress environment`: WP Engine makes a new WordPress site and links it to your application. In the box, enter a name for your new WordPress site.
 
 ![Link to WordPress](./assets/img/link-to-wordpress.png)
 
-4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://my.wpengine.com/atlas#/create) plugins. If you're using the Faust.js starter kit or Faust.js plan to use Faust.js as your framework, select the **I am using Faust.js** checkbox.
+4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/) plugins.
+   If you're using the Faust.js Starter Kit or an existing Faust.js app repository, check the `I am using Faust.js` checkbox. This will ensure that the [FaustWP](https://wordpress.org/plugins/faustwp/) plugin is also installed.
 
 ![Select Faust.js Plugin](./assets/img/faustjs.png)
 
-**NOTE:** If you're using your existing application, you can set environment variables by selecting **Add environment variable**. See the "Environment variables (Optional)" section for more details.
+**NOTE:** If you're using an existing application (rather than the Faust.js Starter Kit), see the [Environment variables (Optional)](#environment-variables--optional-) section below to set up environment variables before proceeding with the steps below.
 
-5. Select **Create App**.
+5. Select `Create App`.
 
-6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appear unders **Last Build**.
+6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appears under `Last Build`.
 
 ![Headless App Building](./assets/img/portal-app-building.png)
 
-7. To see your deployed Atlas application, select the **Atlas URL**. You should see your headless application in action!
+7. To visit your headless WordPress app once the first deploy finishes, click the link under the `Atlas URL` heading. Your Atlas app opens in a new browser tab. Enjoy!
 
-![First app deployed](./assets/img/first-app-complete.png)
+![First app deployed](./assets/img/first-app-deployed.png)
 
-## Environment variables (Optional)
+## Set Environment Variables (Optional)
 
-If you have a front-end application and you can set your own environment variables.
+To add environment variables for your app, click `Add environment variable`.
 
-For environment variables are key/value pairs. The key must be alphanumeric with no spaces, and the value can be any string input.
+Enter the `Key` and `Value` pairs for each environment variable.
 
-Environment variables are OS-level environment variables that will be available to your app during the build step (`npm run wpe-build`) and at runtime (`npm start`). In node, you can access the variables via `process.env.KEY`.
+For example, you may need to add a `NEXT_PUBLIC_WORDPRESS_URL` key with a URL as its value to specify which WordPress site should be used as the data source for the app. You may also need to specify additional environment variables to store sensitive data such as API keys and secrets.
 
-The headless framework requires two environment variables which are in your `.env.local` file:
-
-- `WORDPRESS_URL` - The location of your WordPress instance
-- `WP_HEADLESS_SECRET` - The secret found in the plugin via Settings->Atlas in WP admin.
+Please refer to your JavaScript framework's documentation if you're unsure what environment variables are required for your app.
 
 ## Next Steps
 
-To continue developing your application, see Atlas' [Local App Development](../local-app-development/overview) guide.
+If you want to make changes to the look and functionality of your app, see our [Local App Development](../local-app-development/overview) guide.

@@ -20,17 +20,27 @@
         },
         {
           "type": "doc",
-          "label": "1. Set Repository Settings",
-          "filePath": "/atlas/getting-started/set-repository-settings.mdx"
+          "label": "1. Prerequisites",
+          "filePath": "/atlas/getting-started/prerequisites.mdx"
         },
         {
           "type": "doc",
-          "label": "2. Choose Atlas App Settings ",
-          "filePath": "/atlas/getting-started/wpengine-settings.mdx"
+          "label": "2. Create App",
+          "filePath": "/atlas/getting-started/create-app.mdx"
         },
         {
           "type": "doc",
-          "label": "3. Configure Your Environment",
+          "label": "3. Set Repository Settings",
+          "filePath": "/atlas/getting-started/repository-settings.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "4. Set App Settings ",
+          "filePath": "/atlas/getting-started/app-settings.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "5. Configure Environment",
           "filePath": "/atlas/getting-started/environments.mdx"
         }
       ]

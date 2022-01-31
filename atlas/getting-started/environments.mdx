@@ -1,20 +1,20 @@
 ---
 slug: /atlas/getting-started/environments
-title: 3. Configure Your Environment 
+title: 3. Configure Your Environment
 description: Configure the environments and variables for your Atlas application.
 ---
 
-Atlas uses a GitHub branch in your repository to double as your environment. For example, if you want to create a staging environment for your application, you could use your repository's `dev` branch. 
+Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `dev` branch.
 
 For this tutorial, we'll create a production environment with the `main` branch.
 
 ## Set up your environment
 
-1. From the list of your repository's branches, select the branch you want to use for the basis of your environment. 
+1. From the list of your repository's branches, select the branch you want to use for the basis of your environment.
 
 ![Select a branch](./assets/img/select-branch.png)
 
-2. Fill in a name for your Atlas environment. The name should match how you intend to use the environment. For example, enter' dev' if you only want to use the environment for development purposes. 
+2. Fill in a name for your Atlas environment. The name should match how you intend to use the environment. For example, enter `dev` if you only want to use the environment for development purposes.
 
 3. Every headless environment is associated with a WordPress environment via the site environment name. Choose either:
 
@@ -23,15 +23,15 @@ For this tutorial, we'll create a production environment with the `main` branch.
 
 ![Link to WordPress](./assets/img/link-to-wordpress.png)
 
-4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://my.wpengine.com/atlas#/create) plugins. If you're using the Faust.js starter kit or Faust.js plan to use Faust.js as your framework, select the **I am using Faust.js** checkbox. 
+4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://my.wpengine.com/atlas#/create) plugins. If you're using the Faust.js starter kit or Faust.js plan to use Faust.js as your framework, select the **I am using Faust.js** checkbox.
 
 ![Select Faust.js Plugin](./assets/img/faustjs.png)
 
 **NOTE:** If you're using your existing application, you can set environment variables by selecting **Add environment variable**. See the "Environment variables (Optional)" section for more details.
 
-5. Select **Create App**. 
+5. Select **Create App**.
 
-6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appear unders **Last Build**. 
+6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appear unders **Last Build**.
 
 ![Headless App Building](./assets/img/portal-app-building.png)
 

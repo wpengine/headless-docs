@@ -1,18 +1,14 @@
 ---
 slug: /atlas/getting-started/environments
-title: 5. Configure Environment
+title: Configure Environment
 description: Configure the environments and variables for your Atlas application.
 ---
 
-Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `staging` branch.
-
-For this tutorial, we'll create a production environment with the `main` branch.
+On this page, you'll learn how to set up an app environment. A single Atlas app can have several environments associated with it (one for production, one for stating, etc.).
 
 ## Set Up Environment
 
-Atlas watches a GitHub branch, then automatically deploys your environment when changes are pushed to that branch. For example, if you want to create a staging environment for your application, you could use your repository's `staging` branch.
-
-1. From the list of your repository's branches, select the branch you want to base your environment on.
+1. From the list of your repository's branches, select the branch you want to base your environment on. Whenever changes are pushed to this branch, your app will be automatically re-deployed.
 
 Examples:
 
@@ -23,15 +19,16 @@ Examples:
 
 2. Enter a name for your Atlas environment. The name should represent how you intend to use the environment. For example, enter something like `prod` if it's a production environment, `staging` if it's a staging environment, etc.
 
-3. Every headless environment is associated with a WordPress environment via the site environment name. Choose either:
+3. Every headless environment is associated with a WordPress environment. Choose either:
 
    - `I already have a WordPress environment`: Use a WordPress site from your WP Engine account. Select the search bar and search for the name of your WordPress site.
    - `I want to create a new WordPress environment`: WP Engine makes a new WordPress site and links it to your application. In the box, enter a name for your new WordPress site.
 
 ![Link to WordPress](./assets/img/link-to-wordpress.png)
 
-4. In order for your WordPress site to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/) plugins.
-   If you're using the Faust.js Starter Kit or an existing Faust.js app repository, check the `I am using Faust.js` checkbox. This will ensure that the [FaustWP](https://wordpress.org/plugins/faustwp/) plugin is also installed.
+4. In order for your WordPress environment to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/) plugins.
+
+If you're using the Faust.js Starter Kit or an existing Faust.js app repository, check the `I am using Faust.js` checkbox. This will ensure that the [FaustWP](https://wordpress.org/plugins/faustwp/) plugin is also installed.
 
 ![Select Faust.js Plugin](./assets/img/faustjs.png)
 

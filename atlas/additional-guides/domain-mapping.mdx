@@ -4,7 +4,7 @@ title: Domain Mapping
 description: Map a custom domain to your Atlas application.
 ---
 
-In this guide, you will learn how to map a custom domain name to your Atlas application.
+In this guide, you will learn how to map a custom domain name to your Atlas application. Custom domains allow you to make your application available at a user-friendly URL, but also give you flexibility in how you access the various environments of your app.
 
 ## Choose Atlas Environment
 
@@ -17,11 +17,11 @@ Once you are in the Atlas portal, choose the app and environment that you want t
 
 1. After selecting your environment, locate the `+ Add domains` button on the environment detail panel. 
 ![An image of an Atlas environment details and the add domains button](./assets/img/domain-mapping/add-domains-button.png)
-2. In the text input labeled `Domain URL` copy your desired domain name into that input field. As you type it will validate the URL for you, and then click the `Confirm` button below the input to save your new domain. *NOTE* The `Add Domain` button above this panel is used for adding multiple domains to an environment, not saving the current custom domain settings.
+2. In the text input labeled `Domain URL` copy your desired domain name into that input field. As you type it will validate the URL for you, and then click the `Confirm` button below the input to save your new domain.
 ![An image of the text input that contains your custom domain](./assets/img/domain-mapping/confirm-custom-domain.png)
-3. Click the `Save All` button in the top right of this panel to apply all of your changes. You will get a success message once the settings have been saved, but there may still be processes running behind the scenes to make your app available over that new DNS record.  
+3. Click the `Save All` button in the top right of this panel to apply all of your changes. You will get a success message once the settings have been saved, but there may still be processes running behind the scenes to make your app available over that new DNS record. **NOTE** The `Add Domain` button above this panel is used for adding multiple domains to an environment, not saving the current custom domain settings.
 ![An image of the button in the top right to save your changes](./assets/img/domain-mapping/save-custom-domain.png)
-4. Copy the CNAME and A records on this page for your DNS provider. *Note* Don't assume the A and CNAME records in this image are the same for your app. 
+4. Copy the CNAME and A records on this page for your DNS provider. **Note** Don't assume the A and CNAME records in this image are the same for your app.  
 ![An image of panel that contains the custom DNS records for your app](./assets/img/domain-mapping/dns-records.png)
 
 ## Update DNS records
@@ -30,10 +30,4 @@ Now that you have mapped a domain name to your Atlas environment, you will need 
 
 ## Troubleshooting
 
-DNS can be inherently difficult to troubleshoot. Depending on your provider and you TTL (time to live) settings, it could take up to 24 hours for your DNS records update across the web. When in doubt, waiting an appropriate length of time can be a better troubleshooting step than making lots of changes very quickly. If your domain name resolves, but shows either a Cloudflare error or an error regarding SSL versions, its possible that the Atlas platform is still provisioning the resources required to support your custom domain name. 
-
-
-
-## Next Step
-
-[Configure Your Environment &#8594;](./environments)
+DNS can be inherently difficult to troubleshoot. Depending on your provider and you TTL (time to live) settings, it could take up to 24 hours for your DNS records to propogate across the web. When in doubt, waiting an appropriate length of time can be a better troubleshooting step than making lots of changes very quickly. If your domain name resolves but shows either a Cloudflare error or an error regarding SSL versions, its possible that the Atlas platform is still provisioning the resources required to support your custom domain name. If either of these errors persist, please reach out to support. 

@@ -84,6 +84,22 @@
     },
     {
       "type": "category",
+      "label": "Additional Guides",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Domain Mapping",
+          "filePath": "/atlas/additional-guides/domain-mapping.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Post and Page Previews",
+          "filePath": "/atlas/additional-guides/post-previews.mdx"
+        }
+      ]
+    },
+    {
+      "type": "category",
       "label": "CLI Reference",
       "items": [
         {

@@ -70,6 +70,15 @@ Technically speaking, you could run your frontend JavaScript application locally
 
 If you choose this method, no local WordPress site setup is required.
 
+
+### Replace WordPress Site URL
+
+One of your environment variables will be the URL of the WordPress site where the app sources its data. If you want the app to source its data from your local WordPress site instead, replace this value with the URL of your local WordPress site.
+
+As an example, if your project has a `NEXT_PUBLIC_WORDPRESS_URL` environment variable and your local WordPress site URL is `http://my-site.local`, then that environment variable should be updated to `NEXT_PUBLIC_WORDPRESS_URL=http://my-site.local`.
+
+When finished, save the environment variables file.
+
 ## Next Step
 
 [Frontend App Configuration &#8594;](./frontend-app-config)

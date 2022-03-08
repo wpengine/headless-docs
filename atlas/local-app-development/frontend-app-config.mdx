@@ -26,7 +26,7 @@ This will clone your repository to a local folder to access for development and 
 
 ## 2. Define Environment Variables
 
-With your repository cloned and set to the current directory in your terminal, open the codebase in a code editor. When you app was deployed to the Atlas platform, an environment variable file was automatically provisioned. Most apps rely on environment variable files to store critical information your app will rely on, like the URLs of backend APIs, API keys, or other configuration details that should not get checked into source control. 
+With your repository cloned and set to the current directory in your terminal, open the codebase in a code editor. When your app was deployed to the Atlas platform, an environment variable file was automatically provisioned. Most apps rely on environment variable files to store critical information your app will rely on, like the URLs of backend APIs, API keys, or other configuration details that should not get checked into source control. 
 
 In the following steps, you will recreate that file in your local project for development.
 
@@ -89,7 +89,7 @@ If you are using another framework, you will need to reference that framework's 
 
 ## 4. Push Changes to Atlas
 
-With your site running in development mode, the app running in the browser is sourcing your local JavaScript files for the frontend, but still pulling data from your remote WordPress install on WP Engine's servers. In the next step of this guide, you will learn how to create a separate WordPress instance locally to isolate your development work, but now is a create time to test your connection to GitHub and the Atlas Platform.
+With your site running in development mode, the app running in the browser is sourcing your local JavaScript files for the frontend, but still pulling data from your remote WordPress install on WP Engine's servers. In the next step of this guide, you will learn how to create a separate WordPress instance locally to isolate your development work, but now is a great time to test your connection to GitHub and the Atlas Platform.
 
 Make some basic changes to your site locally: add a component, change the way posts or pages are displayed or update the site styles with your own CSS.
 
@@ -97,9 +97,9 @@ Once you are ready to push your changes, you can trigger a rebuild of your site 
 
 ```
 git add .
-# This command all of the changed files to Git for staging
+# This command adds all of the changed files to Git for staging
 git commit -m "A description of my changes"
-# This command commits my changes with a helpful but succint message
+# This command commits my changes with a helpful but succinct message
 git push -v 
 # This command will push your changes from your local machine to GitHub
 ```

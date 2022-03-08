@@ -3,13 +3,13 @@ slug: /atlas/additional-guides/troubleshooting-builds
 title: Troubleshooting Builds
 description: Troubleshoot your failing builds using build logs and commit history
 ---
-In this guide, you'll learn how to troubleshoot failing builds by examining build logs and comparing logs across your commit history.
+In this guide, you'll learn how to troubleshoot failing builds by examining build logs, comparing logs across your commit history and clearing app and CDN caches.
 
 ## Responding to Failed Builds
 
 When you push new code to your Atlas project repository on GitHub and trigger a new build on the platform, you can inspect the progress of that build in realtime via the [User Portal](https://my.wpengine.com/atlas).
 
-As the build progresses, it can either succeed or fail at any of the stages in the build -> deploy checklist. If the project fails to build, the build details on your Atlas dashboard will look like this:
+As the build progresses, it can either succeed or fail at any stage in the build -> deploy checklist. If the project fails to build, the build details on your Atlas dashboard will look like this:
 
 ![Headless App Failed in Building](./assets/img/troubleshooting-builds/failing-atlas-build.png)
 
@@ -19,7 +19,7 @@ After you've pushed a failing build, there are quick ways to start troubleshooti
 
 ![Headless App Failed in Building Annotated](./assets/img/troubleshooting-builds/failing-atlas-build-annotated.png)
 
-When looking at the build checklist, regardless of whether the build has failed or not, you will always have two quick links to either the commit hash, in this example `2e9121a`, that triggered the build or directly to the `Build logs` detail panel. Let's take a look at each option and how they can be used to diagnose the issues behind your failed build.
+When looking at the build checklist, regardless of whether the build has failed or not, you will always have two quick links to either the GitHub commit details, in this example the `2e9121a` hash, that triggered the build or directly to the `Build logs` detail panel. Let's take a look at each option and how they can be used to diagnose the issues behind your failed build.
 
 ### GitHub Commit 
 If you click on the commit hash link in the above screenshot, you will be taken directly to the GitHub commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
@@ -74,7 +74,7 @@ Since Atlas is a flexible hosting platform for a number of different JavaScript 
 
 To process a `Clean Rebuild` you can click that button in the main details panel of your Atlas environment, which will remove all previously cached folders, pull the latest commit from your repo, and rebuild the app. 
 
-In some cases, you may also want to clear the domain cache using that button, which clears the CDN cache for your Atlas domain. 
+In some cases, you may also want to clear the domain cache using that button, which clears the CDN cache for your Atlas domain. Both of these steps can be helpful if your site is building, but might not reflect the most recent changes. 
 
 
 

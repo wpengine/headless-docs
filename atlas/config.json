@@ -47,7 +47,7 @@
     },
     {
       "type": "category",
-      "label": "Local App Development",
+      "label": "Developing Apps Locally",
       "items": [
         {
           "type": "doc",
@@ -61,13 +61,13 @@
         },
         {
           "type": "doc",
-          "label": "2. WordPress Site Configuration",
-          "filePath": "/atlas/local-app-development/wordpress-site-config.mdx"
+          "label": "2. Frontend App Configuration",
+          "filePath": "/atlas/local-app-development/frontend-app-config.mdx"
         },
         {
           "type": "doc",
-          "label": "3. Frontend App Configuration",
-          "filePath": "/atlas/local-app-development/frontend-app-config.mdx"
+          "label": "3. WordPress Site Configuration",
+          "filePath": "/atlas/local-app-development/wordpress-site-config.mdx"
         }
       ]
     },

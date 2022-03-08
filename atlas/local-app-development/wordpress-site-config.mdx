@@ -4,9 +4,26 @@ title: WordPress Site Configuration
 description: How to configure your WordPress backend for local development
 ---
 
-This page will guide you through configuring your local headless WordPress backend site for local development. Your frontend JavaScript application (which we'll set up on the [Frontend App Configuration](./frontend-app-config) page) will source its data from this WordPress site.
+This page will guide you through your options for configuring headless WordPress backend sites for local development. Your frontend JavaScript application (which we set up on the [Frontend App Configuration](./frontend-app-config) page) will source its data from this WordPress site.
 
-We recommend the [Local](#local) method outlined below. Otherwise, alternative methods are outlined in the [Local Alternatives](#local-alternatives) and [Connect Directly to the Remote WordPress Site](#connect-directly-to-remote-wordpress-site) sections.
+Depending on your existing development tools and needs, there are multiple ways to source data as you develop your site locally. WP Engine's [Local](https://localwp.com/) WordPress development environment offers existing WP Engine or Flywheel customers the most robust feature set, but we understand that Atlas users may have different tooling or wish to develop directly against their production WordPress instance. Below you can find a short summary of the various approaches to working with a local headless WordPress site:
+1. [Connect Directly to the Remote WordPress Site](#connect-directly-to-remote-wordpress-site)
+1. [Non-Local WordPress Development Environments](#local-alternatives)
+1. [WP Engine's Local Development Environment](#local)
+
+After you've decided on the method you will use to connect your local JavaScript app to a WordPress instance, you may need to [replace the WordPress URL in your environment variables file](#replace-wordpress-site-url) to finish the connection.
+
+## Connect Directly to Remote WordPress Site
+
+Technically speaking, you could run your frontend JavaScript application locally and connect it directly to a remote WordPress site hosted online rather than a local WordPress site. While this seems like the simplest approach, it is generally discouraged if your app will make changes to data or if other people will continue updating posts, pages, menus or other settings during development. Some developers may choose to pursue this option early in the development process, but they should be aware of possible side effects. 
+
+If you choose this method, no local WordPress site setup is required.
+
+## Local Alternatives
+
+If you are already using an alternative to Local, such as [MAMP](https://www.mamp.info/en/mac/), [XAMPP](https://www.apachefriends.org/index.html) or [DesktopServer](https://serverpress.com/), you can connect your decoupled frontend directly to a site served by one of those tools.
+
+You will need to follow the documentation those products provide for getting set up for local WordPress site development and migrating a copy of your WordPress site to your local machine. Once you have made the site available via one of these tools, you will need to [replace the WordPress URL in your environment variables file](#replace-wordpress-site-url) to finish the connection.
 
 ## Local
 
@@ -58,18 +75,17 @@ Success: Updated user 1.
 
 You should now be able to click the [`Admin` button](https://localwp.com/help-docs/local-features/using-one-click-admin/) in Local and log into the WordPress admin using the email address for your WP Engine account and the new password you set.
 
-## Local Alternatives
 
-If you don't want to use Local, you can use an alternative such as [MAMP](https://www.mamp.info/en/mac/), [XAMPP](https://www.apachefriends.org/index.html) or [DesktopServer](https://serverpress.com/) and pull down your site using using [WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/) or a similar tool.
+## Replace WordPress Site URL
 
-If you choose this method, please follow the the documentation those products provide for getting set up for local WordPress site development and migrating a copy of your WordPress site to your local machine.
+In many app configuration, including the Faust.js starter, you will store the URL of the WordPress site where the app sources its data in the environments variable file: `.env.local`. If you want the app to source its data from your local WordPress site instead, replace this value with the URL of your local WordPress site.
 
-## Connect Directly to Remote WordPress Site
+As an example, if your project has a `NEXT_PUBLIC_WORDPRESS_URL` environment variable and your local WordPress site URL is `http://my-site.local`, then that environment variable should be updated to `NEXT_PUBLIC_WORDPRESS_URL=http://my-site.local`.
 
-Technically speaking, you could run your frontend JavaScript application locally and connect it directly to a remote WordPress site hosted online rather than a local WordPress site. We generally discourage this approach though, since you could accidentally make changes to a live site without intending to. The safest bet is to run both the WordPress site and the JS app locally, as outlined in the sections above.
-
-If you choose this method, no local WordPress site setup is required.
+When finished, save the environment variables file. This will result in you having separate `.env` files for both your local and production environments. If need more guidance on creating environment variable files or setting variable values, you can reference the [define environment variables](./frontend-app-config#2--define-environment-variables) section of the previous guide.
 
 ## Next Step
 
-[Frontend App Configuration &#8594;](./frontend-app-config)
+Congratulations! You should now have a fully-functioning Atlas application, complete with a development environment on you local machine suited to your needs. Here are a few additional guides about the Atlas platform that you may be interested in reading:
+- [Mapping a Custom Domain to Atlas](../additional-guides/domain-mapping)
+- [Configuring Post and Page Previews](../additional-guides/post-previews) 

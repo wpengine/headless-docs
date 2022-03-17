@@ -100,6 +100,11 @@
           "type": "doc",
           "label": "Troubleshooting Builds",
           "filePath": "/atlas/additional-guides/troubleshooting-builds.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Support",
+          "filePath": "/atlas/additional-guides/support.mdx"
         }
       ]
     },

@@ -4,11 +4,19 @@ title: Post and Page Previews
 description: Configure post and page previews of your Atlas site with Faust.js installed.
 ---
 
-In this guide, you'll learn how to configure post and page previews for your headless WordPress site running on the Atlas platform. This guide assumes that you are using the Faust.js starter template. If you are using another framework, you will likely need to create your own method of rendering post and page previews that is specific to your application. If you did not use the starter template when creating your Atlas site, but are still using Faust.js, it might be helpful to reference those [docs for post/page previews](https://faustjs.org/docs/next/guides/post-page-previews) as well
+In this guide, you'll learn how to configure post and page previews for your headless WordPress site running on the Atlas platform. 
 
-## Set Front-end URL in WP Admin
+Here are the three possible scenarios that this guide will cover:
+1. You created your site using an Atlas Starter template
+1. You created your site from scratch using Faust.js
+1. You are using another framework like Svelte/SvelteKit, Vue/Nuxt, or Next.js 
 
-To get post and page previews to work correctly with Faust.js, we need to configure the plugin's `Front-end site URL` setting. Follow the steps below to get started.
+
+## Atlas Starter Template
+
+When you deploy an Atlas Starter template, many settings are configured for you when your site is provisioned. In the future, this setting will also be configured automatically, but current starter template users will need to configure the FaustWP plugin's `Front-end site URL` setting. 
+
+Follow the steps below to get started.
 
 1. In the Atlas platform, locate the URL to your linked WordPress environment on the main environment detail panel.  
 
@@ -33,4 +41,18 @@ To get post and page previews to work correctly with Faust.js, we need to config
 6. Create a new post and generate a preview. With the `Front-end site URL` setting saved, Faust will rewrite all of your preview links to point towards your Atlas application and let you view them in that context.  
 
 ![An image of a post preview being rendered via the Atlas site](./assets/img/post-previews/preview-in-atlas.png)
+
+## Faust.js 
+
+While many of the Atlas Starter templates are based on Faust.js, it is still possible to build a site from scratch using the framework, and even to deploy that site on another hosting provider. The [Faust.js docs for post/page previews](https://faustjs.org/docs/next/guides/post-page-previews) cover all of the steps that are required for users building from scratch with Faust.js.
+
+## Other Frameworks
+
+If you are using a framework other than Faust.js to create your headless site, there will be some additional complexity involved with enabling post/page previews. Since page and post previews require that a user be authenticated to view them, even over REST & GraphQL APIs, your application will need to handle this in some way while also creating a page to render the previewed content. 
+
+In any case, looking at how Faust.js handles this could be a good place to start, as it also has a `@faust/core` module that may be able to be used in your project depending on your setup. Below you will find links to a few resources that address some portion of the challenges developers will face when trying to create post and page previews from scratch. 
+
+- [Faust.js Documentation](https://faustjs.org/docs/next/guides/post-page-previews) 
+- [Previews In Headless WordPress With NextJS](https://developers.wpengine.com/blog/previews-in-headless-wordpress-using-nextjs)
+- [Headless WordPress Authentication with Native Cookies](https://developers.wpengine.com/blog/headless-wordpress-authentication-native-cookies)
 

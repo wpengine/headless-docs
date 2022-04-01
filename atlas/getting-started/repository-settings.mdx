@@ -4,13 +4,13 @@ title: Set Repository Settings
 description: Set your application's repository settings in the Atlas User Portal.
 ---
 
-This page outlines how to connect your newly created Atlas app to a code repository.
+Learn how to connect an Atlas application to a GitHub repository, so updates you make deploy automatically.
 
-Atlas apps are Node.js applications. Popular frameworks like [Faust.js](https://faustjs.org/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Nuxt](https://nuxtjs.org/), [SvelteKit](https://kit.svelte.dev/), etc. are supported.
+Atlas supports Node.js applications using popular frameworks like [Faust.js](https://faustjs.org/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Nuxt](https://nuxtjs.org/), [SvelteKit](https://kit.svelte.dev/), etc.
 
 ## 1. Connect to GitHub
 
-Before creating an Atlas application, you must connect your GitHub account.
+Connect your GitHub account so you can connect a repo or clone Atlas blueprints.
 
 1. In the `Repository Settings` view, select `Connect`.
 
@@ -20,17 +20,15 @@ After Atlas connects to your GitHub account, the `Connect` button indicates that
 
 ![Connected to GitHub](./assets/img/connect-to-github.png)
 
-## 2. Select a Repository
+## Select a repository
 
-Now that GitHub is connected, it's time to select the repository.
+Now that GitHub is connected, it's time to connect your repository.
 
-If you want to start from scratch with a preconfigured codebase built on WP Engine's headless WordPress framework, [Faust.js](https://faustjs.org/), follow the `Use the Faust.js Starter Kit` steps below. Otherwise, if you already have a JavaScript application repository you'd like to use, follow the `Use an Existing App` steps.
+### Starting from a blueprint
 
-### Use the Faust.js Starter Kit
+If you chose “Start with Blueprint”, clone the Atlas Blueprint repo and link it to Atlas:
 
-To use the Faust.js starter kit, do the following:
-
-1. Select `Clone Faust.js starter`. This option opens another tab in GitHub.
+1. Select `Clone Blueprint`. This option opens another tab in GitHub.
 
 2. On the `Create a new repository` page, set your new git repository settings.
 
@@ -44,17 +42,17 @@ To use the Faust.js starter kit, do the following:
 
 ![Create a new repo](./assets/img/new-repo-screen.png)
 
-4. Navigate back to the WP Engine User Portal. Select your new repository from the repository list.
+4. Navigate back to the WP Engine User Portal by closing the GitHub tab. Select your new repository from the repository list when it refreshes.
 
 ![Select your repo](./assets/img/repo-select.png)
 
 5. Select `Continue` and move on to [App Settings](./app-settings).
 
-### Use an Existing App
+### Using an existing app
 
-Before using an existing app, make sure that you've pushed your application's code to GitHub repository. If you're not familiar with pushing code to a GitHub repository, see this guide: [Adding an existing project to GitHub using the command line](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line).
+If you chose “Pull from repo”, first make sure that you've pushed your application's code to your GitHub repository. If you're not familiar with pushing code to a GitHub repository, see this guide: [Adding an existing project to GitHub using the command line](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line).
 
-1. Add a `wpe-build` script to the [`scripts`](https://docs.npmjs.com/cli/v8/using-npm/scripts) field in your project's `package.json` file. It should execute the build command for your project. This is the script that the Atlas platform will execute when it builds your app.
+Your application needs to include a `wpe-build` script in the [`scripts`](https://docs.npmjs.com/cli/v8/using-npm/scripts) field in your project's `package.json` file. It should execute the build command for your project. This is the script that the Atlas platform will execute when it builds your app.
 
 For example, the `package.json` file for a Faust.js or Next.js app would need to be updated as shown below.
 
@@ -67,11 +65,11 @@ For example, the `package.json` file for a Faust.js or Next.js app would need to
 
 If you don't know what command needs to be run to build your app, please refer to your JavaScript framework's documentation.
 
-2. Select `Add repository`. A list of repositories in your GitHub account appears.
+1. Select `Add repository`. A list of repositories in your GitHub account appears.
 
-3. From the list of repositories, select the one with your application's code.
+2. From the list of repositories, select the one with your application's code.
 
-4. Select `Continue`. The WP Engine Settings page appears.
+3. Select `Continue`. The WP Engine Settings page appears.
 
 ## Next Steps
 

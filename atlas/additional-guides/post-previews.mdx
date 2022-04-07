@@ -7,40 +7,18 @@ description: Configure post and page previews of your Atlas site with Faust.js i
 In this guide, you'll learn how to configure post and page previews for your headless WordPress site running on the Atlas platform. 
 
 Here are the three possible scenarios that this guide will cover:
-1. You created your site using an Atlas Starter template
+1. You created your site using an Atlas Blueprint
 1. You created your site from scratch using Faust.js
 1. You are using another framework like Svelte/SvelteKit, Vue/Nuxt, or Next.js 
 
 
-## Atlas Starter Template
+## Atlas Blueprints
 
-When you deploy an Atlas Starter template, many settings are configured for you when your site is provisioned. In the future, this setting will also be configured automatically, but current starter template users will need to configure the FaustWP plugin's `Front-end site URL` setting. 
+When you deploy an Atlas Blueprint, post and page previews should work out of the box. The FaustWP plugin will automatically rewrite your frontend preview URLs to the URL provisioned for your Atlas app when it is created.  
 
-Follow the steps below to get started.
+If you need to change that setting, if you [change your domain name](./domain-mapping) for example, you can do so in the `Settings > Headless` menu in your WordPress install by changing the `Front-end site URL` value:
 
-1. In the Atlas platform, locate the URL to your linked WordPress environment on the main environment detail panel.  
-
-![An image of Atlas environment details with an arrow pointing to the WordPress site url](./assets/img/post-previews/atlas-env-panel-wp-instance.png)
-
-2. With the dashboard for your connected WordPress site open, find the link to your `WP Admin` area on the dashboard.  
-  
-![An image of the shared WordPress dashboard with an arrow pointing to WP Admin](./assets/img/post-previews/wp-instance-wp-admin.png)
-
-3. Inside of the WP Admin area, locate the FaustWP settings menu in `Settings > Headless` and find the text input labeled `Front-end site URL` at the top of the settings list.  
-
-![An image of the Faust WP settings menu](./assets/img/post-previews/headless-settings-empty.png)
-
-4. Navigate back to the Atlas dashboard for your environment and locate the link to the `Atlas URL` on the main details panel. Click that link to open it in a new tab and copy the URL to your clipboard. If you are using a custom domain, copy that URL instead. 
-
-![An image of Atlas environment details with an arrow pointing to the Atlas site URL](./assets/img/post-previews/atlas-env-panel-wp-fe-url.png)
-
-5. With the `Atlas URL` stored in your clipboard, head back to the FaustWP Settings menu in your WordPress admin area. Paste the `Atlas URL` into the input labeled `Front-end site URL` and click the `Save Changes` button to update these settings.  
-
-![An image of Atlas environment details with an arrow pointing to the Atlas site URL](./assets/img/post-previews/headless-settings-fe-url.png)
-
-6. Create a new post and generate a preview. With the `Front-end site URL` setting saved, Faust will rewrite all of your preview links to point towards your Atlas application and let you view them in that context.  
-
-![An image of a post preview being rendered via the Atlas site](./assets/img/post-previews/preview-in-atlas.png)
+![Frontend site url setting in faust wp](./assets/img/post-previews/headless-settings-fe-url.png)
 
 ## Faust.js 
 

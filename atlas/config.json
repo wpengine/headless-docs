@@ -30,18 +30,18 @@
         },
         {
           "type": "doc",
-          "label": "3. Set Repository Settings",
-          "filePath": "/atlas/getting-started/repository-settings.mdx"
+          "label": "3. Choose a Blueprint or Repo",
+          "filePath": "/atlas/getting-started/blueprint-repository.mdx"
         },
         {
           "type": "doc",
-          "label": "4. Set App Settings ",
-          "filePath": "/atlas/getting-started/app-settings.mdx"
+          "label": "4. Deploy from Blueprint",
+          "filePath": "/atlas/getting-started/deploy-from-blueprint.mdx"
         },
         {
           "type": "doc",
-          "label": "5. Configure Environment",
-          "filePath": "/atlas/getting-started/environments.mdx"
+          "label": "5. Deploy from Existing Repo",
+          "filePath": "/atlas/getting-started/deploy-from-existing-repo.mdx"
         }
       ]
     },

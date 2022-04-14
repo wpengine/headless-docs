@@ -1,98 +1,199 @@
 ---
-slug: /content-engine/introduction
-title: Content Engine Introduction
-description: When using the WordPress API through WPGraphQL, pulling content from WordPress can be slow and cumbersome. Content Engine increases the speed from which your front-end applications retrieve WordPress content.
+slug: /atlas-search/introduction
+title: Atlas Search Introduction
+description: When using the WordPress Search API through WPGraphQL or REST results can yield poor relevancy, has zero query configuration available, and supports only basic WordPress data types out of the box. Atlas Search aims to improve the search relevancy, querying-options, & increase supported data types within your content data search.
 ---
+# Atlas Search (Beta)
 
-**Note**: Content Engine is currently beta and is invite-only. If you're interested in exploring and testing Content Engine, fill out an [interest form](https://docs.google.com/forms/d/e/1FAIpQLSeFKjb1i1t8dbXIQd35NDzoSNKpx_1nWuf72FXmbj9WYAqLYw/viewform).
+You have an [Atlas "headless" WordPress site](https://wpengine.com/atlas/) using the default WordPress (WP) search APIs (default REST APIs or the [WP-GraphQL](https://www.wpgraphql.com/) API plugin - We will focus on just GraphQL API right now). You soon find that your content data search has some issues:
+* Patchy relevancy.
+* Search terms with spaces work as `AND` but no `OR` or `NOT` functionality.
+* Has issues with advanced WordPress data types:
+    + Requires another plugin for ACF (Advanced Custom Fields) types
+    + Doesn’t support ACM (Atlas Content Modeler) types
 
-When using the WordPress API through WPGraphQL, pulling content from WordPress can be slow and cumbersome. Content Engine increases the speed from which your front-end applications retrieve WordPress content.
+Our new ‘Atlas Search’ product is designed to help here: It aims to improve the search relevancy, querying-options, & increase supported data types within your content data search. Atlas Search consists of 2 parts: A SaaS ‘Atlas Search server’ & a per-client WP ‘Atlas Search’ plugin.
 
-Content Engine offers the following benefits over WPGraphQL:
+<br/><br/>
 
-1. Content Engine uses a custom query language that’s faster than WPGraphQL
-2. Content Engine provides a logical, easy-to-use schema for content retrieval
+## <p style="text-align: center;">Contents</p>
 
-## Pre-requisites
+* [Prerequisites](#prerequisites) - What you need ahead of following this ‘Getting Started’ guide
+    + [General Prerequisites](#general-prerequisites) - Atlas specifics & other associated plugins.
+    + [Atlas Search Prerequisites](#atlas-search-prerequisites-unless-configured-via-atlas-blueprints) - Specific to the Atlas Search setup.
+* [Plugin Installation](#plugin-installation) - Steps to enable your Atlas Search plugin to talk to Atlas Search engine
+* [Content Data Sync](#content-data-sync) - How to clone sync WordPress content with Atlas Search engine
+* [Using Atlas Search](#using-atlas-search) - A series of sample GraphQL queries that demonstrate Atlas Search’s functionality.
+    + [Querying Standard WP Data Types](#querying-standard-wp-data-types) WP Data Types - Queries with Posts, Pages, CPT
+    + [Querying ACM/ ACF Types](#querying-acm-or-acf-types) - Queries for Atlas Content Modeller or Advanced Custom Fields
+    + [Getting More Specific with Queries](#getting-more-specific-with-queries) - Queries with `AND`, `NOT` & `OR`
+* [Advanced Configuration of Atlas Search](#advanced-configuration-of-atlas-search) - Configure what WP Data Types & fields are searchable, & set custom weightings to prioritize what matters to you.
+* [Feedback](#feedback) - Let us know what you think of Atlas Search or if you are having any issues
 
-1. A free-tier WP Engine account is required to use Content Engine. If you do not have an account, please reach out to ce-beta@wpengine.com.
-2. A WordPress site with either posts, pages, or users.
+<br/><br/>
 
-When you enroll in testing Content Engine, you'll receive an email with:
+## <p style="text-align: center;">Prerequisites</p>
+### General Prerequisites:
+1. You are an existing or “eval” Atlas customer.
+2. You have an instance of WordPress on a WPEngine ‘Portal’ ‘site’ with a target ‘environment’ & you can access that environment’s ‘WP Admin’ panel.
+3. In the target environment’s WP Admin panel, you have downloaded & activated the [WP-GraphQL](https://www.wpgraphql.com/) plugin from WP Plugin Store.
 
-- A PDF for getting started
-- A zip file with the Content Engine plugin
-- Your Atlas URL and Access Token
+### Atlas Search Prerequisites (Unless configured via ‘Atlas Blueprints’):
+1. You have enrolled for Atlas Search, via:
+    + The [internal enrolment form (WPEngine employees only)](https://docs.google.com/forms/d/e/1FAIpQLSeq4pK2PLUouEk1v_Z7EgSPqPU-H5PNdI2j6FYWhLtF2jQyQA/viewform)
+    + The [external enrolment form (External Customers)](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform):
+        - Requires Gmail account.
+        - Limited to 1 instance per Gmail account.
+    + Automatic-enrollment as part of Atlas “eval” account.
+2. You have received an Atlas Search setup email with the following:
+    + A link to this documentation
+    + A link to download the latest [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin, from WP Plugin Store.
+    + Your own personal Atlas-site URL and Access Token
 
-## Install the Content Engine plugin
+<br/><br/>
 
-Content Engine, like other WordPress customizations, uses a plugin to enable its use.
+## <p style="text-align: center;">Plugin Installation</p>
+Installing & configuring the Atlas Search plugin enables both the Content Data Sync (indexes to the Atlas Search server) & Search Querying (filtered reads from the Atlas Search server, via GraphQL) functionalities.
 
-1. In your WordPress control panel, install the **Atlas Content Engine** plugin.
-2. Install and activate the plugin on the WordPress instance you want to enable. After activation, **WPE Content Engine** appears in the side panel.
-3. On the WPE Content Engine settings, set the following:
-   - URL: https://aql.wpengine.com/sync/:site/graphql
-   - Access Token: See the email sent to you during enrollment.
+Atlas Search plugin can be installed & configured as follows:
+1. Install & activate the Atlas Search plugin [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
+2. After successful installation & activation, the ‘Atlas Search’ menu item will appear in the left navigation panel of WP environment’s WP Admin panel.
+3. Click the `Atlas Search` menu item. By default it will bring you to the default sub-menu ‘Settings’ view, where you will populate the following inputs with the values from the aforementioned setup email you have received:
+    + URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
+    + Access Token (ie. `{your-unique-access-token}`)
+4. Select the ‘Save Settings’ button for the changes to take effect.
 
-![WPE Content Engine Plugin](./images/ce-plugin.png)
+![Atlas Search Plugin Settings](/atlas-search/images/as-plugin-settings.png)
 
-## Sync content for the first time
+<br/><br/>
 
-With Content Engine fully integrated into your WordPress instance, you can sync your data with WordPress CLI. Open a terminal on the WordPress instance and enter `wp ce sync_data`.
+## <p style="text-align: center;">Content Data Sync</p>
+Once you have installed & configured the Atlas Search plugin you will need to run an initial sync, so that Atlas Search server has an indexed copy of your content data to search, on your Atlas-site. After this initial sync the Atlas Search plugin, while “activate”, will be able to update your content data in real-time whenever you add new items. If, at some point after that first successful Content Data Sync, you choose to “deactivate” the Atlas Search plugin, then add new data, you will need to re-run this Content Data Sync to catch the untracked data.
 
-![Content Engine sync](./images/ce-sync.png)
+Initiating the Content Data Sync is done via the plugin’s UI, as follows:
+1. Click this ‘Atlas Search’ menu item, then click the ‘Sync’ sub-menu item to bring up the below view.
+2. Click the ‘Synchronize Now’ button. This Data Sync completion can take some time with large data sets. The Sync Data loading bar will tell you what is currently being Sync’d so you can see where you are in the process.
+3. Await the ‘Sync Completed Successfully’ status message.
+4. In the event that the sync process does not complete you will get an error message of ‘Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again’ -  at which point a Resume & Delete button will be available for retrying or purging & restarting the Data Sync.
 
-Content Engine then syncs users, posts, and pages. Upon completion, CLI returns a message `Success syncing all data`.
+![Atlas Search Plugin Data Sync](/atlas-search/images/as-plugin-data-sync.png)
 
-If you do not receive this message, ensure that your access token is set correctly and that the Content Engine plugin is installed.
+Once the Atlas Search’s Content Data Sync has completed you are free to query the content data, via WPGraphQL! It will look just like the GraphQL search did before but behind the scenes the WordPress Search will now delegate Search activities to Atlas Search instead.
 
-With your data synced, you can begin to query your data with Atlas Query Language.
+<br/><br/>
 
-## Atlas Query Language
+## <p style="text-align: center;">Using Atlas Search</p>
+Once the Content Data Sync has completed, & while the Atlas Search plugin is “active” on your environment’s WP Admin panel, you can use Atlas Search to enhance your search experience.
 
-Atlas Query Language (AQL) provides an intuitive schema for modern javascript developers and can retrieve content with low latency and high throughput, ensuring maximization for a site's SEO and user experience.
+The WP-GraphQL plugin is where you can test this search functionality most easily. That plugin includes an instance of the ‘GraphiQL’ IDE, where one can interface in the browser with their WordPress data, via GraphQL queries. Atlas Search overrides the default search functionality for WPGraphQL queries on all Atlas Search supported WP data types, but all other queries & data in GraphQL/ GraphiQL will still work as before.
 
-## Use AQL
+Below is a screenshot of WP-GraphQL plugin & GraphiQL view, where Atlas Search has replaced the default WP search behavior, followed by some sample queries:
 
-To begin querying data with AQL:
+![Atlas Search Plugin Data Sync](/atlas-search/images/as-wpgraphiql.png)
 
-1. Navigate to your site's AQL URL, https://aql.wpengine.com/sites/:site/graphql. Replace `site:` with your site’s name.
+<br/>
 
-2. Upon entering the endpoint, the GraphQL console appears. Use the following query to sync posts from your WordPress instance:
+### Querying Standard WP Data Types:
+For querying standard WordPress data types (Posts, Pages & Custom Post Types (CPT)) some examples with Atlas Search are:
 
-   ```text
-   query {
-       posts {
-           wpID
-           slug
-           title
-           excerpt
-           urlPath
-           author {
-               displayName
-               avatar {
-                   url
-               }
-           }
-       }
-   }
-   ```
+* Querying Posts/ Pages:
+```
+{
+  {either ‘posts’ or ‘pages’}(where: {search: "CSS"}) {
+    nodes {
+      id
+      status
+      title
+    }
+  }
+}
+```
+* Querying CPTs:
+```
+{
+  branches(where: {search: "Austin"}) {
+    nodes {
+      address
+    }
+  }
+}
+```
 
-3. Select the **Play** icon to begin querying. All post data will show in a JSON format, which includes all metadata related to each post.
+<br/>
 
-![AQL query](./images/aql-query.png)
+### Querying ACM or ACF Types:
+Atlas Search also integrates with the [Atlas Content Modeler](https://developers.wpengine.com/blog/what-is-atlas-content-modeler) (ACM) & [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) (ACF). Default WP search requires plugins for ACF & doesn’t support ACM at all.
 
-## Available Content
+* Querying ACM type of `project`, with fields of  `streetAddress`, `contactName` & `workOrderNumber`:
+```
+{
+  projects(where: {search: "Austin"}) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
 
-Currently, Content Engine supports retrieval for the following:
+<br/>
 
-- Posts
-- Pages
-- Users
+### Getting More Specific with Queries:
+Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress search treats spaces as `AND`. With Atlas Search, however, you can explicitly specify the `AND`, `OR` and `NOT` keywords within your search query and you can combine them too - this provides enhanced specificity for your querying needs:
 
-As Content Engine matures, more WordPress content will become available. If you have suggestions for what type of content you would like to see, fill out this [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform).
+* Using `NOT` search operator:
+```
+{
+  projects(where: {search: "Austin NOT Minnesota"}) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
 
-## Feedback
+* Using `AND` search operator:
+```
+{
+  projects(where: {search: "New York AND Texas"}) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
 
-- **Questions?** Email us ce-beta@wpengine.com
-- **Feedback**: Your feedback helps shape the future of Content Engine. To provide feedback, fill out our [Content Engine Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSecvuZ_EMiTIOlTSwcW1JnPQcFbAcCOwGlhURkzBI8Ps9vFzA/viewform).
+* Using `OR` search operator:
+```
+{
+  projects(where: {search: "New York OR Texas"}) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
+
+<br/><br/>
+
+## <p style="text-align: center;">Advanced Configuration of Atlas Search</p>
+Atlas Search, by default, will search all supported WP Data Type objects (Posts, Pages, CPTs, ACMs, etc.) by all of their supported fields (string, number, boolean, other WP Data Type objects).
+
+Atlas Search will then return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences should rise to the top. This may not always be the desired behavior, so it provides both a field-level filter (‘searchable’ field toggle), and a field-level weighting slider (boost weighting of any more-important fields from 2 to 200).
+
+The Plugin menu’s ‘Search Config Settings’ option, which lists all available WordPress data types & their fields. In here you can play with the specifics, but be sure to press ‘Save’ to see your changes reflected.
+
+![Atlas Search Plugin Config](/atlas-search/images/as-plugin-config.png)
+
+
+<br/><br/>
+
+## <p style="text-align: center;">Feedback</p>
+Questions or feedback(WPEngine employees only at present)? Reach us on Slack: [atlas-search-onboarding](https://wpengine.slack.com/archives/C033XG6ACF3)

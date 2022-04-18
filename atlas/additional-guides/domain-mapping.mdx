@@ -36,4 +36,10 @@ After updating the custom domain settings in your Atlas environment, you will ne
 DNS can be inherently difficult to troubleshoot. Depending on your provider and your TTL (time to live) settings, it could take up to 24 hours for changes to your DNS records to propogate across the web.
 When in doubt, waiting an appropriate length of time can be a better troubleshooting step than making lots of changes very quickly.
 
+If you click `Manage Domains` from the main environment screen, you should see an icon that reflects the status of your custom domain.  
+![An Atlas domain status bar](./assets/img/domain-mapping/domain-status-toolbar.png)
+
+A green check mark indicates that everything is configured appropriately, but other statuses are possible. To get additional details, you can hover over the status icon to reveal a tooltip.
+![An Atlas domain status tooltip](./assets/img/domain-mapping/domain-status-tooltip.png)
+
 If your domain name resolves but shows either a Cloudflare error or an error regarding SSL versions, its possible that the Atlas platform is still provisioning the resources required to support your custom domain name. If either of these errors persist, please reach out to support.

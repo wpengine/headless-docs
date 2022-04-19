@@ -5,70 +5,68 @@ description: When using the WordPress Search API through WPGraphQL or REST resul
 ---
 ## Atlas Search (Beta)
   
-You have an [Atlas "headless" WordPress site](https://wpengine.com/atlas/) using the default WordPress (WP) search APIs (default REST APIs or the [WP-GraphQL](https://www.wpgraphql.com/) API plugin - We will focus on just GraphQL API right now). You soon find that your content data search has some issues:
+You have an [Atlas "headless" WordPress site](https://wpengine.com/atlas/) using the WordPress (WP) search APIs (either the inbuilt REST ones or the [WP-GraphQL](https://www.wpgraphql.com/) one, via its plugin - We will focus on just the latter right now). You soon find that your content data search has some issues:
 * Patchy relevancy.
 * Search terms with spaces work as `AND` but no `OR` or `NOT` functionality.
 * Has issues with advanced WordPress data types:
     + Requires another plugin for ACF (Advanced Custom Fields) types
     + Doesn’t support ACM (Atlas Content Modeler) types
 
-Our new ‘Atlas Search’ product is designed to help here: It aims to improve the search relevancy, querying-options, & increase supported data types within your content data search. Atlas Search consists of 2 parts: A SaaS ‘Atlas Search server’ & a per-client WP ‘Atlas Search’ plugin.
+Our new `Atlas Search` product is designed to help here: It aims to improve the search relevancy, querying-options, & increase supported data types within your content data search. Atlas Search consists of 2 parts: A SaaS `Atlas Search server` & a per-client `Atlas Search plugin`.
   
   
 
 ### Contents
-* [Prerequisites](#prerequisites) - What you need ahead of following this ‘Getting Started’ guide
-    + [General Prerequisites](general-prerequisites-) - Atlas specifics & other associated plugins.
-    + [Atlas Search Prerequisites](#atlas-search-prerequisites--unless-configured-via--atlas-blueprints---) - Specific to the Atlas Search setup.
-* [Plugin Installation](#plugin-installation) - Steps to enable your Atlas Search plugin to talk to Atlas Search engine
-* [Content Data Sync](#content-data-sync) - How to clone sync WordPress content with Atlas Search engine
-* [Using Atlas Search](#using-atlas-search) - A series of sample GraphQL queries that demonstrate Atlas Search’s functionality.
+* [Getting an Atlas Search Account](#getting-an-atlas-search-account) - How to register for an account & get a 'namespace'.
+* [Installing the Atlas Search Plugin](#installing-the-atlas-search-plugin) - Methods of installing the Atlas Search plugin.
+    + [Installation via Blueprints](#installation-via-blueprints) - Standard approach to the plugin installation.
+    + [Installation without Blueprints](#installation-without-blueprints) - Alternate, discouraged, approach to the plugin installation.
+* [Configuring the Atlas Search Plugin](#configuring-atlas-search-plugin) - Making the Atlas Search plugin talk to the Atlas Search server.
+* [Content Data Sync](#content-data-sync) - How to clone/ sync WordPress data into Atlas Search
+* [Using Atlas Search](#using-atlas-search) - A series of sample GraphQL queries that demonstrate Atlas Search’s functionalities.
     + [Querying Standard WP Data Types](#querying-standard-wp-data-types-) WP Data Types - Queries with Posts, Pages, CPT
     + [Querying ACM/ ACF Types](#querying-acm-or-acf-types-) - Queries for Atlas Content Modeller or Advanced Custom Fields
     + [Getting More Specific with Queries](#getting-more-specific-with-queries) - Queries with `AND`, `NOT` & `OR`
 * [Advanced Configuration of Atlas Search](#advanced-configuration-of-atlas-search) - Configure what WP Data Types & fields are searchable, & set custom weightings to prioritize what matters to you.
-* [Feedback](#feedback) - Let us know what you think of Atlas Search or if you are having any issues.
   
   
 
-### Prerequisites
-#### General Prerequisites:
-1. You are an existing or “eval” Atlas customer.
-2. You have an instance of WordPress on a WPEngine ‘Portal’ ‘site’ with a target ‘environment’ & you can access that environment’s ‘WP Admin’ panel.
-3. In the target environment’s WP Admin panel, you have downloaded & activated the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin from the WordPress.org plugin repository.
+### Getting an Atlas Search Account
+The Atlas Search server is where all your Content Data will live, under your own personal 'namespace', once you have created an Atlas Search account. To get this account you will need to fill in the [enrolment form](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform) - which will also provision a namespace for you. Please note that this is limited to 1 account/ namespace per email. If you have already filled in the aforementioned form, & received the associated 'setup' email, then please ignore this step. 
+After submission of the form you should receive an Atlas Search 'setup' email with the your own personal namespace's URL & Access Token. **Do not share this setup email or the Atlas Search credentials**
 
-#### Atlas Search Prerequisites (Unless configured via ‘Atlas Blueprints’):
-1. You have enrolled for Atlas Search, via:
-    + The [internal enrolment form (WPEngine employees only)](https://docs.google.com/forms/d/e/1FAIpQLSeq4pK2PLUouEk1v_Z7EgSPqPU-H5PNdI2j6FYWhLtF2jQyQA/viewform)
-    + The [external enrolment form (External Customers)](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform):
-        - Requires Gmail account.
-        - Limited to 1 instance per Gmail account.
-    + Automatic-enrollment as part of Atlas “eval” account.
-2. You have received an Atlas Search setup email with the following:
-    + A link to this documentation
-    + A link to download the latest [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin, from WP Plugin Store.
-    + Your own personal Atlas-site URL and Access Token.
-  
+Once you have a namespace you will want to be able to communicate between your headless WP instance & the Atlas Search server - this is achieved by using the Atlas Search plugin.
   
 
+### Installing the Atlas Search Plugin
+The Atlas Search plugin can be installed manually but will more likely be installed implicitly as part of our Atlas Blueprints setup.
+  
+#### Installation via Blueprints
+**This is the standard path for Atlas Search plugin installation**
+The Atlas Blueprints pipeline will have:
+* Installed & activated the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+* Installed & activated the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin.
+  
+#### Installation without Blueprints
+**This section only applies if you did not acquire the Atlas Search plugin via Atlas Blueprints.**
+To install the Atlas Search plugin you will need to have an instance of WordPress 'site' on WPEngine ‘Portal’, with a target ‘environment’ that you can access the ‘WP Admin’ panel for. In this WP Admin panel, before installing the Atlas Search plugin, you will need to download & activate the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin from the WordPress.org plugin repository. The Atlas Search plugin can then be installed & activated [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
+  
+  
+### Configuring Atlas Search Plugin
+Configuring the Atlas Search plugin enables both the Content Data Sync (indexes to the Atlas Search server) & Search Querying (filtered reads from the Atlas Search server, via GraphQL) functionalities.
 
-### Plugin Installation
-Installing & configuring the Atlas Search plugin enables both the Content Data Sync (indexes to the Atlas Search server) & Search Querying (filtered reads from the Atlas Search server, via GraphQL) functionalities.
-
-Atlas Search plugin can be installed & configured as follows:
-1. Install & activate the Atlas Search plugin [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
-2. After successful installation & activation, the ‘Atlas Search’ menu item will appear in the left navigation panel of WP environment’s WP Admin panel.
-3. Click the `Atlas Search` menu item. By default it will bring you to the default sub-menu ‘Settings’ view, where you will populate the following inputs with the values from the aforementioned setup email you have received:
-    + URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
+After successful installation, via one of the methods discussed in the [Plugin Installation section](#installing-the-atlas-search-plugin), the `Atlas Search` menu item will appear in the left navigation panel of the site environment’s WP Admin panel.
+1. Click this `Atlas Search` menu item. By default it will bring you to the default sub-menu ‘Settings’ view, where you will populate the following inputs with the values from the setup email you have received after completing the [Getting an Account section](#getting-an-atlas-search-account):
+    + (Namespace) URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
     + Access Token (ie. `{your-unique-access-token}`)
-4. Select the ‘Save Settings’ button for the changes to take effect.
+2. Select the ‘Save Settings’ button for the changes to take effect.
 
 ![Atlas Search Plugin Settings](./images/as-plugin-settings.png)
   
   
 
 ### Content Data Sync
-Once you have installed & configured the Atlas Search plugin you will need to run an initial sync, so that Atlas Search server has an indexed copy of your content data to search, on your Atlas-site. After this initial sync the Atlas Search plugin, while “activate”, will be able to update your content data in real-time whenever you add new items. If, at some point after that first successful Content Data Sync, you choose to “deactivate” the Atlas Search plugin, then add new data, you will need to re-run this Content Data Sync to catch the untracked data.
+Once you have configured the Atlas Search plugin you will need to run an initial sync, so that Atlas Search server has an indexed copy of your content data to search, on your Atlas-site. After this initial sync the Atlas Search plugin, while “activate”, will be able to update your content data in real-time whenever you add new items. If, at some point after that first successful Content Data Sync, you choose to “deactivate” the Atlas Search plugin, then add new data, you will need to re-run this Content Data Sync to catch the untracked data.
 
 Initiating the Content Data Sync is done via the plugin’s UI, as follows:
 1. Click this ‘Atlas Search’ menu item, then click the ‘Sync’ sub-menu item to bring up the below view.
@@ -78,7 +76,7 @@ Initiating the Content Data Sync is done via the plugin’s UI, as follows:
 
 ![Atlas Search Plugin Data Sync](./images/as-plugin-data-sync.png)
 
-Once the Atlas Search’s Content Data Sync has completed you are free to query the content data, via WPGraphQL! It will look just like the GraphQL search did before but behind the scenes the WordPress Search will now delegate Search activities to Atlas Search instead.
+After the Content Data Sync has completed you are free to query the content data, via WPGraphQL! It will look just like the GraphQL search did before but behind the scenes the WordPress Search will now delegate Search activities to Atlas Search instead.
   
   
 
@@ -137,7 +135,7 @@ Atlas Search also integrates with the [Atlas Content Modeler](https://developers
   
 
 #### Getting More Specific with Queries:
-Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress search treats spaces as `AND`. With Atlas Search, however, you can explicitly specify the `AND`, `OR` and `NOT` keywords within your search query and you can combine them too - this provides enhanced specificity for your querying needs:
+Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress search treats spaces as `AND`. With Atlas Search, however, you can explicitly specify the `AND`, `OR` & `NOT` keywords within your search query & you can combine them too - this provides enhanced specificity for your querying needs:
 
 * Using `NOT` search operator:
 ```
@@ -179,18 +177,11 @@ Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress
 ```  
   
 
-
-
 ### Advanced Configuration of Atlas Search
 Atlas Search, by default, will search all supported WP Data Type objects (Posts, Pages, CPTs, ACMs, etc.) by all of their supported fields (string, number, boolean, other WP Data Type objects).
 
-Atlas Search will then return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences should rise to the top. This may not always be the desired behavior, so it provides both a field-level filter (‘searchable’ field toggle), and a field-level weighting slider (boost weighting of any more-important fields from 2 to 200).
+Atlas Search will then return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences should rise to the top. This may not always be the desired behavior, so it provides both a field-level filter (‘searchable’ field toggle), & a field-level weighting slider (boost weighting of any more-important fields from 2 to 200).
 
 The Plugin menu’s ‘Search Config Settings’ option, which lists all available WordPress data types & their fields. In here you can play with the specifics, but be sure to press ‘Save’ to see your changes reflected.
 
 ![Atlas Search Plugin Config](./images/as-plugin-config.png)
-  
-  
-
-### Feedback
-Questions or feedback(WPEngine employees only at present)? Reach us on Slack: [atlas-search-onboarding](https://wpengine.slack.com/archives/C033XG6ACF3)

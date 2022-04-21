@@ -12,6 +12,7 @@ Having setup WordPress and created some content, you may find that your content 
     + Requires another plugin for ACF (Advanced Custom Fields) types
     + Doesn’t support ACM (Atlas Content Modeler) types
 
+Atlas Search is designed to address all these issues in one place and in an easy to use manner. It will improve search result relevancy, support advanced search query operators and add support for advanced WordPress data types.
 
 Atlas Search is for the headless developer using the WordPress WPGraphQL & REST APIs.
 It is composed of 2 parts:
@@ -19,13 +20,14 @@ It is composed of 2 parts:
 2. An Atlas Search provider backend
 
 The easiest way to get started with Atlas Search (Beta) is to request an Atlas sandbox account for free via [Atlas "Headless" WordPress site](https://wpengine.com/atlas/). Once a sandbox account in created you can install all requirements for Atlas Search in just one click, via [Atlas BluePrints](https://wpengine.com/blog/wp-engine-launches-new-plans-and-atlas-blueprints/).
+If you already have an Atlas account and an Atlas App that you wish to evaluate Atlas Search with, fill in the [enrolment form](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform) and jump to the [Installation without Blueprints](#installation-without-blueprints) instructions below.
   
 
 ### Contents
 * [Getting an Atlas Search Account](#getting-an-atlas-search-account) - How to register for an account & get a 'namespace'.
 * [Installing the Atlas Search Plugin](#installing-the-atlas-search-plugin) - Methods of installing the Atlas Search plugin.
     + [Installation via Blueprints](#installation-via-blueprints) - Standard approach to the plugin installation.
-    + [Installation without Blueprints](#installation-without-blueprints) - Alternate, discouraged, approach to the plugin installation.
+    + [Installation without Blueprints](#installation-without-blueprints) - Alternate approach to the plugin installation.
 * [Configuring the Atlas Search Plugin](#configuring-atlas-search-plugin) - Making the Atlas Search plugin talk to the Atlas Search server.
 * [Content Data Sync](#content-data-sync) - How to clone/ sync WordPress data into Atlas Search
 * [Using Atlas Search](#using-atlas-search) - A series of sample GraphQL queries that demonstrate Atlas Search’s functionalities.
@@ -37,11 +39,9 @@ The easiest way to get started with Atlas Search (Beta) is to request an Atlas s
   
 
 ### Getting an Atlas Search Account
-The Atlas Search server is where all your Content Data will live, under your own personal 'namespace', once you have created an Atlas Search account. To get this account you will need to fill in the [enrolment form](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform) - which will also provision a namespace for you. Please note that this is limited to 1 account/ namespace per email. If you have already filled in the aforementioned form, & received the associated 'setup' email, then please ignore this step. 
-After submission of the form you should receive an Atlas Search 'setup' email with the your own personal namespace's URL & Access Token. **Do not share this setup email or the Atlas Search credentials**
-
-Once you have a namespace you will want to be able to communicate between your headless WP instance & the Atlas Search server - this is achieved by using the Atlas Search plugin.
-  
+To get started with Atlas Search, you will need to fill in the [enrolment form](https://docs.google.com/forms/d/e/1FAIpQLSeRdfLXHlAhjaBfMJOobynCwxuKFtWwzHzna_yRXFt0n_dbhA/viewform).
+Please note that this is limited to 1 enrollment per email.
+After submission of the form you will receive an Atlas Search 'setup' email with the your own personal provider backend URL & Access Token. **Do not share this setup email or the Atlas Search credentials**
 
 ### Installing the Atlas Search Plugin
 The Atlas Search plugin can be installed manually but will more likely be installed implicitly as part of our Atlas Blueprints setup.
@@ -54,15 +54,15 @@ The Atlas Blueprints pipeline will have:
   
 #### Installation without Blueprints
 **This section only applies if you did not acquire the Atlas Search plugin via Atlas Blueprints.**
-To install the Atlas Search plugin you will need to have an instance of WordPress 'site' on WPEngine ‘Portal’, with a target ‘environment’ that you can access the ‘WP Admin’ panel for. In this WP Admin panel, before installing the Atlas Search plugin, you will need to download & activate the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin from the WordPress.org plugin repository. The Atlas Search plugin can then be installed & activated [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
+To install the Atlas Search plugin you will need to have an instance of WordPress and can access the ‘WP Admin’ panel. In the WP Admin panel, before installing the Atlas Search plugin, you will need to download & activate the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin from the WordPress.org plugin repository. The Atlas Search plugin can then be installed & activated [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
   
   
 ### Configuring Atlas Search Plugin
-Configuring the Atlas Search plugin enables both the Content Data Sync (indexes to the Atlas Search server) & Search Querying (filtered reads from the Atlas Search server, via GraphQL) functionalities.
+Configuring the Atlas Search plugin enables both the Content Sync & Search Querying functionalities.
 
-After successful installation, via one of the methods discussed in the [Plugin Installation section](#installing-the-atlas-search-plugin), the `Atlas Search` menu item will appear in the left navigation panel of the site environment’s WP Admin panel.
+After successful installation, via one of the methods discussed in the [Plugin Installation section](#installing-the-atlas-search-plugin), the `Atlas Search` menu item will appear in the left navigation panel of the WP Admin panel.
 1. Click this `Atlas Search` menu item. By default it will bring you to the default sub-menu ‘Settings’ view, where you will populate the following inputs with the values from the setup email you have received after completing the [Getting an Account section](#getting-an-atlas-search-account):
-    + (Namespace) URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
+    + URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
     + Access Token (ie. `{your-unique-access-token}`)
 2. Select the ‘Save Settings’ button for the changes to take effect.
 
@@ -70,8 +70,8 @@ After successful installation, via one of the methods discussed in the [Plugin I
   
   
 
-### Content Data Sync
-Once you have configured the Atlas Search plugin it will be necessary to run an initial content sync, which will send all pre-existing content on the WP site to Atlas Search for indexing.
+### Content Sync
+Once you have installed & configured the Atlas Search plugin it will be necessary to run an initial content sync, which will send all pre-existing content on the WP site to Atlas Search for indexing.
 
 After this initial sync, the Atlas Search plugin will continue to auto-sync content in real-time whenever content additions or modifications occur on WP.
 

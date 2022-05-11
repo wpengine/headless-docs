@@ -35,6 +35,7 @@ If you already have an Atlas account and an Atlas App that you wish to evaluate 
     + [Querying Standard WP Data Types](#querying-standard-wp-data-types-) WP Data Types - Queries with Posts, Pages, CPT
     + [Querying ACM/ ACF Types](#querying-acm-or-acf-types-) - Queries for Atlas Content Modeller or Advanced Custom Fields
     + [Getting More Specific with Queries](#getting-more-specific-with-queries) - Queries with `AND`, `NOT` & `OR`
+    + [Handling Typos with Fuzziness](#handling-typos-with-fuzziness) - Resolving queries with typos
 * [Advanced Configuration of Atlas Search](#advanced-configuration-of-atlas-search) - Configure what WP Data Types & fields are searchable, & set custom weightings to prioritize what matters to you.
   
   
@@ -186,6 +187,9 @@ Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress
   }
 }
 ```  
+  
+#### Handling Typos with Fuzziness
+By default, Atlas Search will attempt to search for a match to every word, with a one-letter-per-word typo tolerence: this means that if you type `Hallo Warld` by accident you will get the results for both `Hello` & `World`. If a word contains more than one typo it will not find such associated words, but it will still search any remaining words in the query unbiasedly.  
   
 
 ### Advanced Configuration of Atlas Search

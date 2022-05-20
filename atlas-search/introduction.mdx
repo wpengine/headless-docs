@@ -35,8 +35,9 @@ If you already have an Atlas account and an Atlas App that you wish to evaluate 
     + [Querying Standard WP Data Types](#querying-standard-wp-data-types-) WP Data Types - Queries with Posts, Pages, CPT
     + [Querying ACM/ ACF Types](#querying-acm-or-acf-types-) - Queries for Atlas Content Modeller or Advanced Custom Fields
     + [Getting More Specific with Queries](#getting-more-specific-with-queries) - Queries with `AND`, `NOT` & `OR`
-    + [Handling Typos with Fuzziness](#handling-typos-with-fuzziness) - Resolving queries with typos
-* [Advanced Configuration of Atlas Search](#advanced-configuration-of-atlas-search) - Configure what WP Data Types & fields are searchable, & set custom weightings to prioritize what matters to you.
+* [Advanced Configuration of Atlas Search](#advanced-configuration-of-atlas-search) - Advanced features that allow extra configurability for Atlas Search.
+    + [Handling Typos with Fuzzy Search](#handling-typos-with-fuzzy-search) - Resolving queries with `n` number of typos
+    + [Filtering and Boosting Searchable Content](#filtering-and-boosting-searchable-content) - Configure what WP Data Types & Fields are searchable, & set custom weightings to prioritize what matters to you.
   
   
 
@@ -188,23 +189,30 @@ Atlas Search treats spaces as ‘OR’ by default, whereas the default WordPress
 }
 ```  
   
-#### Handling Typos with Fuzziness
-By default, Atlas Search will attempt to search for a match to every word, with a one-letter-per-word typo tolerence: this means that if you type `Hallo Warld` by accident you will get the results for both `Hello` & `World`. If a word contains more than one typo it will not find such associated words, but it will still search any remaining words in the query unbiasedly.  
-  
 
 ### Advanced Configuration of Atlas Search
+For those users who have more specific functionality needs Atlas Search provides a series of advanced configurations to give you the most control on your data search.  
+  
+#### Handling Typos with Fuzzy Search
+Atlas Search will attempt to search for an exact match to every word in a search query if `Fuzziness` is not enabled. By default, however, Fuzziness is enabled on a fresh plugin install, & it employs a default one-letter-per-word tolerance ("distance"), so you can immediately see the benefits. With this default Fuzziness setup you type "Hallo Warld" and you will get the results for both "Hello" and "World".
+
+This Fuzziness can be toggled, along with modifying this per-word distance (to, let's assume, the maximum distance of 3) in the plugin menu’s ‘Search Config’ view - in this case a search query of "Haaao Waaad" would work as per the previous example, yeilding also  the results for both "Hello" and "World".
+
+Please note that the higher the fuzziness distance allowed the greater the performance & relevancy hit will be to your search experience.  
+  
+#### Filtering And Boosting Searchable Content
 Atlas Search, by default, will search all supported WP Data Type objects (Posts, Pages, CPTs, ACFs, ACMs, etc.) by all of their supported fields (string, number, boolean, other WP Data Type objects).
 
 Atlas Search will then return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences will rise to the top. In some cases this may not be the desired behavior, for example:
 * It may not be correct to consider some specific fields as searchable
 * Searches matching some fields should be considered more relevant than others
 
-To cater for these type of use cases, Atlas Search provides both a field-level filter (‘searchable’ field toggle), and a field-level weighting slider, which can be found in the plugin menu’s ‘Search Config Settings’.
+To cater for these type of use cases, Atlas Search provides both a field-level filter (‘searchable’ field toggle), and a field-level weighting slider, which can be found in the plugin menu’s ‘Search Config’ view.
 
 The field-level filter permits the configuration for each field to be included/excluded from consideration in search queries.
 
-The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when decising on ordering of search results. The higher the weighting, the more relevant it is deemed to be.
-
+The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when decising on ordering of search results. The higher the weighting, the more relevant it is deemed to be.  
+  
 Remember to press the ‘Save’ button to persist any configuration modifications!
 
 ![Atlas Search Plugin Config](./images/as-plugin-config.png)

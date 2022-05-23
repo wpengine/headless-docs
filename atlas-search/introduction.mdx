@@ -196,7 +196,7 @@ For those users who have more specific functionality needs Atlas Search provides
 #### Handling Typos with Fuzzy Search
 Atlas Search will attempt to search for an exact match to every word in a search query if `Fuzziness` is not enabled. By default, however, Fuzziness is enabled on a fresh plugin install, & it employs a default one-letter-per-word tolerance ("distance"), so you can immediately see the benefits. With this default Fuzziness setup you type "Hallo Warld" and you will get the results for both "Hello" and "World".
 
-This Fuzziness can be toggled, along with modifying this per-word distance (to, let's assume, the maximum distance of 3) in the plugin menu’s ‘Search Config’ view - in this case a search query of "Haaao Waaad" would work as per the previous example, yeilding also  the results for both "Hello" and "World".
+This Fuzziness can be toggled, along with modifying this per-word distance (to, let's assume, the maximum distance of 2) in the plugin menu’s ‘Search Config’ view - in this case a search query of "Haalo Waald" would work as per the previous example, yielding also the results for both "Hello" and "World".
 
 Please note that the higher the fuzziness distance allowed the greater the performance & relevancy hit will be to your search experience.  
   

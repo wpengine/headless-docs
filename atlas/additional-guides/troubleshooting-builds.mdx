@@ -36,30 +36,13 @@ At the top of that page, there is a section with additional details about a part
 
 ![Detail panel for a particular Atlas build](./assets/img/troubleshooting-builds/build-log-detail-panel.png)
 
-#### Error Output
-
-Below this detail panel, you will also find two areas that contain console output for your build process. The topmost console output area on the page contains error output, and this will typically be the best place to look when assessing a failed build.
-
-![Error output for a failed Atlas build](./assets/img/troubleshooting-builds/error-output-atlas-build.png)
-
-In the screenshot above, we can see that this particular build exited with a `Failed to compile` error because a `Link` element was malformed or missing required properties. This example points us directly to the offending file and line of code, which makes addressing the issue straightforward.
-
-Using the `copy` button in the top right of the error output area, you can copy the logs to your clipboard for further analysis in a text editor or to share with your team or support. Unfortunately, not all failed builds will be for such an obvious reason, but the error output in your app's build logs is the best starting place for investigation. While there are additional logs that you can review to get to the bottom of failing builds, the error output captures all error message output.
-
 #### Logging Output
 
-Below the error output area, there is another pane that contains logging output labeled `Logs` that provides you with a record of more general console output. While the error area above is dedicated to output of thrown `Errors`, this section captures output from things like `console.log`, `console.info`, and `console.warn` that may be important but not critical.
+The logging output pane labeled `Logs` captures all of the logging output from your build.
 
-![Logging output for a failed Atlas build](./assets/img/troubleshooting-builds/logging-output-atlas-builds.png)
+![Logging output for a failed Atlas build](./assets/img/troubleshooting-builds/logging-output-atlas-builds-v2.png)
 
-In the screenshot above, we can see a few examples of this in action, and there are a few details we can pick out of the logging output:
-
-1. Atlas tells us that it is using cached directories `.next` and `node_modules` from previous builds because we did not request a clean rebuild
-1. Atlas logs a `WARNING` regarding the lack of a specified port for our application; it expects `8080`
-1. Atlas logs an `INFO` message regarding the lack of a specified Node.js version and defaults to `v16`
-1. After those messages, we begin to see output from running `npm install` and the commands our app is using to build itself in `wpe-build`
-
-Even though there aren't any errors here, the logging output available in this pane can be extremely useful for tracking down any issues that are related to your dependencies or their installation.
+The logging output available in this pane can be extremely useful for tracking down any issues that are related to your dependencies or their installation.
 
 ### Accessing Prior Builds
 

@@ -1,0 +1,73 @@
+---
+slug: /atlas/customization/builds
+title: Configuring Atlas Builds
+description: Learn how to configure builds on the Atlas platform
+---
+
+Here we describe ways of configuring the Atlas build system for your needs. You can configure the Node.js environment, how dependencies are installed and what command is used to build your app.
+
+## Setting a custom version of Node.js, npm and yarn
+
+### Node.js
+
+By default, Atlas uses the latest LTS Node.js version which is v16. The timeline of LTS releases is tracked [here.](https://nodejs.org/en/about/releases/) Currently we maintain support for Node.js v12, v14, v16.
+
+To set a custom version of Node.js, use the [engines](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#engines) field in the `package.json` file. For example here is how to set it to use Node.js 14.
+```json
+"engines": {
+  "node": "v14"
+},
+```
+
+To see what version of Node.js you are using on your local machine use the following command:
+```bash
+$ node --version
+v16.15.0
+```
+
+### npm
+
+The default version of npm used depends on the version of Node.js you have selected. You can use [this page](https://nodejs.org/en/download/releases/) to search which version of npm comes with a particular version of Node.js. Alternatively to see what version you have installed locally use:
+```bash
+$ npm --version
+8.11.0
+```
+
+Atlas looks for your npm version in two places. The first is the `engines` field in the `package.json` file:
+```json
+"engines": {
+  "npm": "8.11.0"
+}
+```
+
+An alternative way to set npm is to use the `packageManager` field in the `package.json` file. Note the difference in format compared to the `engines` field above.
+```json
+"packageManager": "npm@8.11.0"
+```
+
+### yarn
+
+Atlas looks for a `yarn.lock` file to decide if your app is using yarn. If no `yarn.lock` file is present then it defaults to `npm`. 
+
+Currently only yarn classic (v1) is supported with the default version on Atlas being `v1.22.18`. Other versions of yarn classic can be selected by using the `packageManager` field in `package.json`
+```bash
+"packageManager": "yarn@1.22.16"
+```
+
+
+## Installing Dependencies
+
+If you have checked in the `package-lock.json` file to your repo Atlas runs `npm ci` to install package dependencies. It is recommended to include this file for a number of reasons:
+**Reliability:** exact dependency versions are in the `package-lock.json` file which ensures the Atlas environment mirrors the local environment
+**Speed:** there is no need to create a list of dependencies before installing them. Dependencies are directly installed from  `package-lock.json`. 
+
+Note: if the `package-lock.json` and `package.json` are out of sync the install will fail. To fix this error please run `npm install` to update the dependencies
+
+If the `package-lock.json` file is not present then `npm install` is run.
+
+## Build Command
+
+The build command can be configured 3 ways. In order of priority they are:
+1.  `npm run-script ATLAS_BUILD_SCRIPT` - Atlas looks for the `ATLAS_BUILD_SCRIPT` environment variable. For example if `ATLAS_BUILD_SCRIPT=my-build` we will run `npm run-script my-build`
+2.  `npm run-script wpe-build` - if it exists in `package.json`
+3.  `npm run-script build` - if it exists in `package.json`

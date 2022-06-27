@@ -14,7 +14,7 @@ Atlas supports Node.js applications using popular frameworks like [Faust.js](htt
 
 When building the front-end app, WPEngine will use ```npm run build``` by default. If you want to specify a build command, you can do so in one of two ways:
 
-1. "wpe-build" script located in the package.json file.
+1. adding a "wpe-build" script in the package.json file for your app.
 
 ```json
   "scripts": {
@@ -23,9 +23,10 @@ When building the front-end app, WPEngine will use ```npm run build``` by defaul
   },
 ```
 
-3. "ATLAS_BUILD_SCRIPT" environmental variable in the user-portal.
+3. creating a "ATLAS_BUILD_SCRIPT" environmental variable in the user-portal and adding the command as value. Learn more about environmental variables [here](#env-var).
 
 ![ATLAS_BUILD_SCRIPT env variable](./assets/img/env-variables.png)
+
 
 >If you don't know what command needs to be run to build your app, please refer to the JavaScript framework's documentation.
 
@@ -99,6 +100,7 @@ If you're using the Faust.js Starter Kit or an existing Faust.js app repository,
 
 ![First app deployed](./assets/img/first-app-deployed.png)
 
+<a name="env-var"></a>
 ### Set Environment Variables (Optional)
 
 To add environment variables for your app, click `Add environment variable`.

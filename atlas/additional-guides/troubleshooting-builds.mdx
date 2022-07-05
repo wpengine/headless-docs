@@ -67,6 +67,22 @@ After the platform pulls your code and runs `npm install`, it will execute the `
   },
 ```
 
+### Make sure the branch and repository you're pulling from exists
+
+If you've deleted your branch or repository, you'll see the following message on the environment details screen:
+<img width="599" alt="image" src="https://user-images.githubusercontent.com/15729608/177279683-d43d93a3-30f7-4bdc-b883-5f79ab158f92.png">
+
+You will also see an alert next to the branch name:
+![image](https://user-images.githubusercontent.com/15729608/177280170-92c651db-d4da-4a58-bec4-d6b81aa8e416.png)
+
+In csae of deleted branch (or if you simply want to switch a branch your environment is pulling code from to, for example, a feature branch), you can do it by clicking on the "edit" button next to the branch name, selecting a branch and clicking "Save":
+![image](https://user-images.githubusercontent.com/15729608/177280390-90af297a-095f-4ff0-9cc1-5b0f2f70804d.png)
+
+Saving this setting will trigger a rebuild - from then on, the code is being sourced from the branch you selected and all the commits to this branch will cause environment to rebuild.
+
+At the moment, there's no way to change the repository your application is pulling code fromm - if you've deleted the repository, you can delete your environments and your application and create a new one, pulling code from your new repository, from scratch.
+
+
 ## Other Build Issues
 
 In some cases, your application will successfully build, but you may not see the correct visual results on the live site, or code that _should_ be a part of you application isn't working. If this is the case, a good next step would be to clear out any assets from previous builds and make sure that no older files are still being served from a CDN.

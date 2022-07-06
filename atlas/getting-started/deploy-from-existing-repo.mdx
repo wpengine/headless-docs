@@ -12,9 +12,9 @@ Atlas supports Node.js applications using popular frameworks like [Faust.js](htt
 
 ### 1. Prepare your app for deployment
 
-When building the front-end app, WPEngine will use ```npm run build``` by default. If you want to specify a build command, you can do so in one of two ways:
+When building the front-end app, WP Engine will use `npm run build` by default. If you want to specify a build command, you can do so in one of two ways:
 
-1. adding a "wpe-build" script in the package.json file for your app.
+1. Add a `wpe-build` script in the `package.json` file for your app.
 
 ```json
   "scripts": {
@@ -23,12 +23,12 @@ When building the front-end app, WPEngine will use ```npm run build``` by defaul
   },
 ```
 
-3. creating a "ATLAS_BUILD_SCRIPT" environmental variable in the user-portal and adding the command as value. Learn more about environmental variables [here](#env-var).
+3. Create a `ATLAS_BUILD_SCRIPT` environmental variable in the User Portal, with the command to be run as its value. Learn more about environmental variables [here](#env-var).
 
 ![ATLAS_BUILD_SCRIPT env variable](./assets/img/env-variables.png)
 
 
->If you don't know what command needs to be run to build your app, please refer to the JavaScript framework's documentation.
+>If you don't know what command needs to be run to build your app, please refer to the your JavaScript framework's documentation.
 
 ### 2. Connect to GitHub
 

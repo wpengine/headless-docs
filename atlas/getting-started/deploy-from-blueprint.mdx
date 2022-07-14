@@ -22,31 +22,28 @@ After Atlas connects to your GitHub account, the `Connect` button indicates that
 
 ![Connected to GitHub](./assets/img/connect-to-github-blueprints.png)
 
-### 2. Clone the blueprint and choose the repository
+### 2. Create a repository
 
-Now that GitHub is connected, it's time to create a repository by cloning a blueprint.
+Now that GitHub is connected, it's time to create a repository where your Blueprint code is going to be stored.
 
-1. Select `Clone Blueprint`. This option opens another tab in GitHub.
+1. Select your GitHub account
+Use the dropdown list or start typing to filter available GitHub accounts.
 
-2. On the `Create a new repository` page, set your new git repository settings.
+![Select your GitHub account](./assets/img/select-github-account.png)
 
-- Under `Owner`, select the username you associated with your repository.
-- For `Repository name`, enter a name in a format similar to `repository-name`. Avoid capitalization or spaces to make it easy to navigate your repository in the future.
-- (Optional) Enter a `description` for your repository.
-- Choose whether to make your repository `Public` or `Private`.
-- Leave `Include all branches` unchecked.
+If you don't see the account for which you'd like to create a repository on the list, click on "Manage GitHub app" on the top of the screen:
+![Connected to GitHub](./assets/img/manage-github-app.png)
 
-3. With your new repository named, select `Create repository from template`.
 
-![Create a new repo](./assets/img/new-repo-screen.png)
+2. Name your repository
 
-4. Navigate back to the WP Engine User Portal by closing the GitHub tab.
+Depending on which Blueprint you chose, Atlas will suggest a repository name for you. The name of your repository should be unique within your GitHub account - If it's not, you'll see an error after clicking the "Create" button on the bottom of the page.
 
-5. Select your new repository from the repository list when it refreshes.
+3. Select the visibility of your repository
 
-![Select your repo](./assets/img/repo-select.png)
+If you want to limit your repository's visibility to only people that can access your GitHub account, make sure to check the "Private repository" checkbox.
 
-6. Select a region for your Atlas app. The region you select will be used for all of your app's environments (production/staging/etc.) and cannot be changed once your Atlas application has been deployed.
+4. Select a region for your Atlas app. The region you select will be used for all of your app's environments (production/staging/etc.) and cannot be changed once your Atlas application has been deployed.
 
 ![Select your app's region](./assets/img/region-select-blueprint.png)
 

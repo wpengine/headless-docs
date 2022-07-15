@@ -79,6 +79,11 @@
           "type": "doc",
           "label": "Cache-Control Headers",
           "filePath": "/atlas/customization/cache-control.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Configuring Atlas Builds",
+          "filePath": "/atlas/customization/builds.mdx"
         }
       ]
     },

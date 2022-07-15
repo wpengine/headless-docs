@@ -32,7 +32,7 @@ If you click on the commit hash link in the above screenshot, you will be taken 
 
 If you click the `Build logs` link, you will be taken to a page that gives you more details about the build itself, as well as access to the errors and logs for your build.
 
-At the top of that page, there is a section with additional details about a particular build. You can see things like the time the build started, the repo and branch that Atlas tried to build from, as well as another commit hash link to GitHub. Each individiual build is also given a unique ID, and this might be needed if you try to escalate continued failing builds with support.
+At the top of that page, there is a section with additional details about a particular build. You can see things like the time the build started, the repo and branch that Atlas tried to build from, as well as another commit hash link to GitHub. Each individual build is also given a unique ID, and this might be needed if you try to escalate continued failing builds with support.
 
 ![Detail panel for a particular Atlas build](./assets/img/troubleshooting-builds/build-log-detail-panel.png)
 
@@ -67,12 +67,33 @@ After the platform pulls your code and runs `npm install`, it will execute the `
   },
 ```
 
+
+### Make sure the branch and repository you're pulling from exists
+
+If you've deleted your branch or repository, you'll see the following message on the environment details screen:
+
+![Deleted branch error ](./assets/img/troubleshooting-builds/deleted-branch-error.png)
+
+You will also see an alert next to the branch name:
+
+![Deleted branch alert ](./assets/img/troubleshooting-builds/deleted-branch-alert.png)
+
+If you delete your branch or want to build from a different branch, you can do it by clicking on the `Edit` button next to the branch name, selecting a branch and clicking `Save`:
+
+![Edit branch UI](./assets/img/troubleshooting-builds/edit-branch-ui.png)
+
+Saving this setting will trigger a rebuild. For all subsequent builds the code will be sourced from the new branch you selected and all commits to this branch will cause the environment to rebuild.
+
+At the moment, there's no way to change the repository your application is pulling code from. If you've deleted the repository, you will have to delete your environments and your application and then create a new one, pulling code from your new repository.
+
+
 ### Creating an Atlas Blueprint Fails
 
 1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
 2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
 
 ![GitHub repo default branch input](./assets/img/troubleshooting-builds/github-repo-default-branch.png)
+
 
 
 ## Other Build Issues

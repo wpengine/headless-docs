@@ -67,6 +67,7 @@ After the platform pulls your code and runs `npm install`, it will execute the `
   },
 ```
 
+
 ### Make sure the branch and repository you're pulling from exists
 
 If you've deleted your branch or repository, you'll see the following message on the environment details screen:
@@ -84,6 +85,15 @@ If you delete your branch or want to build from a different branch, you can do i
 Saving this setting will trigger a rebuild. For all subsequent builds the code will be sourced from the new branch you selected and all commits to this branch will cause the environment to rebuild.
 
 At the moment, there's no way to change the repository your application is pulling code from. If you've deleted the repository, you will have to delete your environments and your application and then create a new one, pulling code from your new repository.
+
+
+### Creating an Atlas Blueprint Fails
+
+1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
+2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
+
+![GitHub repo default branch input](./assets/img/troubleshooting-builds/github-repo-default-branch.png)
+
 
 
 ## Other Build Issues

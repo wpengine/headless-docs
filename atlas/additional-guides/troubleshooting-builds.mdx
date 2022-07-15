@@ -67,6 +67,14 @@ After the platform pulls your code and runs `npm install`, it will execute the `
   },
 ```
 
+### Creating an Atlas Blueprint Fails
+
+1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
+2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
+
+![GitHub repo default branch input](./assets/img/troubleshooting-builds/github-repo-default-branch.png)
+
+
 ## Other Build Issues
 
 In some cases, your application will successfully build, but you may not see the correct visual results on the live site, or code that _should_ be a part of you application isn't working. If this is the case, a good next step would be to clear out any assets from previous builds and make sure that no older files are still being served from a CDN.

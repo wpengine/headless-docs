@@ -12,11 +12,9 @@ Atlas supports Node.js applications using popular frameworks like [Faust.js](htt
 
 ### 1. Prepare your app for deployment
 
-First make sure that you've pushed your application's code to your GitHub repository. If you're not familiar with pushing code to a GitHub repository, see this guide: [Adding an existing project to GitHub using the command line](https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-an-existing-project-to-github-using-the-command-line).
+When building the front-end app, WP Engine will use `npm run build` by default. If you want to specify a build command, you can do so in one of two ways:
 
-Your application needs to include a `wpe-build` script in the [`scripts`](https://docs.npmjs.com/cli/v8/using-npm/scripts) field in your project's `package.json` file. It should execute the build command for your project. This is the script that the Atlas platform will execute when it builds your app.
-
-For example, the `package.json` file for a Faust.js or Next.js app would need to be updated as shown below.
+1. Add a `wpe-build` script in the `package.json` file for your app.
 
 ```json
   "scripts": {
@@ -25,7 +23,12 @@ For example, the `package.json` file for a Faust.js or Next.js app would need to
   },
 ```
 
-If you don't know what command needs to be run to build your app, please refer to your JavaScript framework's documentation.
+3. Create a `ATLAS_BUILD_SCRIPT` environmental variable in the User Portal, with the command to be run as its value. 
+
+![ATLAS_BUILD_SCRIPT env variable](./assets/img/env-variables.png)
+
+
+>If you don't know what command needs to be run to build your app, please refer to the your JavaScript framework's documentation.
 
 ### 2. Connect to GitHub
 

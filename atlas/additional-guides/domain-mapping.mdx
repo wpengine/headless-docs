@@ -31,6 +31,23 @@ Once you are in the Atlas portal, choose the app and environment that you want t
 
 After updating the custom domain settings in your Atlas environment, you will need to point your domain's DNS records to WP Engine servers to finish the connection. This step will vary based on your particular DNS provider, so be sure to reference their documentation on how to add a `CNAME` or `A` record.
 
+## Set domain redirects
+
+Once your domains are added to an environment (which requires adding them in the User Portal and clicking `Save All` to trigger a redeployment of your app), you can define domain-level redirect rules in the same screen. You can do it by clicking on the `Edit` button next to your domain name:
+
+   ![Button to access the domain redirect rules definition pop-up](./assets/img/domain-mapping/edit-redirect.png)
+   
+To specify a redirect rule, select a domain from the dropdown that will be the destination domain for the redirect. 
+
+   ![Define the redirect rule](./assets/img/domain-mapping/add-rule.png)
+   
+Once confirmed, you can inspect your rules in the `Redirects to` column. For changes to take place, you need to click the `Save All` button and redeploy your app. Your redirect rules will work as expected only if both your target and destination domain are properly configured (including the DNS details).
+
+   ![Inspect your redirect rules](./assets/img/domain-mapping/view-rule.png)
+
+Note: at the moment it is not possible to define redirect rules through the Atlas CLI. If changes done through CLI are expected to conflict with redirect rules set in the User Portal, this operation will be stopped and changes requested through CLI will not take place.
+
+
 ## Troubleshooting
 
 DNS can be inherently difficult to troubleshoot. Depending on your provider and your TTL (time to live) settings, it could take up to 24 hours for changes to your DNS records to propogate across the web.

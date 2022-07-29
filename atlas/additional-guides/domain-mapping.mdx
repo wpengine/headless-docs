@@ -34,16 +34,15 @@ After updating the custom domain settings in your Atlas environment, you will ne
 ## Set domain redirects
 
 Once your domains are added to an environment (which requires adding them in the User Portal and clicking "Save all" to trigger a redeployment of your app), you can define domain-level redirect rules in the same screen. You can do it by clicking on the "Edit" button next to your domain name:
-   ![Button to access the domain redirect rules definition pop-up](./assets/img/domain-mapping/edit-redirect.png)
-   
-To specify a redirect rule, select a domain from a dropdown that is supposed to be a destination domain for the redirect. 
-   ![Define the redirect rule](./assets/img/domain-mapping/add-rule.png)
-   
+![Button to access the domain redirect rules definition pop-up](./assets/img/domain-mapping/edit-redirect.png)
+
+To specify a redirect rule, select a domain from a dropdown that is supposed to be a destination domain for the redirect.
+![Define the redirect rule](./assets/img/domain-mapping/add-rule.png)
+
 Once confirmed, you can inspect your rules in the "Redirects to" column. For changes to take place, you need to click the "Save all" button and redeploy your app. Your redirect rules will work as expected only if both your target and destination domain are properly configured (including the DNS details).
-   ![Inspect your redirect rules](./assets/img/domain-mapping/view-rule.png)
+![Inspect your redirect rules](./assets/img/domain-mapping/view-rule.png)
 
 Note: at the moment it is not possible to define redirect rules through the Atlas CLI. If changes done through CLI are expected to conflict with redirect rules set in the User Portal, this operation will be stopped and changes requested through CLI will not take place.
-
 
 ## Troubleshooting
 
@@ -57,3 +56,7 @@ A green check mark indicates that everything is configured appropriately, but ot
 ![An Atlas domain status tooltip](./assets/img/domain-mapping/domain-status-tooltip.png)
 
 If your domain name resolves but shows either a Cloudflare error or an error regarding SSL versions, its possible that the Atlas platform is still provisioning the resources required to support your custom domain name. If either of these errors persist, please reach out to support.
+
+## Additional Resources
+
+[Smart Plugin Manager Compatibility](https://wpengine.com/support/smart-plugin-manager/#Atlas_Support)

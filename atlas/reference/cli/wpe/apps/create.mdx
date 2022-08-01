@@ -89,12 +89,12 @@ To make your `json` file zip configurable, set the `"repo"` parameter to `"uploa
 
 ```json
 {
-  "name":"your_app_name",
+  "name": "your_app_name",
   "repo": "uploadable",
-  "region":"EU-W",
+  "region": "EU-W",
   "environments": [
     {
-      "domains":[],
+      "domains": [],
       "name": "someenvname",
       "zip_file_path": "path/to/file.zip",
       "branch": "-",
@@ -103,14 +103,13 @@ To make your `json` file zip configurable, set the `"repo"` parameter to `"uploa
         {
           "key": "replace-with-key",
           "value": "replace-with-key-value"
-        }]
-}
-]
+        }
+      ]
+    }
+  ]
 }
 ```
 
-With your `json` file parameters set, run `wpe apps create -f wpe.json`. 
+With your `json` file parameters set, run `wpe apps create -f wpe.json`.
 
-## Further Reading
-
-- [Create Your First App](../../../../guides/create-app)
+##

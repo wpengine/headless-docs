@@ -118,17 +118,17 @@ Below is an example of how to set each build command:
 Note - at the moment this feature is open to a limited number of Atlas users. If you would like to use it, let us know through [e-mail](sendto:ilona.kedracka@wpengine.com).
 
 To generate a webhook that, when triggered, is going to rebuild your Atlas environment, visit the environment settings page:
-![Settings page](./img/settings.jpg)
+![Settings page](./img/settings.png)
 
-Click the "Generate webhook" button:
-//picture
+Click the "Create a webhook" button:
+![Generate webhook](./assets/img/webhook-button.png)
 
 Copy the webhook URL to use it in your custom workflows:
-//picture
+![Webhook URL](./assets/img/webhook.png)
 
 Once generated, you can also use it to configure WordPress plugins that are going to start a build triggered by a certain WordPress action, like adding a new post or a new page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/). 
 
 If for any reason you want to regenerate the webhook so that old URL will no longer be able to be used for triggering rebuilds, click the "Regenerate" button and confirm your action:
-//picture
+![Regenerate webhook](./assets/img/regenerate.png)
 
 To delete your webhook, click the "Delete" button. If you do so, the URL you previously used will no longer work while attempting to trigger a rebuild.

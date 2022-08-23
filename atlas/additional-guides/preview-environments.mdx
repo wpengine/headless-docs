@@ -1,0 +1,43 @@
+---
+slug: /atlas/additional-guides/preview-environments
+title: Atlas preview environments
+description: Configure preview environments for your Atlas sites.
+---
+
+In this guide, you'll learn how to configure preview environments for your Atlas sites. 
+
+## What are preview environments?
+To make your Atlas workflow easier, you can now dynamically create new Atlas environments to test your changes on, without having to go through all the configuration steps in the User Portal.
+If you decide to turn the feature on, every pull request opened to a branch that is used as a source branch for your Atlas environment will spin up a preview environment based on the branch that is being compared to your source branch. Closing or merging the PR will shut the environment down.
+
+
+## How to turn the 'preview environments' feature on?
+This feature is enabled through a per-environment setting. To do so, visit the "Settings" page of your Atlas environment:
+//picture
+
+Once you turn the toggle on, every pull request to the branch based on which the environment is built will create a new preview environment automatically:
+
+
+## How to create a preview environment? 
+Once the setting is turned on, you can test the process by opening a pull request to the environment source branch:
+//picture
+
+When the environment is created, a comment with preview environment and build details will be posted on the pull request page:
+//picture
+
+From there, you can view your preview environment details and access the environment URL:
+//picture
+
+You can also view preview environments of a given environment on the environment details page:
+//picture
+
+
+## How to delete a preview environment?
+The action of closing or merging the pull request will automatically shut the preview environment down.
+
+You can also delete your preview environment through the user Portal - to do so, visit the preview environment details page and click the "Delete" button.
+//picture
+
+## Preview environments - important notes
+1. Preview environments inherit both the environment variables and the link to WordPress from their 'parent' environment. You can modify the environment variables of a given preview environment on its details page in the User Portal.
+2. To protect users from creating Atlas environments by unauthorised users, pull requests coming from forked repositories are ignored at the moment.

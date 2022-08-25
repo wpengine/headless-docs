@@ -108,6 +108,11 @@
         },
         {
           "type": "doc",
+          "label": "Preview Environments",
+          "filePath": "/atlas/additional-guides/preview-environments.mdx"
+        },
+        {
+          "type": "doc",
           "label": "Support",
           "filePath": "/atlas/additional-guides/support.mdx"
         }

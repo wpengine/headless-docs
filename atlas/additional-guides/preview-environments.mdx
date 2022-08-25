@@ -13,21 +13,26 @@ If you decide to turn the feature on, every pull request opened to a branch that
 
 ## Enable the 'preview environments' feature
 This feature is enabled through a per-environment setting. To enable this setting, visit the `Settings` page of your Atlas environment:
+
 ![Settings page of Atlas Environment](./assets/img/preview-environments/settings.png)
 
 Once you enable this feature via the toggle, every pull request to the source branch for the environment will create a new preview environment automatically:
+
 ![Settings](./assets/img/preview-environments/toggle.png)
 
 
 ## Create a preview environment
 Once the setting is turned on, you can test the process by opening a pull request to the environment's source branch. When the preview environment is created, a GitHub comment will be posted on the pull request page that includes the new environment's URL, build logs, and other details:
-![Settings](./assets/img/preview-environments/pr.png)
+
+![GitHub comment for preview env](./assets/img/preview-environments/pr.png)
 
 From there, you can view your preview environment details and access the environment URL:
-![Settings](./assets/img/preview-environments/details.png)
+
+![Preview environment details](./assets/img/preview-environments/details.png)
 
 You can also view all current preview environments for a given environment on that environment's details page:
-![Settings](./assets/img/preview-environments/table.png)
+
+![Open preview environments table](./assets/img/preview-environments/table.png)
 
 
 ## Delete a preview environment

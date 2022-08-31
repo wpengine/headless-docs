@@ -13,35 +13,41 @@ This guide describes how to configure the Atlas build system for your applicatio
 By default, Atlas uses the latest v16 LTS release of Node.js. Currently Atlas supports Node.js v12, v14 and v16.
 
 To set a custom version of Node.js, use the [engines](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#engines) field in the `package.json` file. For example, here is how to deploy your application Node.js 16:
+
 ```json
 "engines": {
   "node": "16.15.0"
 },
 ```
+
 Note: Atlas builds use [Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) to specify the Node.js version. This can be used to specify a specific versions, a range of versions or a major version
 
 The version of Node.js in use on your builds can be found in the build output:
+
 ```
 Node.js Setup:
   Detecting Node.js version
     Searching for the Node.js version in package.json => engines
     Using Node.js "16.15.0" from the package.json engines field
-  
+
   Installing Node.js
   nodejs: Contributing to layer
     Node.js v16.15.0 installed
 ```
 
 To see what version of Node.js you are using on your local machine use the following command:
+
 ```bash
 $ node --version
 v16.15.0
 ```
+
 ### npm
 
-The builds use the default version of npm that comes with the Node.js release selected. You can use [this page](https://nodejs.org/en/download/releases/) to search which version of npm comes with a particular version of Node.js. 
+The builds use the default version of npm that comes with the Node.js release selected. You can use [this page](https://nodejs.org/en/download/releases/) to search which version of npm comes with a particular version of Node.js.
 
 You can set a custom version of npm used in Atlas builds in two places. The first is the `engines` field in the `package.json` file. Similar to Node.js versions above, Atlas uses semver to specify the version used. Here is how to set it to use the latest version of npm v8:
+
 ```json
 "engines": {
   "npm": "8"
@@ -49,11 +55,13 @@ You can set a custom version of npm used in Atlas builds in two places. The firs
 ```
 
 An alternative way to set npm is to use the `packageManager` field in the `package.json` file. Note the difference in format compared to the `engines` field above where the version must be an exact version of npm:
+
 ```json
 "packageManager": "npm@8.11.0"
 ```
 
 The version of npm being used on your builds can be found in the build output:
+
 ```
 npm Setup:
   Detecting npm version
@@ -61,26 +69,31 @@ npm Setup:
      1. package.json => engines
      2. package.json => packageManager
     Using npm "8" from package.json engines field
-  
+
   Installing npm
     npm: Contributing to layer
       npm v8.13.2 installed because it is the latest version that matches the constraint "8"
 ```
 
 To see what version you have installed locally use:
+
 ```bash
 $ npm --version
 8.11.0
 ```
+
 ### Yarn
-If the `yarn.lock` file is committed then yarn is used instead of npm to build your application. Currently only Yarn Classic (v1) is supported on Atlas builds. 
+
+If the `yarn.lock` file is committed then yarn is used instead of npm to build your application. Currently only Yarn Classic (v1) is supported on Atlas builds.
 
 If you want to set an exact version of Yarn use the `packageManager` field in `package.json`:
+
 ```json
 "packageManager": "yarn@1.22.16"
 ```
 
 The version of Yarn being used on your builds can be found in the build output:
+
 ```
 Yarn Setup:
   Determining yarn version
@@ -88,10 +101,12 @@ Yarn Setup:
 ```
 
 Use this command to see what version you are using locally:
+
 ```bash
 $ yarn --version
 1.22.16
 ```
+
 ## Installing Dependencies
 
 It is recommended to commit your `package-lock.json` file to version control. Once committed Atlas uses the lock file to run `npm ci` to install package dependencies which builds your app with the same dependencies used in your local dev environment.
@@ -99,14 +114,17 @@ It is recommended to commit your `package-lock.json` file to version control. On
 If the `package-lock.json` file is not present then `npm install` is run.
 
 ## Custom Build Commands
+
 This is the command which is run to build your application. Custom build commands can be set on Atlas and per environment.
 
 The build command can be configured 3 ways. In order of priority they are:
+
 1.  `ATLAS_BUILD_SCRIPT` - Atlas builds look for the `ATLAS_BUILD_SCRIPT` environment variable. For example, `ATLAS_BUILD_SCRIPT=my-build` means `npm run my-build` will be run if using npm
 2.  `wpe-build` - if it exists in `package.json` then `npm run wpe-build` is run if using npm
 3.  `build` - if it exists in `package.json`
 
 Below is an example of how to set each build command:
+
 ```json
 "scripts": {
     "my-build": "next build",  // only run if ATLAS_BUILD_SCRIPT is set
@@ -116,6 +134,7 @@ Below is an example of how to set each build command:
 ```
 
 ## Custom Start Commands
+
 The start command is run to start your Node application once it is deployed. By default Atlas runs the `start` script in `package.json`. This can be overridden by setting the `ATLAS_START_SCRIPT` environment variable. For example, `ATLAS_START_SCRIPT=start-dev` means `next dev` will be run instead of `next start` with the package.json below:
 
 ```json
@@ -127,20 +146,24 @@ The start command is run to start your Node application once it is deployed. By 
 
 ## Rebuild an environment via webhook
 
-Note - at the moment this feature is open to a limited number of Atlas users. If you would like to use it, let us know through [e-mail](sendto:ilona.kedracka@wpengine.com).
+Note - at the moment this feature is open to a limited number of Atlas users. If you would like to use it, let us know through the [form](https://forms.gle/XwqXKaAZcx5u1rhY6).
 
 To generate a webhook that will rebuild your Atlas environment when triggered, visit the environment settings page and click on the `Settings` button:
+
 ![Settings page](./img/settings.png)
 
 Click the `Create a webhook` button:
+
 ![Generate webhook](./img/webhook-button.png)
 
 Copy the webhook URL to use in your custom workflows:
+
 ![Webhook URL](./img/webhook.png)
 
-Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/). 
+Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/).
 
 If for any reason you want to regenerate the webhook so that old URL will no longer trigger rebuilds, click the `Regenerate` button and confirm your action:
+
 ![Regenerate webhook](./img/regenerate.png)
 
 To delete your webhook, click the `Delete` button. If you do so, the URL you previously used will no longer work when attempting to trigger a rebuild.

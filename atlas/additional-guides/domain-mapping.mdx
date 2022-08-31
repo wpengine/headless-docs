@@ -16,21 +16,21 @@ Once you are in the Atlas portal, choose the app and environment that you want t
 
 ## Add a Domain to the Environment
 
-1. After selecting your environment, locate the `+ Add domains` button on the environment detail panel. 
+1. After selecting your environment, locate the `+ Add domains` button on the environment detail panel.
 
    ![An Atlas environment details and the add domains button](./assets/img/domain-mapping/add-domain.png)
 
-2. Locate the text input labeled `Domain URL` and add your desired domain name to that input field. As you type it will validate the URL for you. Click the `Confirm` button below the input to confirm your new domain. 
+2. Locate the text input labeled `Domain URL` and add your desired domain name to that input field. As you type it will validate the URL for you. Click the `Confirm` button below the input to confirm your new domain.
 
    ![The text input that contains your custom domain](./assets/img/domain-mapping/provide-url.png)
 
 3. To apply all of your changes, click the `Save All` button in the top right of this panel. You will get a success message once the settings have been saved, but there may still be processes running behind the scenes to make your app available across our network.  
-   **NOTE:** The `Add Domain` button above this panel is used for adding multiple domains to an environment, not saving the current custom domain settings. 
+   **NOTE:** The `Add Domain` button above this panel is used for adding multiple domains to an environment, not saving the current custom domain settings.
 
    ![The button in the top right to save your changes](./assets/img/domain-mapping/save-all.png)
 
 4. Copy the `CNAME` and `A` records on this page for your DNS provider.
-   **NOTE:** Do not use the `CNAME` and `A` records shown in this image. Instead, copy the ones you see in the User Portal that are specific to your app. 
+   **NOTE:** Do not use the `CNAME` and `A` records shown in this image. Instead, copy the ones you see in the User Portal that are specific to your app.
 
    ![Panel that contains the custom DNS records for your app](./assets/img/domain-mapping/cname-a-record.png)
 
@@ -42,18 +42,17 @@ After updating the custom domain settings in your Atlas environment, you will ne
 
 Once your domains are added to an environment (which requires adding them in the User Portal and clicking `Save All` to trigger a redeployment of your app), you can define domain-level redirect rules in the same screen. You can do it by clicking on the `Edit` button next to your domain name:
 
-   ![Button to access the domain redirect rules definition pop-up](./assets/img/domain-mapping/edit-redirect.png)
-   
-To specify a redirect rule, select a domain from the dropdown that will be the destination domain for the redirect. 
+![Button to access the domain redirect rules definition pop-up](./assets/img/domain-mapping/edit-redirect.png)
 
-   ![Define the redirect rule](./assets/img/domain-mapping/add-rule.png)
-   
+To specify a redirect rule, select a domain from the dropdown that will be the destination domain for the redirect.
+
+![Define the redirect rule](./assets/img/domain-mapping/add-rule.png)
+
 Once confirmed, you can inspect your rules in the `Redirects to` column. For changes to take place, you need to click the `Save All` button and redeploy your app. Your redirect rules will work as expected only if both your target and destination domain are properly configured (including the DNS details).
 
-   ![Inspect your redirect rules](./assets/img/domain-mapping/view-rule.png)
+![Inspect your redirect rules](./assets/img/domain-mapping/view-rule.png)
 
 Note: at the moment it is not possible to define redirect rules through the Atlas CLI. If changes done through CLI are expected to conflict with redirect rules set in the User Portal, this operation will be stopped and changes requested through CLI will not take place.
-
 
 ## Troubleshooting
 

@@ -1,0 +1,99 @@
+---
+slug: /atlas-content-modeler/tutorial/models/taxonomies/query
+title: Atlas Content Modeler Taxonomies - Query
+description: Learn how to query Models by Taxonomy in Atlas Content Modeler.
+---
+
+**Note**: These tutorials assume that you have already [installed the plugin](../../../introduction.mdx).
+
+## Query WPGraphQL for a Taxonomy
+
+Learn how to query models by taxonomy using WPGraphQL.
+
+---
+
+### Dependencies
+
+#### WPGraphQL
+
+Please download and install WPGraphQL following these instructions: [WPGraphQL Installation - Quick Start](https://www.wpgraphql.com/docs/quick-start/).
+
+#### WPGraphQL Tax Query
+
+Please download, install, and activate [WPGraphQL Tax Query](https://github.com/wp-graphql/wp-graphql-tax-query) by [uploading the plugin zip file in the WordPress admin](https://wordpress.org/support/article/managing-plugins/#manual-upload-via-wordpress-admin).
+
+Once you have successfully installed and activated these plugins, you may continue with the steps below for Querying Taxonomies.
+
+---
+
+### Steps to Query a Taxonomy using WPGraphQL
+
+You can find detailed steps in the basic usage of WPGraphQL here: [WPGraphQL Quick Start](https://www.wpgraphql.com/docs/quick-start/)
+
+The steps below are more specific on how to query content models by taxonomy. This assumes you have already [Created a Model](../create.mdx), and [Created a Taxonomy](create.mdx) for that model. The query below is in GraphiQL in the WordPress plugin WPGraphQL.
+
+---
+
+#### Example Query 1
+
+This example queries a Model called Employees. Employees uses the **LOCATION** Taxonomy. In this case, we are querying the term **dallas** and the taxonomy **LOCATION** inside of the **taxQuery: {}** object.
+
+```
+{
+  employees(first: 10,
+    where: {
+      taxQuery: {        
+        taxArray: [
+          {
+            terms: ["dallas"],
+            taxonomy: LOCATION,
+            operator: IN,
+            field: SLUG
+          }
+        ]
+      }
+  	}
+  ){
+    nodes {
+      name
+    }
+  }
+}
+```
+
+#### Example Query 2
+
+This example queries a Model called Companies. Companies uses the **REGION** Taxonomy. In this case, we are querying the term **east coast** and the taxonomy **REGION** inside of the **taxQuery: {}** object.
+
+```
+{
+  companies(first: 2,
+    where: {
+      taxQuery: {        
+        taxArray: [
+          {
+            terms: ["east coast"],
+            taxonomy: REGION,
+            operator: IN,
+            field: SLUG
+          }
+        ]
+      }
+  	}
+  ){
+    nodes {
+      name
+    }
+  }
+}
+```
+
+## Feedback
+
+- **Questions/Comments?** [Content Modeler Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLScc2VN-GRSJMz8zVgJLL6kiX3VeV2jkSDnmU1gnuNElEHCEVQ/viewform)
+- **GitHub**: [GitHub Repo Feedback](https://github.com/wpengine/atlas-content-modeler/issues/new/choose)
+
+## References
+
+- [WPGraphQL](https://www.wpgraphql.com/docs/quick-start/)
+- [WPGraphQL Tax Query](https://github.com/wp-graphql/wp-graphql-tax-query)

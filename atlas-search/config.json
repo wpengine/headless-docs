@@ -1,0 +1,13 @@
+{
+  "title": "Atlas Search",
+  "description": "When using the WordPress Search API through WPGraphQL or REST results can yield poor relevancy, has zero query configuration available, and supports only basic WordPress data types out of the box. Atlas Search aims to improve the search relevancy, querying-options, & increase supported data types within your content data search",
+  "entrypoint": "/atlas-search/introduction.mdx",
+  "ctaLabel": "Get Started",
+  "sidebar": [
+    {
+      "type": "doc",
+      "label": "Introduction",
+      "filePath": "/atlas-search/introduction.mdx"
+    }
+  ]
+}

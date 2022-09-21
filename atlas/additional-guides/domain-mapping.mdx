@@ -67,6 +67,25 @@ A green check mark indicates that everything is configured appropriately, but ot
 
 If your domain name resolves but shows either a Cloudflare error or an error regarding SSL versions, its possible that the Atlas platform is still provisioning the resources required to support your custom domain name. If either of these errors persist, please reach out to support.
 
+## Custom Domain for WordPress Backend
+
+You can also set a custom domain to point to the WordPress backend site by following WP Engine's [Add Domain in User Portal](https://wpengine.com/support/add-domain-in-user-portal/) guide.
+
+### robots.txt
+
+This can be desirable for a number of reasons, including the ability to customize the WordPress site's [`robots.txt`](https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt) file to allow access to some of the site's assets. Doing so allows you to insert meta tags such as the one below into your frontend JS app to allow Twitter and other services to access images, for example.
+
+```html
+<meta property="og:image" content="https://backend-wp-site.com/wp-content/uploads/2023/01/site-image.jpg" />
+```
+
+### Root Domain vs. Subdomain
+
+Using distinct root-level domains for your frontend and backend such as `frontend-js-app.com` and `backend-wp-site.com` is one option. Another common pattern is to use a root-level domain for the frontend JS app, and a subdomain that points to the WordPress instance, such as:
+
+* `example.com` -> frontend JS app
+* `api.example.com` -> backend WP site
+
 ## Additional Resources
 
 [Smart Plugin Manager Compatibility](https://wpengine.com/support/smart-plugin-manager/#Atlas_Support)

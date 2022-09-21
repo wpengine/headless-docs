@@ -4,9 +4,10 @@ title: Domain Mapping
 description: Map a custom domain to your Atlas application.
 ---
 
-In this guide, you will learn how to map a custom domain name to an environment in your Atlas application. Custom domains allow you to make production environments available at a user-friendly URL like `mydomain.com`, but also allow some flexibility in defining how to access other environments like `staging.mydomain.com` or `dev.mydomain.com` depending on your needs.
+In this guide, you will learn how to map a custom domain name to an environment in your Atlas application and the WordPress backend that powers it. Custom domains allow you to make production environments available at a user-friendly URL like `mydomain.com`, but also allow some flexibility in defining how to access other environments like `staging.mydomain.com`,`dev.mydomain.com`, or `cms.mydomain.com` depending on your needs.
 
-While some users may wish to customize non-production environment URLs as well, doing so is not required; the URLs that Atlas automatically generates for environments can continue to be used.
+While some users may wish to customize non-production environment URLs as well, doing so is not required; the URLs that Atlas automatically generates for environments can continue to be used. Assigning a custom domain to your WordPress backend is also optional but strongly encouraged to gain the most control over your site's resources. 
+
 
 ## Choose Atlas Environment
 
@@ -69,19 +70,27 @@ If your domain name resolves but shows either a Cloudflare error or an error reg
 
 ## Custom Domain for WordPress Backend
 
-You can also set a custom domain to point to the WordPress backend site by following WP Engine's [Add Domain in User Portal](https://wpengine.com/support/add-domain-in-user-portal/) guide.
+As you prepare your site for production, it is strongly recommended that you set a custom domain to point to the WordPress backend site by following WP Engine's [Add Domain in User Portal](https://wpengine.com/support/add-domain-in-user-portal/) guide. 
 
-### robots.txt
+Without a custom domain name enabled, WP Engine will apply strict settings in your site's `robots.txt` file to protect it during development that may not be desierable for production sites. 
 
-This can be desirable for a number of reasons, including the ability to customize the WordPress site's [`robots.txt`](https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt) file to allow access to some of the site's assets. Doing so allows you to insert meta tags such as the one below into your frontend JS app to allow Twitter and other services to access images, for example.
+### Customizing robots.txt
+
+Assigning a custom domain provides you with ability to customize the WordPress site's [`robots.txt`](https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt) file to allow access to some of the site's assets. For example, a meta tag like the one below, which specifies a social image for a post, may not load correctly in Twitter or other social services using the default `robots.txt` configuration applied to `you-cms.wpenginepowered.com` or `you-cms.wpengine.com` sites. 
 
 ```html
-<meta property="og:image" content="https://backend-wp-site.com/wp-content/uploads/2023/01/site-image.jpg" />
+<meta property="og:image" content="https://you-cms.wpenginepowered.com/wp-content/uploads/2023/01/site-image.jpg" />
 ```
 
-### Root Domain vs. Subdomain
+Creating a custom `robots.txt` file allows you to create rules specific to your headless implementation. If you want to learn more about using `robots.txt` or ways to create a custom file on the WP Engine platform, you can reference [this guide on robots.txt] for more details.
 
-Using distinct root-level domains for your frontend and backend such as `frontend-js-app.com` and `backend-wp-site.com` is one option. Another common pattern is to use a root-level domain for the frontend JS app, and a subdomain that points to the WordPress instance, such as:
+### Domain Naming Suggestions
+
+Choosing good domain names for the parts of your application is important to organization. While there is no "correct" choice, there are successful patterns you can emulate. 
+
+Using distinct root-level domains for your frontend and backend such as `frontend-js-app.com` and `backend-wp-site.com` is one option. 
+
+Another common pattern is to use a root-level domain for the frontend JS app, and a subdomain that points to the WordPress instance, such as:
 
 * `example.com` -> frontend JS app
 * `api.example.com` -> backend WP site

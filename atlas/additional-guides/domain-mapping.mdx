@@ -76,17 +76,17 @@ Without a custom domain name enabled, WP Engine will apply strict settings in yo
 
 ### Customizing robots.txt
 
-Assigning a custom domain provides you with the ability to customize the WordPress site's [`robots.txt`](https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt) file to allow access to some of the site's assets. For example, a meta tag like the one below, which specifies a social image for a post, may not load correctly in Twitter or other social services using the default `robots.txt` configuration applied to sites with the default domains `you-cms.wpenginepowered.com` or `you-cms.wpengine.com`: 
+Assigning a custom domain provides you with the ability to customize the WordPress site's [`robots.txt`](https://developer.mozilla.org/en-US/docs/Glossary/Robots.txt) file to allow access to some of the site's assets. For example, a meta tag like the one below, which specifies a social image for a post, may not load correctly in Twitter or other social services using the default `robots.txt` configuration applied to sites with the default domains `your-cms.wpenginepowered.com` or `your-cms.wpengine.com`: 
 
 ```html
 <meta property="og:image" content="https://you-cms.wpenginepowered.com/wp-content/uploads/2023/01/site-image.jpg" />
 ```
 
-Creating a custom `robots.txt` file allows you to create rules specific to your headless implementation. If you want to learn more about using `robots.txt` or ways to create a custom file on the WP Engine platform, you can reference [this guide on robots.txt](https://wpengine.com/support/read-use-robots-txt) for more details.
+Creating a custom `robots.txt` file allows you to define rules specific to your headless implementation. If you want to learn more about using `robots.txt` or ways to create a custom file on the WP Engine platform, you can reference [this guide on robots.txt](https://wpengine.com/support/read-use-robots-txt) for more details.
 
 ### Domain Naming Suggestions
 
-Choosing good domain names for the parts of your application is important to organization. While there is no "correct" choice, there are successful patterns you can emulate. 
+Choosing good domain names for the parts of your application is important to its overall organization. While there is no "correct" choice, there are successful patterns you can emulate. 
 
 Using distinct root-level domains for your frontend and backend such as `frontend-js-app.com` and `backend-wp-site.com` is one option. 
 

@@ -167,3 +167,18 @@ If for any reason you want to regenerate the webhook so that old URL will no lon
 ![Regenerate webhook](./img/regenerate.png)
 
 To delete your webhook, click the `Delete` button. If you do so, the URL you previously used will no longer work when attempting to trigger a rebuild.
+
+## Framework Build Assets Cache
+
+Atlas caches common framework assets between builds to optimise build times. 
+
+The folders that are cached currently are: 
+
+* .next/cacahe
+* public/
+* .cache
+* .nuxt
+
+If any of the above folders are in the projects root directory at the start of the build, the cache will **not** override them. 
+
+A clean rebuild will wipe any cached files from a previous build. 

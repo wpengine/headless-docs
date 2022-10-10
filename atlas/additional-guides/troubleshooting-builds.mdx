@@ -63,19 +63,6 @@ Through this panel, you can access links to the build logs via the leftmost time
 
 ## Resolving Common Issues
 
-### Ensure `package.json` contains a `wpe-build` script
-
-After the platform pulls your code and runs `npm install`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
-
-```json
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "wpe-build": "next build"
-  },
-```
-
 
 ### Make sure the branch and repository you're pulling from exists
 

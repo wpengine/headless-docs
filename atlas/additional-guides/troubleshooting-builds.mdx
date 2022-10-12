@@ -63,19 +63,6 @@ Through this panel, you can access links to the build logs via the leftmost time
 
 ## Resolving Common Issues
 
-### Ensure `package.json` contains a `wpe-build` script
-
-After the platform pulls your code and runs `npm install`, it will execute the `wpe-build` script by running `npm run wpe-build`. Here is an example `scripts` section:
-
-```json
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "wpe-build": "next build"
-  },
-```
-
 
 ### Make sure the branch and repository you're pulling from exists
 
@@ -111,7 +98,7 @@ In some cases, your application will successfully build, but you may not see the
 
 ### Clean Rebuild and Clear Domain Cache
 
-Since Atlas is a flexible hosting platform for a number of different JavaScript apps, it is outside the scope of this guide to discuss all of the ways various frameworks create local caches or generate static assets. However, it is important to remember that rebuilding your app from a GitHub commit does not trigger a `Clean Rebuild`, meaning that Atlas will use previously cached folders to rebuild your app using your latest commit.
+Since Atlas is a flexible hosting platform for a number of different JavaScript apps, it is outside the scope of this guide to discuss all of the ways various frameworks create local caches or generate static assets. However, it is important to remember that rebuilding your app from a GitHub commit does not trigger a `Clean Rebuild`, meaning that Atlas will use previously cached folders to rebuild your app using your latest commit. For a list of folders the platform will cache by default, reference the [Framework Build Assets Cache](../customization/builds#framework-build-assets-cache) section of the build docs.
 
 ![Environment details panel for Atlas app with clean rebuild and domains cache highlighted](./assets/img/troubleshooting-builds/env-details-panel-atlas-build.png)
 

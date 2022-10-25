@@ -85,10 +85,7 @@ At the moment, there's no way to change the repository your application is pulli
 
 ### Creating an Atlas Blueprint Fails
 
-1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
-2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
-
-![GitHub repo default branch input](./assets/img/troubleshooting-builds/github-repo-default-branch.png)
+If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
 
 
 
@@ -105,3 +102,9 @@ Since Atlas is a flexible hosting platform for a number of different JavaScript 
 To process a `Clean Rebuild` you can click that button in the main details panel of your Atlas environment, which will remove all previously cached folders, pull the latest commit from your repo, and rebuild the app.
 
 In some cases, you may also want to clear the domain cache using the button labeled `Purge domain cache`, which clears the CDN cache for your Atlas domain. Both of these steps can be helpful if your site is building, but might not reflect the most recent changes.
+
+
+## Rolling back to a past build
+In case you want to republish one of the previous versions of your site, you can use the Atlas rollback functionality. 
+Navigate to the Builds table in your Atlas environment details and select a version which should be republished instead. Once you click the "Rollback" button, the build of your choice will be published instead. You can identify the version that is currently live through the "Live" badge in the Builds table.
+![Rollback mechanism](./assets/img/troubleshooting-builds/rollback.png)

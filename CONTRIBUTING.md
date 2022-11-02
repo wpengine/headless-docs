@@ -17,6 +17,8 @@ Please follow these steps when contributing changes.
 1. Your PR will be reviewed by a DevRel team member, and merged in when ready.
 1. The DevRel team member will merge `develop` into `main` when ready to deploy to production.
 
+Please submit PRs at least two weeks prior to the date you'd like the documentation changes to go live. This gives the Developer Relations team enough time to review your updates and merge them in.
+
 More detailed instructions about how to contribute changes are below.
 
 ## Prerequisites

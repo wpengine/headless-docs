@@ -89,6 +89,37 @@
     },
     {
       "type": "category",
+      "label": "Framework Guides",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Next.js",
+          "filePath": "/atlas/framework-guides/next.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Faust.js",
+          "filePath": "/atlas/framework-guides/faust.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Gatsby",
+          "filePath": "/atlas/framework-guides/gatsby.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Nuxt.js",
+          "filePath": "/atlas/framework-guides/nuxt.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Remix",
+          "filePath": "/atlas/framework-guides/remix.mdx"
+        }
+      ]
+    },
+    {
+      "type": "category",
       "label": "Additional Guides",
       "items": [
         {

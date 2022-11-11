@@ -9,6 +9,10 @@ Once you hit the button, you'll be asked to confirm the operation:
 
 ![Button to roll back to a previous version](./assets/img/restore-version/rollback-message.png)
 
-When confirmed, a past build of your choice will be redeployed. Once complete, the previous version of your site will now be available under your environment's URL and you'll see the "Live" tag moves to the now published build:
+When confirmed, a past build of your choice will be redeployed. A rebuild of the previous version will not be done, which means that, in case you fetch your content during build, changes in content you introduced between builds might disappear. 
+
+Once complete, the previous version of your site will now be available under your environment's URL and you'll see the "Live" tag moves to the now published build:
 
 ![Button to roll back to a previous version](./assets/img/restore-version/live-tag.png)
+
+It's possible to request a rollback operation when build and deployment of a given version of your environment is complete.

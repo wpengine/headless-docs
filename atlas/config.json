@@ -115,6 +115,11 @@
           "type": "doc",
           "label": "Support",
           "filePath": "/atlas/additional-guides/support.mdx"
+        },
+        {
+          "type": "doc",
+          "label": " Redeploy Previous Version",
+          "filePath": "/atlas/additional-guides/redeploy-previous-version.mdx"
         }
       ]
     },

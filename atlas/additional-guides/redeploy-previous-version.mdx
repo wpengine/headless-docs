@@ -1,7 +1,11 @@
+---
+slug: /atlas/additional-guides/redeploy-previous-version
+title: Redeploy Previous Site Version
+description: In this guide, you will learn how to redeploy an older version of your site if you need to rollback your code for any reason.
+---
+In this guide, you will learn how to redeploy an older version of your site if you need to rollback your code.
 
-## Redeploying a previous version of your site
-
-In case you deployed a new version of your site that shows some broken graphics or behavior, you can quickly come back to one of the previous versions by clicking on the "Redeploy" button next to the build you want to redeploy.
+If you deploy a new version of your site that has broken graphics, errors, or other unwanted behavior, you can quickly revert back to one of the previous versions by clicking on the `Redeploy` button next to the build you want to redeploy.
 
 ![Button to roll back to a previous version](./assets/img/restore-version/redeploy-button.png)
 
@@ -9,10 +13,12 @@ Once you hit the button, you'll be asked to confirm the operation:
 
 ![Button to roll back to a previous version](./assets/img/restore-version/redeploy-confirmation.png)
 
-When confirmed, a past build of your choice will be redeployed. A rebuild of the previous version will not be done, which means that, in case you fetch your content during build, changes in content you introduced between builds might disappear. 
+When confirmed, a previous build of your choice will be redeployed. 
 
-Once complete, the previous version of your site will now be available under your environment's URL and you'll see the "Live" tag moves to the now published build:
+**NOTE:** When redeploying a previous build, the application will not be rebuilt and the existing assets from the previous build will be redeployed. If your framework statically generates pages at build time, content changes you introduced in between deploys will not be reflected in a redeployed site version. 
+
+Once complete, the previous version of your site will now be available under your environment's URL and you'll see the `Live` tag moves to the now published build:
 
 ![Button to roll back to a previous version](./assets/img/restore-version/redeploy-live-tag.png)
 
-It's possible to request a rollback operation when build and deployment of a given version of your environment are complete.
+It's possible to request a rollback operation when the build and deployment of a given version of your environment are complete.

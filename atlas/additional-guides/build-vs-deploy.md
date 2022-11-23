@@ -6,4 +6,4 @@ description: Get more familiar with the process of pushing new changes to your A
 
 In this guide, you'll learn more about the process of pushing new changes to your Atlas environments and understand its phases.
 
-## What happens when I push new commit to the branch that Atlas environment is built on?
+## I push a new commit to my branch. What happens next?

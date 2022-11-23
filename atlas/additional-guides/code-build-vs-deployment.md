@@ -17,3 +17,5 @@ During the Deployment phase Atlas starts your project using the start script and
 
 ## I see that the `code build` phase failed. What should I do?
 If the `code build` phase failed, the most likely reason for that is some problem in your code that needs to be fixed so that your project can build properly. The first thing you should do is to check logs generated during the attempt of the build. You can find them by clicking on the link in the "trigger" column that corresponds to your failed build:
+
+![Access build logs](./assets/img/code-build-vs-deployment/failed-build-arrow.png)

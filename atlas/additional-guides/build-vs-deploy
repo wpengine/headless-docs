@@ -3,3 +3,7 @@ slug: /atlas/additional-guides/build-vs-deploy
 title: Details of Atlas' Build and Deployment phases 
 description: Get more familiar with the process of pushing new changes to your Atlas environments and understand its phases.
 ---
+
+In this guide, you'll learn more about the process of pushing new changes to your Atlas environments and understand its phases.
+
+## What happens when I push new commit to the branch that Atlas environment is built on?

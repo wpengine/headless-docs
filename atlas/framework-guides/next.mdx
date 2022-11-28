@@ -1,9 +1,79 @@
 ---
 slug: /atlas/framework-guides/next
 title: Next.js on Atlas
-description: Next.js is the most popular open source React-based framework.  It allows developers to use different rendering patterns at a page and component level for simple to complex sites and applications.
+description: Next.js is the most popular open source React-based framework.  It allows developers to use different rendering patterns at a page and component level for simple to complex sites and applications.  In this guide, you will learn how to deploy it on Atlas.
 ---
 
-## Getting Started
+## Introduction
 
-First, go into your command line and and bootstrap your project by running `npx create-next-app`
+Next.js is the most popular open source React-based framework. It allows developers to use all the features you need for production in a front-end framework: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
+Check out their documentation for guides to all these key [features](https://nextjs.org/docs/getting-started).
+
+## Deploy steps
+
+To get started, you can run the following command to create a new Next.js project and the follow the steps in their [automatic setup guide](https://nextjs.org/docs/getting-started#automatic-setup):
+
+`npx create-next-app@latest`
+
+Or, if you want to start with a template designed specifically for headless WordPress, you can clone one of these starter templates:
+
+`git clone https://github.com/colbyfayock/next-wordpress-starter`
+
+`git clone https://github.com/colbyfayock/next-wpgraphql-basic-starter`
+
+`git clone https://github.com/JEverhart383/crash-course-headless-wp-next-wpgraphql`
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Next.js installation process lets us initialize a local repository for the project.
+
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initialize and configure your local and remote repositories:
+
+### Add remote repository
+
+`$ git remote add origin https://github.com/<username>/<repo>`
+
+### Stage all changed files
+
+`$ git add -A`
+
+### Commit the files to the current branch
+
+`$ git commit -m "initial commit"`
+
+### Push changes to remote repository
+
+`$ git push -u origin main`
+
+## Build Details
+
+Atlas detects that it is a Next.js app and runs the build scripts and configs necessary for the build details.
+
+## Deploy Your Repository
+
+To commit these changes to GitHub, run the following commands:
+
+# Stage all changed files
+
+`$ git add -A`
+
+# Commit the files to the current branch
+
+`$ git commit -m "update build and start"`
+
+# Push changes to remote repository
+
+`$ git push -u origin main`
+
+## Deploy Your Repository
+
+Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
+## Best Practices
+
+### Next Image:
+
+The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web.
+It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
+
+One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. Here is a [stackoverflow article](https://stackoverflow.com/questions/65124094/next-image-does-not-load-images-from-external-url-after-deployment) for reference.
+
+Please visit the Next.js [documentation](https://nextjs.org/docs/getting-started) for more in depth details on framework features.

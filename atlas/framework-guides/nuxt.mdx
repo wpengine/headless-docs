@@ -1,5 +1,63 @@
 ---
-slug: /atlas/customization/builds
-title: Configuring Atlas Builds
-description: Learn how to configure builds on the Atlas platform
+slug: /atlas/framework-guides/nuxt
+title: Nuxt.js on Atlas
+description: Nuxt.js is the most popular open source Vue-based framework. In this guide, you will learn how to deploy it on Atlas.
 ---
+
+## Introduction
+
+TODO
+Nuxt.js is the most popular open source Vue-based framework. It allows developers to use all the features you need for production in a front-end framework: file-system routing, rendering modes, data fetching, and more. No config needed.
+Check out their [documentation](https://nuxtjs.org/docs/get-started) for guides to all these key [features].
+
+## Deploy steps
+
+To get started, you can run the following command to create a new Nuxt.js project and the follow the steps in their [automatic setup guide](https://nuxtjs.org/docs/get-started/installation#using-create-nuxt-app):
+
+`npx create-nuxt-app <project-name>`
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Nuxt.js installation process lets us initialize a local repository for the project.
+
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initialize and configure your local and remote repositories:
+
+### Add remote repository
+
+`$ git remote add origin https://github.com/<username>/<repo>`
+
+### Stage all changed files
+
+`$ git add -A`
+
+### Commit the files to the current branch
+
+`$ git commit -m "<initial commit>"`
+
+### Push changes to remote repository
+
+`$ git push -u origin main`
+
+## Build Details
+
+Atlas detects that it is a Nuxt.js app and runs the build scripts and configs necessary for the build details.
+
+## Deploy Your Repository
+
+To commit these changes to GitHub, run the following commands:
+
+# Stage all changed files
+
+`$ git add -A`
+
+# Commit the files to the current branch
+
+`$ git commit -m "update build and start"`
+
+# Push changes to remote repository
+
+`$ git push -u origin main`
+
+## Deploy Your Repository
+
+Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
+Please visit the [Nuxt.js documentation](https://nuxtjs.org/docs/get-started) for more in depth details on framework features.

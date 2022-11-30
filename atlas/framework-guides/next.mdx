@@ -46,6 +46,7 @@ Create a new remote repository at [repo.new](https://github.com/new/), and then 
 ## Build Details
 
 Atlas detects that it is a Next.js app and runs the build scripts and configs necessary for the build details.
+One thing to note is the `next/cache` within your Next.js project.  This gets built along with the inital build.  
 
 ## Deploy Your Repository
 
@@ -58,6 +59,6 @@ Once your project is in GitHub, you can follow the [directions in our getting st
 The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web.
 It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
 
-One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. Here is a [stackoverflow article](https://stackoverflow.com/questions/65124094/next-image-does-not-load-images-from-external-url-after-deployment) for reference.
+One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. Please reference  [Next Image Docs](https://nextjs.org/docs/api-reference/next/image#domains) for guidance.
 
 Please visit the Next.js [documentation](https://nextjs.org/docs/getting-started) for more in depth details on framework features.

@@ -6,6 +6,21 @@ description: Troubleshoot your failing builds using build logs and commit histor
 
 In this guide, you'll learn how to troubleshoot failing builds by examining build logs, comparing logs across your commit history and clearing app and CDN caches.
 
+## Currently Published Build
+You can check which version of your site is currently live by navigating to the table in the Atlas environment details screen and looking for a version that is marked as `Live`
+![Headless App Failed in Building Annotated](./assets/img/troubleshooting-builds/live.png)
+
+## Cancelling a Build Process
+In case you want to stop an ongoing build, you can click on the "Cancel build" button displayed in the top right corner of your environment details screen:
+
+![Cancel an ongoing build](./assets/img/troubleshooting-builds/cancel-build.png)
+
+Your build will be displayed in the `Builds` table with the status `Cancelled` - and the changes that were supposed to be rolled out will not be pushed to your site.
+
+![Cancellled build in the Builds table](./assets/img/troubleshooting-builds/cancelled-build-table.png)
+
+**Note:** the process can only be stopped as long as the environment is in the `Code build` phase. If the `Code build` phase has passed, the new version of your Atlas environment will be published upon successful deploy. If you wish to redeploy an older version, follow the instructions for [Atlas quick rollbacks](/docs/atlas/additional-guides/redeploy-previous-version).
+
 ## Responding to Failed Builds
 
 When you push new code to your Atlas project repository on GitHub and trigger a new build on the platform, you can inspect the progress of that build in realtime via the [User Portal](https://my.wpengine.com/atlas).

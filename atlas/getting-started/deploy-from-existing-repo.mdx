@@ -4,7 +4,7 @@ title: Deploy From An Existing Repository
 description: Deploy an Atlas app from an existing repository.
 ---
 
-Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing to your main branch in GitHub will then deploy updates to Atlas automatically.
+Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing code changes to the branch of your choice in GitHub will then deploy updates to Atlas automatically.
 
 Atlas supports Node.js applications using popular frameworks like [Faust.js](https://faustjs.org/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Nuxt](https://nuxtjs.org/), [SvelteKit](https://kit.svelte.dev/), etc.
 
@@ -83,13 +83,10 @@ Examples:
 
 ![Link to WordPress](./assets/img/link-to-wordpress.png)
 
-4. In order for your WordPress environment to become "headless", Atlas installs the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/) and [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/) plugins.
+4. In order for your WordPress environment to become "headless", Atlas can install the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/), [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/), [FaustWP](https://wordpress.org/plugins/faustwp/) and [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugins. It can also automatically set the required environment variables for you so that the FaustWP plugin will work properly out-of-the-box.
 
-If you're using the Faust.js Starter Kit or an existing Faust.js app repository, check the `I am using Faust.js` checkbox. This will ensure that the [FaustWP](https://wordpress.org/plugins/faustwp/) plugin is also installed.
+![Install Headless Plugins](./assets/img/plugins-env-vars.png)
 
-![Select Faust.js Plugin](./assets/img/faustjs.png)
-
-**NOTE:** If you're using an existing application (rather than the Faust.js Starter Kit), see the [Environment variables (Optional)](#environment-variables--optional-) section below to set up environment variables before proceeding with the steps below.
 
 5. Select `Create App`.
 

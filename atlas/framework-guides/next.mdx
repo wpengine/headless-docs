@@ -46,7 +46,8 @@ Create a new remote repository at [repo.new](https://github.com/new/), and then 
 ## Build Details
 
 Atlas detects that it is a Next.js app and runs the build scripts and configs necessary for the build details.
-One thing to note is the `next/cache` within your Next.js project.  This gets built along with the inital build.  
+
+One thing to note is the `next/cache` folder within your Next.js project. Atlas caches common framework assests between builds to optimise build times.  The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).   
 
 ## Deploy Your Repository
 

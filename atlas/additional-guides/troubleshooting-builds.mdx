@@ -33,15 +33,7 @@ Since Atlas accepts a wide variety of frontend application frameworks (Faust.js,
 
 After you've pushed a failing build, there are quick ways to start troubleshooting your app from the Atlas dashboard by inspecting the GitHub commit or looking at the build logs directly.
 
-![Headless App Failed in Building Annotated](./assets/img/troubleshooting-builds/failing-atlas-build-annotated.png)
-
-When looking at the build checklist, regardless of whether the build has failed or not, you will always have two quick links to either the details of the GitHub commit (`2e9121a`) that triggered the build or directly to the `Build logs` detail panel. Let's take a look at each option and how they can be used to diagnose the issues behind your failed build.
-
-### GitHub Commit
-
-If you click on the commit hash link in the above screenshot, you will be taken directly to the GitHub commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
-
-![GitHub commit diff for a failing build](./assets/img/troubleshooting-builds/github-commit-diff-failing-build.png)
+When looking at the build checklist, will have a quick link to the `Build logs` detail panel. Let's take a look at each option and how they can be used to diagnose the issues behind your failed build.
 
 ### Build Logs
 
@@ -50,6 +42,10 @@ If you click the `Build logs` link, you will be taken to a page that gives you m
 At the top of that page, there is a section with additional details about a particular build. You can see things like the time the build started, the repo and branch that Atlas tried to build from, as well as another commit hash link to GitHub. Each individual build is also given a unique ID, and this might be needed if you try to escalate continued failing builds with support.
 
 ![Detail panel for a particular Atlas build](./assets/img/troubleshooting-builds/build-log-detail-panel.png)
+
+If you click on the commit hash link in the build details screen, you will be taken directly to the GitHub commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
+
+![GitHub commit diff for a failing build](./assets/img/troubleshooting-builds/github-commit-diff-failing-build.png)
 
 #### Logging Output
 

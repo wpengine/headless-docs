@@ -113,13 +113,18 @@
         },
         {
           "type": "doc",
-          "label": "Support",
-          "filePath": "/atlas/additional-guides/support.mdx"
+          "label": "Redeploy Previous Version",
+          "filePath": "/atlas/additional-guides/redeploy-previous-version.mdx"
         },
         {
           "type": "doc",
-          "label": " Redeploy Previous Version",
-          "filePath": "/atlas/additional-guides/redeploy-previous-version.mdx"
+          "label": "Password Protection",
+          "filePath": "/atlas/additional-guides/password-protection.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Support",
+          "filePath": "/atlas/additional-guides/support.mdx"
         }
       ]
     },

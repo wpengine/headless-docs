@@ -7,7 +7,7 @@ description: Next.js is the most popular open source React-based framework.  It 
 ## Introduction
 
 Next.js is the most popular open source React-based framework. It allows developers to use all the features you need for production in a front-end framework: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
-Check out their documentation for guides to all these key [features](https://nextjs.org/docs/getting-started).
+Check out their documentation for guides to all these [key features](https://nextjs.org/docs/getting-started).
 
 ## Deploy steps
 
@@ -68,10 +68,10 @@ One thing to keep in mind is when switching over your domains on Atlas, you must
 While our Node infrastructure will support path-based revalidation on-demand, this revalidation will currently not extend to edge cached versions of that path, nor will they apply to all instances of your front-end application (if scaled beyond a single instance). This is under active investigation by our engineering team.
 
 #### Next Image caching: 
-By default, Next Image serves up WebP versions of images to browsers that support it, and the AVIF format can also be delivered through configuration. While Atlas supports the delivery of both of these formats, [Cloudflare](https://github.com/vercel/next.js/discussions/39510) does not support the Vary header for paths without a file extension. Because of this, it is possible that if the WebP/AVIF version of a header is cached, that version may be served to browsers that cannot support such formats and could result in broken images for such users. The linked GitHub issue has a potential workaround, and we currently have a request in to Cloudflare to support such functionality.
+By default, Next Image serves up WebP versions of images to browsers that support it, and the AVIF format can also be delivered through configuration. While Atlas supports the delivery of both of these formats, [Cloudflare does not support the Vary header](https://github.com/vercel/next.js/discussions/39510) for paths without a file extension. Because of this, it is possible that if the WebP/AVIF version of a header is cached, that version may be served to browsers that cannot support such formats and could result in broken images for such users. The linked GitHub issue has a potential workaround, and we currently have a request in to Cloudflare to support such functionality.
 
 #### Edge Runtime/Middleware: 
 Because Atlas does not rely on serverless functions/edge functions, such functionality currently runs on the origin Node server. It is important to note that this means that such functions will run only on requests that terminate at the origin; any requests served from the edge will continue to serve whatever response is cached at the edge for that path.
 
 
-The Next.js [documentation](https://nextjs.org/docs/getting-started) has more in depth details on framework features.
+The [Next.js documentation](https://nextjs.org/docs/getting-started) has more in depth details on framework features.

@@ -6,6 +6,7 @@ description: In this guide, you will learn how to deploy an SSG Astro site on th
 ## Introduction 
 
 Astro is a sever-first framework for creating fast content-focused sites. You can run the framework either in SSR or SSG mode, and you can incorporate any of the popular frontend frameworks, like React, Vue, Svelte, etc. Astro is best used for content-focused sites, not web applications. Check out their docs for [some more details on when you should and should not use Astro](https://docs.astro.build/en/concepts/why-astro/) in your project.
+
 ## Deploy Steps
 
 To get started, you can run the following command to create a new Astro project and the follow the steps in their [installation guide](https://docs.astro.build/en/install/auto/):
@@ -17,6 +18,7 @@ Or, if you want to start with a template designed specifically for headless Word
 `git clone https://github.com/JEverhart383/astro-wordpress-starter.git`
 
 After you have created your application, `cd` into your project directory:
+
 `cd <your project directory>`
 
 ### Push Initial Commits to GitHub
@@ -65,8 +67,10 @@ $ git push -u origin main
 ```
 
 ### Deploy Your Repository
+
 Once your project is in GitHub, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
 
 ## Best Practices 
+
 Since most Astro implementations use SSG to generate your site at build time, we recommend implementing [WPGraphQL Smart Cache](https://developers.wpengine.com/blog/wpgraphql-smart-cache-with-next-js-and-apollo) on your WordPress instance to improve server performance.
 

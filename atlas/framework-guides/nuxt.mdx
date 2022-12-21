@@ -1,0 +1,66 @@
+---
+slug: /atlas/framework-guides/nuxt
+title: Nuxt.js Framework Guide
+description: Nuxt.js is the most popular open source Vue-based framework. In this guide, you will learn how to deploy it on Atlas.
+---
+## Introduction
+
+Nuxt.js is the most popular open source Vue-based framework. It allows developers to use all the features you need for production in a front-end framework: file-system routing, rendering modes, data fetching, and more. No config needed.
+Check out their [documentation for guides to all these key features](https://nuxt.com/docs/getting-started/introduction). This guide assumes you are using Nuxt 3.
+
+## Deploy steps
+
+To get started, you can run the following command to create a new Nuxt.js project and the follow the steps in their [automatic setup guide](https://nuxt.com/docs/getting-started/installation):
+
+`npx nuxi init <project-name>`
+
+After you have created your application, cd into your project directory:
+
+`cd <your project directory>`
+
+### Push Initial Commits to GitHub
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Nuxt.js installation process lets us initialize a local repository for the project.
+
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initalize and configure your local and remote repositories:
+  
+```
+# Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
+
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "initial commit"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+
+### Build Details
+
+Atlas detects that it is a Nuxt.js app and runs the `build` script in your `package.json` file. The default output mode for Nuxt is a Node.js server that gets created as a part of the build process. To run this server on Atlas, change your `start` script in `package.json` to the following:
+`node .output/server/index.mjs`
+
+This will run your Nuxt app in universal rendering mode (server-side rendering and hydration).
+
+To commit these changes to GitHub, run the following commands:
+
+```
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "update build and start"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+
+
+### Deploy Your Repository
+
+Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
+Please visit the [Nuxt.js documentation](https://nuxt.com/docs/getting-started/introduction) for more in depth details on framework features.

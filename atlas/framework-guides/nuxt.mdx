@@ -15,45 +15,33 @@ To get started, you can run the following command to create a new Nuxt.js projec
 
 `npx create-nuxt-app <project-name>`
 
+After you have created your application, cd into your project directory:
+
+`cd <your project directory>`
+
+### Push Initial Commits to GitHub
+
 To deploy your project to Atlas, it will need to be available on GitHub. The Nuxt.js installation process lets us initialize a local repository for the project.
 
-Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initialize and configure your local and remote repositories:
+Create a new remote repository at repo.new, and then run the following commands to initalize and configure your local and remote repositories:
+  
+```
+#Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
 
-### Add remote repository
+# Stage all changed files
+$ git add -A
 
-`$ git remote add origin https://github.com/<username>/<repo>`
+# Commit the files to the current branch
+$ git commit -m "initial commit"
 
-### Stage all changed files
-
-`$ git add -A`
-
-### Commit the files to the current branch
-
-`$ git commit -m "<initial commit>"`
-
-### Push changes to remote repository
-
-`$ git push -u origin main`
+# Push changes to remote repository
+$ git push -u origin main
+```
 
 ## Build Details
 
 Atlas detects that it is a Nuxt.js app and runs the build scripts and configs necessary for the build details.
-
-## Deploy Your Repository
-
-To commit these changes to GitHub, run the following commands:
-
-# Stage all changed files
-
-`$ git add -A`
-
-# Commit the files to the current branch
-
-`$ git commit -m "update build and start"`
-
-# Push changes to remote repository
-
-`$ git push -u origin main`
 
 ## Deploy Your Repository
 

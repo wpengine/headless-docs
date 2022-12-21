@@ -1,9 +1,8 @@
 ---
 slug: /atlas/framework-guides/faust
-title: Faust.js on Atlas
-description: Faust is a JavaScript framework designed to make the development of headless WordPress sites as easy as possible for WordPress and JavaScript developers.  In this guide, you will learn how to deploy it on Atlas.
+title: Faust.js Framework Guide
+description: In this guide, you will learn how to deploy the Faust.js framework on the Atlas platform.
 ---
-
 ## Introduction
 
 Faust is a JavaScript framework designed to make the development of headless WordPress sites as easy as possible for WordPress and JavaScript developers.
@@ -29,16 +28,16 @@ Create a new remote repository at [repo.new](https://github.com/new/), and then 
 
 ```
 # Add remote repository
-`$ git remote add origin https://github.com/<username>/<repo>`
+$ git remote add origin https://github.com/<username>/<repo>
 
 # Stage all changed files
-`$ git add -A`
+$ git add -A
 
 # Commit the files to the current branch
-`$ git commit -m "initial commit"`
+$ git commit -m "initial commit"
 
 # Push changes to remote repository
-`$ git push -u origin main`
+$ git push -u origin main
 ```
 
 ### Deploy Your Repository
@@ -49,14 +48,15 @@ Once your project is in GitHub, you can follow the [directions in our getting st
 
 Atlas detects that it is a Faust.js app and runs the build scripts and configs necessary for the build details.
 
-One thing to note is the `next/cache` folder within your Faust.js project. Atlas caches common framework assests between builds to optimise build times. The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).
+One thing to note is the `next/cache` folder within your Faust.js project. Atlas caches common framework assests between builds to optimise build times.
+
+The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).
 
 ## Best Practices
 
 ### Next Image in Faust.js
 
-The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web.
-It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
+The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image), is an extension of the HTML `<img>` element, evolved for the modern web. It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
 
 One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. 
 
@@ -71,9 +71,4 @@ By default, Next Image serves up WebP versions of images to browsers that suppor
 ### Edge Runtime/Middleware
 Because Atlas does not rely on serverless functions/edge functions, such functionality currently runs on the origin Node server. It is important to note that this means that such functions will run only on requests that terminate at the origin; any requests served from the edge will continue to serve whatever response is cached at the edge for that path.
 
-
-
-
-
-
-Visit the Faust.js [documentation](https://faustjs.org/docs/getting-started) for more in depth details on framework features.
+Visit the Faust.js [documentation](https://faustjs.org/docs/getting-started)for more in depth details on framework features.

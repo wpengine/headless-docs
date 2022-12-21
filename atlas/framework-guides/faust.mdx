@@ -49,14 +49,15 @@ Once your project is in GitHub, you can follow the [directions in our getting st
 
 Atlas detects that it is a Faust.js app and runs the build scripts and configs necessary for the build details.
 
-One thing to note is the `next/cache` folder within your Faust.js project. Atlas caches common framework assests between builds to optimise build times. The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).
+One thing to note is the `next/cache` folder within your Faust.js project. Atlas caches common framework assests between builds to optimise build times.
+
+The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).
 
 ## Best Practices
 
 ### Next Image in Faust.js
 
-The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web.
-It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
+The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web. It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
 
 One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. 
 

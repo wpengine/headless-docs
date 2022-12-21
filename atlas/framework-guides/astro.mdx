@@ -1,47 +1,66 @@
 ---
 slug: /atlas/framework-guides/astro
 title: Astro Framework Guide
-description: In this guide, you will learn how create and deploy an Astro application on the Atlas hosting platform. 
+description: In this guide, you will learn how to deploy an SSG Astro site on the Atlas platform. 
 ---
 ## Introduction 
-Astro is a sever-first framework for creating fast content-focused sites. You can run the framework either in SSR or SSG mode, and you can incorporate any of the popular frontend frameworks, like React, Vue, Svelte, etc. Astro is best used for content-focused sites, not web applications. Check out their docs for [some more details on when you should and should not use Astro](https://docs.astro.build/en/concepts/why-astro/) in your project.
 
+Astro is a sever-first framework for creating fast content-focused sites. You can run the framework either in SSR or SSG mode, and you can incorporate any of the popular frontend frameworks, like React, Vue, Svelte, etc. Astro is best used for content-focused sites, not web applications. Check out their docs for [some more details on when you should and should not use Astro](https://docs.astro.build/en/concepts/why-astro/) in your project.
 ## Deploy Steps
 
-To get started, you can run the following command to create a new Remix project. When prompted, select `Remix App Server` in the console:
-`npx create-remix@latest`
+To get started, you can run the following command to create a new Astro project and the follow the steps in their [installation guide](https://docs.astro.build/en/install/auto/):
+`npm create astro@latest`
 
 Or, if you want to start with a template designed specifically for headless WordPress, you can clone this starter template:
 
-`git clone https://github.com/JEverhart383/remixing-wordpress`
+`git clone https://github.com/JEverhart383/astro-wordpress-starter.git`
 
 After you have created your application, cd into your project directory:
-
 `cd <your project directory>`
+Push Initial Commits to GitHub
 
-### Push Initial Commits to GitHub
+To deploy your project to Atlas, it will need to be available on GitHub. The Astro installation process lets to initialize a local repository for the project.
 
-To deploy your project to Atlas, it will need to be available on GitHub. 
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initalize and configure your local and remote repositories:
 
-Create a new remote repository at repo.new, and then run the following commands to initalize and configure your local and remote repositories:
-  
 ```
-# Add remote repository
+#Add remote repository
 $ git remote add origin https://github.com/<username>/<repo>
 
 # Stage all changed files
 $ git add -A
-
 # Commit the files to the current branch
 $ git commit -m "initial commit"
 
 # Push changes to remote repository
 $ git push -u origin main
+
 ```
-
 ### Build Details 
-Using the `Remix App Server` selection, there are no additional changes needed to build or deploy a Remix app on Atlas.
 
+Since Astro’s default output is static assets, you’ll need to make two small changes to make it run inside of a Node container on the Atlas platform.
+
+First, add `http-server` as a dependency to the project and install if you want to run locally:
+
+`$ npm install --save http-server`
+
+With that project installed, modify the start command that runs after building. Update the `start` script in `package.json` to look like this:
+
+`http-server ./dist`
+
+To commit these changes to GitHub, run the following commands:
+```
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "update build and start"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
 ### Deploy Your Repository
 Once your project is in GitHub, you can follow the directions in our getting started guide to deploy your project to Atlas.
+## Best Practices 
+Since most Astro implementations use SSG to generate your site at build time, we recommend implementing [WPGraphQL Smart Cache](https://developers.wpengine.com/blog/wpgraphql-smart-cache-with-next-js-and-apollo) on your WordPress instance to improve server performance.
 

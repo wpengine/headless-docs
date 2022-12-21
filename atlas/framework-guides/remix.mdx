@@ -1,0 +1,46 @@
+---
+slug: /atlas/framework-guides/remix
+title: Remix Framework Guide
+description: In this guide, you will learn how create and deploy a Remix application on the Atlas hosting platform. 
+---
+## Introduction 
+Remix is a React-based framework that provides both server and client runtimes and utilizes web standard approaches and browser APIs to facilitate framework interactions. Remix embraces the client/server model and supports a zero-JS experience.
+
+## Deploy Steps
+
+To get started, you can run the following command to create a new Remix project. When prompted, select `Remix App Server` in the console:
+`npx create-remix@latest`
+
+Or, if you want to start with a template designed specifically for headless WordPress, you can clone this starter template:
+
+`git clone https://github.com/JEverhart383/remixing-wordpress`
+
+After you have created your application, cd into your project directory:
+
+`cd <your project directory>`
+
+### Push Initial Commits to GitHub
+
+To deploy your project to Atlas, it will need to be available on GitHub. 
+
+Create a new remote repository at repo.new(https://github.com/new/), and then run the following commands to initalize and configure your local and remote repositories:
+  
+```
+# Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
+
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "initial commit"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+
+### Build Details 
+Using the `Remix App Server` selection, there are no additional changes needed to build or deploy a Remix app on Atlas.
+
+### Deploy Your Repository
+Once your project is in GitHub, you can follow the directions in our getting started guide to deploy your project to Atlas.

@@ -6,7 +6,18 @@ description: Deploy an Atlas app from an existing repository.
 
 Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing code changes to the branch of your choice in GitHub will then deploy updates to Atlas automatically.
 
-Atlas supports Node.js applications using popular frameworks like [Faust.js](https://faustjs.org/), [Next.js](https://nextjs.org/), [Gatsby](https://www.gatsbyjs.com/), [Nuxt](https://nuxtjs.org/), [SvelteKit](https://kit.svelte.dev/), etc.
+Atlas supports Node.js applications using many popular frameworks with minimal configuration. You can view our framework guides to see what may be required of your particular framework:
+- [Astro](../framework-guides/astro)
+- [Faust.js](../framework-guides/faust)
+- [Gatsby](../framework-guides/gatsby) 
+- [Next.js](../framework-guides/next)
+- [Nuxt](../framework-guides/nuxt)
+- [Remix](../framework-guides/remix)
+- SvelteKit
+- SolidStart
+- QwikCity
+
+Some newer frameworks may not have a framework guide yet, but can still run on the Atlas platform using whatever Node.js-based adapters are provided by the framework or as SSG using a Node.js package to serve static assets like `http-server` or `express`.
 
 ## Create Atlas App
 

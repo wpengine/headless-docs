@@ -13,10 +13,11 @@ Check out their [documentation](https://faustjs.org/) for guides to all these ke
 
 ## Deploy steps
 
-To get started, you can run the following command to create a new Faust.js project and the follow the steps in their getting started guide:
+To get started, you can run the following command to create a new Faust.js project and the follow the steps in their [getting started guide](https://faustjs.org/docs/getting-started):
+
 `npx create-next-app \ -e https://github.com/wpengine/faustjs/tree/main \ --example-path examples/next/faustwp-getting-started \ --use-npm`
 
-After you have created your application, cd into your project directory:
+After you have created your application, `cd` into your project directory:
 
 `cd <your project directory>`
 
@@ -40,10 +41,6 @@ $ git commit -m "initial commit"
 $ git push -u origin main
 ```
 
-### Deploy Your Repository
-
-Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
-
 ### Build Details
 
 Atlas detects that it is a Faust.js app and runs the build scripts and configs necessary for the build details.
@@ -51,6 +48,10 @@ Atlas detects that it is a Faust.js app and runs the build scripts and configs n
 One thing to note is the `next/cache` folder within your Faust.js project. Atlas caches common framework assests between builds to optimise build times.
 
 The build step will not override the [folder](https://developers.wpengine.com/docs/atlas/customization/builds#framework-build-assets-cache).
+
+### Deploy Your Repository
+
+Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
 
 ## Best Practices
 

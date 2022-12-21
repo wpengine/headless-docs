@@ -93,8 +93,8 @@
       "items": [
         {
           "type": "doc",
-          "label": "Next.js",
-          "filePath": "/atlas/framework-guides/next.mdx"
+          "label": "Astro",
+          "filePath": "/atlas/framework-guides/astro.mdx"
         },
         {
           "type": "doc",
@@ -105,6 +105,11 @@
           "type": "doc",
           "label": "Gatsby",
           "filePath": "/atlas/framework-guides/gatsby.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Next.js",
+          "filePath": "/atlas/framework-guides/next.mdx"
         },
         {
           "type": "doc",

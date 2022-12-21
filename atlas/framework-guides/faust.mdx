@@ -10,3 +10,32 @@ Faust is a JavaScript framework designed to make the development of headless Wor
 The mission of Faust is to reduce the complexity of building headless WordPress frontends for the web, allowing the developer to build production sites with the ease of a monolithic WordPress site.
 
 Check out their [documentation](https://faustjs.org/) for guides to all these key features.
+
+## Deploy steps
+
+To get started, you can run the following command to create a new Faust.js project and the follow the steps in their getting started guide:
+`npx create-next-app \ -e https://github.com/wpengine/faustjs/tree/main \ --example-path examples/next/faustwp-getting-started \ --use-npm`
+
+After you have created your application, cd into your project directory:
+
+`cd <your project directory>`
+
+### Push Initial Commits to GitHub
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Faust.js installation process lets us initialize a local repository for the project.
+
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initialize and configure your local and remote repositories:
+
+```
+# Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
+
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "initial commit"
+
+# Push changes to remote repository
+$ git push -u origin main
+```

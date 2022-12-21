@@ -16,7 +16,9 @@ Or, if you want to start with a template designed specifically for headless Word
 `git clone https://github.com/JEverhart383/remixing-wordpress`
 
 After you have created your application, cd into your project directory:
+
 `cd <your project directory>`
+
 ### Push Initial Commits to GitHub
 
 To deploy your project to Atlas, it will need to be available on GitHub. 
@@ -24,23 +26,22 @@ To deploy your project to Atlas, it will need to be available on GitHub.
 Create a new remote repository at repo.new, and then run the following commands to initalize and configure your local and remote repositories:
   
 ```
-#Add remote repository
+# Add remote repository
 $ git remote add origin https://github.com/<username>/<repo>
 
 # Stage all changed files
 $ git add -A
+
 # Commit the files to the current branch
 $ git commit -m "initial commit"
 
 # Push changes to remote repository
 $ git push -u origin main
 ```
+
 ### Build Details 
 Using the `Remix App Server` selection, there are no additional changes needed to build or deploy a Remix app on Atlas.
+
 ### Deploy Your Repository
 Once your project is in GitHub, you can follow the directions in our getting started guide to deploy your project to Atlas.
-  
-## Best Practices 
-N/A
-
 

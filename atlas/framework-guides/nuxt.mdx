@@ -39,14 +39,14 @@ $ git commit -m "initial commit"
 $ git push -u origin main
 ```
 
-## Build Details
+### Build Details
 
 Atlas detects that it is a Nuxt.js app and runs the `build` script in your `package.json` file. The default output mode for Nuxt is a Node.js server that gets created as a part of the build process. To run this server on Atlas, change your `start` script in `package.json` to the following:
 `node .output/server/index.mjs`
 
 This will run your Nuxt app in universal rendering mode (server-side rendering and hydration).
 
-## Deploy Your Repository
+### Deploy Your Repository
 
 Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
 

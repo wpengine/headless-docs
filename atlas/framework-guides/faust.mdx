@@ -7,7 +7,9 @@ description: Faust is a JavaScript framework designed to make the development of
 ## Introduction
 
 Faust is a JavaScript framework designed to make the development of headless WordPress sites as easy as possible for WordPress and JavaScript developers.
+
 The mission of Faust is to reduce the complexity of building headless WordPress frontends for the web, allowing the developer to build production sites with the ease of a monolithic WordPress site.
+
 Check out their [documentation](https://faustjs.org/) for guides to all these key features.
 
 ## Deploy steps
@@ -25,27 +27,25 @@ To deploy your project to Atlas, it will need to be available on GitHub. The Fau
 
 Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initialize and configure your local and remote repositories:
 
-### Add remote repository
-
+```
+# Add remote repository
 `$ git remote add origin https://github.com/<username>/<repo>`
 
-### Stage all changed files
-
+# Stage all changed files
 `$ git add -A`
 
-### Commit the files to the current branch
-
+# Commit the files to the current branch
 `$ git commit -m "initial commit"`
 
-### Push changes to remote repository
-
+# Push changes to remote repository
 `$ git push -u origin main`
+```
 
-## Deploy Your Repository
+### Deploy Your Repository
 
 Once your project is in GitHub, you can follow the [directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
 
-## Build Details
+### Build Details
 
 Atlas detects that it is a Faust.js app and runs the build scripts and configs necessary for the build details.
 
@@ -53,22 +53,22 @@ One thing to note is the `next/cache` folder within your Faust.js project. Atlas
 
 ## Best Practices
 
-### Next Image in Faust.js:
+### Next Image in Faust.js
 
 The Next.js Image component, [next/image](https://nextjs.org/docs/api-reference/next/image) , is an extension of the HTML <img> element, evolved for the modern web.
 It includes a variety of built-in performance optimizations to help you achieve good Core Web Vitals.
 
 One thing to keep in mind is when switching over your domains on Atlas, you must declare them in the `next.js.config` file, otherwise the images will not render. 
 
-### Known Limitations
+## Known Limitations
 
-#### On-Demand ISR: 
+### On-Demand ISR
 While our Node infrastructure will support path-based revalidation on-demand, this revalidation will currently not extend to edge cached versions of that path, nor will they apply to all instances of your front-end application (if scaled beyond a single instance). This is under active investigation by our engineering team.
 
-#### Next Image caching with Faust: 
+### Next Image caching with Faust
 By default, Next Image serves up WebP versions of images to browsers that support it, and the AVIF format can also be delivered through configuration. While Atlas supports the delivery of both of these formats, [Cloudflare](https://github.com/vercel/next.js/discussions/39510) does not support the Vary header for paths without a file extension. Because of this, it is possible that if the WebP/AVIF version of a header is cached, that version may be served to browsers that cannot support such formats and could result in broken images for such users. The linked GitHub issue has a potential workaround, and we currently have a request in to Cloudflare to support such functionality.
 
-#### Edge Runtime/Middleware: 
+### Edge Runtime/Middleware
 Because Atlas does not rely on serverless functions/edge functions, such functionality currently runs on the origin Node server. It is important to note that this means that such functions will run only on requests that terminate at the origin; any requests served from the edge will continue to serve whatever response is cached at the edge for that path.
 
 

@@ -9,6 +9,7 @@ Astro is a sever-first framework for creating fast content-focused sites. You ca
 ## Deploy Steps
 
 To get started, you can run the following command to create a new Astro project and the follow the steps in their [installation guide](https://docs.astro.build/en/install/auto/):
+
 `npm create astro@latest`
 
 Or, if you want to start with a template designed specifically for headless WordPress, you can clone this starter template:
@@ -17,7 +18,8 @@ Or, if you want to start with a template designed specifically for headless Word
 
 After you have created your application, cd into your project directory:
 `cd <your project directory>`
-Push Initial Commits to GitHub
+
+### Push Initial Commits to GitHub
 
 To deploy your project to Atlas, it will need to be available on GitHub. The Astro installation process lets to initialize a local repository for the project.
 
@@ -49,6 +51,7 @@ With that project installed, modify the start command that runs after building. 
 `http-server ./dist`
 
 To commit these changes to GitHub, run the following commands:
+
 ```
 # Stage all changed files
 $ git add -A
@@ -59,8 +62,10 @@ $ git commit -m "update build and start"
 # Push changes to remote repository
 $ git push -u origin main
 ```
+
 ### Deploy Your Repository
-Once your project is in GitHub, you can follow the directions in our getting started guide to deploy your project to Atlas.
+Once your project is in GitHub, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
 ## Best Practices 
 Since most Astro implementations use SSG to generate your site at build time, we recommend implementing [WPGraphQL Smart Cache](https://developers.wpengine.com/blog/wpgraphql-smart-cache-with-next-js-and-apollo) on your WordPress instance to improve server performance.
 

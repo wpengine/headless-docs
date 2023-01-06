@@ -6,6 +6,10 @@ description: Deploy an Atlas app from an existing repository.
 
 Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing code changes to the branch of your choice in GitHub will then deploy updates to Atlas automatically.
 
+## Create Atlas App
+
+### 1. Prepare your app for deployment
+
 Atlas supports Node.js applications using many popular frameworks with minimal configuration. You can view our framework guides to see what may be required of your particular framework:
 - [Astro](../framework-guides/astro)
 - [Faust.js](../framework-guides/faust)
@@ -19,27 +23,14 @@ Atlas supports Node.js applications using many popular frameworks with minimal c
 
 Some newer frameworks may not have a framework guide yet, but can still run on the Atlas platform using whatever Node.js-based adapters are provided by the framework or as SSG using a Node.js package to serve static assets like `http-server` or `express`.
 
-## Create Atlas App
+#### Custom build and start commands
 
-### 1. Prepare your app for deployment
+By default, the Atlas platform will run `npm run build` and `npm run start` to build and start your application. If you want to run different commands to build or start your application, you can reference the docs on [custom build commands](../customization/builds#custom-build-commands) or [custom start commands](../customization/builds#custom-start-commands) to review the various ways this can be implemented. 
 
-When building the front-end app, WP Engine will use `npm run build` by default. If you want to specify a build command, you can do so in one of two ways:
+#### Using the correct port
 
-1. Add a `wpe-build` script in the `package.json` file for your app.
+The platform expects your application to listen for traffic on one of the following ports: `8080`(default) or `3000`. You may receive an error during deployment if your application is using a different port value. In some frameworks, you may be able to use an environment variable named `PORT` to specify which port you application will listen on.
 
-```json
-  "scripts": {
-    "wpe-build": "next build",
-    // etc.
-  },
-```
-
-2. Create a `ATLAS_BUILD_SCRIPT` environmental variable in the User Portal, with the command to be run as its value. 
-
-![ATLAS_BUILD_SCRIPT env variable](./assets/img/env-variables.png)
-
-
->If you don't know what command needs to be run to build your app, please refer to the your JavaScript framework's documentation.
 
 ### 2. Connect to GitHub
 

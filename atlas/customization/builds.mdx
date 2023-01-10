@@ -10,17 +10,19 @@ This guide describes how to configure the Atlas build system for your applicatio
 
 ### Node.js
 
-By default, Atlas uses the latest v16 LTS release of Node.js. Currently Atlas supports Node.js v12, v14 and v16.
+By default, Atlas uses the latest v16 LTS release of Node.js. Currently Atlas supports Node.js v12, v14, v16 and v18. 
 
-To set a custom version of Node.js, use the [engines](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#engines) field in the `package.json` file. For example, here is how to deploy your application Node.js 16:
+New LTS Node.js versions become available for use within one month of the ‘Initial Release’ and become the default version within one month of the ‘Active LTS Start.’ Please consult [Node.js release dates](https://nodejs.dev/en/about/releases/) as needed. 
+
+To set a custom version of Node.js, use the [engines field](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#engines) in the `package.json` file. For example, here is how to deploy your application using Node.js 16:
 
 ```json
 "engines": {
-  "node": "16.15.0"
+  "node": ">=16.0.0 <17.0.0"
 },
 ```
 
-Note: Atlas builds use [Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) to specify the Node.js version. This can be used to specify a specific versions, a range of versions or a major version
+Note: Atlas builds use [Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) to specify the Node.js version. This can be used to specify a specific versions, a range of versions or a major version. If a range is used, ensure that an upper bound is set (e.g. <17.0.0) as the build may use the new node version unexpectedly. For example, a clean rebuild will clear the cached version of Node.js.
 
 The version of Node.js in use on your builds can be found in the build output:
 
@@ -28,11 +30,11 @@ The version of Node.js in use on your builds can be found in the build output:
 Node.js Setup:
   Detecting Node.js version
     Searching for the Node.js version in package.json => engines
-    Using Node.js "16.15.0" from the package.json engines field
+    Using Node.js ">=16.0.0 <17.0.0" from the package.json engines field
 
   Installing Node.js
   nodejs: Contributing to layer
-    Node.js v16.15.0 installed
+    Node.js v16.19.0 installed because it is the latest version that matches the constraint ">=16.0.0 <17.0.0"
 ```
 
 To see what version of Node.js you are using on your local machine use the following command:

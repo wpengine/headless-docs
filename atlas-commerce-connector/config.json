@@ -1,0 +1,34 @@
+{
+  "title": "Atlas Commerce Connector for BigCommerce",
+  "description": "Sync product data from BigCommerce to WordPress.",
+  "entrypoint": "/atlas-commerce-connector/introduction.mdx",
+  "ctaLabel": "Get Started",
+  "sidebar": [
+    {
+      "type": "doc",
+      "label": "Introduction",
+      "filePath": "/atlas-commerce-connector/introduction.mdx"
+    },
+    {
+      "type": "category",
+      "label": "Tutorials",
+      "items": [
+        {
+          "type": "doc",
+          "label": "Connecting BigCommerce",
+          "filePath": "/atlas-commerce-connector/tutorial/connecting-bigcommerce.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Performing Product Sync",
+          "filePath": "/atlas-commerce-connector/tutorial/performing-product-sync.mdx"
+        }
+      ]
+    },
+    {
+      "type": "doc",
+      "label": "Atlas Commerce Blocks",
+      "filePath": "/atlas-commerce-connector/using-commerce-blocks.mdx"
+    }
+  ]
+}

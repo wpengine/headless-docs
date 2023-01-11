@@ -120,6 +120,11 @@
           "type": "doc",
           "label": "Remix",
           "filePath": "/atlas/framework-guides/remix.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Qwik",
+          "filePath": "/atlas/framework-guides/qwik.mdx"
         }
       ]
     },

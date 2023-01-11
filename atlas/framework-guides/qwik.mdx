@@ -1,0 +1,82 @@
+---
+slug: /atlas/framework-guides/qwik
+title: Qwik on Atlas
+description: Learn how to deploy a Qwik site to Atlas by configuring it to work in a Node environment.
+---
+## Introduction 
+
+Qwik is a new kind of web framework that can deliver instant loading web applications at any size or complexity. Your sites and apps can boot with about 1kb of JS, and achieve consistent performance at scale. Check out the [documentation](https://qwik.builder.io/docs/getting-started/) for more information.
+
+## Deploy Steps
+
+To get started, you can run the following command to create a new Qwik project:
+
+`npm create qwik@latest`
+
+After you have created your application, cd into your project directory:
+
+`cd <your project directory>`
+
+### Push Initial Commits to GitHub
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Qwik installation process lets us initialize a local repository for the project.
+
+Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initalize and configure your local and remote repositories:
+
+```
+# Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
+
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "initial commit"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+  
+### Build Details 
+  
+Qwik apps are not designed to work on Atlas right out of the box. They need to be configured by using the Node.js integration that is built into the Qwik ecosystem. Please consult the docs on [the Node.js integration](https://qwik.builder.io/integrations/deployments/node/) for details beyond this guide.
+
+First, configure your app for Node.js by installing the node adapter with the following command:
+
+`npm run qwik add express`
+
+Open the `package.json` file and change the `start` script to the following:
+
+`node ./server/entry.express.js`
+
+To commit these changes to GitHub, run the following commands:
+
+```
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "update build and start"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+  
+### Deploy Your Repository
+  
+Once your project is in GitHub, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
+## Best Practices 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -39,17 +39,18 @@ $ git push -u origin main
   
 ### Build Details 
   
-Qwik apps are not designed to work on Atlas right out of the box. They need to be configured by using the Node integration that is built in to the Qwik ecosystem. You can read more about the Node integration [here](https://qwik.builder.io/integrations/deployments/node/).
+Qwik apps are not designed to work on Atlas right out of the box. They need to be configured by using the Node.js integration that is built in to the Qwik ecosystem. Please consult the docs on [the Node.js integration](https://qwik.builder.io/integrations/deployments/node/) for more details.
 
-First, configure your app for Node by Install the node adapter with the following command:
+First, configure your app for Node.js by installing the node adapter with the following command:
 
 `npm run qwik add express`
 
-Open the package.json file and change the “start” script to the following:
+Open the `package.json` file and change the `start` script to the following:
 
 `node ./server/entry.express.js`
 
 To commit these changes to GitHub, run the following commands:
+
 ```
 # Stage all changed files
 $ git add -A

@@ -64,11 +64,12 @@ To set a custom version of Node.js, use the engines field in the `package.json` 
 },
 ```
 
-To make Gatsby compatible with the Node.js container on Atlas, run the following commands to install and save the `gatsby-plugin-fastify` package:
+To make Gatsby compatible with the Node.js container on Atlas, run the following commands to install and save the [`gatsby-plugin-fastify` package](https://www.gatsbyjs.com/plugins/gatsby-plugin-fastify/):
 ```
 npm install gatsby-plugin-fastify fastify
-``
-The add the plugin to `gatsby-config.js`:
+```
+
+Then add the plugin to the `gatsby-config.js` file:
 ```
 module.exports = {
   /* Site config */
@@ -82,6 +83,7 @@ module.exports = {
     },
   ],
 };
+
 ```
 
 With that project installed, modify the start command that runs after building. Update the start script in `package.json` to look like this:

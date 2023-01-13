@@ -1,7 +1,110 @@
 ---
 slug: /atlas/framework-guides/gatsby
 title: Gatsby Framework Guide
-description: In this framework guide you will learn how to deploy Gatsby to the Atlas platform
+description: In this guide, you will learn how to create and deploy a Gatsby application on the Atlas hosting platform. 
 ---
+## Introduction 
+Gatsby is a React-based framework with a built-in content layer that simplifies the process of integrating different sources of data. Gatsby provides a variety of rendering methods and has an extensive ecosystem of plugins and other integrations.
 
-## Coming Soon
+### WordPress Requirements
+Since Gatsby has its own built-in data layer, you’ll need to install a few other things to get started. In your WordPress site, install the following plugins:
+- [WPGatsby](https://wordpress.org/plugins/wp-gatsby/)
+- [WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases)
+
+In addition to these WordPress plugins, Gatsby also needs to install an npm package in the JavaScript application to finish the connection. Please reference the steps below.
+
+### Deploy Steps
+
+To get started, you can run the following command to create a new Gatsby project and the follow the steps in their [getting started guide](https://www.gatsbyjs.com/docs/quick-start):
+
+`npm init gatsby`
+
+During the installation process, you can select WordPress as a CMS option, and Gatsby will pre-install a few things for you.
+
+Or, if you want to start with a blog template designed specifically for headless WordPress, you can clone this starter template:
+
+`git clone https://github.com/gatsbyjs/gatsby-starter-wordpress-blog`
+
+#### Install `gatsby-source-wordpress` Package
+
+Both  of the methods above will pre-install the [gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md) plugin, but you can manually install it using the following command:
+`npm install –save gatsby-source-wordpress`
+
+The `gatsby-source-wordpress` plugin completes the connection between your site and the Gatsby data layer. Consider reading [Gatsby’s guide on getting started with WordPress](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md) for more details.
+
+After you have created your application, cd into your project directory:
+`cd <your project directory>`
+
+#### Push Initial Commits to GitHub
+
+To deploy your project to Atlas, it will need to be available on GitHub. The Gatsby installation process initializes a local repository for the project.
+
+Create a new remote repository at [repo.new](https://repo.new), and then run the following commands to initialize and configure your local and remote repositories:
+```
+#Add remote repository
+$ git remote add origin https://github.com/<username>/<repo>
+
+# Stage all changed files
+$ git add -A
+# Commit the files to the current branch
+$ git commit -m "initial commit"
+
+# Push changes to remote repository
+$ git push -u origin main
+
+```
+### Build Details 
+
+Since v5 of Gatsby requires Node.js v18, you will need to tell Atlas to use [a custom version of Node.js](https://developers.wpengine.com/docs/atlas/customization/builds#setting-a-custom-version-of-node-js--npm-and-yarn).
+
+To set a custom version of Node.js, use the `engines` field in the `package.json` file. For example, here is how to deploy your application Node.js 18.0.0:
+```
+"engines": {
+ "node": "18.0.0"
+},
+```
+
+To make Gatsby compatible with the Node.js container on Atlas, run the following commands to install and save the [`gatsby-plugin-fastify` package](https://www.gatsbyjs.com/plugins/gatsby-plugin-fastify/):
+```
+npm install gatsby-plugin-fastify fastify
+```
+
+Then add the plugin to the `gatsby-config.js` file:
+```
+module.exports = {
+  /* Site config */
+  plugins: [
+    /* Rest of the plugins */
+    {
+      resolve: `gatsby-plugin-fastify`,
+      options: {
+        /* discussed below */
+      }, // All options are optional
+    },
+  ],
+};
+
+```
+
+With that project installed, modify the start command that runs after building. Update the start script in `package.json` to look like this:
+```
+"start": "gserve"
+```
+
+To commit these changes to GitHub, run the following commands:
+```
+# Stage all changed files
+$ git add -A
+
+# Commit the files to the current branch
+$ git commit -m "update build and start"
+
+# Push changes to remote repository
+$ git push -u origin main
+```
+## Deploy Your Repository
+Once your project is in GitHub, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+
+## Best Practices 
+
+

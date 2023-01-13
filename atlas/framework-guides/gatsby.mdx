@@ -67,7 +67,7 @@ To set a custom version of Node.js, use the engines field in the `package.json` 
 
 With that project installed, modify the start command that runs after building. Update the start script in `package.json` to look like this:
 ```
-"start": "gatsby serve"
+"start": "gatsby build && gatsby serve --port 8080"
 ```
 
 To commit these changes to GitHub, run the following commands:

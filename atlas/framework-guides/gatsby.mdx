@@ -8,22 +8,24 @@ Gatsby is a React-based framework with a built-in content layer that simplifies 
 
 ### WordPress Requirements
 Since Gatsby has its own built in data layer, you’ll need to install a few other things to get started. In you WordPress site, install the following plugins:
-[WPGatsby](https://wordpress.org/plugins/wp-gatsby/)
-[WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases)
+- [WPGatsby](https://wordpress.org/plugins/wp-gatsby/)
+- [WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases)
 
 In addition to these WordPress plugins, Gatsby also needs to install an npm package in the JavaScript application to finish the connection. Please reference the steps below.
 
 ### Deploy Steps
 
-To get started, you can run the following command to create a new Gatsby project and the follow the steps in their [getting started guide](https://www.gatsbyjs.com/docs/quick-start) :
+To get started, you can run the following command to create a new Gatsby project and the follow the steps in their [getting started guide](https://www.gatsbyjs.com/docs/quick-start):
 
 `npm init gatsby`
 
-During the installation process, you can select WordPress as a CMS option, and Gatsby will pre-install a few things for you. Reference the section below for what needs to be installed in WordPress for Gatsby to use it.
+During the installation process, you can select WordPress as a CMS option, and Gatsby will pre-install a few things for you.
 
 Or, if you want to start with a blog template designed specifically for headless WordPress, you can clone this starter template:
 
 `git clone https://github.com/gatsbyjs/gatsby-starter-wordpress-blog`
+
+#### Install `gatsby-source-wordpress` Package
 
 Both  of the methods above will pre-install the [gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/blob/master/packages/gatsby-source-wordpress/README.md) plugin, but you can manually install it using the following command:
 `npm install –save gatsby-source-wordpress`

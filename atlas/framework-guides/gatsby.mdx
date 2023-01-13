@@ -7,7 +7,7 @@ description: In this guide, you will learn how to create and deploy a Gatsby app
 Gatsby is a React-based framework with a built-in content layer that simplifies the process of integrating different sources of data. Gatsby provides a variety of rendering methods and has an extensive ecosystem of plugins and other integrations.
 
 ### WordPress Requirements
-Since Gatsby has its own built in data layer, you’ll need to install a few other things to get started. In you WordPress site, install the following plugins:
+Since Gatsby has its own built-in data layer, you’ll need to install a few other things to get started. In your WordPress site, install the following plugins:
 - [WPGatsby](https://wordpress.org/plugins/wp-gatsby/)
 - [WPGraphQL](https://github.com/wp-graphql/wp-graphql/releases)
 
@@ -39,7 +39,7 @@ After you have created your application, cd into your project directory:
 
 To deploy your project to Atlas, it will need to be available on GitHub. The Gatsby installation process initializes a local repository for the project.
 
-Create a new remote repository at repo.new, and then run the following commands to initalize and configure your local and remote repositories:
+Create a new remote repository at [repo.new](https://repo.new), and then run the following commands to initialize and configure your local and remote repositories:
 ```
 #Add remote repository
 $ git remote add origin https://github.com/<username>/<repo>
@@ -57,7 +57,7 @@ $ git push -u origin main
 
 Since v5 of Gatsby requires Node.js v18, you will need to tell Atlas to use [a custom version of Node.js](https://developers.wpengine.com/docs/atlas/customization/builds#setting-a-custom-version-of-node-js--npm-and-yarn).
 
-To set a custom version of Node.js, use the engines field in the `package.json` file. For example, here is how to deploy your application Node.js 18.0.0:
+To set a custom version of Node.js, use the `engines` field in the `package.json` file. For example, here is how to deploy your application Node.js 18.0.0:
 ```
 "engines": {
  "node": "18.0.0"

@@ -156,17 +156,17 @@ Click the `Create a webhook` button:
 
 ![Generate webhook](./img/webhook-button.png)
 
-Copy the webhook URL to use in your custom workflows:
+This creates one webhook with 2 `Webhook URL` options: `Rebuild` and `Clean Rebuild`; The `Clean Rebuild` will clear all cached assets, but is otherwise idential to `Rebuild`. Copy one of the webhook URLs to use in your custom workflows:
 
 ![Webhook URL](./img/webhook.png)
 
 Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/).
 
-If for any reason you want to regenerate the webhook so that old URL will no longer trigger rebuilds, click the `Regenerate` button and confirm your action:
+If for any reason you want to regenerate the webhook ULRs so that old URL will no longer trigger rebuilds, click the `Regenerate all` button and confirm your action:
 
 ![Regenerate webhook](./img/regenerate.png)
 
-To delete your webhook, click the `Delete` button. If you do so, the URL you previously used will no longer work when attempting to trigger a rebuild.
+To delete your webhook, click the `Delete all` button. If you do so, the URLs you previously used will no longer work when attempting to trigger a rebuild.
 
 ## Framework Build Assets Cache
 

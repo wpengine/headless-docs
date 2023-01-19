@@ -22,7 +22,7 @@ To set a custom version of Node.js, use the [engines field](https://docs.npmjs.c
 },
 ```
 
-Note: Atlas builds use [Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) to specify the Node.js version. This can be used to specify a specific versions, a range of versions or a major version. If a range is used, ensure that an upper bound is set (e.g. <17.0.0) as the build may use the new node version unexpectedly. For example, a clean rebuild will clear the cached version of Node.js.
+Note: Atlas builds use [Semantic Versioning](https://docs.npmjs.com/about-semantic-versioning) to specify the Node.js version. This can be used to specify a specific versions, a range of versions or a major version. If a range is used, ensure that an upper bound is set (e.g. {'<'}17.0.0) as the build may use the new node version unexpectedly. For example, a clean rebuild will clear the cached version of Node.js.
 
 The version of Node.js in use on your builds can be found in the build output:
 

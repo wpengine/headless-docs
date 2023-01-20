@@ -24,7 +24,7 @@ description: Learn how to sync your product data from BigCommerce into WordPress
 
 ![Atlas Commerce Connector Product Queries](../images/product-queries.png)
 
-6. In the context of our **Atlas Commerce Blueprint**, once this sync is performed and your product data has been imported successfully you should now see products appearing on the **Home** and **Shop** pages of the Blueprint frontend where these GraphQL queries are being used. Missing products on the **Home** page will need to be configured using [Atlas Commerce Blocks](../atlas-commerce-blocks.mdx).
+6. In the context of our **Atlas Commerce Blueprint**, once this sync is performed and your product data has been imported successfully you should now see products appearing on the **Home** and **Shop** pages of the Blueprint frontend where these GraphQL queries are being used. Missing products on the **Home** page will need to be configured using [Atlas Commerce Blocks](../atlas-commerce-blocks.mdx). The **Home** and **Shop** pages uses [ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) and so you won't see the products on the frontend immediately - try refreshing these pages until they appear or you can run another build in **Atlas**.
 
 ![Products listed on the Blueprint Shop page](../images/shop-page.png)
 
@@ -39,3 +39,5 @@ description: Learn how to sync your product data from BigCommerce into WordPress
 2. If there is an error with the sync or missing data on the **Products** screen please ensure that your BigCommerce API account has the necessary permissions for the data sets needed to be imported.
 
 3. If there are issues with Webhooks please note that these are only set when a product sync has been performed and you wish to catch further updates. If you click **Clear imported products** this will also clear the current Webhooks so as not to sync unwanted updates from BigCommerce. Once a new sync is performed, Webhooks will be set again to catch further updates to your product data in BigCommerce.
+
+4. The **Home** and **Shop** pages uses [ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) and so you won't see the products on the frontend immediately - try refreshing these pages until they appear or you can run another build in **Atlas**.

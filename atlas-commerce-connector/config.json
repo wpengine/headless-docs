@@ -22,6 +22,11 @@
           "type": "doc",
           "label": "Performing Product Sync",
           "filePath": "/atlas-commerce-connector/tutorial/performing-product-sync.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "Hosted Checkout",
+          "filePath": "/atlas-commerce-connector/tutorial/hosted-checkout.mdx"
         }
       ]
     },

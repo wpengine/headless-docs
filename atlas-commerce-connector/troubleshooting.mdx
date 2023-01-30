@@ -1,0 +1,30 @@
+---
+slug: /atlas-commerce-connector/troubleshooting
+title: Atlas Commerce Connector for BigCommerce - Troubleshooting
+description: Solve issues with Atlas Commerce Connector for BigCommerce.
+---
+
+**Note**: This documentation assumes that you have already chosen and deployed the [Atlas Commerce Blueprint via our User Portal](https://developers.wpengine.com/docs/atlas/getting-started/blueprint-repository)
+
+## Common issues when connecting BigCommerce and running the sync
+
+- If the confirm connection operation is failing please make sure your **Access Token** is correct and that the API Account you setup has the [required scopes](https://developer.bigcommerce.com/docs/97b76565d4269-big-commerce-ap-is-quick-start).
+
+The following scopes are required to connect with your credentials, run the product sync, modify the cart and submit product reviews:
+
+| Scope                  | Permission |
+| ---------------------- | ---------- |
+| Carts                  | Modify     |
+| Content                | Read-Only  |
+| Products               | Modify     |
+| Store Inventory        | Read-Only  |
+| Information & settings | Read-Only  |
+
+- If you are encountering an error with **CORS** or whereby the WordPress domain is trying to hit endpoints in the plugin that seem to be using the Atlas url for your headless site, please ensure that permalinks are set to **Post name** or have a custom structure like so: `/%postname%/`
+
+- If there are errors coming back from the progress endpoints being polled while running the sync it could mean that there was an issue persisting some of the data coming from BigCommerce via **Atlas Content Modeler**. In this case make sure to check that all of the ACM models are imported and set up correctly. The `acm-blueprint.zip` folder localted in the **Atlas Commerce Blueprint** repo that was cloned to your GitHub account during the installation will have a property called `models` which you can extract into its own file and import again by going to the `Tools` menu item under `Content Modeler` in the WP Admin toolbar.
+
+- After solving some sync issues, the progress bar on the `Dashboard` menu item under `BigCommerce Connection` in the WP Admin toolbar may still be loading or hanging. There is a local storage item with the key `yourdomain.com-bigCommerceSyncProgress` set in the browser when a sync is started. Deleting this by going to your browser dev tools `Application` > `Local Storage` can help clean this up and reset the UI.
+
+- Check out the demo of [Atlas Commerce Blueprint](https://atlascommerce.wpengine.com/)
+- Try out a [sandbox version of Atlas](https://wpengine.com/atlas/#atlasplans) where you can install Atlas Commerce Blueprint

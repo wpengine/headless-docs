@@ -314,17 +314,17 @@
               "filePath": "/atlas/reference/cli/wpe/completion/zsh.mdx"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Non-CLI Reference",
+      "items": [
         {
-          "type": "category",
-          "label": "non-cli zip-upload",
-          "items": [
-            {
-              "type": "doc",
-              "label": "zip-upload",
-              "filePath": "/atlas/reference/non-cli/zip-upload.mdx"
-            }
-          ]
+          "type": "doc",
+          "label": "zip-upload",
+          "filePath": "/atlas/reference/non-cli/zip-upload.mdx"
         }
       ]
     }

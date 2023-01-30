@@ -316,6 +316,17 @@
           ]
         }
       ]
+    },
+    {
+      "type": "category",
+      "label": "Non-CLI Reference",
+      "items": [
+        {
+          "type": "doc",
+          "label": "zip-upload",
+          "filePath": "/atlas/reference/non-cli/zip-upload.mdx"
+        }
+      ]
     }
   ]
 }

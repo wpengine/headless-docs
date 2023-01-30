@@ -8,17 +8,17 @@ description: Solve issues with Atlas Commerce Connector for BigCommerce.
 
 ## Common issues when connecting BigCommerce and running the sync
 
-- If the confirm connection operation is failing please make sure your **Access Token** is correct and that the API Account you setup has the [required scopes](https://developer.bigcommerce.com/docs/97b76565d4269-big-commerce-ap-is-quick-start).
+- If the confirm connection operation is failing please make sure your **Access Token** is correct and that the API Account you setup has the [required scopes](https://developer.bigcommerce.com/docs/97b76565d4269-big-commerce-ap-is-quick-start). The following scopes are required to connect with your credentials, run the product sync, modify the cart and submit product reviews:
 
-The following scopes are required to connect with your credentials, run the product sync, modify the cart and submit product reviews:
+  **Carts** => Modify
 
-| Scope                  | Permission |
-| ---------------------- | ---------- |
-| Carts                  | Modify     |
-| Content                | Read-Only  |
-| Products               | Modify     |
-| Store Inventory        | Read-Only  |
-| Information & settings | Read-Only  |
+  **Content** => Read-Only
+
+  **Products** => Modify
+
+  **Store Inventory** => Read-Only
+
+  **Information & settings** => Read-Only
 
 - If you are encountering an error with **CORS** or whereby the WordPress domain is trying to hit endpoints in the plugin that seem to be using the Atlas url for your headless site, please ensure that permalinks are set to **Post name** or have a custom structure like so: `/%postname%/`
 

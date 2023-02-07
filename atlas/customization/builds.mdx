@@ -160,7 +160,10 @@ This creates one webhook with 2 `Webhook URL` options: `Rebuild` and `Clean Rebu
 
 ![Webhook URL](./img/webhook.png)
 
-Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/).
+Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/). Alternatively, you can configure a POST request to be sent from the service you want to integrate with Atlas or trigger such request yourself:
+```
+curl -X POST 'https://js.wpengineapi.com/wh/v1/accounts/{your-account}/apps/{your-app}/environments/{your-env-id}/webhooks/webhook:rebuild?token={your-token}'
+```
 
 If for any reason you want to regenerate the webhook URLs so that old URL will no longer trigger rebuilds, click the `Regenerate all` button and confirm your action:
 
@@ -182,4 +185,4 @@ The folders that are cached currently are:
 
 If any of the above folders are in the projects root directory at the start of the build, the build will **not** override them. 
 
-Performing a clean rebuild will remove any previously cached files. For instructions on how to [perform a clean rebuild](../additional-guides/troubleshooting-builds#clean-rebuild-and-clear-domain-cache) you can reference the guide on troubleshooting builds.
+Performing a clean rebuild, either through a webhook or through User Portal, will remove any previously cached files. For instructions on how to [perform a clean rebuild](../additional-guides/troubleshooting-builds#clean-rebuild-and-clear-domain-cache) you can reference the guide on troubleshooting builds.

@@ -146,9 +146,9 @@ The start command is run to start your Node application once it is deployed. By 
 },
 ```
 
-## Rebuild an environment via webhook
+## Webhooks
 
-To generate a webhook that will rebuild your Atlas environment when triggered, visit the environment settings page and click on the `Settings` button:
+To generate a webhook, visit the environment settings page and click on the `Settings` button:
 
 ![Settings page](./img/settings.png)
 
@@ -156,7 +156,7 @@ Click the `Create a webhook` button:
 
 ![Generate webhook](./img/webhook-button.png)
 
-This creates one webhook with 2 `Webhook URL` options: `Rebuild` and `Clean Rebuild`; The `Clean Rebuild` will clear all cached assets, but is otherwise idential to `Rebuild`. Copy one of the webhook URLs to use in your custom workflows:
+This creates one webhook with 3 options: `Rebuild`, `Clean Rebuild` and `Purge Cache`. The `Clean Rebuild` will clear all cached assets, but is otherwise idential to `Rebuild`. The `Purge Cache` will clear the CDN cache for your Atlas domain. Copy one of the webhook URLs to use in your custom workflows:
 
 ![Webhook URL](./img/webhook.png)
 

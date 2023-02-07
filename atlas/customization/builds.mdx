@@ -162,7 +162,7 @@ This creates one webhook with 2 `Webhook URL` options: `Rebuild` and `Clean Rebu
 
 Once generated, you can use this URL to configure a WordPress plugin that can trigger your webhook based on certain WordPress actions, like adding a new post or page. Examples of such plugins are [JAMstack deployments](https://wordpress.org/plugins/wp-jamstack-deployments/) and [WPGatsby](https://wordpress.org/plugins/wp-gatsby/). Alternatively, you can configure a POST request to be sent from the service you want to integrate with Atlas or trigger such request yourself:
 ```
-curl -X POST 'https://js.wpengineapi.com/wh/v1/accounts/{your-account}/apps/{your-app}/environments/{your-env-id}/webhooks/webhook:rebuild?token={your-token}'
+curl -X POST 'https://js.wpengineapi.com/wh/v1/accounts/{your-account}/apps/{your-app}/environments/{your-env-id}/webhooks/webhook:{action}?token={your-token}'
 ```
 
 If for any reason you want to regenerate the webhook URLs so that old URL will no longer trigger rebuilds, click the `Regenerate all` button and confirm your action:

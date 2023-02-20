@@ -14,7 +14,7 @@ description: Learn how to sync your product data from BigCommerce into WordPress
 
    ![Atlas Commerce Connector Product Sync](../images/performing-sync.png)
 
-3. Once the product and images sync is complete, [Webhooks](https://developer.bigcommerce.com/docs/9a6037ffe79fd-webhooks-overview) will be set in your BigCommerce account which you can confirm by navigating to `Settings > API Accounts` back in your BigCommerce account dashboard. These webhooks will trigger a background job in WordPress to sync any updates made to your product data in BigCommerce so you don't have to.
+3. Once the product and images sync is complete, [Webhooks](https://developer.bigcommerce.com/docs/9a6037ffe79fd-webhooks-overview) will be set in your BigCommerce account which you can confirm by navigating to `Settings > API Accounts` back in your BigCommerce account dashboard. These webhooks will trigger a background job in WordPress to sync any updates made to your product data in BigCommerce so you don't have to. A CRON event is also set after an initial sync named `atlas_commerce_connector_bigcommerce_sync_store_event` which will run the sync store callback daily to catch any updates that could not be updated via Webhooks. This ensures that synced data will be trued up to the BigCommerce store every 24 hours. This event is removed along with Webhooks whenever products are cleared or store credentials have changed.
 
 4. Navigate to the `Products` menu item under `BigCommerce Connection` in the WP Admin toolbar. Here you can view the results of the sync and examine the BigCommerce data that is now available to you via WPGraphQL and using our [`Atlas Commerce Blocks`](../atlas-commerce-blocks.mdx) plugin.
 

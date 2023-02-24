@@ -49,9 +49,7 @@ After Atlas connects to your GitHub account, the `Connect` button indicates that
 Now that GitHub is connected, it's time to connect your repository.
 
 1. From the list of repositories, select the one with your application's code.
-2. If your project is stored in a folder within your repository, specify the path to your root folder by clicking on the `Edit` icon in the `Root Directory` field.
-![Select the subfolder](./assets/img/root-directory.png)
-4. Select `Continue` to proceed to the WP Engine Settings page.
+2. Select `Continue` to proceed to the WP Engine Settings page.
 
 ### 4. Set your application settings
 
@@ -76,27 +74,31 @@ Examples:
 
 ![Select a branch](./assets/img/select-branch.png)
 
-2. Enter a name for your Atlas environment. The name should represent how you intend to use the environment. For example, enter something like `prod` if it's a production environment, `staging` if it's a staging environment, etc.
+2. If your project is stored in a folder within your repository, specify the path to your root folder by clicking on the `Edit` icon in the `Root Directory` field.
 
-3. Every headless environment is associated with a WordPress environment. Choose either:
+![Select the subfolder](./assets/img/root-directory.png)
+
+3. Enter a name for your Atlas environment. The name should represent how you intend to use the environment. For example, enter something like `prod` if it's a production environment, `staging` if it's a staging environment, etc.
+
+4. Every headless environment is associated with a WordPress environment. Choose either:
 
    - `I already have a WordPress environment`: Use a WordPress site from your WP Engine account. Select the search bar and search for the name of your WordPress site.
    - `I want to create a new WordPress environment`: WP Engine makes a new WordPress site and links it to your application. In the box, enter a name for your new WordPress site.
 
 ![Link to WordPress](./assets/img/link-to-wordpress.png)
 
-4. In order for your WordPress environment to become "headless", Atlas can install the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/), [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/), [FaustWP](https://wordpress.org/plugins/faustwp/) and [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugins. It can also automatically set the required environment variables for you so that the FaustWP plugin will work properly out-of-the-box.
+5. In order for your WordPress environment to become "headless", Atlas can install the [WP GraphQL](https://wordpress.org/plugins/wp-graphql/), [Atlas Content Modeler](https://wordpress.org/plugins/atlas-content-modeler/), [FaustWP](https://wordpress.org/plugins/faustwp/) and [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugins. It can also automatically set the required environment variables for you so that the FaustWP plugin will work properly out-of-the-box.
 
 ![Install Headless Plugins](./assets/img/plugins-env-vars.png)
 
 
-5. Select `Create App`.
+6. Select `Create App`.
 
-6. The Atlas app details page appears. When Atlas completes building your application, a checkmark appears under `Last Build`.
+7. The Atlas app details page appears. When Atlas completes building your application, a checkmark appears under `Last Build`.
 
 ![Headless App Building](./assets/img/matching-names-table.png)
 
-7. To visit your headless WordPress app once the first deploy finishes, click the link under the `Atlas URL` heading. Your Atlas app opens in a new browser tab. Enjoy!
+8. To visit your headless WordPress app once the first deploy finishes, click the link under the `Atlas URL` heading. Your Atlas app opens in a new browser tab. Enjoy!
 
 ![First app deployed](./assets/img/first-app-deployed.png)
 

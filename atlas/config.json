@@ -325,6 +325,11 @@
           "type": "doc",
           "label": "zip-upload",
           "filePath": "/atlas/reference/non-cli/zip-upload.mdx"
+        },
+        {
+          "type": "doc",
+          "label": "create app",
+          "filePath": "/atlas/reference/non-cli/create-app.mdx"
         }
       ]
     }

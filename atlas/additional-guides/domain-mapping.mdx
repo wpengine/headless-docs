@@ -39,6 +39,8 @@ Once you are in the Atlas portal, choose the app and environment that you want t
 
 After updating the custom domain settings in your Atlas environment, you will need to point your domain's DNS records to WP Engine servers to finish the connection. This step will vary based on your particular DNS provider, so be sure to reference their documentation on how to add a `CNAME` or `A` record.
 
+If your list of custom domains mapped to your Atlas environment contains subdomains (e.g. `my.domain.com`), make sure that a domain with a wildcard (`*.domain.com`) is configured properly on the DNS side, too (so host name is equal to `*` and A record / CNAME is equal to required WP Engine values).
+
 ## Set domain redirects
 
 Once your domains are added to an environment (which requires adding them in the User Portal and clicking `Save All` to trigger a redeployment of your app), you can define domain-level redirect rules in the same screen. You can do it by clicking on the `Edit` button next to your domain name:

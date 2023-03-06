@@ -8,6 +8,16 @@
       "type": "doc",
       "label": "Introduction",
       "filePath": "/atlas-search/introduction.mdx"
+    },
+    {
+      "type": "doc",
+      "label": "Getting Started",
+      "filePath": "/atlas-search/getting-started.mdx"
+    },
+    {
+      "type": "doc",
+      "label": "Using Atlas Search",
+      "filePath": "/atlas-search/using-atlas-search.mdx"
     }
   ]
 }

@@ -1,0 +1,31 @@
+---
+slug: /atlas-search/getting-started
+title: Getting Started
+description: Getting started with Atlas Search.
+---
+
+#### Installation via Purchase
+When you purchase and apply Atlas Search to one of your environments, if possible, Atlas Search will automatically installed on the chosen environment
+* Installed & activated the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+* Installed & activated the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin.
+
+#### Installation via Blueprints
+**This is the standard path for Atlas Search plugin installation**
+The Atlas Blueprints pipeline will have:
+* Installed & activated the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+* Installed & activated the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin.
+
+#### Installation without Blueprints
+**This section only applies if you did not acquire the Atlas Search plugin via Atlas Blueprints.**
+In the WP Admin panel, before installing the Atlas Search plugin, you will need to download & activate the [WP-GraphQL](https://wordpress.org/plugins/wp-graphql/) plugin. The Atlas Search plugin can then be installed & activated [as per its documentation](https://wordpress.org/plugins/atlas-search/#installation).
+
+### Configuring Atlas Search Plugin
+Configuring the Atlas Search plugin enables both the Content Sync & Search Querying functionalities.
+
+After successful installation, via one of the methods discussed in the [Plugin Installation section](#installing-the-atlas-search-plugin), the `Atlas Search` menu item will appear in the left navigation panel of the WP Admin panel.
+1. Click this `Atlas Search` menu item. By default it will bring you to the default sub-menu ‘Settings’ view, where you will populate the following inputs with the values from the setup email you have received after completing the [Getting an Account section](#getting-an-atlas-search-account):
+    + URL (ie. `https://{atlas-env}/sync/{yoursite}/graphql`)
+    + Access Token (ie. `{your-unique-access-token}`)
+2. Select the ‘Save Settings’ button for the changes to take effect.
+
+![Atlas Search Plugin Settings](./images/as-plugin-settings.png)

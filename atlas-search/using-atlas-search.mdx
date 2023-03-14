@@ -4,26 +4,6 @@ title: Using Atlas Search
 description: Using Atlas Search to improve your search results.
 ---
 
-### Content Sync
-Once you have installed & configured the Atlas Search plugin it will be necessary to run an initial content sync, which will index your WP site's data with Atlas Search.
-
-After this initial sync, the Atlas Search plugin will continue to sync content in real-time whenever content additions or modifications occur on WP.
-
-Note that, if the Atlas Search plugin is deactivated or uninstalled, real-time sync will not occur.
-
-Content sync is performed via the Atlas Search plugin’s UI, as follows:
-1. Click the ‘Atlas Search’ menu item in the WP Admin panel, then click the ‘Sync’ sub-menu item to bring up the below view.
-2. Click the `Synchronize Now` button. Content Sync can take some time to complete, especially with large data sets. The content sync loading bar provides information on progress.
-3. Await the ‘Sync Completed Successfully’ status message.
-4. In the event that the sync process does not complete successfully, an error message of `Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again` will be displayed -  at which point `Resume` & `Delete` buttons will be available for resuming from point of failure or purging & restarting the content sync respectively.
-
-![Atlas Search Plugin Data Sync](./images/as-plugin-data-sync.png)
-
-Once the Atlas Search’s Content Sync has completed you are free to query the content via the WPGraphQL and REST APIs.
-The API search functions will look & feel just like they did before but will now be handled by Atlas Search.
-
-
-
 ### Using Atlas Search
 Once the initial content sync has completed, & while the Atlas Search plugin remains “active”, Atlas Search will enhance your WP search experience.
 

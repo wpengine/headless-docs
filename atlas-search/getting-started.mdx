@@ -5,65 +5,71 @@ description: Getting started with Atlas Search.
 ---
 
 ## Getting an Atlas Search License
-To get an Atlas Search license you must either select Atlas Search as an Add-on when signing up for your Headless plan, or if you already have a headless plan then you can purchase it through the Add-ons page.
+
+To get an Atlas Search license, you can either select Atlas Search as an Add-on when signing up for your Atlas plan or you can purchase it through the Add-ons page of your existing plan.
 You are granted 3 licenses per site when you sign up for Atlas Search.
 
-### Purchasing when Signing Up
-During signup for a headless plan, there is an option under the "Enhance your plan with powerful add-ons" to purchase Atlas Search.
+### Purchasing During Sign Up
+
+During sign up for an Atlas plan, there is an option under the "Enhance your plan with powerful add-ons" to purchase Atlas Search.
 
 ![Atlas Search Add-On Signup](./images/as-add-on-signup.png)
 
 ### Purchasing After Sign Up
-If you have already signed up for an Atlas plan and wish to make use of Atlas Search you can purchase it as an add-on in the side-bar under the "Add-ons" option.
-To do so, navigate to the "Add-ons" option, then to the "Available add-ons" tab. Here you will see Atlas Search as a purchasable add-on.
+
+If you already have an Atlas plan and wish to add Atlas Search, you can purchase it as an add-on in the side-bar under the "Add-ons" option.
+To do so, navigate to the "Add-ons" option, then select the "Available add-ons" tab. Here you will see Atlas Search as a purchasable add-on.
 
 ![Atlas Search Add-On](./images/as-add-on.png)
 
 ## Applying an Atlas Search License
-Now that you have purchased Atlas Search as an add-on, you will see in the "Add-ons" page in the sidebar that Atlas Search is available under the "My Add-ons" tab.
-Click the manage button to get started.
 
-If you have no active Atlas Search enabled environments then you will be navigated to the "Add Environment" page. Here you will see a list of your environments, the number of Atlas Search licenses that you have and checkboxes that can be used to select environments that you want to apply a license to.
-Select the checkbox of the environment that you want to enable Atlas Search for and click "Add Environment", after confirmation you will be navigated to the "Atlas Search" page.
+Now that you have purchased Atlas Search as an add-on, you will see Atlas Search is available under the "My Add-ons" tab on the "Add-ons" page.
+Click the Manage button to get started.
 
-In this page you can see your environments that currently have Atlas Search licenses enabled on them. In the rows you can also see the "Status" of your Atlas Search and the "Last Sync" which shows the last time you performed a sync on your site.
+If you have no active Atlas Search enabled environments, you will be navigated to the "Add Environment" page. Here you will see a list of your environments, the number of Atlas Search licenses that you have, and checkboxes that can be used to select environments that you want to apply a license to.
+Select the checkbox of the environment that you want to enable Atlas Search for and click "Add Environment." After confirmation, you will be navigated to the "Atlas Search" page.
 
+On this page you can see your environments that currently have Atlas Search licenses enabled. You can also view the "Status" of your Atlas Search and the "Last Sync" which shows the last time you performed a sync on your site.
 
-## Releasing an Atlas Search License
-If you wish to release one of the licenses that you have applied to an environment, navigate to the "Atlas Search" page through the "Add-ons" option in the sidebar.
-Each item in the environment list has an ellipsis at the end, clicking this will show an option to release the license from this environment.
+## Installing the Atlas Search Plugin
 
-
-## Installing the Plugin
-When you purchase and apply an Atlas Search license to one of your environments, if possible, Atlas Search will automatically installed on the chosen environment.
+When you purchase and apply an Atlas Search license to one of your environments, Atlas Search will automatically installed on the chosen environment if possible.
 This will install the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin on your WordPress backend.
 
 ### Other Methods of Installing the Plugin
-- Blueprints
-The Atlas Blueprints pipeline will have:
-* Installed & activated the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
-* Installed & activated the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin.
 
-*Note that when installing Atlas Search this way you must apply a license to the environment where the plugin is installed to receive valid settings to use Atlas Search.*
+#### Blueprints
+
+The Atlas Blueprints pipeline will have:
+
+- Installed & activated the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+- Installed & activated the [Atlas Search](https://wordpress.org/plugins/atlas-search/) plugin.
+
+_Note that when installing Atlas Search this way you must apply a license to the environment where the plugin is installed to receive valid settings to use Atlas Search._
 
 ![Atlas Search Plugin Settings](./images/as-plugin-settings.png)
 
-
 ## Content Sync
-Once you have installed & configured the Atlas Search plugin it will be necessary to run an initial content sync, which will index your WP site's data with Atlas Search.
-*Important: You must perform an initial sync before modifying any other data, otherwise errors may occur in future syncs*
 
-After this initial sync, the Atlas Search plugin will continue to sync content in real-time whenever content additions or modifications occur on WP.
+Once you have installed and configured the Atlas Search plugin, you must run an initial content sync to index your WordPress site's data with Atlas Search.
+_Important: You must perform an initial sync before modifying any other data, otherwise errors may occur in future syncs._
 
-Note that, if the Atlas Search plugin is deactivated or uninstalled, real-time sync will not occur.
+After this initial sync, the Atlas Search plugin will continue to sync content in real-time whenever content additions or modifications occur on WordPress.
+_Note: if the Atlas Search plugin is deactivated or uninstalled, real-time sync will not occur._
 
 Content sync is performed via the Atlas Search plugin’s UI, as follows:
-1. Click the ‘Atlas Search’ menu item in the WP Admin panel, then click the ‘Sync’ sub-menu item to bring up the below view.
+
+1. Click the ‘Atlas Search’ menu item in the WordPress Admin panel. Then, click the ‘Sync’ sub-menu item to bring up the below view.
 2. Click the `Synchronize Now` button. Content Sync can take some time to complete, especially with large data sets. The content sync loading bar provides information on progress.
 3. Await the ‘Sync Completed Successfully’ status message.
-4. In the event that the sync process does not complete successfully, an error message of `Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again` will be displayed -  at which point `Resume` & `Delete` buttons will be available for resuming from point of failure or purging & restarting the content sync respectively.
+4. In the event that the sync process does not complete successfully, an error message of `Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again` will be displayed - at which point `Resume` and `Delete` buttons will be available for resuming from point of failure or purging & restarting the content sync respectively.
 
 ![Atlas Search Plugin Data Sync](./images/as-plugin-data-sync.png)
 
-Once the Atlas Search’s Content Sync has completed you are free to query the content via the WPGraphQL and REST APIs.
-The API search functions will look & feel just like they did before but will now be handled by Atlas Search.
+Once the Atlas Search’s Content Sync has completed, you are free to query the content via the WPGraphQL and REST APIs. The API search functions will look and feel just like they did before but will now be handled by Atlas Search.
+
+## Removing an Atlas Search License
+
+If you wish to remove one of the licenses that you have applied to an environment, navigate to the "Atlas Search" page through the "Add-ons" option in the sidebar.
+Click on the ellipsis next to the item in the environment list to show an option to release the license from this environment.

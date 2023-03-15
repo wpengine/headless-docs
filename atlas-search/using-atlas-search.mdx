@@ -144,13 +144,15 @@ _Note: The higher the fuzziness distance allowed the greater the performance & r
 By default, Atlas Search will search all supported WordPress Data Type objects (Posts, Pages, CPTs, ACFs, ACMs, etc.) by all of their supported fields (string, number, boolean, and other WordPress Data Type objects).
 
 The search will return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences will rise to the top. In some cases this may not be the desired behavior. For example:
+![Atlas Search Config Default](./images/as-plugin-config-default.png)
 
 - It may not be correct to consider some specific fields as searchable.
 - Searches matching some fields should be considered more relevant than others.
 
 In these cases, Atlas Search provides both a field-level searchable toggle and weighting slider. The searchable toggle allows for the inclusion/exclusion of a field from the search. The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when determining the order of search results. The higher the weighting, the more relevant it is determined to be.
 
-![Atlas Search Plugin Config](./images/as-plugin-config.png)
+![Atlas Search Config Toggle](./images/as-plugin-config-toggle.png)
+![Atlas Search Config Weighting](./images/as-plugin-config-weighting.png)
 
 ### Saving Configuration Changes
 

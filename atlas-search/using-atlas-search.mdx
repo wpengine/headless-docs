@@ -1,0 +1,171 @@
+---
+slug: /atlas-search/using-atlas-search
+title: Using Atlas Search
+description: Using Atlas Search to improve your search results.
+---
+
+## Prerequisites
+
+Atlas Search requires the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
+
+### Debug Information
+
+Atlas Search adds debug information to WPGraphQL queries. To enable this, navigate to the WPGraphQL settings page and check the setting `Enable GraphQL Debug Mode`.
+
+![WPGraphQL Debug Setting](./images/as-wpgraphql-debug-setting.png)
+
+## Querying with Atlas Search
+
+Once your site is set up with an Atlas Search license and the initial content sync has completed, Atlas Search will take over the default WordPress search functionality and enhance your WordPress search experience.
+
+The WPGraphQL plugin is a good place to test search queries. WPGraphQL provides a ‘GraphiQL IDE' in the WordPress dashboard where you can interact with the WPGraphQL Schema in the browser. Atlas Search overrides the default search functionality for WPGraphQL queries on all Atlas Search supported WordPress data types.
+
+Below is a screenshot of the WPGraphQL plugin & GraphiQL IDE view, where Atlas Search has overridden the default WP search behavior, followed by some sample queries:
+
+![Atlas Search Plugin Data Sync](./images/as-wpgraphiql.png)
+
+### Querying Standard WordPress Data Types
+
+Here are examples of querying standard WordPress data types (Posts, Pages, and Custom Post Types (CPT)):
+
+- Querying Posts/Pages:
+
+```graphql
+{
+  {either "posts" or "pages"}(where: {search: "CSS"}) {
+    nodes {
+      id
+      status
+      title
+    }
+  }
+}
+```
+
+- Querying Custom Post Types:
+
+```graphql
+{
+  branches(where: { search: "Austin" }) {
+    nodes {
+      address
+    }
+  }
+}
+```
+
+### Querying ACM or ACF Types
+
+Atlas Search also integrates with the [Atlas Content Modeler](https://developers.wpengine.com/blog/what-is-atlas-content-modeler) (ACM) & [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) (ACF) plugins.
+
+Here is an example of querying for a custom data type:
+
+- Querying ACM type of `project`, with fields of `streetAddress`, `contactName` & `workOrderNumber`:
+
+```graphql
+{
+  projects(where: { search: "Austin" }) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
+
+### Query Operators
+
+Atlas Search treats spaces as an `OR` operator by default, whereas the default WordPress search treats spaces as an `AND` operator. With Atlas Search, you can explicitly specify the `AND`, `OR` & `NOT` keywords within your search query & you can combine them too - this provides enhanced specificity for your querying needs.
+
+Here is an example of querying using different search operators:
+
+- Using `NOT` search operator:
+
+```graphql
+{
+  projects(where: { search: "Austin NOT Minnesota" }) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
+
+- Using `AND` search operator:
+
+```graphql
+{
+  projects(where: { search: "New York AND Texas" }) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
+
+- Using `OR` search operator:
+
+```graphql
+{
+  projects(where: { search: "New York OR Texas" }) {
+    nodes {
+      streetAddress
+      contactName
+      workOrderNumber
+    }
+  }
+}
+```
+
+## Configuration
+
+For users who have more specific functionality needs, Atlas Search provides a series of advanced configurations to give you the most control on your data search. To manage these configurations, navigate to the 'Search Config' tab of Atlas Search.
+The Atlas Search Config page shows options for changing your search method along with a list of models which is populated from your standard wordpress post types, custom post types and Atlas Content Modeler models. The models also show ACF groups and fields attached to each model.
+
+### Search Method
+
+Atlas Search provides two methods for searching - `stemming` and `fuzzy` - which can be used to tune the search results for your needs.
+
+![Atlas Search Method Toggle](./as-search-method-toggle.png)
+
+#### High Relevancy with Stemming Search
+
+Stemming is the process of reducing a word to its root form or base word. This is the default search method of Atlas Search. Using stemming can increase search relevancy as it will search for both exact matches and matches on stemmed words.
+For example, a search for the word `running` will return results where running is in the queried field first but it will also return results that include variations of the word `run`.
+
+#### Handling Typos with Fuzzy Search
+
+The fuzzy search method can be toggled in the Search Config menu as an alternative to stemming.
+
+Fuzzy search can be used to handle typos in a search query. With fuzziness enabled, a search query for "Hallo Warld" would return results for both "Hello" and "World".
+
+You can specify the per-word 'distance' setting for Fuzziness to either 1 or 2 on the slider, which determines how many letters can be off in each word. If you set the 'Fuzzy distance' to the maximum distance of 2, a search query of "Haalo Waald" would work as per the previous example, still yielding the results for both "Hello" and "World".
+
+_Note: The higher the fuzziness distance allowed the greater the performance & relevancy hit will be to your search experience._
+
+The image below shows how having your fuzzy distance too high can lead to incorrect results:
+![Fuzzy Relevancy Issues](./fuzzy-relevancy)
+
+### Filtering And Boosting Searchable Content
+
+By default, Atlas Search will search all supported WordPress Data Type objects (Posts, Pages, CPTs, ACFs, ACMs, etc.) by all of their supported fields (string, number, boolean, and other WordPress Data Type objects).
+
+The search will return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences will rise to the top. In some cases this may not be the desired behavior. For example:
+
+- It may not be correct to consider some specific fields as searchable.
+- Searches matching some fields should be considered more relevant than others.
+
+In these cases, Atlas Search provides both a field-level searchable toggle and weighting slider. The searchable toggle allows for the inclusion/exclusion of a field from the search. The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when determining the order of search results. The higher the weighting, the more relevant it is determined to be.
+
+![Atlas Search Config Toggle](./images/as-plugin-config-toggle.png)
+
+![Atlas Search Config Weighting](./images/as-plugin-config-weighting.png)
+
+### Saving Configuration Changes
+
+Remember to press the "Save" button to persist any configuration modifications!

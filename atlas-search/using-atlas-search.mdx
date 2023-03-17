@@ -8,6 +8,12 @@ description: Using Atlas Search to improve your search results.
 
 Atlas Search requires the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
 
+### Debug Information
+
+Atlas Search adds debug information to WPGraphQL queries. To enable this, navigate to the WPGraphQL settings page and check the setting `Enable GraphQL Debug Mode`.
+
+![WPGraphQL Debug Setting](./images/as-wpgraphql-debug-setting.png)
+
 ## Querying with Atlas Search
 
 Once your site is set up with an Atlas Search license and the initial content sync has completed, Atlas Search will take over the default WordPress search functionality and enhance your WordPress search experience.
@@ -26,7 +32,7 @@ Here are examples of querying standard WordPress data types (Posts, Pages, and C
 
 ```graphql
 {
-  {either ‘posts’ or ‘pages’}(where: {search: "CSS"}) {
+  {either "posts" or "pages"}(where: {search: "CSS"}) {
     nodes {
       id
       status
@@ -119,10 +125,13 @@ Here is an example of querying using different search operators:
 ## Configuration
 
 For users who have more specific functionality needs, Atlas Search provides a series of advanced configurations to give you the most control on your data search. To manage these configurations, navigate to the 'Search Config' tab of Atlas Search.
+The Atlas Search Config page shows options for changing your search method along with a list of models which is populated from your standard wordpress post types, custom post types and Atlas Content Modeler models. The models also show ACF groups and fields attached to each model.
 
 ### Search Method
 
 Atlas Search provides two methods for searching - `stemming` and `fuzzy` - which can be used to tune the search results for your needs.
+
+![Atlas Search Method Toggle](./as-search-method-toggle.png)
 
 #### High Relevancy with Stemming Search
 
@@ -139,12 +148,14 @@ You can specify the per-word 'distance' setting for Fuzziness to either 1 or 2 o
 
 _Note: The higher the fuzziness distance allowed the greater the performance & relevancy hit will be to your search experience._
 
+The image below shows how having your fuzzy distance too high can lead to incorrect results:
+![Fuzzy Relevancy Issues](./fuzzy-relevancy)
+
 ### Filtering And Boosting Searchable Content
 
 By default, Atlas Search will search all supported WordPress Data Type objects (Posts, Pages, CPTs, ACFs, ACMs, etc.) by all of their supported fields (string, number, boolean, and other WordPress Data Type objects).
 
 The search will return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences will rise to the top. In some cases this may not be the desired behavior. For example:
-![Atlas Search Config Default](./images/as-plugin-config-default.png)
 
 - It may not be correct to consider some specific fields as searchable.
 - Searches matching some fields should be considered more relevant than others.
@@ -152,8 +163,9 @@ The search will return results where each field-match to the search query term(s
 In these cases, Atlas Search provides both a field-level searchable toggle and weighting slider. The searchable toggle allows for the inclusion/exclusion of a field from the search. The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when determining the order of search results. The higher the weighting, the more relevant it is determined to be.
 
 ![Atlas Search Config Toggle](./images/as-plugin-config-toggle.png)
+
 ![Atlas Search Config Weighting](./images/as-plugin-config-weighting.png)
 
 ### Saving Configuration Changes
 
-Remember to press the ‘Save’ button to persist any configuration modifications!
+Remember to press the "Save" button to persist any configuration modifications!

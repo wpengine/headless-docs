@@ -57,7 +57,6 @@ _Note that when installing Atlas Search this way you must apply a license to the
 ![Atlas Search Plugin Settings](./images/as-plugin-settings.png)
 
 ## Content Sync
-
 Once you have installed and configured the Atlas Search plugin, you must run an initial content sync to index your WordPress site's data with Atlas Search.
 _Important: You must perform an initial sync before modifying any other data, otherwise errors may occur in future syncs._
 
@@ -66,10 +65,11 @@ _Note: if the Atlas Search plugin is deactivated or uninstalled, real-time sync 
 
 Content sync is performed via the Atlas Search plugin’s UI, as follows:
 
-1. Click the ‘Atlas Search’ menu item in the WordPress Admin panel. Then, click the ‘Sync’ sub-menu item to bring up the below view.
-2. Click the `Synchronize Now` button. Content Sync can take some time to complete, especially with large data sets. The content sync loading bar provides information on progress.
-3. Await the ‘Sync Completed Successfully’ status message.
-4. In the event that the sync process does not complete successfully, an error message of `Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again` will be displayed - at which point `Resume` and `Delete` buttons will be available for resuming from point of failure or purging & restarting the content sync respectively.
+1. From the Atlas Search environments page, navigate to the WP Admin of the environment you wish to work with by clicking the "WP Admin" button in the environment list item.
+2. Click the "Atlas Search" menu item in the WordPress Admin panel. Then, click the "Sync" sub-menu item to bring up the below view.
+3. Click the `Synchronize Now` button. Content Sync can take some time to complete, especially with large data sets. The content sync loading bar provides information on progress.
+4. Await the "Sync Completed Successfully" status message.
+5. In the event that the sync process does not complete successfully, an error message of `Unexpected sync error occurred. Please try to Resume the sync or Delete what did sync, then start the sync process again` will be displayed - at which point `Resume` and `Delete` buttons will be available for resuming from point of failure or purging & restarting the content sync respectively.
 
 ![Atlas Search Plugin Data Sync](./images/as-plugin-data-sync.png)
 
@@ -79,3 +79,6 @@ Once the Atlas Search’s Content Sync has completed, you are free to query the 
 
 If you wish to remove one of the licenses that you have applied to an environment, navigate to the "Atlas Search" page through the "Add-ons" option in the sidebar.
 Click on the ellipsis next to the item in the environment list to show an option to release the license from this environment.
+
+## Next Steps
+To learn how to use Atlas Search with WPGraphQL, see the [Using Atlas Search ](./using-atlas-search) section.

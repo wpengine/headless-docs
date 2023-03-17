@@ -9,9 +9,11 @@ description: Using Atlas Search to improve your search results.
 Atlas Search requires the [WPGraphQL](https://wordpress.org/plugins/wp-graphql/) plugin.
 
 ### Debug Information
+
 Atlas Search adds debug information to WPGraphQL queries. To enable this, navigate to the WPGraphQL settings page and check the setting `Enable GraphQL Debug Mode`.
 
 ![WPGraphQL Debug Setting](./images/as-wpgraphql-debug-setting.png)
+
 ## Querying with Atlas Search
 
 Once your site is set up with an Atlas Search license and the initial content sync has completed, Atlas Search will take over the default WordPress search functionality and enhance your WordPress search experience.
@@ -146,7 +148,7 @@ You can specify the per-word 'distance' setting for Fuzziness to either 1 or 2 o
 
 _Note: The higher the fuzziness distance allowed the greater the performance & relevancy hit will be to your search experience._
 
-The image below shows how having your fuzzy distance too high can lead to incorrect results
+The image below shows how having your fuzzy distance too high can lead to incorrect results:
 ![Fuzzy Relevancy Issues](./fuzzy-relevancy)
 
 ### Filtering And Boosting Searchable Content
@@ -161,7 +163,6 @@ The search will return results where each field-match to the search query term(s
 In these cases, Atlas Search provides both a field-level searchable toggle and weighting slider. The searchable toggle allows for the inclusion/exclusion of a field from the search. The field-level weighting slider permits the configuration of some fields to be considered more relevant than others when determining the order of search results. The higher the weighting, the more relevant it is determined to be.
 
 ![Atlas Search Config Toggle](./images/as-plugin-config-toggle.png)
-
 
 ![Atlas Search Config Weighting](./images/as-plugin-config-weighting.png)
 

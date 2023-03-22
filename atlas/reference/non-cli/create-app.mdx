@@ -1,0 +1,52 @@
+---
+slug: /node-engine/reference/non-cli/create-app
+title: create app
+description: Atlas Node Engine API Reference - Create a new WP Engine Headless Application
+---
+
+# Purpose
+This functionality allows you to create a new WP Engine Headless Application, without using `Atlas CLI`.
+
+# Prerequsites
+In order to allow this functionality you must first create API access by generating auth credentials in User Portal - `Portal > Username dropdown > Profile > API access (tab) > Generate credentials`.
+The screenshots below walk you through what you will see. Next, copy the API credentials & ensure you have CURL installed locally.
+
+![Getting to API credentials in portal](./img/api-access-and-generate-screen.png)
+![Credentials modal screenshot from portal](./img/api-credentials-modal.png)
+
+# Running Create app command in CURL
+Run the following commands replacing the path capitals and `shellVariables` with your own values.
+
+The `{PUT_YOUR_ENV_NAME_HERE}` corresponds to the WP Engine User Portal environments where you have your WP site. So if your domain is `myapp.wpengine.com`, your environment would be `myapp`.
+
+The available regions for `{PUT_REGION_HERE}` variable are `US-C` or `EU-W`.
+
+- Create an Atlas Application:
+```bash
+curl -X POST -H 'Content-Type: application/json' -u "PUT_USER_ID_HERE:PUT_PASSWORD_HERE" \
+'https://jsstaging.wpengineapi.com/v1/accounts/{PUT_ACCOUNT_NAME_HERE}/apps?appId={PUT_YOUR_NEW_APP_NAME_HERE}' \
+--data-raw '{"region":"regions/{PUT_REGION_HERE}","uploadable":{}}'
+```
+
+- Connect an app with the environment corresponding to the WP Engine User Portal environments where you have your WP site.
+```bash
+curl -X POST -H 'Content-Type: application/json' -u "PUT_USER_ID_HERE:PUT_PASSWORD_HERE" \
+'https://jsstaging.wpengineapi.com/v1/accounts/{PUT_ACCOUNT_NAME_HERE}/apps/{PUT_YOUR_NEW_APP_NAME_HERE}/environments' \
+--data-raw '{"displayName":"{PUT_YOUR_ENV_NAME_HERE}","branch":"uploadable","wpEnvironment":"{PUT_YOUR_WORDPRESS_INSTALL_NAME_HERE}","shellVariables":[{"key":"foo","value":"bar"}]}'
+```
+
+Example long-running operation response, that starts application deployment to the environment.
+```
+{
+    "name": "accounts/{ACCOUNT_NAME}/apps/{YOUR_NEW_APP_NAME}/environments/{ENV_UUID}/operations/no_build",
+    "metadata": {
+        "@type": "type.googleapis.com/wpengine.js.apps.v1.UpdateEnvironmentMetadata",
+        "build": "accounts/{ACCOUNT_NAME}/apps/{YOUR_NEW_APP_NAME}/environments/{ENV_UUID}/builds/no_build",
+        "deployment": ""
+    },
+    "done": false
+}
+```
+
+### Notes:
+In case of Create an Atlas Application CURL HTTP Response will give `200` status, but will not return a response body, if successful. If you would like more detail add the `-i` (include the HTTP response headers in the output) or `-v` (makes curl verbose during the operation) flag to the above CURL command. You can also check Portal to see the Atlas Environment buildng state.

@@ -1,5 +1,5 @@
 ---
-slug: /node-engine/reference/cli/zip-upload
+slug: /node-engine/reference/non-cli/zip-upload
 title: zip upload
 description: Atlas Node Engine API Reference - zip upload provides functionality to upload a full zipped repo, for use with Atlas and via CURL, without Remote Git connection.
 ---
@@ -24,5 +24,5 @@ The following is what the CURL command with populated credentials should look li
 curl -X POST -H "Content-Type: multipart/form-data" -F "repository=@express-simple-server-main.zip" -u "user_name:password" https://js.wpengineapi.com/fu/v1/accounts/wpengineaccount/apps/faust-app-001/environments/135788ee-e49f-0670-1a83-9c4eeede01f9:upload
 ```
 
-###Notes:
+### Notes:
 CURL HTTP Response will give `200` status, but will not return a response body, if successful. If you would like more detail add the `-i` (include the HTTP response headers in the output) or `-v` (makes curl verbose during the operation) flag to the above CURL command. You can also check Portal to see the Atlas Environment rebuilding state.

@@ -43,15 +43,26 @@ $ git push -u origin main
 ```
 ### Build Details 
 
-Since Astro’s default output is static assets, you’ll need to make two small changes to make it run inside of a Node container on the Atlas platform.
+Astro has two main rendering output modes, `server` or `static`, but using `prerender` flags you can implement a hybrid rendering approach. 
 
-First, add `http-server` as a dependency to the project and install if you want to run locally:
+First, add the `@astrojs/node` adapter using the following command:
+```
+$ npx astro add node
+```
 
-`$ npm install --save http-server`
+With that adapter installed, update the Astro config file to tell the Node adapter to run in `standalone` mode:
 
-With that project installed, modify the start command that runs after building. Update the `start` script in `package.json` to look like this:
+```
+import { defineConfig } from 'astro/config';
+import node from '@astrojs/node';
 
-`http-server ./dist`
+export default defineConfig({
+  output: 'server',
+  adapter: node({
+    mode: 'standalone'
+  }),
+});
+```
 
 To commit these changes to GitHub, run the following commands:
 

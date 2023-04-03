@@ -4,7 +4,7 @@ title: Deploy From An Existing Repository
 description: Deploy an Atlas app from an existing repository.
 ---
 
-Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing code changes to the branch of your choice in GitHub will then deploy updates to Atlas automatically.
+Now that you have [chosen to deploy from an existing repository](./blueprint-repository), you can select the repository and deploy it to Atlas. Pushing code changes to the branch of your choice in your repository will then deploy updates to Atlas automatically.
 
 ## Create Atlas App
 
@@ -32,21 +32,21 @@ By default, the Atlas platform will run `npm run build` and `npm run start` to b
 The platform expects your application to listen for traffic on one of the following ports: `8080`(default) or `3000`. You may receive an error during deployment if your application is using a different port value. In some frameworks, you may be able to use an environment variable named `PORT` to specify which port you application will listen on.
 
 
-### 2. Connect to GitHub
+### 2. Connect to repository hosting service
 
-Connect your GitHub account so you can select the repo to deploy to Atlas.
+Atlas supports three repository hosting service providers - GitHub, Bitbucket and GitLab. Connect your respective account so you can select the repository to deploy to Atlas.
 
-1. In the `Repository Settings` view, select `Connect`.
+1. In the `Connect to repository` section, select `Connect` under the provider you want to connect with.
 
-2. GitHub opens in another tab of your web browser. Give WP Engine permission to access your repositories.
+2. GitHub, Bitbucket or GitLab opens in another tab of your web browser. Give WP Engine permission to access your repositories.
 
-After Atlas connects to your GitHub account, the `Connect` button indicates that you are `Connected`. A list of repositories associated with your GitHub account appears.
+After Atlas connects to your account, the `Connected` label with green checkmark indicates that you are connected. A list of repositories associated with your GitHub account appears.
 
-![Connected to GitHub](./assets/img/connect-to-github.png)
+![Connected to provider](./assets/img/github-bitbucket-gitlab.png)
 
 ### 3. Select the repository to deploy
 
-Now that GitHub is connected, it's time to connect your repository.
+Now that you are connected to the provider of your choice, it's time to connect your repository.
 
 1. From the list of repositories, select the one with your application's code.
 2. Select `Continue` to proceed to the WP Engine Settings page.
@@ -55,7 +55,7 @@ Now that GitHub is connected, it's time to connect your repository.
 
 On the `WP Engine Settings` screen:
 
-1. Fill out a name for your application. We recommend choosing a name similar to your GitHub repository's name. The application name cannot be changed once it has been deployed.
+1. Fill out a name for your application. We recommend choosing a name similar to your repository's name. The application name cannot be changed once it has been deployed.
 
 2. Select a region for your application. The region you select will be used for all of your app's environments (production/staging/etc.) and cannot be changed once your Atlas application has been deployed.
 

@@ -21,15 +21,15 @@ After you have created your application, `cd` into your project directory:
 
 `cd <your project directory>`
 
-### Push Initial Commits to GitHub
+### Push Initial Commits to your repository
 
-To deploy your project to Atlas, it will need to be available on GitHub. The Astro installation process lets to initialize a local repository for the project.
+To deploy your project to Atlas, it will need to be available on a remote GitHub, Bitbucket or GitLab repository. The Astro installation process lets to initialize a local repository for the project.
 
-Create a new remote repository at [repo.new](https://github.com/new/), and then run the following commands to initalize and configure your local and remote repositories:
+Create a new remote repository, and then run the following commands to initalize and configure your local and remote repositories:
 
 ```
 #Add remote repository
-$ git remote add origin https://github.com/<username>/<repo>
+$ git remote add origin https://<gitprovider>/<username>/<repo>
 
 # Stage all changed files
 $ git add -A
@@ -79,7 +79,7 @@ $ git push -u origin main
 
 ### Deploy Your Repository
 
-Once your project is in GitHub, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
+Once your project is in a remotr repository, you can follow [the directions in our getting started guide](https://developers.wpengine.com/docs/atlas/getting-started/deploy-from-existing-repo) to deploy your project to Atlas.
 
 ## Best Practices 
 

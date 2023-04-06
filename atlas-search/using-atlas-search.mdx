@@ -74,6 +74,28 @@ Here is an example of querying for a custom data type:
 }
 ```
 
+### Advanced query example:
+
+It is possible to query fields that appear in the search config, consider the following query
+
+```
+seats.count:>4 tags.name:Cars hello AND world OR 123 4.56
+```
+
+This search string is a combination of search terms and filters. It searches for records that match the following criteria:
+
+- The `seats.count` field has a value greater than 4.
+- The `tags.name` field contains the value Cars.
+- The text **“hello”** appears in the record.
+- The text **“world”** appears in the record.
+- The record contains either the number **123** or the number **4.56**.
+
+The search string uses the following syntax:
+
+- **Search terms:** Any word that does not contain a special character is considered a search term. In this example, **“hello”** and **“world"** are search terms.
+- **Filters:** A filter is used to search for records that meet specific criteria. Filters are specified using the format <field name>: <value>. In this example, `seats.count:>4` and `tags.name: Cars` are filters. The `seats.count` filter searches for records where the value of the `seats.count` field is greater than **4**, while the `tags.name` filter searches for records where the `tags.name` field contains the value **Cars**.
+- **Logical operators:** The search string uses the logical operators **AND** and **OR** to combine search terms and filters. The **AND** operator is used to require that both search terms or filters appear in a record, while the **OR** operator is used to search for records that contain either one or the other.
+
 ### Query Operators
 
 Atlas Search treats spaces as an `OR` operator by default, whereas the default WordPress search treats spaces as an `AND` operator. With Atlas Search, you can explicitly specify the `AND`, `OR` & `NOT` keywords within your search query & you can combine them too - this provides enhanced specificity for your querying needs.

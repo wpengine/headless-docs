@@ -74,15 +74,17 @@ Here is an example of querying for a custom data type:
 }
 ```
 
-### Advanced query example:
+### Advanced Query Example
 
-It is possible to query fields that appear on the search config page, this includes ACF fields, ACM fields, tags and categories etc. consider the following query:
+You can query fields that appear on the plugin's Search Config page, including ACF fields, ACM fields, tags and categories, etc. Consider the following query:
 
 ```
 seats.count:>4 tags.name:Cars hello AND world OR 123 4.56
 ```
 
-This search string is a combination of search terms and filters. It searches for records that match the following criteria:
+This search string uses a combination of search terms and filters.
+
+It searches for records that match the following criteria:
 
 - The `seats.count` field has a value greater than 4.
 - The `tags.name` field contains the value Cars.

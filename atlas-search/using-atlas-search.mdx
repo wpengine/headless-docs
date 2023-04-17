@@ -95,7 +95,7 @@ It searches for records that match the following criteria:
 The search string uses the following syntax:
 
 - **Search terms:** Any word that does not contain a special character is considered a search term. In this example, **“hello”** and **“world"** are search terms.
-- **Filters:** A filter is used to search for records that meet specific criteria. Filters are specified using the format <field name>: <value>. In this example, `seats.count:>4` and `tags.name: Cars` are filters. The `seats.count` filter searches for records where the value of the `seats.count` field is greater than **4**, while the `tags.name` filter searches for records where the `tags.name` field contains the value **Cars**.
+- **Filters:** A filter is used to search for records that meet specific criteria. Filters are specified using the format {'<'}field name{'>'}: {'<'}value{'>'}. In this example, `seats.count:>4` and `tags.name: Cars` are filters. The `seats.count` filter searches for records where the value of the `seats.count` field is greater than **4**, while the `tags.name` filter searches for records where the `tags.name` field contains the value **Cars**.
 - **Logical operators:** The search string uses the logical operators **AND** and **OR** to combine search terms and filters. The **AND** operator is used to require that both search terms or filters appear in a record, while the **OR** operator is used to search for records that contain either one or the other.
 
 ### Query Operators

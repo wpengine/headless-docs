@@ -14,6 +14,20 @@ Atlas Search adds debug information to WPGraphQL queries. To enable this, naviga
 
 ![WPGraphQL Debug Setting](./images/as-wpgraphql-debug-settings.png)
 
+### Query Monitoring for non-WPGraphQL users
+
+Atlas Search works seamlessly with the Query Monitor plugin for non-WPGraphQL users (see ["Debug Information" above](https://wordpress.org/plugins/query-monitor/) for how to access logs if you are using WPGraphQL).
+
+The query monitoring plugin will allow users to view detailed information about the Atlas Search queries being made on their site, including the query string, the time it took to execute the query, and more. This information can be used to optimize search performance and ensure that searches are working as expected.
+
+To use Query Monitor with Atlas Search, follow these steps:
+
+1. Install the [Query Monitor](https://wordpress.org/plugins/query-monitor/) plugin on your WordPress site.
+2. Activate the plugin.
+3. Click the Query Monitor that has appear in your WordPress Admin Top Nav.
+4. In the dashboard that appears, click on "Logs."
+5. Run Atlas Search and see the data appear.
+
 ## Querying with Atlas Search
 
 Once your site is set up with an Atlas Search license and the initial content sync has completed, Atlas Search will take over the default WordPress search functionality and enhance your WordPress search experience.

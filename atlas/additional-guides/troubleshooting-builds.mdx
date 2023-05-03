@@ -23,7 +23,7 @@ Your build will be displayed in the `Builds` table with the status `Cancelled` -
 
 ## Responding to Failed Builds
 
-When you push new code to your Atlas project repository on GitHub and trigger a new build on the platform, you can inspect the progress of that build in realtime via the [User Portal](https://my.wpengine.com/atlas).
+When you push new code to your Atlas project repository and trigger a new build on the platform, you can inspect the progress of that build in realtime via the [User Portal](https://my.wpengine.com/atlas).
 
 As the build progresses, it can either succeed or fail at any stage in the build -> deploy checklist. If the project fails to build, the build details on your Atlas dashboard will look like this:
 
@@ -31,7 +31,7 @@ As the build progresses, it can either succeed or fail at any stage in the build
 
 Since Atlas accepts a wide variety of frontend application frameworks (Faust.js, Next.js, Nuxt, Svelte, React, Remix, etc.), there are many different ways that building a particular application could fail. Since there are few commonalities in these failure modes, this guide will focus on giving you the tools to inspect and diagnose your own app's failure state.
 
-After you've pushed a failing build, there are quick ways to start troubleshooting your app from the Atlas dashboard by inspecting the GitHub commit or looking at the build logs directly.
+After you've pushed a failing build, there are quick ways to start troubleshooting your app from the Atlas dashboard by inspecting the repository commit or looking at the build logs directly.
 
 When looking at the build checklist, will have a quick link to the `Build logs` detail panel. Let's take a look at each option and how they can be used to diagnose the issues behind your failed build.
 
@@ -39,11 +39,13 @@ When looking at the build checklist, will have a quick link to the `Build logs` 
 
 If you click the `Build logs` link, you will be taken to a page that gives you more details about the build itself, as well as access to the errors and logs for your build.
 
-At the top of that page, there is a section with additional details about a particular build. You can see things like the time the build started, the repo and branch that Atlas tried to build from, as well as another commit hash link to GitHub. Each individual build is also given a unique ID, and this might be needed if you try to escalate continued failing builds with support.
+At the top of that page, there is a section with additional details about a particular build. You can see things like the time the build started, the repo and branch that Atlas tried to build from, as well as another commit hash link to your repository. Each individual build is also given a unique ID, and this might be needed if you try to escalate continued failing builds with support.
 
 ![Detail panel for a particular Atlas build](./assets/img/troubleshooting-builds/failed-build-id.png)
 
-If you click on the commit hash link in the build details screen, you will be taken directly to the GitHub commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
+If you click on the commit hash link in the build details screen, you will be taken directly to the repository commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you're using GitHub and you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
+
+**Please note:** comments on commit pages aren't available for Atlas applications built from Bitbucket or GitLab repositories at the moment.
 
 ![GitHub commit diff for a failing build](./assets/img/troubleshooting-builds/github-commit-diff-failing-build.png)
 
@@ -96,6 +98,8 @@ At the moment, there's no way to change the repository your application is pulli
 
 ### Creating an Atlas Blueprint Fails
 
+**Please note:** It's not possible to create a Blueprint application using Bitbucket or GitLab repository at the moment.
+
 1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
 2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
 
@@ -109,7 +113,7 @@ In some cases, your application will successfully build, but you may not see the
 
 ### Clean Rebuild and Clear Domain Cache
 
-Since Atlas is a flexible hosting platform for a number of different JavaScript apps, it is outside the scope of this guide to discuss all of the ways various frameworks create local caches or generate static assets. However, it is important to remember that rebuilding your app from a GitHub commit does not trigger a `Clean Rebuild`, meaning that Atlas will use previously cached folders to rebuild your app using your latest commit. For a list of folders the platform will cache by default, reference the [Framework Build Assets Cache](../customization/builds#framework-build-assets-cache) section of the build docs.
+Since Atlas is a flexible hosting platform for a number of different JavaScript apps, it is outside the scope of this guide to discuss all of the ways various frameworks create local caches or generate static assets. However, it is important to remember that rebuilding your app from a repository commit does not trigger a `Clean Rebuild`, meaning that Atlas will use previously cached folders to rebuild your app using your latest commit. For a list of folders the platform will cache by default, reference the [Framework Build Assets Cache](../customization/builds#framework-build-assets-cache) section of the build docs.
 
 ![Environment details panel for Atlas app with clean rebuild and domains cache highlighted](./assets/img/troubleshooting-builds/purge-clean.png)
 

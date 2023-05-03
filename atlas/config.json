@@ -149,6 +149,11 @@
         },
         {
           "type": "doc",
+          "label": "Build Notifications",
+          "filePath": "/atlas/additional-guides/build-notifications.mdx"
+        },
+        {
+          "type": "doc",
           "label": "Preview Environments",
           "filePath": "/atlas/additional-guides/preview-environments.mdx"
         },

@@ -13,16 +13,10 @@ This page will guide you through configuring your Atlas frontend JavaScript appl
 
 ## 1. Clone Repo
 
-Visit the GitHub repository page for your frontend JavaScript app and copy the SSH address of your repository.  
-![GitHub code address dropdown menu](./assets/img/github-code-dropdown.png)
+Depending on the source control repository hosting provider you're using, follow the instructions below to clone your repository to your local machine:
 
-With your terminal open, run the following commands: 
-```
-cd <directory_to_clone_into>
-git clone git@github.com:<your_username>/<your_repository>
-cd <your_repository>
-``` 
-This will clone your repository to a local folder to access for development and set it as your current directory. If you need additional guidance, you can reference GitHub's documentation on [cloning repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to your local machine. If you are new to using Git on the command line, [GitHub provides a Desktop version](https://desktop.github.com/) that helps you manage your repos with a user interface. 
+- [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
+- [Bitbucket](https://support.atlassian.com/bitbucket-cloud/docs/clone-a-git-repository/)
 
 ## 2. Define Environment Variables
 
@@ -89,11 +83,11 @@ If you are using another framework, you will need to reference that framework's 
 
 ## 4. Push Changes to Atlas
 
-With your site running in development mode, the app running in the browser is sourcing your local JavaScript files for the frontend, but still pulling data from your remote WordPress install on WP Engine's servers. In the next step of this guide, you will learn how to create a separate WordPress instance locally to isolate your development work, but now is a great time to test your connection to GitHub and the Atlas Platform.
+With your site running in development mode, the app running in the browser is sourcing your local JavaScript files for the frontend, but still pulling data from your remote WordPress install on WP Engine's servers. In the next step of this guide, you will learn how to create a separate WordPress instance locally to isolate your development work, but now is a great time to test your connection to your repository and the Atlas Platform.
 
 Make some basic changes to your site locally: add a component, change the way posts or pages are displayed or update the site styles with your own CSS.
 
-Once you are ready to push your changes, you can trigger a rebuild of your site by pushing to GitHub. A basic workflow assuming SSH configuration would look like this:
+Once you are ready to push your changes, you can trigger a rebuild of your site by pushing to your repository. A basic workflow assuming SSH configuration would look like this:
 
 ```
 git add .
@@ -101,11 +95,11 @@ git add .
 git commit -m "A description of my changes"
 # This command commits my changes with a helpful but succinct message
 git push -v 
-# This command will push your changes from your local machine to GitHub
+# This command will push your changes from your local machine to your repository
 ```
 Using the `-v` or verbose flag should give you feedback in the terminal window after you run the command. 
 
-Once your changes are processed by GitHub, Atlas will automatically begin rebuilding your application based on your latest commit. If you open the [User Portal](https://my.wpengine.com/atlas) in the browser, and navigate to the associated Atlas environment, you can get feedback regarding the build and deployment states of your app. 
+Once your changes are processed by your repository, Atlas will automatically begin rebuilding your application based on your latest commit. If you open the [User Portal](https://my.wpengine.com/atlas) in the browser, and navigate to the associated Atlas environment, you can get feedback regarding the build and deployment states of your app. 
 
 ![The Atlas build and deployment checklist in a building state](./assets/img/build-stages.png)
 
@@ -117,7 +111,7 @@ If you Atlas build is not successful, you can reference our guide on [troublesho
 
 ## Done!
 
-In this guide, you learned how to clone your Atlas app from GitHub, get it running locally, and then push your local changes to GitHub, triggering a rebuild on the Atlas platform. While your JavaScript app is running on your local machine, the app is still pulling data from your production WordPress instance on WP Engine servers. In the next step of the guide, you'll learn how to get a copy of your remote WordPress site running locally to help create a fully isolated development environment.
+In this guide, you learned how to clone your Atlas app from your remote repository, get it running locally, and then push your local changes to your repository, triggering a rebuild on the Atlas platform. While your JavaScript app is running on your local machine, the app is still pulling data from your production WordPress instance on WP Engine servers. In the next step of the guide, you'll learn how to get a copy of your remote WordPress site running locally to help create a fully isolated development environment.
 
 ## Next Step
 

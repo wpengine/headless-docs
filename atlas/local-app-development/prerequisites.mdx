@@ -7,11 +7,11 @@ description: The prerequisites for doing local Atlas app development
 The following tools are required for local Atlas app development.
 
 - A WP Engine [Atlas](https://wpengine.com/atlas) account
-- An Atlas app repository hosted on [GitHub](https://github.com/) or self-hosted [GitHub Enterprise Server](https://github.com/enterprise)
+- An Atlas app repository hosted on [GitHub](https://github.com/) or [Bitbucket](https://bitbucket.com/)
 - A command line application ("terminal") on your local machine
 - [Git](https://github.com/git-guides/install-git) installed on your local machine
 - [Node.js](https://nodejs.org/en/download/) version 16 or higher on your local machine (alternatively, Node versions 12 and 14 are also supported)
-- GitHub SSH keys configured
+- GitHub or Bitbucket SSH keys configured
 
 The sections below provide further details on several of the prerequisites.
 
@@ -48,17 +48,17 @@ To make sure you have Node.js installed on your computer, run `node --version` o
 
 You can install a supported version from the [Node.js](https://nodejs.org/en/) website. Alternatively, you can choose to use a tool like [NVM](https://github.com/nvm-sh/nvm) if you need to be able to switch between several different version of Node on the same machine.
 
-## GitHub SSH Keys
+## SSH Keys
 
-Most of the examples in this guide assume that you will be using SSH to move code to and from GitHub. If you're unsure whether you have SSH keys set up already, you can follow these GitHub guides:
+Most of the examples in this guide assume that you will be using SSH to move code to and from your repository. If you're unsure whether you have SSH keys set up already, you can follow these guides:
 
+### GitHub
 1. [Checking for existing SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
-1. [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-1. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+2. [Generating a new SSH key and adding it to the ssh-agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+3. [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-## GitHub Desktop
-
-While the examples in this guide use the command line to interact with Git and GitHub, the UI-based [GitHub Desktop app](https://docs.github.com/en/get-started/using-github/github-desktop) is a viable alternative to managing your repository from the command line. 
+### Bitbucket
+1. [SSH key configuration guide](https://support.atlassian.com/bitbucket-cloud/docs/configure-ssh-and-two-step-verification/)
 
 ## Next Step
 

@@ -157,13 +157,13 @@ To search for documents using the `search` query, the input looks like something
 ### Advanced Query Example
 ```graphql
 {
-  "query": "seats.count::>4 tags.name:Cars hello AND world OR 123 4.56",
+  "query": "seats.count::>4 !seats.count:10 tags.name:Cars hello AND world OR 123 4.56",
 }
 ```
 
 It searches for records that match the following criteria:
 
-- The `seats.count` field has a value greater than 4.
+- The `seats.count` field has a value greater than 4 and not 10
 - The `tags.name` field contains the value Cars.
 - The text **“hello”** appears in the record.
 - The text **“world”** appears in the record.

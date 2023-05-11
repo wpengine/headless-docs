@@ -82,7 +82,7 @@ In this example, we’re updating an existing document with the `id` of `my-docu
 same behaviour would have happened if the document didn't exist ( so it would have created with the provided `id` and then return this `id` in the response) 
 
 In this example, we are updating an existing document with the `id` `my-document-id`. We are modifying the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object, which contains the `id` and `data` of the updated document. 
-The same behavior applies even if the document does not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id` .
+The same behavior applies even if the document does not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id`.
 
 ### Deleting a Document
 

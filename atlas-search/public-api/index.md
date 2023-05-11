@@ -47,9 +47,14 @@ mutation {
 }
 ```
 
-In this example, we’re creating a new document with a title and body text. The mutation returns a `DocumentMutationResponse` object that includes the `id` of the new document, as well as the `data`..
+In this example, we’re creating a new document with a title and body text. The mutation returns a `DocumentMutationResponse` object that includes the `id` of the new document, as well as the `data`.
 
-To update an existing document, you need to provide the `id` of the document you want to update in the `DocumentInput`object. Here’s an example mutation to update an existing document:
+To create a new document with a provided id or update an existing document, you can use the index mutation. The behavior depends on whether a document with the provided id already exists:
+
+- If a document with the provided id doesn't exist, a new document will be created with the specified id.
+- If a document with the provided id already exists, the existing document will be updated with the new data.
+
+To create a new document with a provided `id` or update an existing document, you need to provide the `id` of the document you want to update in the `DocumentInput`object. Here’s an example mutation to update an existing document:
 
 ```graphql
 mutation {
@@ -73,7 +78,11 @@ mutation {
 }
 ```
 
-In this example, we’re updating an existing document with the `id` of `my-document-id”` We are mutating the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object that includes the updated document’s `id` and `data`.
+In this example, we’re updating an existing document with the `id` of `my-document-id”` We are mutating the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object that includes the updated document’s `id` and `data`. The exact
+same behaviour would have happened if the document didn't exist ( so it would have created with the provided `id` and then return this `id` in the response) 
+
+In this example, we are updating an existing document with the `id` `my-document-id`. We are modifying the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object, which contains the `id` and `data` of the updated document. 
+The same behavior applies even if the document does not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id` .
 
 ### Deleting a Document
 

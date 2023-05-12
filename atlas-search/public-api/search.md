@@ -9,89 +9,78 @@ The Search API allows you to search for documents in an index based on specific 
 
 ##  API Reference
 
-### Queries
+The search schema defines the GraphQL query type for searching documents in an index. It includes various parameters to customize the search query.
 
-#### search
-Searches for documents in an index based on the provided search query and parameters.
+### Query
 
-| Argument | Type | Description |
-| --- | --- | --- |
-| query | String! | The search query. |
-| filter | String | A filter string to apply to the search query and filter out search results. |
-| orderBy | [OrderBy] | An array of objects specifying the field and sort direction for ordering the documents. |
-| offset | Int | The results offset used for pagination. Default is 0. |
-| limit | Int | The results limit used for pagination. Default is 15. |
-| fields | [SearchField] | The fields to search for in the documents. |
-| tolerance | SearchOption | The search tolerance option. Selects either fuzzy or stemming. |
+| Field    | Description                                                                                               |
+|----------|--------|
+| search   | Searches for documents in an index based on specific parameters.                                           |
 
-##### Response
-Returns a SearchResult object containing the total number of documents returned and an array of SearchDocument objects representing the search results.
+#### Search Parameters
 
-### Types
+| Parameter | Type                | Description                                                                                           |
+|-----------|---------------------|--------------------------------|
+| query     | String!             | The search query.                                                                                     |
+| filter    | String              | Filter string that will be added to the search query and filter out search results.                    |
+| orderBy   | [OrderBy]           | Used for ordering the search results. By default, a weight policy is applied.                          |
+| offset    | Int                 | Results offset used for pagination.                                                                   |
+| limit     | Int                 | Results limit used for pagination.                                                                    |
+| fields    | [SearchField]       | Specifies the fields to search for in the documents.                                                   |
+| tolerance | SearchOption = {}   | Selects either Fuzzy or Stemming search option. Can be provided later to override the global setting. |
 
-#### SearchField
-Represents a field to search for in the document.
+#### SearchField Input
 
-| Field | Type | Description |
-| --- | --- | --- |
-| name | String! | The field name. |
-| weight | Int | The field weight. It affects the order in which documents are returned. |
+| Field  | Type   | Description                                                         |
+|--------|--------|------------------------------|
+| name   | String!| The field name to search for in the document.                        |
+| weight | Int    | The weight of the field, affecting the order of returned documents.  |
 
-#### SearchResult
-Represents a search result hit.
+#### OrderBy Input
 
-| Field | Type | Description |
-| --- | --- | --- |
-| total | Int | The total number of documents returned. |
-| documents | [SearchDocument] | An array of SearchDocument objects representing the search results. |
+| Field     | Type            | Description                                |
+|-----------|-----------------|--------------------------------------------|
+| field     | String!         | The field to order the documents by.        |
+| direction | OrderByDirection| The sort direction (asc or desc).           |
 
-#### Number
-A union type representing either an integer or a float.
+#### SearchOption Input
 
-#### SearchOption
-A union type representing the search tolerance option (either fuzzy or stemming).
+| Field         | Type               | Description                                                                       |
+|---------------|--------------------|-----------------------------------------------------------------------------------|
+| name          | SearchOptionEnum! | The search option name (fuzzy or stemming).                                       |
+| fuzzyDistance | Int                | Optional fuzzy distance. Applicable only if the fuzzy search option is selected. Its actually is the number of one-character changes needed to turn one term into another. |
 
-#### SearchFuzzyOption
-Represents the fuzzy search option.
+#### SearchResult Type
 
-| Field | Type | Description                                 |
-| --- | --- |---------------------------------------------|
-| name | FuzzyName! | The name should only be the string 'fuzzy'. |
-| distance | Int | The fuzzy distance. Its actually is the number of one-character changes needed to turn one term into another.           |
+| Field     | Type            | Description                                   |
+|-----------|-----------------|-----------------------------------------------|
+| total     | Int             | The total number of documents returned.        |
+| documents | [SearchDocument] | The list of documents matching the search.     |
 
-#### SearchStemmingOption
-Represents the stemming search option.
+#### SearchDocument Type
 
-| Field | Type | Description |
-| --- | --- | --- |
-| name | StemmingName! | The name should only be the string 'stemming'. |
+| Field  | Type    | Description                                             |
+|--------|---------|---------------------------------------------------------|
+| id     | ID!     | The Elasticsearch ID of the document.                    |
+| score  | Float   | The Elasticsearch score of the document.                 |
+| sort   | [Float] | Values used by Elasticsearch to sort the documents.    |
+| data   | Map!    | The document data.                                      |
 
-#### FuzzyName
-An enum type representing the fuzzy search option.
+### Enumerations
 
-#### StemmingName
-An enum type representing the stemming search option.
+#### SearchOptionEnum
 
-#### SearchDocument
-Represents a search document.
-
-| Field | Type | Description |
-| --- | --- | --- |
-| id | ID! | The Elastic search ID. |
-| score | Float | The Elastic search score. |
-| sort | [Number] | Values used by Elastic Search to sort documents. |
-| data | Map! | The document data. |
-
-#### OrderBy
-Represents the field and direction for ordering the documents.
-
-| Field | Type | Description |
-| --- | --- | --- |
-| field | String! | The field to order the documents by. |
-| direction | OrderByDirection! | The sort direction (asc or desc). |
+| Name     | Description           |
+|----------|-----------------------|
+| fuzzy    | The fuzzy search option.|
+| stemming | The stemming search option. |
 
 #### OrderByDirection
-An enum type representing the sort direction (asc or desc).
+
+| Name | Description             |
+|------|-------------------------|
+| asc  | Sort in ascending order. |
+| desc | Sort in descending order.|
 
 
 
@@ -112,7 +101,7 @@ To search for documents using the `search` query, the input looks like something
   "limit": 100,
   "fields": [
     { "name": "title", "weight": 2 },
-    { "name": "description", "weight": 1 }
+    { "name": "description" }
   ],
   "tolerance": { "name": "fuzzy", "distance": 2 }
 }

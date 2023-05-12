@@ -22,7 +22,13 @@ To create or update a document in the index using the mutation, you need to:
 1. Use the `index` operation.
 2. Provide a `DocumentInput` object as a parameter.
 3. In the `DocumentInput` object, provide the necessary document data as a `JSON` object.
-4. Provide a unique identifier for the document in the `id` field of the `DocumentInput` object. If no id is provided, one will be generated for the document.
+4. To ensure a document has a unique identifier in the `DocumentInput` object, follow these guidelines:
+   1. The `id` field of the `DocumentInput` object should be used to provide a unique identifier for the document. This field is optional, allowing flexibility in case an identifier is not initially available.
+   2. If an `id` is provided in the `DocumentInput` object, the system checks whether a document with that `id` already exists. If it does, the existing document is updated with the new data instead of creating a new document.
+   3. In cases where no `id` is provided in the `DocumentInput` object, the system automatically generates a unique identifier for the document. This ensures that each document has a unique identifier, even if one is not explicitly provided. 
+By following these guidelines, you can effectively handle document creation and updates, ensuring uniqueness of identifiers and appropriate handling based on the presence or absence of an `id` in the `DocumentInput` object.
+5. Optionally, you can include metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
+
 
 Here’s an example mutation to create a new document:
 
@@ -33,7 +39,12 @@ mutation {
       data: {
         title: "New document title"
         body: "New body text for the document."
-      }
+      },
+      meta: {
+          system: "Atlas Search",
+          action: "manual index",
+          source: "atlasce.wpengine.com"
+      }  
     }
   ) {
     code

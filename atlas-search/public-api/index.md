@@ -2,10 +2,10 @@
 
 ### Overview
 
-The index API includes two mutations for creating or updating a document, and deleting a document.
+The index API includes two mutations for creating or updating a document and deleting a document.
 
-- The `index` mutation accepts a `DocumentInput` and returns a `DocumentMutationResponse`.
-- The `delete` mutation accepts an `id` as a parameter and also returns a `DocumentMutationResponse`.
+- The `index` mutation accepts a `DocumentInput` as a parameter and returns a `DocumentMutationResponse`.
+- The `delete` mutation accepts an `id` as a parameter and returns a `DocumentMutationResponse`.
 
 ### Authentication
 
@@ -25,10 +25,11 @@ To create or update a document in the index using the mutation, you need to:
 4. To ensure a document has a unique identifier in the `DocumentInput` object, follow these guidelines:
    1. The `id` field of the `DocumentInput` object should be used to provide a unique identifier for the document. This field is optional, allowing flexibility in case an identifier is not initially available.
    2. If an `id` is provided in the `DocumentInput` object, the system checks whether a document with that `id` already exists. If it does, the existing document is updated with the new data instead of creating a new document.
-   3. In cases where no `id` is provided in the `DocumentInput` object, the system automatically generates a unique identifier for the document. This ensures that each document has a unique identifier, even if one is not explicitly provided. 
-By following these guidelines, you can effectively handle document creation and updates, ensuring uniqueness of identifiers and appropriate handling based on the presence or absence of an `id` in the `DocumentInput` object.
-5. Optionally, you can include metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
+   3. In cases where no `id` is provided in the `DocumentInput` object, the system automatically generates a unique identifier for the document. This ensures that each document has a unique identifier, even if one is not explicitly provided.
+      By following these guidelines, you can effectively handle document creation and updates, ensuring uniqueness of identifiers and appropriate handling based on the presence of an `id` in the `DocumentInput` object.
+5. Optionally, you can include metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Metadata can be helpful for analyzing and understanding the logs more effectively.
 
+#### GraphQL Examples to Create or Update a Document
 
 Here’s an example mutation to create a new document:
 
@@ -39,12 +40,12 @@ mutation {
       data: {
         title: "New document title"
         body: "New body text for the document."
-      },
+      }
       meta: {
-          system: "Atlas Search",
-          action: "manual index",
-          source: "atlasce.wpengine.com"
-      }  
+        system: "Atlas Search"
+        action: "manual index"
+        source: "atlasce.wpengine.com"
+      }
     }
   ) {
     code
@@ -60,10 +61,10 @@ mutation {
 
 In this example, we’re creating a new document with a title and body text. The mutation returns a `DocumentMutationResponse` object that includes the `id` of the new document, as well as the `data`.
 
-To create a new document with a provided id or update an existing document, you can use the index mutation. The behavior depends on whether a document with the provided id already exists:
+To create a new document with a provided `id` or update an existing document, you can use the index mutation. The behavior depends on whether a document with the provided id already exists:
 
-- If a document with the provided id doesn't exist, a new document will be created with the specified id.
-- If a document with the provided id already exists, the existing document will be updated with the new data.
+- If a document with the provided `id` doesn't exist, a new document will be created with the specified `id`.
+- If a document with the provided `id` already exists, the existing document will be updated with the new data.
 
 To create a new document with a provided `id` or update an existing document, you need to provide the `id` of the document you want to update in the `DocumentInput`object. Here’s an example mutation to update an existing document:
 
@@ -89,11 +90,9 @@ mutation {
 }
 ```
 
-In this example, we’re updating an existing document with the `id` of `my-document-id”` We are mutating the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object that includes the updated document’s `id` and `data`. The exact
-same behaviour would have happened if the document didn't exist ( so it would have created with the provided `id` and then return this `id` in the response) 
+In this example, we’re updating an existing document with the `id` of `my-document-id`. We are mutating the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object that includes the `id` and `data` of the updated document.
 
-In this example, we are updating an existing document with the `id` `my-document-id`. We are modifying the title and body fields of the document. The mutation returns a `DocumentMutationResponse` object, which contains the `id` and `data` of the updated document. 
-The same behavior applies even if the document does not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id`.
+The same behavior would occur even if the document did not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id`.
 
 ### Deleting a Document
 
@@ -101,6 +100,8 @@ To delete a document from the index, you need to:
 
 1. Use the delete operation.
 2. Provide the `id` of the document you want to delete.
+
+#### GraphQL Example to Delete a Document
 
 Here’s an example mutation to delete a document:
 
@@ -118,4 +119,4 @@ mutation {
 }
 ```
 
-We are deleting a document with the `id` of `"my-document-id"` The mutation returns a `DocumentMutationResponse` object that includes the `id`, `data` fields of the deleted document.
+We are deleting a document with the `id` of `my-document-id` The mutation returns a `DocumentMutationResponse` object that includes the `id` and `data` fields of the deleted document.

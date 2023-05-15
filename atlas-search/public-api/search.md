@@ -14,11 +14,41 @@ The search schema defines the GraphQL query type for searching documents in an i
 
 ### Query
 
-| Field  | Description                                                      |
-| ------ | ---------------------------------------------------------------- |
-| search | Searches for documents in an index based on specific parameters. |
+<table>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>search</td>
+<td>Searches for documents in an index based on specific parameters.</td>
+</tr>
+</table>
 
 #### Search Parameters
+
+<table>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>query</td>
+<td>String!</td>
+<td>The search query.</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>String</td>
+<td>Filter string that will be added to the search query and filter out search results.</td>
+</tr>
+<tr>
+<td>orderBy</td>
+<td>[OrderBy]</td>
+<td>Used for ordering the search results. By default, a weight policy is applied.</td>
+</tr>
+</table>
 
 | Parameter | Type              | Description                                                                                           |
 | --------- | ----------------- | ----------------------------------------------------------------------------------------------------- |

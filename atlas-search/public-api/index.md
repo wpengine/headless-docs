@@ -100,6 +100,7 @@ To delete a document from the index, you need to:
 
 1. Use the delete operation.
 2. Provide the `id` of the document you want to delete.
+3. Optionally provide metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
 
 #### GraphQL Example to Delete a Document
 
@@ -107,7 +108,14 @@ Here’s an example mutation to delete a document:
 
 ```graphql
 mutation {
-  delete(id: "my-document-id") {
+  delete(
+     id: "my-document-id",
+     meta: {
+        system: "Atlas Search",
+        action: "reset-data",
+        source: "atlasce.wpengine.com"
+     }
+  ) {
     code
     success
     message

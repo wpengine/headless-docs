@@ -13,6 +13,7 @@ The Search API allows you to search for documents in an index based on specific 
 The search schema defines the GraphQL query type for searching documents in an index. It includes various parameters to customize the search query.
 
 ### Query
+
 <table>
   <thead>
     <tr>
@@ -22,7 +23,7 @@ The search schema defines the GraphQL query type for searching documents in an i
   </thead>
   <tbody>
     <tr>
-      <td>search</td>
+      <td>find</td>
       <td>Searches for documents in an index based on specific parameters.</td>
     </tr>
   </tbody>
@@ -78,6 +79,7 @@ The search schema defines the GraphQL query type for searching documents in an i
 </table>
 
 #### SearchField Input
+
 <table>
   <thead>
     <tr>
@@ -101,6 +103,7 @@ The search schema defines the GraphQL query type for searching documents in an i
 </table>
 
 #### OrderBy Input
+
 <table>
   <thead>
     <tr>
@@ -148,6 +151,7 @@ The search schema defines the GraphQL query type for searching documents in an i
 </table>
 
 #### SearchResult Type
+
 <table>
   <thead>
     <tr>
@@ -252,7 +256,7 @@ The search schema defines the GraphQL query type for searching documents in an i
 
 ### Basic Usage
 
-To search for documents using the `search` query, the input looks like something like this:
+To search for documents using the `find` query, the input looks like something like this:
 
 ```graphql
 {
@@ -271,6 +275,7 @@ To search for documents using the `search` query, the input looks like something
   "tolerance": { "name": "fuzzy", "distance": 2 }
 }
 ```
+
 <table>
   <thead>
     <tr>

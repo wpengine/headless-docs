@@ -256,15 +256,48 @@ The search schema defines the GraphQL query type for searching documents in an i
 
 ### Basic Usage
 
-To search for documents using the `find` query, the input looks like something like this:
+To search for documents using the `find` query. Below you can see an example.
+
+Find query example
+
+```graphql
+query FindQuery(
+  $query: String!
+  $filter: String
+  $fields: [SearchField!]
+  $orderBy: [OrderBy!]
+  $limit: Int!
+  $offset: Int!
+  $tolerance: SearchOption!
+) {
+  find(
+    query: $query
+    filter: $filter
+    fields: $fields
+    orderBy: $orderBy
+    limit: $limit
+    offset: $offset
+    tolerance: $tolerance
+  ) {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+Find query variables
 
 ```graphql
 {
   "query": "Austin",
   "filter": "post_type:post,page",
   "orderBy": [
-    { "field": "name", "direction": "asc" },
-    { "field": "date", "direction": "desc" }
+    { "field": "published_at", "direction": "desc" }
   ],
   "offset": 200,
   "limit": 100,
@@ -272,7 +305,7 @@ To search for documents using the `find` query, the input looks like something l
     { "name": "title", "weight": 2 },
     { "name": "description" }
   ],
-  "tolerance": { "name": "fuzzy", "distance": 2 }
+  "tolerance": { "name": "fuzzy", "fuzzyDistance": 2 }
 }
 ```
 

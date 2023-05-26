@@ -25,22 +25,7 @@ If you don't have Git installed, follow the instructions on GitHub's website to 
 
 ## Node.js
 
-Atlas supports [Node.js](https://nodejs.org/)-based applications. The supported versions of Node are **12, 14, and 16**.
-
-By default, apps are built on the Atlas platform using the latest supported version of Node.js (v16). If you'd like for your app to be built using Node 12 or 14 instead, you can specify the desired node version in the "engines" section of your `package.json` file, as shown in the example below.
-
-```json
-{
-  "engines": {
-    "node": "14.00.0"
-  }
-}
-```
-
-Notes on Node versions:
-
-- Specifying a Node version below the minimum supported version will default to the minimum supported version (12); setting a higher version will default to the maximum supported version (16).
-- Only major versions are available - minor and patch versions will be rounded to a major version.
+Atlas supports [Node.js](https://nodejs.org/)-based applications. To see supported versions of Node.js and how to change the Node.js version you are using see [Configuring Atlas Builds &#8594;](../customization/builds)
 
 ### Install Node.js
 

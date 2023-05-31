@@ -23,13 +23,13 @@ After you have created your application, `cd` into your project directory:
 
 ### Push Initial Commits to Your Repository
 
-To deploy your project to Atlas, it will need to be available on a remote GitHub or Bitbucket repository. The Astro installation process lets to initialize a local repository for the project.
+To deploy your project to Atlas, it will need to be available on a remote GitHub, Bitbucket or GitLab repository. The Astro installation process lets to initialize a local repository for the project.
 
 Create a new remote repository, and then run the following commands to initalize and configure your local and remote repositories:
 
 ```
 #Add remote repository
-$ git remote add origin https://<gitprovider>/<username>/<repo>
+$ git remote add origin https://<your-git-provider>/<username>/<repo>
 
 # Stage all changed files
 $ git add -A
@@ -64,7 +64,7 @@ export default defineConfig({
 });
 ```
 
-To commit these changes to GitHub, run the following commands:
+To commit these changes to your repository, run the following commands:
 
 ```
 # Stage all changed files

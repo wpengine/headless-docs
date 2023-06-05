@@ -1,4 +1,4 @@
-# Index documentation
+# Index Documentation
 
 ## Overview
 
@@ -137,14 +137,14 @@ We are deleting a document with the `id` of `my-document-id` The mutation return
 
 ---
 
-## Deleting all documents
+## Deleting All Documents
 
 To delete all documents from the index you need to:
 
 1. Use `deleteAll` mutation.
 2. Optionally provide metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
 
-### GraphQL Example to Delete all documents
+### GraphQL Example to Delete All Documents
 
 ```graphql
 mutation resetIndexedData {
@@ -162,7 +162,7 @@ mutation resetIndexedData {
 }
 ```
 
-### Successful response
+### Successful Response
 
 ```json
 {

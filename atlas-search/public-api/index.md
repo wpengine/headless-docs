@@ -1,25 +1,29 @@
-# Index documentation
+# Index Documentation
 
-### Overview
+## Overview
 
 The index API includes two mutations for creating or updating a document and deleting a document.
 
 - The `index` mutation accepts a `DocumentInput` as a parameter and returns a `DocumentMutationResponse`.
 - The `delete` mutation accepts an `id` as a parameter and returns a `DocumentMutationResponse`.
 
-### Authentication
+---
+
+## Authentication
 
 Clients calling the index API are required to add an authentication header with the valid authentication token.
 
 ```
-Authorization: Token {ACCESS_TOKEN}
+Authorization: Bearer {ACCESS_TOKEN}
 ```
 
-### Creating or Updating a Document
+---
+
+## Creating or Updating a Document
 
 To create or update a document in the index using the mutation, you need to:
 
-1. Use the `index` operation.
+1. Use the `index` mutation.
 2. Provide a `DocumentInput` object as a parameter.
 3. In the `DocumentInput` object, provide the necessary document data as a `JSON` object.
 4. To ensure a document has a unique identifier in the `DocumentInput` object, follow these guidelines:
@@ -29,7 +33,7 @@ To create or update a document in the index using the mutation, you need to:
       By following these guidelines, you can effectively handle document creation and updates, ensuring uniqueness of identifiers and appropriate handling based on the presence of an `id` in the `DocumentInput` object.
 5. Optionally, you can include metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Metadata can be helpful for analyzing and understanding the logs more effectively.
 
-#### GraphQL Examples to Create or Update a Document
+### GraphQL Examples to Create or Update a Document
 
 Here’s an example mutation to create a new document:
 
@@ -94,27 +98,29 @@ In this example, we’re updating an existing document with the `id` of `my-docu
 
 The same behavior would occur even if the document did not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id`.
 
-### Deleting a Document
+---
+
+## Deleting a Document
 
 To delete a document from the index, you need to:
 
-1. Use the delete operation.
+1. Use the `delete` mutation.
 2. Provide the `id` of the document you want to delete.
 3. Optionally provide metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
 
-#### GraphQL Example to Delete a Document
+### GraphQL Example to Delete a Document
 
 Here’s an example mutation to delete a document:
 
 ```graphql
-mutation {
+mutation deleteDocument {
   delete(
-     id: "my-document-id",
-     meta: {
-        system: "Atlas Search",
-        action: "reset-data",
-        source: "atlasce.wpengine.com"
-     }
+    id: "my-document-id"
+    meta: {
+      system: "Atlas Search"
+      action: "delete-document"
+      source: "atlasce.wpengine.com"
+    }
   ) {
     code
     success
@@ -128,3 +134,44 @@ mutation {
 ```
 
 We are deleting a document with the `id` of `my-document-id` The mutation returns a `DocumentMutationResponse` object that includes the `id` and `data` fields of the deleted document.
+
+---
+
+## Deleting All Documents
+
+To delete all documents from the index you need to:
+
+1. Use `deleteAll` mutation.
+2. Optionally provide metadata by using the `meta` field. This allows you to provide additional information that will be logged on the server. Including metadata can be helpful for analyzing and understanding the logs more effectively.
+
+### GraphQL Example to Delete All Documents
+
+```graphql
+mutation resetIndexedData {
+  deleteAll(
+    meta: {
+      system: "Atlas Search"
+      action: "reset-data"
+      source: "atlasce.wpengine.com"
+    }
+  ) {
+    code
+    success
+    message
+  }
+}
+```
+
+### Successful Response
+
+```json
+{
+  "data": {
+    "deleteAll": {
+      "code": "200",
+      "success": true,
+      "message": "Delete all documents was successful"
+    }
+  }
+}
+```

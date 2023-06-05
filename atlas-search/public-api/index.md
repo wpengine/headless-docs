@@ -113,7 +113,7 @@ To delete a document from the index, you need to:
 Here’s an example mutation to delete a document:
 
 ```graphql
-mutation {
+mutation deleteDocument {
   delete(
     id: "my-document-id"
     meta: {
@@ -170,7 +170,7 @@ mutation resetIndexedData {
     "deleteAll": {
       "code": "200",
       "success": true,
-      "message": "Delete all documents was successful'
+      "message": "Delete all documents was successful"
     }
   }
 }

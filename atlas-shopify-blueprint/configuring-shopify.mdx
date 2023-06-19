@@ -1,0 +1,29 @@
+---
+slug: /atlas-shopify-blueprint/configuring-shopify
+title: Atlas Shopify Blueprint - Configuring Shopify
+description: Configure the Shopify Blueprint with Shopify Storefront API credentials.
+---
+
+## Configuring Shopify
+
+In order to list products from your **Shopify** store in the Blueprint once it has been deployed, you need to add your Shopify Access Token and Shopify GraphQL URL as Environment Variables.
+
+The Environment Variables that need to be set in addition to the default ones should be named as follows:
+
+- NEXT_PUBLIC_SHOPIFY_TOKEN
+- NEXT_PUBLIC_SHOPIFY_URL
+
+![Environment Variables](./images/environment-variables.png)
+
+The following guide walks through the process of creating Environment Variables in the **Atlas** Dashboard as well as for local development:
+
+[Configuring Atlas Environment Variables &#8594;](https://developers.wpengine.com/docs/atlas/local-app-development/frontend-app-config#2--define-environment-variables)
+
+Once the above **Environment Variables** have been added to the Blueprint, you should manually rebuild the site.
+
+![Rebuild](./images/rebuild.png)
+
+Once completed this should show your products listed on various pages on the frontend.
+
+- Check out the demo of [Atlas Shopify Blueprint](https://atlasshopify.wpengine.com/)
+- Try out a [sandbox version of Atlas](https://wpengine.com/atlas/#atlasplans) where you can install Atlas Commerce Blueprint

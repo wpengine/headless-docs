@@ -1,0 +1,18 @@
+{
+  "title": "Atlas Shopify Blueprint",
+  "description": "The Atlas Shopify Blueprint allows you to seamlessly connect Shopify product data to WordPress.",
+  "entrypoint": "/atlas-shopify-blueprint/introduction.mdx",
+  "ctaLabel": "Get Started",
+  "sidebar": [
+    {
+      "type": "doc",
+      "label": "Introduction",
+      "filePath": "/atlas-shopify-blueprint/introduction.mdx"
+    },
+    {
+      "type": "doc",
+      "label": "Configuring Shopify",
+      "filePath": "/atlas-shopify-blueprint/configuring-shopify.mdx"
+    }
+  ]
+}

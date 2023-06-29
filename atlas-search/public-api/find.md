@@ -280,6 +280,30 @@ query FindSimpleQuery {
 ### Find query advance example
 
 ```graphql
+query FindAdvanceQuery {
+  find(
+    query: "Austin"
+    filter: "post_type:post,page"
+    fields: [{ name: "title", weight: 2 }, { name: "description" }]
+    orderBy: [{ field: "published_at", direction: desc, unmappedType: "date" }]
+    limit: 100
+    offset: 200
+    tolerance: { name: fuzzy, fuzzyDistance: 2 }
+  ) {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+You can write the same query with separated variables:
+
+```graphql
 query FindAdvanceQuery(
   $query: String!
   $filter: String

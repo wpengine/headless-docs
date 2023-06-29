@@ -259,12 +259,28 @@ The schema defines the GraphQL query type for searching documents in an index. I
 
 ## Basic Usage
 
-To search for documents using the `find` query. Below you can see an example.
+To search for documents using the `find` query. Below you can see examples.
 
-### Find query example
+### Find query simple example
 
 ```graphql
-query FindQuery(
+query FindSimpleQuery {
+  find(query: "hello") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+### Find query advance example
+
+```graphql
+query FindAdvanceQuery(
   $query: String!
   $filter: String
   $fields: [SearchField!]
@@ -324,42 +340,80 @@ The query returns a `SearchResult` object that includes fields:
 Using `NOT` search operator:
 
 ```graphql
-{
-  "query": "Austin NOT Minnesota",
+query FindNotQuery {
+  find(query: "Austin NOT Minnesota") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
 Using `AND` search operator:
 
 ```graphql
-{
-  "query": "New York AND Texas",
+query FindAndQuery {
+  find(query: "New York AND Texas") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
 Using `OR` search operator:
 
 ```graphql
-{
-  "query": "New York OR Texas",
+query FindOrQuery {
+  find(query: "New York OR Texas") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
 ### Search field value with greater, lower or equal operator
 
 ```graphql
-{
-  "query": "seats.count:(>4 AND <20)"
+query FindRangeQuery {
+  find(query: "seats.count:(>4 AND <20)") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
 The `seats.count` field has a value greater than 4 and lower than 20.
 
-### Specify a field for a search value
-
 ```graphql
-{
-  "query": "categories.name:Cars",
+query FindRangeQuery {
+  find(query: "categories.name:Cars") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 

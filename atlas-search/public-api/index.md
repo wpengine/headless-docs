@@ -1,4 +1,4 @@
-# Mutations Documentation
+# Index Documentation
 
 ## Overview
 

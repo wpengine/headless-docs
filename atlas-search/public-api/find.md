@@ -6,6 +6,10 @@ description: Using Atlas Search API for search
 
 # Find API Documentation
 
+**NOTE:** This API and its endpoints are in BETA. Beta Services as described by Section 2.e. of the terms of services located [here](https://wpengine.com/legal/terms-of-service/)
+
+## Overview
+
 The find API allows you to search for documents in an index based on specific parameters.
 
 ## API Reference

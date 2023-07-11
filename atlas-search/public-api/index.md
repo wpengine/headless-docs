@@ -1,4 +1,12 @@
-# Index Documentation
+---
+slug: /atlas-search/public-api/index
+title: Using GraphQL Index API
+description: Using Atlas Index API for indexing records
+---
+
+# Index API Documentation
+
+**NOTE:** This API and its endpoints are in BETA. Beta Services as described by Section 2.e. of the terms of services located [here](https://wpengine.com/legal/terms-of-service/)
 
 ## Overview
 

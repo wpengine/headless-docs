@@ -28,7 +28,7 @@ Clients calling the API mutations are required to add an authentication header w
 Authorization: Bearer {ACCESS_TOKEN}
 ```
 
-Data needed to consume API you can find in your WordPress Atlas Search Plugin in admin area in section `Settings`.
+Data needed to consume API can be found in your WP Admin area in the Atlas Search tab under `Settings`.
 
 ![Atlas Search Settings](../images/as-plugin-settings.png)
 

@@ -137,17 +137,21 @@ In these cases, WP Engine Search provides both a field-level searchable toggle a
 
 Remember to press the "Save" button to persist any configuration modifications!
 
-### Advanced Search Options
+### Querying with WP Engine Search
 
-#### Debug Information
+1. First lets go and vist our site:
 
-WP Engine Search adds debug information to WPGraphQL queries. To enable this, navigate to the WPGraphQL settings page and check the setting "Enable GraphQL Debug Mode".
+![Atlas Search Plugin Data Sync](./images/as-visit-site.png)
 
-![WPGraphQL Debug Setting](./images/as-wpgraphql-debug-settings.png)
+2. Toggle the searh bar on the right hand side:
 
-#### Query Monitoring for non-WPGraphQL Users
+![Atlas Search Plugin Data Sync](./images/as-visit-site-search-bar.png)
 
-WP Engine Search works seamlessly with the [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) for non-WPGraphQL users (see "Debug Information" above for how to access logs if you are using WPGraphQL).
+3. Then perform a search query i.e. **"hello"**, Once the search is executed we are redirected to the active themes search results page:
+
+![Atlas Search Plugin Data Sync](./images/as-visit-site-search-performed.png)
+
+To understand if the query with atlas search was successful we can install a plugin called query monitor, WP Engine Search works seamlessly with the [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) for non-WPGraphQL users (see "Debug Information" above for how to access logs if you are using WPGraphQL).
 
 The query monitoring plugin will allow users to view detailed information about the Atlas Search queries being made on their site, including the query string, the time it took to execute the query, and more. This information can be used to optimize search performance and ensure that searches are working as expected.
 
@@ -159,72 +163,17 @@ To use Query Monitor with WP Engine Search, follow these steps:
 4. In the dashboard that appears, click on "Logs."
 5. Run Atlas Search and see the data appear.
 
-### Querying with WP Engine Search
+Once query monitor is activated lets visit the site and run the **"hello"** search again from steps **1**, **2** and **3** above. 
 
-Atlas Search works completely out of the box, no code changes needed. However, some advanced customers prefer to use [WPGraphQL](https://www.wpgraphql.com/docs/introduction) to write custom queries. If this describes you, or is interesting to you, read along. If not, don't worry! Atlas Search will do everything in the above documentation, with no code changes required!
+![Atlas Search Plugin Data Sync](./images/as-query-monitor-hover.png)
 
-Once your site is set up with an WP Engine Search beta license and the initial content sync has completed, WP Engine Search will take over the default WordPress search functionality and enhance your WordPress search experience.
+With query monitor enabled we get access to a new admin bar item, hovering over it reveals a couple of items that relate to how the page was loaded, we are interested in the **Logs** section.
 
-<em>
-  **Note:** If you have other search tools installed on your site, you may need
-  to deactivate or uninstall them for WP Engine Search to work properly.
-</em>
 
-For advanced users wanting to test search queries, the WPGraphQL plugin is a good place to start. WPGraphQL provides a ‘GraphiQL IDE' in the WordPress dashboard where you can interact with the WPGraphQL Schema in the browser. WP Engine Search overrides the default search functionality for WPGraphQL queries on all WP Engine Search supported WordPress data types.
+![Atlas Search Plugin Data Sync](./images/as-query-monitor-navigate-to-logs.png)
 
-Below is a screenshot of the WPGraphQL plugin & GraphiQL IDE view, where WP Engine Search has overridden the default WP search behavior, followed by some sample queries:
+Once we click the logs section a new window will open from the bottom of the screen where we will find a log that states the search was successful, these logs will also indicate if there was an issue with the search request being performed
 
-![Atlas Search Plugin Data Sync](./images/as-wpgraphiql.png)
-
-#### Querying Standard WordPress Data Types
-
-Here are examples of querying standard WordPress data types (Posts, Pages, and Custom Post Types (CPT)):
-
-- Querying Posts/Pages:
-
-```graphql
-{
-  {either "posts" or "pages"}(where: {search: "CSS"}) {
-    nodes {
-      id
-      status
-      title
-    }
-  }
-}
-```
-
-- Querying Custom Post Types:
-
-```graphql
-{
-  branches(where: { search: "Austin" }) {
-    nodes {
-      address
-    }
-  }
-}
-```
-
-#### Querying ACM or ACF Types
-
-Atlas Search also integrates with the [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) (ACF) plugin.
-
-Here is an example of querying for a custom data type:
-
-- Querying ACF type of `project`, with fields of `streetAddress`, `contactName` & `workOrderNumber`:
-
-```graphql
-{
-  projects(where: { search: "Austin" }) {
-    nodes {
-      streetAddress
-      contactName
-      workOrderNumber
-    }
-  }
-}
-```
 
 #### Advanced Query Example
 
@@ -258,42 +207,18 @@ Here is an example of querying using different search operators:
 
 - Using `NOT` search operator:
 
-```graphql
-{
-  projects(where: { search: "Austin NOT Minnesota" }) {
-    nodes {
-      streetAddress
-      contactName
-      workOrderNumber
-    }
-  }
-}
+```
+Austin NOT Minnesota
 ```
 
 - Using `AND` search operator:
 
-```graphql
-{
-  projects(where: { search: "New York AND Texas" }) {
-    nodes {
-      streetAddress
-      contactName
-      workOrderNumber
-    }
-  }
-}
+```
+New York AND Texas
 ```
 
 - Using `OR` search operator:
 
-```graphql
-{
-  projects(where: { search: "New York OR Texas" }) {
-    nodes {
-      streetAddress
-      contactName
-      workOrderNumber
-    }
-  }
-}
+```
+New York OR Texas
 ```

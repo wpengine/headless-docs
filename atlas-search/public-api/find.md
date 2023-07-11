@@ -413,7 +413,7 @@ query FindOrQuery {
 }
 ```
 
-### Search field value with greater, lower or equal operator
+### Search field value with greater, less or equal operator
 
 ```graphql
 query FindRangeQuery {

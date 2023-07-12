@@ -4,13 +4,17 @@ title: Using GraphQL Search API
 description: Using Atlas Search API for search
 ---
 
-# Search API
+# Find API Documentation
 
-The Search API allows you to search for documents in an index based on specific parameters.
+**NOTE:** This API and its endpoints are in BETA. Beta Services as described by Section 2.e. of the terms of services located [here](https://wpengine.com/legal/terms-of-service/)
+
+## Overview
+
+The find API allows you to search for documents in an index based on specific parameters.
 
 ## API Reference
 
-The search schema defines the GraphQL query type for searching documents in an index. It includes various parameters to customize the search query.
+The schema defines the GraphQL query type for searching documents in an index. It includes various parameters to customize the search query.
 
 ### Query
 
@@ -29,7 +33,7 @@ The search schema defines the GraphQL query type for searching documents in an i
   </tbody>
 </table>
 
-#### Search Parameters
+#### Find Parameters
 
 <table>
   <thead>
@@ -43,7 +47,7 @@ The search schema defines the GraphQL query type for searching documents in an i
     <tr>
       <td>query</td>
       <td>String!</td>
-      <td>The search query.</td>
+      <td>The search query. This is required.</td>
     </tr>
     <tr>
       <td>filter</td>
@@ -72,8 +76,8 @@ The search schema defines the GraphQL query type for searching documents in an i
     </tr>
     <tr>
       <td>tolerance</td>
-      <td>SearchOption = {}</td>
-      <td>Selects either Fuzzy or Stemming search option. Can be provided later to override the global setting.</td>
+      <td>SearchOption = { name: stemming }</td>
+      <td>Selects either Fuzzy or Stemming search option. By default, find will use stemming.</td>
     </tr>
   </tbody>
 </table>
@@ -122,6 +126,11 @@ The search schema defines the GraphQL query type for searching documents in an i
       <td>direction</td>
       <td>OrderByDirection</td>
       <td>The sort direction (asc or desc).</td>
+    </tr>
+     <tr>
+      <td>unmappedType</td>
+      <td>String</td>
+      <td>Option to ignore unmapped type.</td>
     </tr>
   </tbody>
 </table>
@@ -252,16 +261,54 @@ The search schema defines the GraphQL query type for searching documents in an i
   </tbody>
 </table>
 
-## Usage
+## Basic Usage
 
-### Basic Usage
+To search for documents using the `find` query. Below, you can see examples:
 
-To search for documents using the `find` query. Below you can see an example.
-
-Find query example
+### Find query basic example
 
 ```graphql
-query FindQuery(
+query FindSimpleQuery {
+  find(query: "hello") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+### Find query advance example
+
+```graphql
+query FindAdvanceQuery {
+  find(
+    query: "Austin"
+    filter: "post_type:post,page"
+    fields: [{ name: "title", weight: 2 }, { name: "description" }]
+    orderBy: [{ field: "published_at", direction: desc, unmappedType: "date" }]
+    limit: 100
+    offset: 200
+    tolerance: { name: fuzzy, fuzzyDistance: 2 }
+  ) {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+You can write the same query with separated variables:
+
+```graphql
+query FindAdvanceQuery(
   $query: String!
   $filter: String
   $fields: [SearchField!]
@@ -290,102 +337,112 @@ query FindQuery(
 }
 ```
 
-Find query variables
+GraphQL Variables
 
-```graphql
+```json
 {
   "query": "Austin",
   "filter": "post_type:post,page",
   "orderBy": [
-    { "field": "published_at", "direction": "desc" }
+    { "field": "published_at", "direction": "desc", "unmappedType": "date" }
   ],
   "offset": 200,
   "limit": 100,
-  "fields": [
-    { "name": "title", "weight": 2 },
-    { "name": "description" }
-  ],
+  "fields": [{ "name": "title", "weight": 2 }, { "name": "description" }],
   "tolerance": { "name": "fuzzy", "fuzzyDistance": 2 }
 }
 ```
 
-<table>
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>query</td>
-      <td>The search query itself. We search for documents containing the word 'Austin'.</td>
-    </tr>
-    <tr>
-      <td>filter</td>
-      <td>Additional filtering to apply to the search results. We search only for posts and page post_types.</td>
-    </tr>
-    <tr>
-      <td>orderBy</td>
-      <td>Order by name asc and, in case of a tie, date desc.</td>
-    </tr>
-    <tr>
-      <td>offset</td>
-      <td>The number of results to skip for pagination. We asked to skip the first 200.</td>
-    </tr>
-    <tr>
-      <td>limit</td>
-      <td>The maximum number of results to return. We asked for 100.</td>
-    </tr>
-    <tr>
-      <td>fields</td>
-      <td>An array of objects specifying the fields to search for in the documents and their weights. Title has double the weight of description, so it will come first as a result.</td>
-    </tr>
-    <tr>
-      <td>tolerance</td>
-      <td>The search tolerance option, such as fuzzy search with a specified distance. We used fuzzy with distance 2.</td>
-    </tr>
-  </tbody>
-</table>
+The query returns a `SearchResult` object that includes fields:
 
-### Using Query Operators
+- `total` - an integer of the total documents matching the query. Independent to offset and limit arguments.
+- `documents` - an array of search documents with fields:
+  - `id` is unique id of the document in the index
+  - `score` is a relevance score, which determines how closely each document matches the query
+  - `sort` is an array associated with a document. The first element represents the sorting score or relevance score of the document. The second element represents a timestamp or any other value used for sorting.
 
-- Using `NOT` search operator:
+## Advanced Usage
+
+### Logical operators: AND, OR, NOT.
+
+Using `NOT` search operator:
 
 ```graphql
-{
-  "query": "Austin NOT Minnesota",
+query FindNotQuery {
+  find(query: "Austin NOT Minnesota") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
-- Using `AND` search operator:
+Using `AND` search operator:
 
 ```graphql
-{
-  "query": "New York AND Texas",
+query FindAndQuery {
+  find(query: "New York AND Texas") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
-- Using `OR` search operator:
+Using `OR` search operator:
 
 ```graphql
-{
-  "query": "New York OR Texas",
+query FindOrQuery {
+  find(query: "New York OR Texas") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
-### Advanced Query Example
+### Search field value with greater, less or equal operator
 
 ```graphql
-{
-  "query": "seats.count::>4 !seats.count:10 tags.name:Cars hello AND world OR 123 4.56",
+query FindRangeQuery {
+  find(query: "seats.count:(>4 AND <20)") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
 }
 ```
 
-This example searches for records that match the following criteria:
+The `seats.count` field has a value greater than 4 and lower than 20.
 
-- The `seats.count` field has a value greater than 4 and not 10
-- The `tags.name` field contains the value Cars.
-- The text **“hello”** appears in the record.
-- The text **“world”** appears in the record.
-- The record contains either the number **123** or the number **4.56**.
+```graphql
+query FindRangeQuery {
+  find(query: "categories.name:Cars") {
+    total
+    documents {
+      id
+      score
+      sort
+      data
+    }
+  }
+}
+```
+
+The `categories.name` field contains the value Cars.

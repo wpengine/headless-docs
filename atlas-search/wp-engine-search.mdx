@@ -139,19 +139,19 @@ Remember to press the "Save" button to persist any configuration modifications!
 
 ### Querying with WP Engine Search
 
-1. First lets go and vist our site:
+1. First, visit our site:
 
 ![Atlas Search Plugin Data Sync](./images/as-visit-site.png)
 
-2. Toggle the searh bar on the right hand side:
+2. Toggle the search bar on the right-hand side:
 
 ![Atlas Search Plugin Data Sync](./images/as-visit-site-search-bar.png)
 
-3. Then perform a search query i.e. **"hello"**, Once the search is executed we are redirected to the active themes search results page:
+3. Then, perform a search query, i.e. **"hello"**. Once the search is executed, we are redirected to the active theme's search results page:
 
 ![Atlas Search Plugin Data Sync](./images/as-visit-site-search-performed.png)
 
-To understand if the query with atlas search was successful we can install a plugin called query monitor, WP Engine Search works seamlessly with the [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) for non-WPGraphQL users (see "Debug Information" above for how to access logs if you are using WPGraphQL).
+To understand if the query with Atlas Search was successful, we can install a plugin called Query Monitor. WP Engine Search works seamlessly with the [Query Monitor plugin](https://wordpress.org/plugins/query-monitor/) for non-WPGraphQL users (see "Debug Information" above for how to access logs if you are using WPGraphQL).
 
 The query monitoring plugin will allow users to view detailed information about the Atlas Search queries being made on their site, including the query string, the time it took to execute the query, and more. This information can be used to optimize search performance and ensure that searches are working as expected.
 
@@ -163,17 +163,15 @@ To use Query Monitor with WP Engine Search, follow these steps:
 4. In the dashboard that appears, click on "Logs."
 5. Run Atlas Search and see the data appear.
 
-Once query monitor is activated lets visit the site and run the **"hello"** search again from steps **1**, **2** and **3** above. 
+Once Query Monitor is activated, visit the site and run the **"hello"** search again from steps **1**, **2** and **3** above.
 
 ![Atlas Search Plugin Data Sync](./images/as-query-monitor-hover.png)
 
-With query monitor enabled we get access to a new admin bar item, hovering over it reveals a couple of items that relate to how the page was loaded, we are interested in the **Logs** section.
-
+With Query Monitor enabled, we get access to a new admin bar item that reveals several pieces of information including how the page was loaded. We are interested in the **Logs** section.
 
 ![Atlas Search Plugin Data Sync](./images/as-query-monitor-navigate-to-logs.png)
 
-Once we click the logs section a new window will open from the bottom of the screen where we will find a log that states the search was successful, these logs will also indicate if there was an issue with the search request being performed
-
+Once we click the Logs section, a new window will open from the bottom of the screen with a log that states if the search was successful. These logs can provide helpful information if there was an issue with the search request being performed.
 
 #### Advanced Query Example
 

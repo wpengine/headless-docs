@@ -16,7 +16,7 @@ The public API includes mutations:
 - [delete](#deleting-a-document) mutation for deleting a document
 - [deleteAll](#deleting-all-documents) mutation for deleting all documents
 
-To use a mutation you need to [authenticate](#authentication).
+To use a mutation, you need to [authenticate](#authentication).
 
 ---
 
@@ -184,7 +184,7 @@ Mutation Response
 }
 ```
 
-In this example, we’re updating an existing document with the `id` of `yMI9vogB0FEetE6QV9fh`. We are mutating `post_title` field of the document. The mutation returns a `DocumentMutationResponse` like for creating.
+In this example, we’re updating an existing document with the `id` of `yMI9vogB0FEetE6QV9fh`. We are mutating `post_title` field of the document. The mutation returns a `DocumentMutationResponse` object.
 
 The same behavior would occur even if the document did not already exist. In that case, it would be created with the provided `id` and the `DocumentMutationResponse` would include this `id`.
 

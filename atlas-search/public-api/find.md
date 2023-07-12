@@ -47,7 +47,7 @@ The schema defines the GraphQL query type for searching documents in an index. I
     <tr>
       <td>query</td>
       <td>String!</td>
-      <td>The search query. It's required.</td>
+      <td>The search query. This is required.</td>
     </tr>
     <tr>
       <td>filter</td>
@@ -77,7 +77,7 @@ The schema defines the GraphQL query type for searching documents in an index. I
     <tr>
       <td>tolerance</td>
       <td>SearchOption = { name: stemming }</td>
-      <td>Selects either Fuzzy or Stemming search option. By default find will use stemming.</td>
+      <td>Selects either Fuzzy or Stemming search option. By default, find will use stemming.</td>
     </tr>
   </tbody>
 </table>
@@ -263,9 +263,9 @@ The schema defines the GraphQL query type for searching documents in an index. I
 
 ## Basic Usage
 
-To search for documents using the `find` query. Below you can see examples.
+To search for documents using the `find` query. Below, you can see examples:
 
-### Find query simple example
+### Find query basic example
 
 ```graphql
 query FindSimpleQuery {
@@ -356,7 +356,7 @@ GraphQL Variables
 The query returns a `SearchResult` object that includes fields:
 
 - `total` - an integer of the total documents matching the query. Independent to offset and limit arguments.
-- `documents` - and array of search documents with fields:
+- `documents` - an array of search documents with fields:
   - `id` is unique id of the document in the index
   - `score` is a relevance score, which determines how closely each document matches the query
   - `sort` is an array associated with a document. The first element represents the sorting score or relevance score of the document. The second element represents a timestamp or any other value used for sorting.

@@ -18,6 +18,16 @@
       "type": "doc",
       "label": "Using Atlas Search",
       "filePath": "/atlas-search/using-atlas-search.mdx"
+    },
+    {
+      "type": "doc",
+      "label": "Search API",
+      "filePath": "/atlas-search/public-api/find.md"
+    },
+    {
+      "type": "doc",
+      "label": "Index & Delete API",
+      "filePath": "/atlas-search/public-api/index.md"
     }
   ]
 }

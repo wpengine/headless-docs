@@ -1,7 +1,7 @@
 ---
-slug: /atlas-search/public-api/search
+slug: /atlas-search/public-api/find
 title: Using GraphQL Search API
-description: Using Atlas Search API for search
+description: Using Atlas Find API for search
 ---
 
 # Find API Documentation
@@ -10,7 +10,7 @@ description: Using Atlas Search API for search
 
 ## Overview
 
-The find API allows you to search for documents in an index based on specific parameters.
+The Find API allows you to search for documents in an index based on specific parameters.
 
 ## API Reference
 
@@ -76,7 +76,7 @@ The schema defines the GraphQL query type for searching documents in an index. I
     </tr>
     <tr>
       <td>tolerance</td>
-      <td>SearchOption = { name: stemming }</td>
+      <td>SearchOption = \{ name: stemming \}</td>
       <td>Selects either Fuzzy or Stemming search option. By default, find will use stemming.</td>
     </tr>
   </tbody>
@@ -363,7 +363,7 @@ The query returns a `SearchResult` object that includes fields:
 
 ## Advanced Usage
 
-### Logical operators: AND, OR, NOT.
+### Logical operators: AND, OR, NOT
 
 Using `NOT` search operator:
 

@@ -68,13 +68,14 @@ Here are examples of querying standard WordPress data types (Posts, Pages, and C
 }
 ```
 
-### Querying ACM or ACF Types
+### Querying for various post types and ACF fields
+**Please note that Atlas Search has stopped support for ACM since version v.0.2.14.**
 
-Atlas Search also integrates with the [Atlas Content Modeler](https://developers.wpengine.com/blog/what-is-atlas-content-modeler) (ACM) & [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) (ACF) plugins.
+Atlas Search also integrates with the [Advanced Custom Fields](https://wordpress.org/plugins/advanced-custom-fields/) (ACF) plugin.
 
 Here is an example of querying for a custom data type:
 
-- Querying ACM type of `project`, with fields of `streetAddress`, `contactName` & `workOrderNumber`:
+- Querying ACF type of `project`, with fields of `streetAddress`, `contactName` & `workOrderNumber`:
 
 ```graphql
 {
@@ -90,7 +91,7 @@ Here is an example of querying for a custom data type:
 
 ### Advanced Query Example
 
-You can query fields that appear on the plugin's Search Config page, including ACF fields, ACM fields, tags and categories, etc. Consider the following query:
+You can query fields that appear on the plugin's Search Config page, including ACF fields, tags and categories, etc. Consider the following query:
 
 ```
 seats.count:>4 tags.name:Cars hello AND world OR 123 4.56
@@ -191,7 +192,7 @@ The image below shows how having your fuzzy distance too high can lead to incorr
 
 ### Filtering And Boosting Searchable Content
 
-By default, Atlas Search will search all supported WordPress Data Type objects (Posts, Pages, CPTs, ACFs, ACMs, etc.) by all of their supported fields (string, number, boolean, and other WordPress Data Type objects).
+By default, Atlas Search will search all supported WordPress Data Type objects (Posts, Pages, CPTs, ACFs, etc.) by all of their supported fields (string, number, boolean, and other WordPress Data Type objects).
 
 The search will return results where each field-match to the search query term(s) are given an equal weighting (1), thus the objects with most search-match occurrences will rise to the top. In some cases this may not be the desired behavior. For example:
 

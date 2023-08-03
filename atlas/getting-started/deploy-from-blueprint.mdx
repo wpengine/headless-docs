@@ -4,53 +4,52 @@ title: Deploy From A Blueprint
 description: Deploy an Atlas app from a blueprint.
 ---
 
-Now that you have [chosen a blueprint](./blueprint-repository), you can clone it in GitHub and deploy it to Atlas. Pushing to your main branch in GitHub will then deploy updates to Atlas automatically.
-
-**Please note:** at the moment, Blueprints are not available to be used with Bitbucket or GitLab accounts, however Atlas team is actively working on this integration.
+Now that you have [chosen a blueprint](./blueprint-repository), you can clone it to any supported repository hosting service provider (GitHub, GitLab or Bitbucket) and then deploy it to Atlas. Pushing changes to your `main` branch in your chosen repository hosting service provider will then deploy updates to Atlas automatically.
 
 Atlas blueprints use the [Faust.js](https://faustjs.org/) framework based on [Next.js](https://nextjs.org/). Atlas also supports other frameworks that run on Node.js.
 
 ## Create Atlas App
 
-### 1. Connect to GitHub
+### 1. Connect to a supported repository provider (GitHub, GitLab, Bitbucket)
 
-Connect your GitHub account so you can clone Atlas blueprints.
+Connect to your chosen repository provider so you can clone Atlas blueprints.
 
-1. Under `Connect to GitHub`, select `Connect`.
+1. Under `Connect to a Git repository`, select one of the `Connect` button for your chosen provider.
 
-2. GitHub opens in another tab of your web browser. Give WP Engine permission to access your repositories.
+2. The Atlas connect page opens in another tab of your web browser. Give WP Engine permission to access your chosen provider's repositories in order to proceed.
 
-After Atlas connects to your GitHub account, the `Connect` button indicates that you are `Connected`.
+After Atlas connects to your provider's account, the connect page tab will close and the `Connect` button will now indicate that you are `Connected`.
 
-![Connected to GitHub](./assets/img/connect-to-github-blueprints.png)
+![Connected to Git Provider(s)](./assets/img/create-app-github-bitbucket-gitlab.png)
 
 ### 2. Create a repository
 
-Now that GitHub is connected, it's time to create a repository where your Blueprint code is going to be stored.
+Now that your chosen repository provider is connected, it's time to create a repository where your Blueprint code is going to be stored.
 
-1. Select your GitHub account
+1. Select your repository provider's account (or 'namespace', if BitBucket)
 
-Use the dropdown list or start typing to filter available GitHub accounts.
+Use the dropdown list or start typing to filter available repository account/ namespace.
 
-![Select your GitHub account](./assets/img/select-github-account.png)
+![Select your Git Provider account/ namespace](./assets/img/select-github-account.png)
 
-If you don't see the account for which you'd like to create a repository on the list, click on "Manage GitHub app" on the top of the screen:
+If you don't see the account for which you'd like to create a repository on the list, click on "Manage GitHub app" on the top of the screen (this is a GitHub only feature at present):
+
 ![Connected to GitHub](./assets/img/manage-github-app.png)
 
 
 2. Name your repository
 
-Depending on which Blueprint you chose, Atlas will suggest a repository name for you. The name of your repository should be unique within your GitHub account - If it's not, you'll see an error after clicking the "Create" button on the bottom of the page.
+Depending on which Blueprint you chose, Atlas will suggest a repository name for you. The name of your repository should be unique within your chosen repository provider account/ namespace - If it's not, you'll see an error after clicking the "Create" button on the bottom of the page.
 
 3. Select the visibility of your repository
 
-If you want to limit your repository's visibility to only people that can access your GitHub account, make sure to check the "Private repository" checkbox.
+If you want to limit your repository's visibility to only people that can access your chosen repository provier account/ namespace, make sure to check the "Private repository" checkbox.
 
 4. Select a region for your Atlas app. The region you select will be used for all of your app's environments (production/staging/etc.) and cannot be changed once your Atlas application has been deployed.
 
 ![Select your app's region](./assets/img/region-select-blueprint.png)
 
-7. Click `Create App`.
+5. Click `Create App`.
 
 That's it! Track the initial build progress on the next screen that loads automatically.
 

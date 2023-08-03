@@ -43,9 +43,8 @@ At the top of that page, there is a section with additional details about a part
 
 ![Detail panel for a particular Atlas build](./assets/img/troubleshooting-builds/failed-build-id.png)
 
-If you click on the commit hash link in the build details screen, you will be taken directly to the repository commit diff for that particular commit. This view provides you with an easily scannable summary of everything that changed. If you're using GitHub and you scroll below your code changes, you will see an automated message from the WP Engine GitHub bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs and your public environment URL.
+If you click on the commit hash link in the build details screen (shown above), you will be taken directly to the repository commit diff for that particular commit, within your supported repository hosting service provider (GitHub, GitLab or Bitbucket). This view provides you with an easily-scannable summary of everything that changed, and you will see an automated message from the WP Engine bot with some details about your build. It should tell you the status of the build, whether it succeeded or failed, and also provide you with links directly to the build logs, the preview environment site, and access the preview environment's details page (Portal). Below is the GitHub equivalent:
 
-**Please note:** comments on commit pages aren't available for Atlas applications built from Bitbucket or GitLab repositories at the moment.
 
 ![GitHub commit diff for a failing build](./assets/img/troubleshooting-builds/github-commit-diff-failing-build.png)
 
@@ -100,10 +99,8 @@ In case you change a name of the repository you're using for your Atlas applicat
 
 ### Creating an Atlas Blueprint Fails
 
-**Please note:** It's not possible to create a Blueprint application using Bitbucket or GitLab repository at the moment.
-
-1. If you selected to create a repository within a GitHub organisation, make sure the GitHub user you're authenticated as has enough permissions to create new repositories in this GitHub org.
-2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your [GitHub repository settings](https://github.com/settings/repositories).
+1. If you selected to create a repository within a supported repository hosting service provider's (GitHub, GitLab or Bitbucket) organisation (called 'namespace' for Bitbucket), make sure the user you're authenticated as has enough permissions to create new repositories in this organisation/ namespace.
+2. For Blueprints to work properly, we - for now - require your default branch to be called 'main'. You can change this setting globally for all new repositories in your chosen repository provider. Below is the GitHub equivalent:
 
 ![GitHub repo default branch input](./assets/img/troubleshooting-builds/github-repo-default-branch.png)
 

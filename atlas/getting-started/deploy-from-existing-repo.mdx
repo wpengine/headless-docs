@@ -32,7 +32,7 @@ By default, the Atlas platform will run `npm run build` and `npm run start` to b
 The platform expects your application to listen for traffic on one of the following ports: `8080`(default) or `3000`. You may receive an error during deployment if your application is using a different port value. In some frameworks, you may be able to use an environment variable named `PORT` to specify which port you application will listen on.
 
 
-### 2. Connect to repository hosting service
+### 2. Connect to a supported repository provider (GitHub, GitLab, Bitbucket)
 
 Atlas supports three repository hosting service providers - GitHub, Bitbucket and GitLab. Connect to your repository provider, then choose the account/ namespace, in order to find the repository you wish to deploy on Atlas.
 
@@ -50,7 +50,11 @@ After Atlas connects to your account, the `Connected` label with green checkmark
 Now that you are connected to the provider of your choice, it's time to connect your repository.
 
 1. From the list of repositories, select the one with your application's code.
-2. Select `Continue` to proceed to the WP Engine Settings page.
+
+    If you have selected GitHub as your provider but don't see the repository which you'd like to use, click on "Manage GitHub repositories" or "Add GitHub repository" (if no GitHub respoitories visible yet) button presented, as the account where the repository resides is not visible yet to Portal (this is a GitHub only feature at present):
+
+    ![Connected to GitHub](./assets/img/manage-github-repositories.png)
+1. Select `Continue` to proceed to the WP Engine Settings page.
 
 ### 4. Set your application settings
 

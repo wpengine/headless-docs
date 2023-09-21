@@ -1,0 +1,35 @@
+---
+slug: /atlas/additional-guides/environment-variables
+title: Environment Variables
+description: Everything about environment variables
+---
+
+In this guide, you will learn everything about environment variables in Atlas.
+
+## Default variables
+
+Each of the environments has default environment variables that cannot be deleted:
+- `WPE_ATLAS_GIT_PROVIDER`
+- `WPE_ATLAS_REPOSITORY`
+- `WPE_ATLAS` (always true)
+- `WPE_ATLAS_APP_NAME`
+- `WPE_ATLAS_ENV_NAME`
+- `WPE_ATLAS_COMMIT_SHA`
+- `WPE_ATLAS_BRANCH`
+
+These cannot be manually modified, but for example, changing the branch will result in a change of value for `WPE_ATLAS_BRANCH`.
+
+## Custom variables
+
+For each environment separately, you can add, modify, or delete custom environmental variables according to established rules.
+
+The variable cannot be named:
+- `HOME`
+- `PORT`
+- `TMP`
+- `TMPDIR`
+- `TEMP`
+
+The name of variable cannot start with the prefix:
+- `WPE_`
+- `K_`

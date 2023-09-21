@@ -169,6 +169,11 @@
         },
         {
           "type": "doc",
+          "label": "Environment Variables",
+          "filePath": "/atlas/additional-guides/environment-variables.mdx"
+        },
+        {
+          "type": "doc",
           "label": "Support",
           "filePath": "/atlas/additional-guides/support.mdx"
         }

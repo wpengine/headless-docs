@@ -173,6 +173,19 @@ With Query Monitor enabled, we get access to a new admin bar item that reveals s
 
 Once we click the Logs section, a new window will open from the bottom of the screen with a log that states if the search was successful. These logs can provide helpful information if there was an issue with the search request being performed.
 
+#### Search with Order By
+You can use search to order by results on `date` and `modified`, using order: `asc`, `desc`(default) as well.
+
+Let's assume that your website is `example.com`. If you are searching for `hello`, the search url will be:
+
+```example.com/?=hello```
+
+Now in order to order by the results by date, the search url would be:
+```example.com/?=hello&orderby=date&order=asc```
+
+Or to order by date `modified` `desc` ( if `order` is omitted `desc` is the default):
+```example.com/?=hello&orderby=modified```
+
 #### Advanced Query Example
 
 You can query fields that appear on the plugin's Search Config page, including ACF fields, tags and categories, etc. Consider the following query:

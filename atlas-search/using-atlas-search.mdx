@@ -113,6 +113,35 @@ The search string uses the following syntax:
 - **Filters:** A filter is used to search for records that meet specific criteria. Filters are specified using the format {'<'}field name{'>'}: {'<'}value{'>'}. In this example, `seats.count:>4` and `tags.name: Cars` are filters. The `seats.count` filter searches for records where the value of the `seats.count` field is greater than **4**, while the `tags.name` filter searches for records where the `tags.name` field contains the value **Cars**.
 - **Logical operators:** The search string uses the logical operators **AND** and **OR** to combine search terms and filters. The **AND** operator is used to require that both search terms or filters appear in a record, while the **OR** operator is used to search for records that contain either one or the other.
 
+### Order By
+Currently, we support ordering by the following fields: `DATE`, `MODIFIED`. Also, should be provided the order direction: `ASC`, `DESC`. If `orderby` is not provided, the default weighting policy is applied - which is shaped by Search Config weights.
+
+- Querying posts, order by `DATE DESC` :
+```graphql
+{
+  posts(where: {search: "CSS", orderby: [ { field: DATE, order: DESC} ] }) {
+    nodes {
+      id
+      status
+      title
+    }
+  }
+}
+```
+
+- Querying ACF type of project, with fields of streetAddress, contactName & workOrderNumber, ordered by `MODIFIED ASC`. In the event of the same modified date, further sort them in descending order of `DATE`:
+```graphql
+{
+    projects(where: { search: "Austin" , orderby: [ { field: MODIFIED, order: ASC}, { field: DATE, order: DESC}] }) {
+        nodes {
+            streetAddress
+            contactName
+            workOrderNumber
+        }
+    }
+}
+```
+
 ### Query Operators
 
 Atlas Search treats spaces as an `OR` operator by default, whereas the default WordPress search treats spaces as an `AND` operator. With Atlas Search, you can explicitly specify the `AND`, `OR` & `NOT` keywords within your search query & you can combine them too - this provides enhanced specificity for your querying needs.

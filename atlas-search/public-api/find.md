@@ -120,7 +120,7 @@ The schema defines the GraphQL query type for searching documents in an index. I
     <tr>
       <td>field</td>
       <td>String!</td>
-      <td>The field to order the documents by.</td>
+      <td>The field to order the documents by. For now only numeric and date fields are supported</td>
     </tr>
     <tr>
       <td>direction</td>
@@ -197,17 +197,17 @@ The schema defines the GraphQL query type for searching documents in an index. I
     <tr>
       <td>id</td>
       <td>ID!</td>
-      <td>The Elasticsearch ID of the document.</td>
+      <td>The Search ID of the document.</td>
     </tr>
     <tr>
       <td>score</td>
       <td>Float</td>
-      <td>The Elasticsearch score of the document.</td>
+      <td>The Search score of the document.</td>
     </tr>
     <tr>
       <td>sort</td>
       <td>[Float]</td>
-      <td>Values used by Elasticsearch to sort the documents.</td>
+      <td> <b>Deprecated:</b> Going to be removed soon. For now always returns the score</td>
     </tr>
     <tr>
       <td>data</td>
@@ -274,7 +274,6 @@ query FindSimpleQuery {
     documents {
       id
       score
-      sort
       data
     }
   }
@@ -289,7 +288,7 @@ query FindAdvanceQuery {
     query: "Austin"
     filter: "post_type:post,page"
     fields: [{ name: "title", weight: 2 }, { name: "description" }]
-    orderBy: [{ field: "published_at", direction: desc, unmappedType: "date" }]
+    orderBy: [{ field: "published_at", direction: desc }]
     limit: 100
     offset: 200
     tolerance: { name: fuzzy, fuzzyDistance: 2 }
@@ -298,7 +297,6 @@ query FindAdvanceQuery {
     documents {
       id
       score
-      sort
       data
     }
   }
@@ -330,7 +328,6 @@ query FindAdvanceQuery(
     documents {
       id
       score
-      sort
       data
     }
   }
@@ -344,7 +341,7 @@ GraphQL Variables
   "query": "Austin",
   "filter": "post_type:post,page",
   "orderBy": [
-    { "field": "published_at", "direction": "desc", "unmappedType": "date" }
+    { "field": "published_at", "direction": "desc" }
   ],
   "offset": 200,
   "limit": 100,
@@ -359,7 +356,6 @@ The query returns a `SearchResult` object that includes fields:
 - `documents` - an array of search documents with fields:
   - `id` is unique id of the document in the index
   - `score` is a relevance score, which determines how closely each document matches the query
-  - `sort` is an array associated with a document. The first element represents the sorting score or relevance score of the document. The second element represents a timestamp or any other value used for sorting.
 
 ## Advanced Usage
 
